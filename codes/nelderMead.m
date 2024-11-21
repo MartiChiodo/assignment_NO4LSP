@@ -18,26 +18,47 @@ function [xbest,iter,fbest, flag]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % of the symplex
 %
 % OUTPUTS:
-% xbest = the approximation of the minimazer
+% xbest = the approximation of the minimizer
 % iter = number of iterations
-% fbest = approximation of the minimums
+% fbest = approximation of the minimum
 % flag = if true, the given symplex was degenere
 
 % we are verifying that all the parameters are passed as inputs, eventually
 % we set rho, chi, gamma and sigma with default valuess
-arguments
-    f
-    x0 %matrice nxn+1 con n+1 colonne ognuna delle quali è un vertice del simplesso di partenza
-    rho double =1
-    chi double =2
-    gamma double =0.5
-    sigma double =0.5
-    kmax integer =50
-    tol double =1e-6
+if isempty(rho)
+    rho=1;
 end
+if isempty(chi)
+    chi=2;
+end
+if isempty(gamma)
+    gamma=0.5;
+end
+if isempty(sigma)
+    sigma=0.5;
+end
+if isempty(kmax)
+    kmax=10;
+end
+if isempty(tol)
+    tol=1e-6;
+end
+
+
+%arguments
+%    f
+%    x0 %matrice nxn+1 con n+1 colonne ognuna delle quali è un vertice del simplesso di partenza
+%    rho double =1
+%    chi double =2
+%    gamma double =0.5
+%    sigma double =0.5
+%    kmax integer =50
+%    tol double =1e-6
+%end
+
 %aggiungere controllo su simplesso degenere (nel caso in cui x0 sia un
 %simplesso)
-rho %togli
+
 
 n=size(x0,1); %dimension of the space we are working
 flag = false;
@@ -67,10 +88,10 @@ k=0;
 c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
 distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
 
-while k<=kmax && distance>tol
+while k<kmax && distance>tol
     shrinking=false; %false se devo aggiornare solo un punto, true se ho fatto shrink
 
-    % sorting the point based on the evaluation ef the function in the point
+    % sorting the point based on the evaluation of the function in the point
     for i=1:n+1
         fk(i)=f(x0(:,i));
     end
@@ -82,23 +103,29 @@ while k<=kmax && distance>tol
     centroid=mean(x0_best_n,2); 
     
     % REFLECTION PHASE
+    disp("reflection") %togli
     xR=centroid + rho*(centroid-x0(:,indices(end)));
     fxR=f(xR);
     if fxR>=fk_sorted(1) && fxR<fk_sorted(n)
         xnew=xR;
-        continue
+        %x0(:,indices(end))=xnew; %se non lo metto non lo aggiorna (con il continue passa subito all'iterazione successiva?)
+        %continue
     elseif fxR<fk_sorted(1)
         % EXPANSION PHASE
+        disp("expansion") %togli
         xE=centroid+chi.*(xR-centroid);
         if f(xE)<fxR
             xnew=xE;
-            continue
+            %x0(:,indices(end))=xnew; %se non lo metto non lo aggiorna (con il continue passa subito all'iterazione successiva?)
+            %continue
         else
             xnew=xR;
-            continue
+            %x0(:,indices(end))=xnew; %?
+            %continue
         end
     else
         % CONTRACTION PHASE
+        disp("contraction") %togli
         if fxR > fk_sorted(n+1)
             xC=centroid-gamma.*(centroid-x0(:,indices(end)));
         else
@@ -108,6 +135,7 @@ while k<=kmax && distance>tol
             xnew=xC;
         else
             % SHRINKING PHASE
+            disp("shrinking") %togli
             shrinking=true;
             x=zeros(n,n+1);
             x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n)-x0(:,indices(1)));
