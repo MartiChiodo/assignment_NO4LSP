@@ -1,4 +1,4 @@
-function [xbest,iter,fbest, flag]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
+function [xbest,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 
 % [xbest,iter,fbest]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % 
@@ -22,6 +22,8 @@ function [xbest,iter,fbest, flag]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % iter = number of iterations
 % fbest = approximation of the minimum
 % flag = if true, the given symplex was degenere
+% failure = if true, we are declaring a failure
+%
 
 % we are verifying that all the parameters are passed as inputs, eventually
 % we set rho, chi, gamma and sigma with default valuess
@@ -62,6 +64,7 @@ end
 
 n=size(x0,1); %dimension of the space we are working
 flag = false;
+failure = false;
 
 if rank(x0) < n && size(x0,2) > 1
     % se il simplesso è degenere ritorniamo flag = true
@@ -103,7 +106,6 @@ while k<kmax && distance>tol
     centroid=mean(x0_best_n,2); 
     
     % REFLECTION PHASE
-    disp("reflection") %togli
     xR=centroid + rho*(centroid-x0(:,indices(end)));
     fxR=f(xR);
     if fxR>=fk_sorted(1) && fxR<fk_sorted(n)
@@ -112,7 +114,6 @@ while k<kmax && distance>tol
         %continue
     elseif fxR<fk_sorted(1)
         % EXPANSION PHASE
-        disp("expansion") %togli
         xE=centroid+chi.*(xR-centroid);
         if f(xE)<fxR
             xnew=xE;
@@ -125,7 +126,6 @@ while k<kmax && distance>tol
         end
     else
         % CONTRACTION PHASE
-        disp("contraction") %togli
         if fxR > fk_sorted(n+1)
             xC=centroid-gamma.*(centroid-x0(:,indices(end)));
         else
@@ -135,7 +135,6 @@ while k<kmax && distance>tol
             xnew=xC;
         else
             % SHRINKING PHASE
-            disp("shrinking") %togli
             shrinking=true;
             x=zeros(n,n+1);
             x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n)-x0(:,indices(1)));
@@ -160,10 +159,15 @@ end
 for i=1:n+1
         fk(i)=f(x0(:,i));
 end
+
 [fk_sorted,indices]=sort(fk);
 xbest=x0(:,indices(1));
 iter=k;
 fbest=fk_sorted(1);
+
+if k == kmax && distance > tol
+    failure = true;
+end
 
 
 
