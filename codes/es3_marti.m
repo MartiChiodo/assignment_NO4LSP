@@ -50,8 +50,10 @@ Hessf = @(x) BTP_Hess(x);
 
 % setting the values for the dimension
 dimension = [1e1 1e2 1e3];
+iter_max = 150;
+tol = 1e-6;
 avg_execution_time_NM = zeros(3,1);
-failure_struct_NM = zeros(3,1); %for each dimension we count the number of failuer
+failure_struct_NM = zeros(3,1); %for each dimension we count the number of failure
 
 for dim = 1:3
     n = dimension(dim);
@@ -76,30 +78,35 @@ for dim = 1:3
     % first initial point
     fprintf('solving the NM method for the first x0 with dim = %i \n', n)
     t1 = tic;
-    [xbest,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],50,1e-9);
+    [xbest, ~,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],iter_max,tol);
     time = time + toc(t1);
     xbest_struct(:,1) = xbest;
     iter_struct(1,1) = iter;
     fbest_struct(1,1) = fbest;
-    if failure == 1
-        failure_struct_NM(dim) = failure_struct_NM(dim) +1;
-    end
+
+    % if failure = true (failure == 1), the run was unsuccessful; otherwise
+    % failure = 0
+    failure_struct_NM(dim) = failure_struct_NM(dim) + failure;
 
     for i = 1:10
         fprintf('solving the NM method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
-        [xbest,iter,fbest, flag, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],50,1e-9);
+        [xbest,~,iter,fbest, flag, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max,tol);
         time = time + toc(t1);
         xbest_struct(:,i+1) = xbest;
         iter_struct(1,i+1) = iter;
         fbest_struct(1,i+1) = fbest;
-        if failure == 1
-            failure_struct_NM(dim) = failure_struct_NM(dim) +1;
-        end
+
+        % if failure = true (failure == 1), the run was unsuccessful; otherwise
+        % failure = 0
+        failure_struct_NM(dim) = failure_struct_NM(dim) + failure;
     end
 
     % I store the average execution time
     avg_execution_time_NM(dim,1) = time/11;
 
 end
+
+failure_struct_NM
+avg_execution_time_NM
 

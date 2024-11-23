@@ -1,4 +1,4 @@
-function [xbest,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
+function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 
 % [xbest,iter,fbest]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % 
@@ -14,11 +14,12 @@ function [xbest,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,
 % gamma = contraction factor
 % sigma = shrinking factor
 % kmax = maximum number of iterations
-% tol = tollerance on the relative distance of the centroid to one vertice
-% of the symplex
+% tol = tollerance on the absolute value of f(xN) - f(x1)
 %
 % OUTPUTS:
 % xbest = the approximation of the minimizer
+% xseq = matrix n x iter, the k-th col contains the point of the symplex
+% which minimize the function f
 % iter = number of iterations
 % fbest = approximation of the minimum
 % flag = if true, the given symplex was degenere
@@ -40,7 +41,7 @@ if isempty(sigma)
     sigma=0.5;
 end
 if isempty(kmax)
-    kmax=10;
+    kmax=150;
 end
 if isempty(tol)
     tol=1e-6;
@@ -88,17 +89,18 @@ end
 
 fk=zeros(n+1,1);
 k=0;
-c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
 
-while k<kmax && distance>tol
+% sorting the point based on the evaluation of the function in the point
+for i=1:n+1
+    fk(i)=f(x0(:,i));
+end
+[fk_sorted,indices]=sort(fk);
+
+xseq = zeros(n,kmax+1);
+xseq(:,1) = x0(:,indices(1));
+
+while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     shrinking=false; %false se devo aggiornare solo un punto, true se ho fatto shrink
-
-    % sorting the point based on the evaluation of the function in the point
-    for i=1:n+1
-        fk(i)=f(x0(:,i));
-    end
-    [fk_sorted,indices]=sort(fk);
 
     % we are keeping the n best vertices to compute the centroid
     x0_best_n=x0;
@@ -149,23 +151,28 @@ while k<kmax && distance>tol
         x0(:,indices(end))=xnew;
     end
 
-    % compute the relative distance
+    % PREPARATION for next iterations
     k=k+1;
-    c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-    distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
+
+    % sorting the point based on the evaluation of the function in the point
+    for i=1:n+1
+        fk(i)=f(x0(:,i));
+    end
+    [fk_sorted,indices]=sort(fk);
+
+    xseq(:,k+1) = x0(:,indices(1));
+
 end
 
 % computing the minimizer and the minimum found
-for i=1:n+1
-        fk(i)=f(x0(:,i));
-end
+xbest = x0(:,indices(1));
+iter = k;
+fbest = fk_sorted(1);
 
-[fk_sorted,indices]=sort(fk);
-xbest=x0(:,indices(1));
-iter=k;
-fbest=fk_sorted(1);
+% cutting xseq
+xseq = xseq(:,1:iter+1);
 
-if k == kmax && distance > tol
+if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;
 end
 
