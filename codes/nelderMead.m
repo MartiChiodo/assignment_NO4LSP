@@ -41,7 +41,7 @@ if isempty(sigma)
     sigma=0.5;
 end
 if isempty(kmax)
-    kmax=150;
+    kmax=200*size(x,1);
 end
 if isempty(tol)
     tol=1e-6;
@@ -139,7 +139,7 @@ while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
             % SHRINKING PHASE
             shrinking=true;
             x=zeros(n,n+1);
-            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n)-x0(:,indices(1)));
+            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n+1)-x0(:,indices(1)));
             x(:,indices(1))=x0(:,indices(1));
             x0=x;
         end
