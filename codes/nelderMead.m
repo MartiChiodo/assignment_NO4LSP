@@ -1,4 +1,4 @@
-function [xbest,iter,fbest, flag]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
+function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 
 % [xbest,iter,fbest]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % 
@@ -14,14 +14,17 @@ function [xbest,iter,fbest, flag]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % gamma = contraction factor
 % sigma = shrinking factor
 % kmax = maximum number of iterations
-% tol = tollerance on the relative distance of the centroid to one vertice
-% of the symplex
+% tol = tollerance on the absolute value of f(xN) - f(x1)
 %
 % OUTPUTS:
 % xbest = the approximation of the minimizer
+% xseq = matrix n x iter, the k-th col contains the point of the symplex
+% which minimize the function f
 % iter = number of iterations
 % fbest = approximation of the minimum
 % flag = if true, the given symplex was degenere
+% failure = if true, we are declaring a failure
+%
 
 % we are verifying that all the parameters are passed as inputs, eventually
 % we set rho, chi, gamma and sigma with default valuess
@@ -38,7 +41,7 @@ if isempty(sigma)
     sigma=0.5;
 end
 if isempty(kmax)
-    kmax=10;
+    kmax=200*size(x,1);
 end
 if isempty(tol)
     tol=1e-6;
@@ -62,6 +65,7 @@ end
 
 n=size(x0,1); %dimension of the space we are working
 flag = false;
+failure = false;
 
 if rank(x0) < n && size(x0,2) > 1
     % se il simplesso è degenere ritorniamo flag = true
@@ -85,17 +89,18 @@ end
 
 fk=zeros(n+1,1);
 k=0;
-c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
 
-while k<kmax && distance>tol
+% sorting the point based on the evaluation of the function in the point
+for i=1:n+1
+    fk(i)=f(x0(:,i));
+end
+[fk_sorted,indices]=sort(fk);
+
+xseq = zeros(n,kmax+1);
+xseq(:,1) = x0(:,indices(1));
+
+while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     shrinking=false; %false se devo aggiornare solo un punto, true se ho fatto shrink
-
-    % sorting the point based on the evaluation of the function in the point
-    for i=1:n+1
-        fk(i)=f(x0(:,i));
-    end
-    [fk_sorted,indices]=sort(fk);
 
     % we are keeping the n best vertices to compute the centroid
     x0_best_n=x0;
@@ -103,7 +108,6 @@ while k<kmax && distance>tol
     centroid=mean(x0_best_n,2); 
     
     % REFLECTION PHASE
-    disp("reflection") %togli
     xR=centroid + rho*(centroid-x0(:,indices(end)));
     fxR=f(xR);
     if fxR>=fk_sorted(1) && fxR<fk_sorted(n)
@@ -112,7 +116,6 @@ while k<kmax && distance>tol
         %continue
     elseif fxR<fk_sorted(1)
         % EXPANSION PHASE
-        disp("expansion") %togli
         xE=centroid+chi.*(xR-centroid);
         if f(xE)<fxR
             xnew=xE;
@@ -125,7 +128,6 @@ while k<kmax && distance>tol
         end
     else
         % CONTRACTION PHASE
-        disp("contraction") %togli
         if fxR > fk_sorted(n+1)
             xC=centroid-gamma.*(centroid-x0(:,indices(end)));
         else
@@ -135,10 +137,9 @@ while k<kmax && distance>tol
             xnew=xC;
         else
             % SHRINKING PHASE
-            disp("shrinking") %togli
             shrinking=true;
             x=zeros(n,n+1);
-            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n)-x0(:,indices(1)));
+            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n+1)-x0(:,indices(1)));
             x(:,indices(1))=x0(:,indices(1));
             x0=x;
         end
@@ -150,20 +151,30 @@ while k<kmax && distance>tol
         x0(:,indices(end))=xnew;
     end
 
-    % compute the relative distance
+    % PREPARATION for next iterations
     k=k+1;
-    c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-    distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
+
+    % sorting the point based on the evaluation of the function in the point
+    for i=1:n+1
+        fk(i)=f(x0(:,i));
+    end
+    [fk_sorted,indices]=sort(fk);
+
+    xseq(:,k+1) = x0(:,indices(1));
+
 end
 
 % computing the minimizer and the minimum found
-for i=1:n+1
-        fk(i)=f(x0(:,i));
+xbest = x0(:,indices(1));
+iter = k;
+fbest = fk_sorted(1);
+
+% cutting xseq
+xseq = xseq(:,1:iter+1);
+
+if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
+    failure = true;
 end
-[fk_sorted,indices]=sort(fk);
-xbest=x0(:,indices(1));
-iter=k;
-fbest=fk_sorted(1);
 
 
 
