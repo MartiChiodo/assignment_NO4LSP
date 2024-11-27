@@ -5,6 +5,31 @@ function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] =
 % tolgrad è usato come stopping criterion per il gradiente
 % tau_kmax max iter per determinare Bk
 
+
+% we are verifying that all the parameters are passed as inputs, eventually
+% we set rho, chi, gamma and sigma with default valuess
+if isempty(rho)
+    rho=0.5;
+end
+if isempty(c1)
+    c1 = 1e-4;
+end
+if isempty(itermax)
+    itermax=500;
+end
+if isempty(tolgrad)
+    tol=1e-6;
+end
+if isempty(btmax)
+    btmax=40;
+end
+
+if isempty(tau_kmax)
+    tau_kmax=50;
+end
+
+
+
 % Function handle for the armijo condition
 farmijo = @(fk, alpha, c1_gradfk_pk) fk + alpha * c1_gradfk_pk;
 

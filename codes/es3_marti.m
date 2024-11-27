@@ -3,7 +3,7 @@ clear all
 clc
 
 % setting the seed
-seed = 1234; %poi andrà modificato opportunamente
+seed = min(339268, 343310); %poi andrà modificato opportunamente
 rng(seed);
 
 % Let's begin by implementing the PENALTY FUNCTION 1
@@ -28,12 +28,12 @@ Hessf = @(x) (2+1e-5)*eye(length(x));
 dimension = [1e2 1e3 1e4];
 iter_max = 100;
 tol = 1e-9;
-avg_execution_time_NM = zeros(3,1);
-failure_struct_NM = zeros(3,1); %for each dimension we count the number of failure
+avg_execution_time_SX = zeros(3,1);
+failure_struct_SX = zeros(3,1); %for each dimension we count the number of failure
 
  % initializing structures
-iter_struct_NM = zeros(1,3);
-fbest_struct_NM = zeros(1,3);
+iter_struct_SX = zeros(1,3);
+fbest_struct_SX = zeros(1,3);
 
 
 for dim = 1:3
@@ -67,7 +67,7 @@ for dim = 1:3
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
-    failure_struct_NM(dim) = failure_struct_NM(dim) + failure;
+    failure_struct_SX(dim) = failure_struct_SX(dim) + failure;
 
     for i = 1:10
         fprintf('solving the NM method for the %i -th x0 with dim = %i \n', i+1, n)
@@ -80,19 +80,19 @@ for dim = 1:3
 
         % if failure = true (failure == 1), the run was unsuccessful; otherwise
         % failure = 0
-        failure_struct_NM(dim) = failure_struct_NM(dim) + failure;
+        failure_struct_SX(dim) = failure_struct_SX(dim) + failure;
     end
 
-    fbest_struct_NM(dim) = f_best_avg/11;
-    iter_struct_NM(1,dim) = iter_avg/11;
+    fbest_struct_SX(dim) = f_best_avg/11;
+    iter_struct_SX(1,dim) = iter_avg/11;
 
     % I store the average execution time
-    avg_execution_time_NM(dim,1) = time/11;
+    avg_execution_time_SX(dim,1) = time/11;
 
 end
 
-failure_struct_NM
-avg_execution_time_NM
-fbest_struct_NM
-iter_struct_NM
+failure_struct_SX
+avg_execution_time_SX
+fbest_struct_SX
+iter_struct_SX
 

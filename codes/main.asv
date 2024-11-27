@@ -4,16 +4,6 @@ clear all
 clc
 
 
-function rate_of_convergence = compute_roc(x_esatto, xseq)
-if size(xseq,2) >=3
-    rate_of_convergence = log(norm(x_esatto - xseq(:,end))/norm(x_esatto - xseq(:, end-1)))/log(norm(x_esatto - xseq(:,end-1))/norm(x_esatto - xseq(:, end-2)));
-else 
-    rate_of_convergence = nan;
-end
-end
-
-
-
 % Rosenbrock function in dimension n 
 function f = parametric_rosenbrock(x, alpha)
     f = 0;
@@ -58,17 +48,16 @@ x0_a = [1.2; 1.2];
 x0_b = [-1.2; 1];
 x_esatto = [1;1];
 
-tol = 1e-8;
+tol = 1e-7;
 rho = 0.5; c1 = 1e-4; btmax = 50; tau_kmax = 10; 
 
 time_SX = 0;
 time_MN = 0;
 
-% we run each model twice with different initial conditions and we compute
-% some summary
 t1 = tic;
 [xbest_SX_a,xseq_SX_a,iter_SX_a,fbest_SX_a, flag_SX_a, failure_SX_a] = nelderMead(f,x0_a,[],[],[],[],400,tol);
 time_SX = time_SX + toc(t1);
+rconv_SX_a = log(norm(xseq_SX_a-s_esatto))/log()
 t1 = tic;
 [xbest_MN_a, xseq_MN_a, iter_MN_a, fbest_MN_a, gradfk_norm_MN_a, btseq_MN_a, flag_acktrck_MN_a, failure_MN_a] = modified_Newton(f,gradf, Hessf, x0_a, 1000, rho, c1, btmax, tol, tau_kmax);
 time_MN = time_MN + toc(t1);
@@ -79,14 +68,10 @@ t1 = tic;
 [xbest_MN_b, xseq_MN_b, iter_MN_b, fbest_MN_b, gradfk_norm_MN_b, btseq_MN_b, flag_bcktrck_MN_b, failure_MN_b] = modified_Newton(f,gradf, Hessf, x0_b, 1000, rho, c1, btmax, tol, tau_kmax);
 time_MN = time_MN + toc(t1);
 
-% creation of the table
 failure = [failure_SX_a + failure_SX_b;  failure_MN_a + failure_MN_b];
 avg_iter = [(iter_SX_b+iter_SX_a)/2; (iter_MN_b + iter_MN_a)/2];
 avg_time_execution = [time_SX/2; time_MN/2];
-roc = [(compute_roc(x_esatto, xseq_SX_b)+ compute_roc(x_esatto, xseq_SX_a))/2; (compute_roc(x_esatto, xseq_MN_b)+ compute_roc(x_esatto, xseq_MN_a))/2];
 
 
-T = table( failure, avg_iter, avg_time_execution, roc, 'RowNames', {'simplex method'; 'modified Newton'});
+T = table(failure, avg_iter, avg_time_execution);
 display(T)
-
-

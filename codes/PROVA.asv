@@ -63,12 +63,10 @@ ylabel('min(f)');
 n = 100;
 x0 = (1:1:n)';
 options = optimset('Display','iter','PlotFcns',@optimplotfval);
-[x,fval,exitflag,output] = fminsearch(f,x0,options)
+%[x,fval,exitflag,output] = fminsearch(f,x0,options)
 x0
 
 %% PROVA MODIFIED NEWTON METHOD
-tol = 1e-7;
-n = 10000;
-x0 = (1:1:n)';
+tol = 1e-
 rho = 0.5; c1 = 1e-4; btmax = 50; tau_kmax = 10; 
 [xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] = modified_Newton(f,gradf, Hessf, x0, 1000, rho, c1, btmax, tol, tau_kmax);
