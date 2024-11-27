@@ -85,10 +85,14 @@ end
 
 fk=zeros(n+1,1);
 k=0;
-c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
+%c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
+%distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
+for i=1:n+1
+        fk(i)=f(x0(:,i));
+end
+[fk_sorted,indices]=sort(fk); %poi sistemalo
 
-while k<kmax && distance>tol
+while k<kmax && (fk_sorted(n+1) - fk_sorted(1)) > tol
     shrinking=false; %false se devo aggiornare solo un punto, true se ho fatto shrink
 
     % sorting the point based on the evaluation of the function in the point
@@ -138,7 +142,7 @@ while k<kmax && distance>tol
             disp("shrinking") %togli
             shrinking=true;
             x=zeros(n,n+1);
-            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n)-x0(:,indices(1)));
+            x(:,1:n+1)=x0(:,indices(1))+sigma.*(x0(:,1:n+1)-x0(:,indices(1)));
             x(:,indices(1))=x0(:,indices(1));
             x0=x;
         end
@@ -152,8 +156,8 @@ while k<kmax && distance>tol
 
     % compute the relative distance
     k=k+1;
-    c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
-    distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
+    %c_all=mean(x0,2); %centroide di tutti i punti per valutare quando fermarsi
+    %distance=sum((c_all-x0(:,1)).^2)/sum(c_all.^2);
 end
 
 % computing the minimizer and the minimum found
