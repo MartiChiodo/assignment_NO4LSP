@@ -25,11 +25,16 @@ Hessf = @(x) (2+1e-5)*eye(length(x));
 
 
 % setting the values for the dimension
-dimension = [1e1 1e2 1e3];
+dimension = [1e2 1e3 1e4];
 iter_max = 100;
 tol = 1e-9;
 avg_execution_time_NM = zeros(3,1);
 failure_struct_NM = zeros(3,1); %for each dimension we count the number of failure
+
+ % initializing structures
+iter_struct_NM = zeros(1,3);
+fbest_struct_NM = zeros(1,3);
+
 
 for dim = 1:3
     n = dimension(dim);
@@ -43,10 +48,10 @@ for dim = 1:3
     ro = 0.5;
     c = 1e-4;
 
-    % initializing structures
-    xbest_struct = zeros(n, 11);
-    iter_struct = zeros(1,11);
-    fbest_struct = zeros(1,11);
+    %
+    f_best_avg = 0;
+    x_best_avg = zeros(n,1);
+    iter_avg = 0;
 
     % I can measure the computanional averge time
     time = 0;
@@ -56,9 +61,9 @@ for dim = 1:3
     t1 = tic;
     [xbest, ~,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],iter_max*size(x0,1),tol);
     time = time + toc(t1);
-    xbest_struct(:,1) = xbest;
-    iter_struct(1,1) = iter;
-    fbest_struct(1,1) = fbest;
+    f_best_avg = f_best_avg + fbest;
+    iter_avg = iter_avg + iter;
+
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
@@ -69,18 +74,17 @@ for dim = 1:3
         t1 = tic;
         [xbest,~,iter,fbest, flag, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
         time = time + toc(t1);
-        xbest_struct(:,i+1) = xbest;
-        iter_struct(1,i+1) = iter;
-        fbest_struct(1,i+1) = fbest;
+        f_best_avg = f_best_avg + fbest;
+        x_best_avg = x_best_avg + xbest;
+        iter_avg = iter_avg + iter;
 
         % if failure = true (failure == 1), the run was unsuccessful; otherwise
         % failure = 0
         failure_struct_NM(dim) = failure_struct_NM(dim) + failure;
     end
 
-
-    fbest_struct
-    iter_struct
+    fbest_struct_NM(dim) = f_best_avg/11;
+    iter_struct_NM(1,dim) = iter_avg/11;
 
     % I store the average execution time
     avg_execution_time_NM(dim,1) = time/11;
@@ -89,4 +93,6 @@ end
 
 failure_struct_NM
 avg_execution_time_NM
+fbest_struct_NM
+iter_struct_NM
 
