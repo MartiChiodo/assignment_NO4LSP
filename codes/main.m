@@ -3,7 +3,7 @@
 clear all
 clc
 
-
+% function that compute the rate of convergence
 function rate_of_convergence = compute_roc(x_esatto, xseq)
 if size(xseq,2) >=3
     rate_of_convergence = log(norm(x_esatto - xseq(:,end))/norm(x_esatto - xseq(:, end-1)))/log(norm(x_esatto - xseq(:,end-1))/norm(x_esatto - xseq(:, end-2)));
@@ -14,7 +14,7 @@ end
 
 
 
-% Rosenbrock function in dimension n 
+% Parametric Rosenbrock function in dimension n 
 function f = parametric_rosenbrock(x, alpha)
     f = 0;
     n = length(x);
@@ -50,10 +50,12 @@ function Hessf = hess_parametric_rosenbrock(x,alpha)
 
 end
 
+% the excercice asks to fix alpha = 100
 f = @(x) parametric_rosenbrock(x, 100);
 gradf = @(x) grad_parametric_rosenbrock(x,100);
 Hessf = @(x) hess_parametric_rosenbrock(x,100);
 
+% initial points for the algorithms
 x0_a = [1.2; 1.2];
 x0_b = [-1.2; 1];
 x_esatto = [1;1];

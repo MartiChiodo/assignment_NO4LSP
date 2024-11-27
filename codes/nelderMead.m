@@ -6,7 +6,7 @@ function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,s
 % Method.
 %
 % INPUTS:
-% f = function we want to minimize f : R^n --> R
+% f = function handle that return the value of the function we want to minimize f : R^n --> R
 % x0 = either the initial point (x in R^n) of the method or the initial
 % symplex (x in R^(n,n+1), the columns of x are the vertices of the symplex)
 % rho = reflection factor
@@ -17,7 +17,7 @@ function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,s
 % tol = tollerance on the absolute value of f(xN) - f(x1)
 %
 % OUTPUTS:
-% xbest = the approximation of the minimizer
+% xbest = the last xk computed by the function
 % xseq = matrix n x iter, the k-th col contains the point of the symplex
 % which minimize the function f
 % iter = number of iterations

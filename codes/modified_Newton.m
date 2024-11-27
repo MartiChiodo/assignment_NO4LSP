@@ -1,13 +1,35 @@
 function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
 
-%%%% DESCRIZIONE INPUT/OUTPUT
-% flag indica se il backtracking ha funzionato 
-% tolgrad è usato come stopping criterion per il gradiente
-% tau_kmax max iter per determinare Bk
+% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
+%
+% Function the minimizer of the function f by using the Modified Newton
+% Method and implementing backtracking
+% 
+% INPUTS:
+% f = function handle that return the values of function we want to minimize f_R^n --> R;
+% gradf = function handle that compute the gradient of the function f in a given point;
+% Hessf = function handle that compute the Hessian of the function f in a given point;
+% x0 = starting point in R^n;
+% itermax = maximum number of outter iterations;
+% rho = ﻿fixed factor, lesser than 1, used for reducing alpha0;
+% c1 = ﻿the factor of the Armijo condition that must be a scalar in (0,1);
+% btmax =  ﻿maximum number of steps for updating alpha during the backtracking strategy;
+% tolgrad = value used as stopping criterion w.r.t. the norm of the gradient;
+% tau_kmax = maximum number of iterations permitted to compute Bk at each step;
+% 
+% OUTPUTS:
+% xbest = the last xk computed by the function;
+% xseq = matrix nxiter where we stored all the xk;
+% iter = index of the last iteration performed;
+% fbest = the value of f(xbest);
+% gradfk_norm = value of the norm of gradf(xbest);
+% btseq =  1-by-iter vector where elements are the number of backtracking iterations at each optimization step;
+% flag_bcktrck = returns true if the method stopped because the backtracking failed;
+% failure = returns true if the method stopped with iter = itermax and without satisfying the stopping criterion w.r.t- the norm of the gradient;
+% 
 
 
-% we are verifying that all the parameters are passed as inputs, eventually
-% we set rho, chi, gamma and sigma with default valuess
+% we are verifying that all the parameters are passed as inputs
 if isempty(rho)
     rho=0.5;
 end
@@ -70,7 +92,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
         end
 
         if failure_chol
-            tau = max(5*tau_0, beta);
+            tau_0 = max(5*tau_0, beta);
         else
             % we already solve the linear system to compute pk exploiting
             % the choleski factorization
