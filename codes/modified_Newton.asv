@@ -1,0 +1,82 @@
+function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
+
+%%%% DESCRIZIONE INPUT/OUTPUT
+% flag indica se il backtracking ha funzionato 
+% tolgrad è usato come stopping criterion per il gradiente
+% tau_kmax max iter per determinare Bk
+
+% initializing quantities
+n = length(x0); %dimension
+xseq = zeros(n,itermax + 1);
+xseq(:,1) = x0;
+btseq = zeros(itermax,1);
+failure = false;
+flag = false;
+
+fk = f(x0);
+gradfk = gradf(x0);
+Hessfk = Hessf(x0);
+k = 0;
+
+while k < kmax && sum(gradfk.^2) < tolgrad^2
+    
+    % computing Bk according the Algorith 3.3 of the book
+    beta = 1e-3;
+    min_diag = min(diag(Hessfk));
+
+    % initializing the tau
+    if min_diag > 0
+        tau_0 = 0;
+    else
+        tau_0 = --min_diag +beta;
+    end
+
+    for k_tau = 1:tau_kmax
+        % attempt to compute the Choleski factorization
+        failure_chol = false;
+        try
+            R = chol(Hessfk + tau_0 * eye(n));
+            
+        catch
+            failure_chol = true;
+        end
+
+        if failure_chol
+            tau = max(5*tau_0, beta);
+        else
+            % we already solve the linear system to compute pk exploiting
+            % the choleski factorization
+            y = -  R' \ gradfk;
+            pk = R \ y;
+            break
+        end
+    end
+
+    if k_tau == tau_max && failure_chol
+        disp("ALGORITMO 3.3 HA FALLITO")
+    end
+
+
+
+
+    
+
+
+
+    % preparing for the next iteration
+    k = k+1;
+    fk = f(x0);
+    xseq(:,k+1) = x0;
+    btseq(k,1) = bt;
+    gradfk = gradf(x0);
+    Hessfk = Hessf(x0);
+
+end
+
+fbest = fk;
+iter = k;
+xseq = xseq(:, 1:iter+1);
+btseq = btseq(:, 1:iter);
+gradfk_norm = norm(gradfk);
+
+end
