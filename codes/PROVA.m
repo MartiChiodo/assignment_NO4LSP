@@ -15,7 +15,8 @@ end
 
 f = @(x) PF1_funct(x);
 gradf = @(x) x .* (2+1e-5) -1e-5;
-Hessf = @(x) (2+1e-5)*eye(length(x));
+Hessf = @(x) spdiags((2+1e-5)*ones(length(x),1), 0, length(x), length(x));
+
 
 
 %% vediamo se il minimo varia all'aumentare della dimensione o se è costante
@@ -60,7 +61,7 @@ ylabel('min(f)');
 
 
 %% prova NEALDER MEAD MATLAB
-n = 100;
+n = 1e3;
 x0 = (1:1:n)';
 options = optimset('Display','iter','PlotFcns',@optimplotfval);
 [x,fval,exitflag,output] = fminsearch(f,x0,options)
@@ -68,7 +69,16 @@ x0
 
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-7;
-n = 10000;
+n = 1e5;
 x0 = (1:1:n)';
-rho = 0.5; c1 = 1e-4; btmax = 50; tau_kmax = 10; 
+rho = 0.5; c1 = 1e-4; btmax = 50; tau_kmax = 1e4; 
 [xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] = modified_Newton(f,gradf, Hessf, x0, 1000, rho, c1, btmax, tol, tau_kmax);
+
+
+%% NEALDER MEAD
+n = 1e2;
+x0 = (1:1:n)';
+[xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[]);
+iter
+failure
+xbest

@@ -18,7 +18,8 @@ function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,s
 %
 % OUTPUTS:
 % xbest = the last xk computed by the function
-% xseq = matrix n x iter, the k-th col contains the point of the symplex
+% xseq = matrix n x 3, the k-th col contains the best point of the symplex
+% of the last 3 iterates
 % which minimize the function f
 % iter = number of iterations
 % fbest = approximation of the minimum
@@ -41,26 +42,11 @@ if isempty(sigma)
     sigma=0.5;
 end
 if isempty(kmax)
-    kmax=200*size(x,1);
+    kmax=200*size(x0,1);
 end
 if isempty(tol)
     tol=1e-6;
 end
-
-
-%arguments
-%    f
-%    x0 %matrice nxn+1 con n+1 colonne ognuna delle quali è un vertice del simplesso di partenza
-%    rho double =1
-%    chi double =2
-%    gamma double =0.5
-%    sigma double =0.5
-%    kmax integer =50
-%    tol double =1e-6
-%end
-
-%aggiungere controllo su simplesso degenere (nel caso in cui x0 sia un
-%simplesso)
 
 
 n=size(x0,1); %dimension of the space we are working
@@ -74,21 +60,42 @@ if rank(x0) < n && size(x0,2) > 1
     return
 end
 
+
+% preliminary analysis of the function in order to compute a smart complex
+eval_pt = [1, 50, -50, 100, -100, 300, -300, 600, -600, 1000, -1000, 3000, -3000, 6000, -6000 10000, -10000];
+best_direction = zeros(n,1);
+for comp = 1:n
+    eval = zeros(length(eval_pt),1);
+    id = 1;
+    for pt = eval_pt
+        x = x0;
+        x(comp) = x(comp) + pt;
+        eval(id) = f(x);
+        id = id + 1;
+    end
+
+    [~, id_pt] = min(eval);
+    best_direction(comp) = eval_pt(id_pt);
+end
+
+disp("ho finito la valutazione di funzione")
+
+
 if size(x0,2)==1 
     %se in input c'è un solo punto costruiamo il simplesso di partenza 
     simplex0=zeros(n,n+1);
     simplex0(:,1)=x0;
     for i=1:n
         ei=zeros(n,1);
-        ei(i)=1;
-        simplex0(:,i+1)=x0+ei;
-    end
+        ei(i) = best_direction(i);
+        simplex0(:,i+1)= x0 + ei;
+    end 
     x0=simplex0;
 end
 
 
 fk=zeros(n+1,1);
-k=0;
+comp=0;
 
 % sorting the point based on the evaluation of the function in the point
 for i=1:n+1
@@ -96,27 +103,35 @@ for i=1:n+1
 end
 [fk_sorted,indices]=sort(fk);
 
-xseq = zeros(n,kmax+1);
-xseq(:,1) = x0(:,indices(1));
 
-while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
+xseq = zeros(n,3);
+cont = 1;
+xseq(:,cont) = x0(:,indices(1));
+best_values = []; % list I will use to plot the convergence of the method
+
+
+while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     shrinking=false; %false se devo aggiornare solo un punto, true se ho fatto shrink
+
+    % indices last element
+    np1 = indices(end);
 
     % we are keeping the n best vertices to compute the centroid
     x0_best_n=x0;
     x0_best_n(:,indices(end))=[]; 
-    centroid=mean(x0_best_n,2); 
+    centroid=sum(x0_best_n(:, 1:n))/n; 
+    centroid = centroid';
     
     % REFLECTION PHASE
-    xR=centroid + rho*(centroid-x0(:,indices(end)));
+    xR= (1+rho) * centroid - rho * x0(:,np1);
     fxR=f(xR);
-    if fxR>=fk_sorted(1) && fxR<fk_sorted(n)
+    if fxR>fk_sorted(1) && fxR<fk_sorted(n)
         xnew=xR;
         %x0(:,indices(end))=xnew; %se non lo metto non lo aggiorna (con il continue passa subito all'iterazione successiva?)
         %continue
-    elseif fxR<fk_sorted(1)
+    elseif fxR<=fk_sorted(1)
         % EXPANSION PHASE
-        xE=centroid+chi.*(xR-centroid);
+        xE= (1+rho*chi) * centroid - rho*chi*x0(:, np1);
         if f(xE)<fxR
             xnew=xE;
             %x0(:,indices(end))=xnew; %se non lo metto non lo aggiorna (con il continue passa subito all'iterazione successiva?)
@@ -129,9 +144,11 @@ while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
     else
         % CONTRACTION PHASE
         if fxR > fk_sorted(n+1)
-            xC=centroid-gamma.*(centroid-x0(:,indices(end)));
+            % inside contraction
+            xC=(1-gamma) * centroid + gamma*x0(:,np1);
         else
-            xC=centroid-gamma.*(centroid-xR);
+            % outside contraction
+            xC= (1 + gamma*rho)*centroid - gamma * rho*x0(:, np1);
         end
         if f(xC)<fk_sorted(end)
             xnew=xC;
@@ -148,11 +165,11 @@ while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
     % if we have not shrunk the symplex, we have to update the symplex by
     % replacing the worst vertice with the new one
     if ~shrinking
-        x0(:,indices(end))=xnew;
+        x0(:,np1)=xnew;
     end
 
     % PREPARATION for next iterations
-    k=k+1;
+    comp=comp+1;
 
     % sorting the point based on the evaluation of the function in the point
     for i=1:n+1
@@ -160,17 +177,32 @@ while k<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
     end
     [fk_sorted,indices]=sort(fk);
 
-    xseq(:,k+1) = x0(:,indices(1));
+    % updating xseq
+    if cont == 3
+        cont = 1;
+    else
+        cont = cont + 1;
+    end
+    xseq(:,cont) = x0(:,indices(1));
+
+    best_values(end+1) = fk_sorted(1);
+    % plot
+    figure(1);
+    plot(best_values, '-o', 'MarkerSize', 4);
+    xlabel('Iterations');
+    ylabel('Best Evaluation');
+    title('Progress minimum value Nealder Mead');
+    drawnow;
 
 end
 
 % computing the minimizer and the minimum found
 xbest = x0(:,indices(1));
-iter = k;
+iter = comp;
 fbest = fk_sorted(1);
 
 % cutting xseq
-xseq = xseq(:,1:iter+1);
+xseq = xseq(:,1:min(iter, 3));
 
 if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;

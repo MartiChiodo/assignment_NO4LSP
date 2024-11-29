@@ -89,6 +89,7 @@ roc = [(compute_roc(x_esatto, xseq_SX_b)+ compute_roc(x_esatto, xseq_SX_a))/2; (
 
 
 T = table( failure, avg_iter, avg_time_execution, roc, 'RowNames', {'simplex method'; 'modified Newton'});
+format bank
 display(T)
 
 

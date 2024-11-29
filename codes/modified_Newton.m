@@ -19,7 +19,7 @@ function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] =
 % 
 % OUTPUTS:
 % xbest = the last xk computed by the function;
-% xseq = matrix nxiter where we stored all the xk;
+% xseq = matrix nx3 where we stored just the last 3 xk;
 % iter = index of the last iteration performed;
 % fbest = the value of f(xbest);
 % gradfk_norm = value of the norm of gradf(xbest);
@@ -57,8 +57,9 @@ farmijo = @(fk, alpha, c1_gradfk_pk) fk + alpha * c1_gradfk_pk;
 
 % initializing quantities
 n = length(x0); %dimension
-xseq = zeros(n,itermax + 1);
-xseq(:,1) = x0;
+xseq = zeros(n,3);
+cont = 1;
+xseq(:,cont) = x0;
 btseq = zeros(itermax,1);
 failure = false;
 flag_bcktrck = false;
@@ -67,6 +68,8 @@ fk = f(x0);
 gradfk = gradf(x0);
 Hessfk = Hessf(x0);
 k = 0;
+
+best_values = [];
 
 while k < itermax && sum(gradfk.^2) > tolgrad^2
     
@@ -85,7 +88,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
         % attempt to compute the Choleski factorization
         failure_chol = false;
         try
-            R = chol(Hessfk + tau_0 * eye(n));
+            R = chol(Hessfk + tau_0 * spdiags(ones(n,1), 0, n, n));
             
         catch
             failure_chol = true;
@@ -142,10 +145,26 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     % preparing for the next iteration
     k = k+1;
     fk = f(x0);
-    xseq(:,k+1) = x0;
     btseq(k,1) = bt;
     gradfk = gradf(x0);
     Hessfk = Hessf(x0);
+
+    % updating xseq
+    if cont == 3
+        cont = 1;
+    else
+        cont = cont + 1;
+    end
+    xseq(:,cont) = x0;
+
+    best_values(end+1) = fk;
+    % plot
+    figure(1);
+    plot(best_values, '-o', 'MarkerSize', 4);
+    xlabel('Iterations');
+    ylabel('Best Evaluation');
+    title('Progress minimum value Modified Newton Method');
+    drawnow;
 
 end
 
@@ -157,7 +176,7 @@ end
 xbest = x0;
 fbest = fk;
 iter = k;
-xseq = xseq(:, 1:iter+1);
+xseq = xseq(:,1:min(iter, 3));
 btseq = btseq(1:iter,1);
 gradfk_norm = norm(gradfk);
 
