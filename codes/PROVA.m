@@ -35,29 +35,6 @@ zlabel('f(x, y)');
 shading interp; 
 
 
-% punti stazionari --> dim n
-dimensioni = (2:1:100);
-minimi = zeros(length(dimensioni),1);
-for n = dimensioni
-    k_vector = -5:1:5;
-    x0 = zeros(n,length(k_vector));
-    for i = 1:length(k_vector)
-        k = k_vector(i);
-        x0(1,i) = pi*k - atan(2);
-        for row = 2:n-1
-            x0(row,i) = pi*k -atan(2/row);
-        end
-        x0(n,i) = pi*k + atan((n-1)/n);
-    end
-    minimi(n-1,1) = min(f(x0));
-end
-
-dimensioni = transpose(dimensioni);
-f2 = figure;
-plot(dimensioni,minimi, '.');
-title('Valore del minimo al variare della dimensione');
-xlabel('dimensione');
-ylabel('min(f)');
 
 
 %% prova NEALDER MEAD MATLAB
