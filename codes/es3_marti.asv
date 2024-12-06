@@ -5,7 +5,6 @@ clc
 
 % setting the seed
 seed = min(339268, 343310); %poi andrà modificato opportunamente
-rng(seed);
 
 % Let's begin by implementing the PENALTY FUNCTION 1
 % The function is F : R^n --> R (scalar function)
@@ -35,24 +34,58 @@ end
 
 Hessf = @(x) hessian(x);
 
-% setting the values for the dimension
-dimension = [1e2 1e3 1e4];
+% common parameters for the methods
 iter_max = 100;
 tol = 1e-7;
+
+
+%% RUNNING THE EXPERIMENTS ON NEALDER MEAD
+
+% setting the dimensionality
+dimension = [10 25 50];
+rng(seed);
+
+
+% initializing the structures to store some stats
 avg_execution_time_SX = zeros(length(dimension),1);
 failure_struct_SX = zeros(length(dimension),1); %for each dimension we count the number of failure
-avg_execution_time_MN = zeros(length(dimension),1);
-failure_struct_MN = zeros(length(dimension),1); %for each dimension we count the number of failure
-
-
- % initializing structures
 iter_struct_SX = zeros(length(dimension),1);
 fbest_struct_SX = zeros(length(dimension),1);
+
+for dim = 1:length(dimension)
+    n = dimension(dim);
+
+    % defining the given initial point
+    x0 = (1:1:n)';
+
+    % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
+    x0_rndgenerated = zeros(n,10);
+    x0_rndgenerated(1:n, :) = x0(1:n) - 1 + 2.*rand(n,10);
+
+    % 
+    f_best_avg_SX = 0;
+
+
+end
+
+
+
+
+%% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
+% setting the values for the dimension
+dimension = [1e2 1e3 1e4];
+rng(seed);
+
+% initializing structures to store some stats
+avg_execution_time_MN = zeros(length(dimension),1);
+failure_struct_MN = zeros(length(dimension),1); %for each dimension we count the number of failure
 iter_struct_MN = zeros(length(dimension),1);
 fbest_struct_MN = zeros(length(dimension),1);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
+
+    %defining the given initial point
     x0 = (1:1:n)';
     
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
@@ -60,8 +93,6 @@ for dim = 1:length(dimension)
     x0_rndgenerated(1:n, :) = x0(1:n) - 1 + 2.*rand(n,10);
     
     %
-    f_best_avg_SX = 0;
-    iter_avg_SX = 0;
     f_best_avg_MN = 0;
     iter_avg_MN = 0;
 
