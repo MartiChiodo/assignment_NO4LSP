@@ -177,7 +177,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
 end
 
 % declaring failure if this is the case
-if (k == itermax || flag_bcktrck) && sum(gradfk.^2) > tolgrad^2
+if (k == itermax  ) && sum(gradfk.^2) > tolgrad^2
     failure = true;
 end
 

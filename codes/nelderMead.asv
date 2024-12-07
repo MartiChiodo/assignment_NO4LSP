@@ -87,8 +87,8 @@ if size(x0,2)==1
     simplex0(:,1)=x0;
     for i=1:n
         ei=zeros(n,1);
-        ei(i) = best_direction(i);
-        % ei(i) = 0.05*x(i); % according to Matlab implementation
+        %ei(i) = best_direction(i);
+        ei(i) = x
         simplex0(:,i+1)= x0 + ei;
     end 
     x0=simplex0;
@@ -188,14 +188,12 @@ while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
 
     best_values(end+1) = fk_sorted(1);
     % plot
-    if mod(comp, 10) == 0
-        figure(1);
-        plot(best_values, '-o', 'MarkerSize', 4);
-        xlabel('Iterations');
-        ylabel('Best Evaluation');
-        title('Progress minimum value Modified Newton Method');
-        drawnow;
-    end
+    figure(1);
+    plot(best_values, '-o', 'MarkerSize', 4);
+    xlabel('Iterations');
+    ylabel('Best Evaluation');
+    title('Progress minimum value Nealder Mead');
+    drawnow;
 
 end
 
