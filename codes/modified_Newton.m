@@ -42,7 +42,7 @@ if isempty(itermax)
     itermax=500;
 end
 if isempty(tolgrad)
-    tol=1e-6;
+    tolgrad=1e-6;
 end
 if isempty(btmax)
     btmax=45;
@@ -104,6 +104,8 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     % Controllo finale del successo del Cholesky
     if failure_chol
         disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
+        disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * eye(n)))),...
+            num2str(max(eig(Hessfk + tau_0 * eye(n))) )] ); %togli
         xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk);
         return;
     end
