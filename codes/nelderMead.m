@@ -1,5 +1,7 @@
 function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 
+close all
+
 % [xbest,iter,fbest]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % 
 % Functiopn that finds the minimizer of the function f using the Nealder
@@ -193,7 +195,7 @@ while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
         plot(best_values, '-o', 'MarkerSize', 4);
         xlabel('Iterations');
         ylabel('Best Evaluation');
-        title('Progress minimum value Modified Newton Method');
+        title('Progress minimum value Nealder Mead');
         drawnow;
     end
 

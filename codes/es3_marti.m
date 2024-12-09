@@ -20,7 +20,7 @@ function Fx = PF1_funct(x)
 end
 
 f = @(x) PF1_funct(x);
-gradf = @(x) x .* (2+1e-5) -1e-5 + (sum(x.^2) -0.25).*x;
+gradf = @(x) 1e-5.*(x-ones(length(x),1)) + 2*(sum(x.^2) -0.25).*x;
 
 function hessf = hessian(x)
     n = length(x);
@@ -100,9 +100,11 @@ display(TSX)
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
 format short e
 
+iter = 5000;
+
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
-rho = 0.5; c1 = 1e-4; btmax = 45; tau_kmax = 1e4; tol = 1e-7;
+rho = 0.5; c1 = 1e-4; btmax = 48; tau_kmax = 1e4; tol = 1e-7;
 rng(seed);
 
 % initializing structures to store some stats

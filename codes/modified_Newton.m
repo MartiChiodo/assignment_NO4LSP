@@ -1,5 +1,7 @@
 function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
 
+close all
+
 % [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
 %
 % Function the minimizer of the function f by using the Modified Newton
@@ -73,50 +75,42 @@ best_values = [];
 
 while k < itermax && sum(gradfk.^2) > tolgrad^2
     
-    % Calcolo di Bk secondo l'Algoritmo 3.3 (migliorato)
+    % Calcolo di Bk secondo l'Algoritmo 3.3 
     beta = 1e-3;
     min_diag = min(diag(Hessfk));
-    
+
     % Inizializzazione di tau_0 (aggiustamento per la definizione positiva)
     if min_diag > 0
         tau_0 = 0;
     else
         tau_0 = -min_diag + beta;
     end
-    
+
     failure_chol = true; % Inizializza il flag per il fallimento del Cholesky
-    
+
     % Loop per la regolarizzazione
     for k_tau = 1:tau_kmax
         try
             % Tentativo di fattorizzazione di Cholesky
-            R = chol(Hessfk + tau_0 * eye(n)); % Usa eye(n) per una matrice diagonale
-            failure_chol = false; % Se il Cholesky ha successo, aggiorna il flag
-            break; % Esci dal ciclo
+            R = chol(Hessfk + tau_0 * eye(n)); 
+            failure_chol = false; 
+            break; 
         catch
             % Se fallisce, aumenta tau_0 per migliorare la regolarità
             tau_0 = max(2 * tau_0, beta);
         end
     end
-    
+
     % Controllo finale del successo del Cholesky
     if failure_chol
         disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
-        xbest = []; fbest = []; iter = k; gradfk_norm = norm(gradfk);
+        xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk);
         return;
     end
-    
+
     % Calcolo della direzione pk sfruttando la fattorizzazione di Cholesky
     y = -R' \ gradfk;
     pk = R \ y;
-
-
-    eigenvalues = eig(Hessfk + tau_0 * spdiags(ones(n,1)));
-    if all(eigenvalues > 0)
-        disp('La matrice è definita positiva.');
-    else
-        disp('La matrice non è definita positiva.');
-    end
 
     % BACKTRACKING
     % Reset the value of alpha
@@ -126,8 +120,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     xnew = x0 + alpha * pk;
     % Compute the value of f in the candidate new xk
     fnew = f(xnew);
-    
-    c1_gradfk_pk = c1 * gradfk' * pk;
+    c1_gradfk_pk = c1 * (gradfk' * pk);
     bt = 0;
     % Backtracking strategy: 
     % 2nd condition is the Armijo condition not satisfied
