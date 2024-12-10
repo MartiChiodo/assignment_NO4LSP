@@ -1,4 +1,5 @@
-function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
+function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+    = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
 
 close all
 

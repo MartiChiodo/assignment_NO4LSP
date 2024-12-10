@@ -1,3 +1,19 @@
+%% PROVE MODIFIED
+%% prova modified cambiando parametri
+tol = 1e-7;
+n = 1e3;
+x0 = ones(n,1); % pto iniziale Rosenbrock
+x0(1:2:n) = -1.2;
+rho = 0.5; c1 = 1e-4; btmax = 45; tau_kmax = 1e4; 
+[xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] = ...
+    modified_Newton(f,gradf, Hessf, x0, 1000, rho, c1, btmax, tol, tau_kmax);
+
+f = @(x) parametric_rosenbrock(x, 100);
+gradf = @(x) grad_parametric_rosenbrock(x,100);
+Hessf = @(x) hess_parametric_rosenbrock(x,100);
+
+
+
 
 %% generalization of the Brown function 2
 clc
