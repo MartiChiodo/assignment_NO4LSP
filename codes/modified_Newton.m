@@ -97,7 +97,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
             break; 
         catch
             % Se fallisce, aumenta tau_0 per migliorare la regolarità
-            tau_0 = max(2 * tau_0, beta);
+            tau_0 = max(10 * tau_0, beta);
         end
     end
 
@@ -168,6 +168,9 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
         title('Progress minimum value Modified Newton Method');
         drawnow;
     end
+
+    norm(gradfk)
+    fk = fk
 
 end
 
