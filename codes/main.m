@@ -28,7 +28,7 @@ function gradf = grad_parametric_rosenbrock(x,alpha)
     gradf = zeros(n,1);
     
     for k = 2:n-1
-        gradf(k,1) = -2*alpha*(x(k-1)^2 - x(k)) + 2*(x(k) -1) +4*alpha*x(k)*(x(k) - x(k+1));
+        gradf(k,1) = -2*alpha*(x(k-1)^2 - x(k)) + 2*(x(k) -1) +4*alpha*x(k)*(x(k)^2 - x(k+1));
     end
 
     gradf(1,1) = 2*(x(1) -1) + 4*alpha*x(1)*(x(1)^2 - x(2));
@@ -42,13 +42,13 @@ function Hessf = hess_parametric_rosenbrock(x,alpha)
     % diags(:,1) is the principal one, diags(:,2) is the superior one and
     % diags(:,3) is the inferior one
 
-    diags(1,1) = 2 + 8*alpha*x(1) - 4*alpha*x(2);
+    diags(1,1) = 2 + 12*alpha*x(1)^2 - 4*alpha*x(2);
     diags(n,1) = 2*alpha;
     diags(n-1,3) = -4*alpha*x(n-1);
     diags(n,2) = -4*alpha*x(n-1);
 
     for k = 2:n-1
-       diags(k,1) = 2*alpha*8*alpha*x(k) - 4*alpha*x(k+1) +2;
+       diags(k,1) = 2*alpha + 12*alpha*x(k)^2 - 4*alpha*x(k+1) +2;
        diags(k-1,3) = -4*alpha*x(k-1); %diag inferior: k is the first derivative
        diags(k,2)= -4*alpha*x(k-1); %diag superior: k id the first derivative
     end
