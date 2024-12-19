@@ -71,7 +71,7 @@ x0_b = [-1.2; 1];
 x_esatto = [1;1];
 
 tol = 1e-7;
-rho = 0.5; c1 = 1e-4; btmax = 48; tau_kmax = 100; 
+rho = 0.5; c1 = 1e-4; btmax = 40; tau_kmax = 100; 
 
 time_SX = 0;
 time_MN = 0;
@@ -97,7 +97,8 @@ avg_iter = [(iter_SX_b+iter_SX_a)/2; (iter_MN_b + iter_MN_a)/2];
 avg_time_execution = [time_SX/2; time_MN/2];
 roc = [(compute_roc(x_esatto, xseq_SX_b)+ compute_roc(x_esatto, xseq_SX_a))/2; (compute_roc(x_esatto, xseq_MN_b)+ compute_roc(x_esatto, xseq_MN_a))/2];
 avg_gradfk = [NaN; (gradfk_norm_MN_a +gradfk_norm_MN_b)/2];
+avg_fbest =[(fbest_SX_b+fbest_SX_a)/2; (fbest_MN_b+fbest_MN_a)/2];
 
-T = table( failure, avg_gradfk, avg_iter, avg_time_execution, roc, 'RowNames', {'simplex method'; 'modified Newton'});
+T = table( failure, avg_fbest, avg_gradfk, avg_iter, avg_time_execution, roc, 'RowNames', {'simplex method'; 'modified Newton'});
 display(T)
 

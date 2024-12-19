@@ -1,5 +1,5 @@
 function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-    = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax)
+    = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax, x_esatto)
 
 close all
 
@@ -73,47 +73,54 @@ Hessfk = Hessf(x0);
 k = 0;
 
 best_values = [];
+best_gradf = [];
 
 while k < itermax && sum(gradfk.^2) > tolgrad^2
     
-    % Calcolo di Bk secondo l'Algoritmo 3.3 
-    beta = 1e-3;
-    min_diag = min(diag(Hessfk));
+    % % Calcolo di Bk secondo l'Algoritmo 3.3 
+    % beta = 1e-3;
+    % min_diag = min(diag(Hessfk));
+    % 
+    % % Inizializzazione di tau_0 (aggiustamento per la definizione positiva)
+    % if min_diag > 0
+    %     tau_0 = 0;
+    % else
+    %     tau_0 = -min_diag + beta;
+    % end
+    % 
+    % failure_chol = true; % Inizializza il flag per il fallimento del Cholesky
+    % 
+    % % Loop per la regolarizzazione
+    % for k_tau = 1:tau_kmax
+    %     try
+    %         % Tentativo di fattorizzazione di Cholesky
+    %         R = chol(Hessfk + tau_0 * eye(n)); 
+    %         failure_chol = false; 
+    %         break; 
+    %     catch
+    %         % Se fallisce, aumenta tau_0 per migliorare la regolarità
+    %         tau_0 = max(10 * tau_0, beta);
+    %     end
+    % end
+    % 
+    % % Controllo finale del successo del Cholesky
+    % if failure_chol
+    %     disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
+    %     disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * eye(n)))),...
+    %         num2str(max(eig(Hessfk + tau_0 * eye(n))) )] ); %togli
+    %     xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk);
+    %     return;
+    % end
+    % 
+    % % Calcolo della direzione pk sfruttando la fattorizzazione di Cholesky
+    % y = -R' \ gradfk;
+    % pk = R \ y;
 
-    % Inizializzazione di tau_0 (aggiustamento per la definizione positiva)
-    if min_diag > 0
-        tau_0 = 0;
-    else
-        tau_0 = -min_diag + beta;
-    end
-
-    failure_chol = true; % Inizializza il flag per il fallimento del Cholesky
-
-    % Loop per la regolarizzazione
-    for k_tau = 1:tau_kmax
-        try
-            % Tentativo di fattorizzazione di Cholesky
-            R = chol(Hessfk + tau_0 * eye(n)); 
-            failure_chol = false; 
-            break; 
-        catch
-            % Se fallisce, aumenta tau_0 per migliorare la regolarità
-            tau_0 = max(10 * tau_0, beta);
-        end
-    end
-
-    % Controllo finale del successo del Cholesky
-    if failure_chol
-        disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
-        disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * eye(n)))),...
-            num2str(max(eig(Hessfk + tau_0 * eye(n))) )] ); %togli
-        xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk);
-        return;
-    end
-
-    % Calcolo della direzione pk sfruttando la fattorizzazione di Cholesky
-    y = -R' \ gradfk;
-    pk = R \ y;
+    % calcolo Bk secondo la definizione
+    autovett_min = eigs(Hessfk,1,'smallestreal');
+    tau_k = max([0, 1e-6 - autovett_min]);
+    Bk = Hessfk + tau_k * speye(n);
+    pk = -Bk\ gradfk;    
 
     % BACKTRACKING
     % Reset the value of alpha
@@ -161,17 +168,30 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     xseq(:,cont) = x0;
 
     best_values(end+1) = fk;
+    best_gradf(end+1) = norm(gradfk);
     if mod(k, 10) == 0
-        figure(1);
-        plot(best_values, '-o', 'MarkerSize', 4);
+        % figure(1);
+        % plot(best_values(5:end), '-o', 'MarkerSize', 4);
+        % xlabel('Iterations');
+        % ylabel('Best Evaluation');
+        % title('Progress minimum value Modified Newton Method');
+        % drawnow;
+
+        figure(2);
+        plot(best_gradf(5:end), '-o', 'MarkerSize', 4);
         xlabel('Iterations');
         ylabel('Best Evaluation');
-        title('Progress minimum value Modified Newton Method');
+        title('Progress gradient value Modified Newton Method');
         drawnow;
+
     end
 
-    norm(gradfk)
-    fk = fk
+    try
+        testo = ['distanza alla ', num2str(k), ' iterazione = ', num2str(norm(x_esatto-x0)), ' e fk = ', num2str(fk)];
+        disp(testo)
+    catch
+    end
+
 
 end
 

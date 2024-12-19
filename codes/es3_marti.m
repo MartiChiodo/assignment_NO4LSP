@@ -6,6 +6,15 @@ clc
 % setting the seed
 seed = min(339268, 343310); %poi andrà modificato opportunamente
 
+% function to compute the rate of convergence
+function rate_of_convergence = compute_roc(x_esatto, xseq)
+if size(xseq,2) >=3
+    rate_of_convergence = log(norm(x_esatto - xseq(:,end))/norm(x_esatto - xseq(:, end-1)))/log(norm(x_esatto - xseq(:,end-1))/norm(x_esatto - xseq(:, end-2)));
+else 
+    rate_of_convergence = nan;
+end
+end
+
 % Let's begin by implementing the PENALTY FUNCTION 1
 % The function is F : R^n --> R (scalar function)
 
@@ -53,9 +62,11 @@ execution_time_SX = zeros(length(dimension),11);
 failure_struct_SX = zeros(length(dimension),11); %for each dimension we count the number of failure
 iter_struct_SX = zeros(length(dimension),11);
 fbest_struct_SX = zeros(length(dimension),11);
+roc_struct_SX = zeros(length(dimension),11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
+    x_esatto = -2*1e-5 * ones(n,1);
 
     % defining the given initial point
     x0 = (1:1:n)';
@@ -68,10 +79,11 @@ for dim = 1:length(dimension)
     % first initial point
     fprintf('solving the SX method for the first x0 with dim = %i \n', n)
     t1 = tic;
-    [~, ~,iter,fbest, ~, failure] = nelderMead(f,x0,[],[],[],[],iter_max*size(x0,1),tol);
+    [~, xseq,iter,fbest, ~, failure] = nelderMead(f,x0,[],[],[],[],iter_max*size(x0,1),tol);
     execution_time_SX(dim,1) = toc(t1);
     fbest_struct_SX(dim,1) = fbest;
     iter_struct_SX(dim,1) = iter;
+    roc_struct_SX(dim,1) = compute_roc(x_esatto, xseq);
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
@@ -85,13 +97,14 @@ for dim = 1:length(dimension)
         fbest_struct_SX(dim,i+1) = fbest;
         iter_struct_SX(dim,i+1) = iter;
         failure_struct_SX(dim,i+1) = failure_struct_SX(dim,i+1) + failure;
+        roc_struct_SX(dim,i+1) = compute_roc(x_esatto, xseq);
     end
 end
 
 
-varNames = ["average fbest", "average number of iterations", "average time of execution (sec)", "numbers of failure"];
+varNames = ["average fbest", "average number of iterations", "average time of execution (sec)", "numbers of failure", "average rate of convergence"];
 rowNames = string(dimension');
-TSX = table(sum(fbest_struct_SX,2)/11, sum(iter_struct_SX,2)/11, sum(execution_time_SX,2)/11, sum(failure_struct_SX,2), 'VariableNames', varNames, 'RowNames', rowNames);
+TSX = table(sum(fbest_struct_SX,2)/11, sum(iter_struct_SX,2)/11, sum(execution_time_SX,2)/11, sum(failure_struct_SX,2),sum(roc_struct_SX,2)/11 ,'VariableNames', varNames, 'RowNames', rowNames);
 format bank
 display(TSX)
 
@@ -100,11 +113,11 @@ display(TSX)
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
 format short e
 
-iter_max = 5000;
+iter_max = 6000;
 
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
-rho = 0.5; c1 = 1e-4; btmax = 45; tau_kmax = 1e4; tol = 1e-5;
+rho = 0.7; c1 = 1e-3; btmax = 98; tau_kmax = 1e4; tol = 1e-4;
 rng(seed);
 
 % initializing structures to store some stats
@@ -113,9 +126,12 @@ failure_struct_MN = zeros(length(dimension),11); %for each dimension we count th
 iter_struct_MN = zeros(length(dimension),11);
 fbest_struct_MN = zeros(length(dimension),11);
 gradf_struct_MN = zeros(length(dimension),11);
+roc_struct_MN = zeros(length(dimension),11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
+    x_esatto = -2*1e-5 * ones(n,1);
+
 
     %defining the given initial point
     x0 = (1:1:n)';
@@ -129,11 +145,12 @@ for dim = 1:length(dimension)
     % first initial point
     fprintf('solving the MN method for the first x0 with dim = %i \n', n)
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, tau_kmax);       
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, tau_kmax, x_esatto);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
+    roc_struct_MN(dim,1) = compute_roc(x_esatto, xseq);
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
@@ -142,19 +159,20 @@ for dim = 1:length(dimension)
     for i = 1:10
         fprintf('solving the MN method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, tau_kmax);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, tau_kmax, x_esatto);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
+        roc_struct_MN(dim,i+1) = compute_roc(x_esatto, xseq);
     end
 end
 
 
-varNames = ["average fbest", "average gradf_norm","average number of iterations", "average time of execution (sec)", "numbers of failure"];
+varNames = ["average fbest", "average gradf_norm","average number of iterations", "average time of execution (sec)", "numbers of failure", "average rate of convergence"];
 rowNames = string(dimension');
-TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2),'VariableNames', varNames, 'RowNames', rowNames);
+TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
 format bank
 display(TMN)
 
