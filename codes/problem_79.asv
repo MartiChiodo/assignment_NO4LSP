@@ -1,4 +1,4 @@
-%% ESERCIZIO 3 (marti)
+% PROBLEMA 79
 
 close all
 clear all
@@ -16,25 +16,46 @@ else
 end
 end
 
-% Let's begin by implementing the PENALTY FUNCTION 1
-% The function is F : R^n --> R (scalar function)
 
-function Fx = PF1_funct(x)
-    % x is a matrix, each col contains a vector of dimension n
-    % Fx is a vector, the i-th element is F(x(:,i))
+% implementing the function, the gradient and the hessiano for problem 79
+function val = function_pb79(x)
+    % definisco preliminarm i fk per comodità
+    x_esteso = [0; x; 0];
+    n = length(x_esteso);
+    fk = @(x,k) (3 + x(k)/10)*x(k) +1 - x(k-1) - 2*x(k+1);
 
-    Fx = zeros(1,size(x,2));
-    for col = 1:size(x,2)
-        Fx(1,col) = 0.5* 1e-5 * sum((x(:,col) - ones(size(x,1),1)).^2) + 0.5*(sum(x(:,col).^2) - 0.25)^2;
+    val = 0;
+    for k = 2:n-1
+        val = val + fk(x_esteso, k);
+    end
+
+    val = 0.5*val;
+
+end
+
+f = @(x) function_pb79(x);
+
+function val = grad_pb79(x)
+    n = length(x);
+    fk = @(x,k) (3 + x(k)/10)*x(k) +1 - x(k-1) - 2*x(k+1);
+    x_esteso = [0; x; 0];
+
+    val = zeros(n, 1);
+    val(1,1) = fk(x_esteso, 1)*(3-0.2*x(1)) - fk(x_esteso, 2);
+    val(n,1) = -2 * fk(x_esteso, n-1) + fk(x_esteso, n);
+
+    for k =2:n-1
+        val(k,1) = -2 * fk(x_esteso, k-1) + fk(x_esteso, k) - fk(x_esteso, k+1);
     end
 end
 
-f = @(x) PF1_funct(x);
-gradf = @(x) 1e-5.*(x-ones(length(x),1)) + 2*(sum(x.^2) -0.25).*x;
+gradf = @(x) grad_pb79(x);
 
-function hessf = hessian(x)
+
+function val = hessian_pb79(x)
     n = length(x);
     diags = zeros(n,3); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
+    
     diags(1:n,1) = 1e-5 + 4*x(1:n).^2 + 2*(sum(x(:,1).^2) -0.25);
     % inferior diagonal
     diags(1:n-1,3) = 4.*x(1:n-1).*x(2:n);
@@ -43,11 +64,10 @@ function hessf = hessian(x)
     hessf = spdiags(diags, [0,1,-1], n,n);
 end
 
-Hessf = @(x) hessian(x);
 
-% common parameters for the methods
-iter_max = 200;
-tol = 1e-7;
+
+
+
 
 
 %% RUNNING THE EXPERIMENTS ON NEALDER MEAD

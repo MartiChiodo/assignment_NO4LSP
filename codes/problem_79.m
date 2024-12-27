@@ -1,4 +1,4 @@
-%% ESERCIZIO 3 (marti)
+% PROBLEMA 79
 
 close all
 clear all
@@ -16,38 +16,68 @@ else
 end
 end
 
-% Let's begin by implementing the PENALTY FUNCTION 1
-% The function is F : R^n --> R (scalar function)
 
-function Fx = PF1_funct(x)
-    % x is a matrix, each col contains a vector of dimension n
-    % Fx is a vector, the i-th element is F(x(:,i))
+% implementing the function, the gradient and the hessiano for problem 79
+function val = function_pb79(x)
+    % definisco preliminarm i fk per comodità
+    x_esteso = [0; x; 0];
+    n = length(x_esteso);
+    fk = @(x,k) (3 + x(k)/10)*x(k) +1 - x(k-1) - 2*x(k+1);
 
-    Fx = zeros(1,size(x,2));
-    for col = 1:size(x,2)
-        Fx(1,col) = 0.5* 1e-5 * sum((x(:,col) - ones(size(x,1),1)).^2) + 0.5*(sum(x(:,col).^2) - 0.25)^2;
+    val = 0;
+    for k = 2:n-1
+        val = val + fk(x_esteso, k);
+    end
+
+    val = 0.5*val;
+
+end
+
+f = @(x) function_pb79(x);
+
+function val = grad_pb79(x)
+    n = length(x) + 2;
+    fk = @(x,k) (3 + x(k)/10)*x(k) +1 - x(k-1) - 2*x(k+1);
+    x_esteso = [0; x; 0];
+
+    val = zeros(n, 1);
+    val(1,1) = fk(x_esteso, 2)*(3-0.2*x(1)) - fk(x_esteso, 3);
+    val(n,1) = -2 * fk(x_esteso, n-3) + fk(x_esteso, n-2);
+
+    for k =3:n-2
+        val(k,1) = -2 * fk(x_esteso, k-1) + fk(x_esteso, k) - fk(x_esteso, k+1);
     end
 end
 
-f = @(x) PF1_funct(x);
-gradf = @(x) 1e-5.*(x-ones(length(x),1)) + 2*(sum(x.^2) -0.25).*x;
+gradf = @(x) grad_pb79(x);
 
-function hessf = hessian(x)
+
+function val = hessian_pb79(x)
     n = length(x);
     diags = zeros(n,3); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
-    diags(1:n,1) = 1e-5 + 4*x(1:n).^2 + 2*(sum(x(:,1).^2) -0.25);
+
+    % principal diag
+    diags(2:n-1,1) = 5 + (3-0.2 * x(2:n-1)).^2;
+    diags(1,1) = 1 + (3-0.2 * x(1))^2;
+    diags(n,1) = 4 + (3-0.2 * x(n))^2;
+
     % inferior diagonal
-    diags(1:n-1,3) = 4.*x(1:n-1).*x(2:n);
+    diags(1:n-1,3) = -2*(3-0.2*x(1:n-1)) - (3-0.2*x(2:n));
+
     %superior diagonal
-    diags(2:n,2) = 4.*x(2:n).*x(1:n-1);
-    hessf = spdiags(diags, [0,1,-1], n,n);
+    diags(2:n,2) =  -2*(3-0.2*x(1:n-1)) - (3-0.2*x(2:n));
+
+    val = spdiags(diags, [0,1,-1], n,n);
 end
 
-Hessf = @(x) hessian(x);
 
-% common parameters for the methods
-iter_max = 200;
-tol = 1e-7;
+Hessf = @(x) hessian_pb79(x);
+
+n = 1e3;
+
+% minimum point is such that gradf(x) = 0
+x_esatto = fsolve(gradf, -0.7*ones(n,1));
+f(x_esatto)
 
 
 %% RUNNING THE EXPERIMENTS ON NEALDER MEAD

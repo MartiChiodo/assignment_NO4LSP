@@ -52,6 +52,12 @@ end
 f = @(x) parametric_rosenbrock(x, 100);
 gradf = @(x) grad_parametric_rosenbrock(x,100);
 Hessf = @(x) hess_parametric_rosenbrock(x,100);
+
+n = 1e4;
+% minimum point is such that gradf(x) = 0
+x_esatto = fsolve(gradf, zeros(n,1), '');
+f(x_esatto)
+
 %% vediamo se il minimo varia all'aumentare della dimensione o se è costante
 x = -15:0.1:15;
 y = -15:0.1:15;
@@ -77,21 +83,23 @@ shading interp;
 
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-4;
-n = 1e5;
-x0 = (1:1:n)'; % pto iniziale es3_marti
+% x0 = (1:1:n)'; % pto iniziale es3_marti
 % x0 = ones(n,1); % pto iniziale Rosenbrock
 % x0(1:2:n) = -1.2;
+n = 1e3;
+x0 = -ones(n,1); %pto iniziale pb 79
 
-rho = 0.7; c1 = 1e-2; btmax = 98; tau_kmax = 1e4; 
+rho = 0.9;  c1 = 1e-3; btmax = 150; tau_kmax = 1e4; 
 [xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax, x_esatto)
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax)
 
 
 %% PROVANEALDER MEAD
-n = 50;
+n = 10;
 % x0 = (1:1:n)'; % pto iniziale es3_marti
-x0 = ones(n,1); % pto iniziale Rosenbrock
-x0(1:2:n) = -1.2;
+% x0 = ones(n,1); % pto iniziale Rosenbrock
+% x0(1:2:n) = -1.2;
+x0 = -ones(n,1); %pto iniziale pb 79
 
 [xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[])
 
@@ -129,7 +137,7 @@ end
 
 Hessf = @(x) hessian(x);
 
-n = 1e4;
+n = 1e3;
 
 % minimum point is such that gradf(x) = 0
 x_esatto = fsolve(gradf, zeros(n,1), '');
