@@ -117,7 +117,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     % pk = R \ y;
 
     % calcolo Bk secondo la definizione
-    autovett_min = eigs(Hessf(x0), 6, 'smallestreal', 'IsFunctionSymmetric',true, 'FailureTreatment','keep', 'MaxIterations', 500);
+    autovett_min = eigs(Hessfk, 3, 'smallestreal', 'FailureTreatment','keep', 'MaxIterations', 500);
     tau_k = max([0, 1e-6 - min(autovett_min)]);
     Bk = Hessfk + tau_k * speye(n);
     pk = -Bk\ gradfk;    

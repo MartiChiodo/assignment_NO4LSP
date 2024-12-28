@@ -107,7 +107,7 @@ end
 [fk_sorted,indices]=sort(fk);
 
 
-xseq = zeros(n,3);
+xseq = zeros(n,4);
 cont = 1;
 xseq(:,cont) = x0(:,indices(1));
 best_values = []; % list I will use to plot the convergence of the method
@@ -181,7 +181,7 @@ while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
     [fk_sorted,indices]=sort(fk);
 
     % updating xseq
-    if cont == 3
+    if cont == 4
         cont = 1;
     else
         cont = cont + 1;
@@ -207,7 +207,7 @@ iter = comp;
 fbest = fk_sorted(1);
 
 % cutting xseq
-xseq = xseq(:,1:min(iter, 3));
+xseq = xseq(:,1:min(iter, 4));
 
 if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;

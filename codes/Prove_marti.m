@@ -59,8 +59,8 @@ x_esatto = fsolve(gradf, zeros(n,1), '');
 f(x_esatto)
 
 %% vediamo se il minimo varia all'aumentare della dimensione o se è costante
-x = -35:0.1:35;
-y = -35:0.1:35;
+x = -105:0.1:100;
+y = -105:0.1:100; 
 [X, Y] = meshgrid(x, y);
 Z = arrayfun(@(x, y) f([x; y]), X, Y);
 
@@ -73,27 +73,29 @@ ylabel('y');
 zlabel('f(x, y)');
 shading interp; 
 
-% % curve di livello
-% contour(X, Y, Z, 60); % '20' indica il numero di livelli
-% colorbar; % Aggiunge una barra colori per riferimento
-% xlabel('x');
-% ylabel('y');
-% title('Curve di livello della funzione f');
+% curve di livello
+contour(X, Y, Z, 60); % '20' indica il numero di livelli
+colorbar; % Aggiunge una barra colori per riferimento
+xlabel('x');
+ylabel('y');
+title('Curve di livello della funzione f');
 
 
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-4;
-% x0 = (1:1:n)'; % pto iniziale es3_marti
-% x0 = ones(n,1); % pto iniziale Rosenbrock
-% x0(1:2:n) = -1.2;
-n = 1e5;
-x0 = 2*ones(n,1); %pto iniziale pb 76
 
-% rho = 0.4;  c1 = 1e-4; btmax = 40; tau_kmax = 1e4; % per 1e3
+
+n = 1e3;
+% x0 = 2*ones(n,1); %pto iniziale pb 76
+% x0 = 0.5*ones(n,1); %pto iniziale pb 82
+x0 = ones(n,1); % pto iniziale Rosenbrock
+x0(1:2:n) = -1.2;
+
+rho = 0.7;  c1 = 1e-4; btmax = 98; tau_kmax = 1e4; % per 1e3
 % rho = 0.5;  c1 = 1e-3; btmax = 48; tau_kmax = 1e4; % per 1e4
- rho = 0.4;  c1 = 1e-3; btmax = 40; % per 1e5
-[xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax)
+% rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
+[xbest_MN, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax, ones(n,1));
 
 
 %% PROVANEALDER MEAD
@@ -109,40 +111,11 @@ x0 = 2 *ones(n,1); %pto iniziale pb 76
 
 %%
 
-clear all
-clc
-close all
-
-function Fx = PF1_funct(x)
-    % x is a matrix, each col contains a vector of dimension n
-    % Fx is a vector, the i-th element is F(x(:,i))
-
-    Fx = zeros(1,size(x,2));
-    for col = 1:size(x,2)
-        Fx(1,col) = 0.5* 1e-5 * sum((x(:,col) - ones(size(x,1),1)).^2) + 0.5*(sum(x(:,col).^2) - 0.25)^2;
-    end
-end
-
-f = @(x) PF1_funct(x);
-gradf = @(x) 1e-5.*(x-ones(length(x),1)) + 2*(sum(x.^2) -0.25).*x;
-
-function hessf = hessian(x)
-    n = length(x);
-    diags = zeros(n,3); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
-    diags(1:n,1) = 1e-5 + 4*x(1:n).^2 + 2*(sum(x(:,1).^2) -0.25);
-    % inferior diagonal
-    diags(1:n-1,3) = 4.*x(1:n-1).*x(2:n);
-    %superior diagonal
-    diags(2:n,2) = 4.*x(2:n).*x(1:n-1);
-    hessf = spdiags(diags, [0,1,-1], n,n);
-end
-
-Hessf = @(x) hessian(x);
-
 n = 1e3;
 
 % minimum point is such that gradf(x) = 0
-x_esatto = fsolve(gradf, zeros(n,1), '');
-f(x_esatto)
+options = optimoptions('fsolve', 'FunctionTolerance', 1e-15, 'OptimalityTolerance', 1e-10);
+[x,fval,exitflag,output]  = fsolve(gradf, 0.5*ones(n,1),  options)
+f(x)
 
 

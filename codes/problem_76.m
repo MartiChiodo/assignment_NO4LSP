@@ -1,4 +1,5 @@
-% PROBLEMA 76
+%% PROBLEMA 76
+% ha minimo pari a 0 nell'origine
 close all
 clear all
 clc
@@ -9,6 +10,7 @@ seed = min(339268, 343310);
 % function to compute the rate of convergence
 function rate_of_convergence = compute_roc(xseq)
 if size(xseq,2) >=4
+    k = size(xseq,2) -1;
     norm_ekplus1 = norm(xseq(:, k+1) - xseq(:,k));
     norm_ek = norm(xseq(:, k) - xseq(:,k-1));
     norm_ekminus1 = norm(xseq(:, k-1) - xseq(:,k-2));
@@ -73,11 +75,8 @@ end
 
 Hessf = @(x) hessian_pb76(x);
 
-n = 1e4;
-% 
-% % minimum point is such that gradf(x) = 0
-% x_esatto = fsolve(gradf, -10*ones(n,1));
-% f(x_esatto)
+tol = 1e-4;
+iter_max = 300;
 
 
 %% RUNNING THE EXPERIMENTS ON NEALDER MEAD
@@ -97,10 +96,9 @@ roc_struct_SX = zeros(length(dimension),11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
-    x_esatto = -2*1e-5 * ones(n,1);
 
     % defining the given initial point
-    x0 = (1:1:n)';
+    x0 = 2*ones(n,1);
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);
@@ -108,20 +106,38 @@ for dim = 1:length(dimension)
 
     % SOLVING SIMPLEX METHOD
     % first initial point
-    fprintf('solving the SX method for the first x0 with dim = %i \n', n)
     t1 = tic;
     [~, xseq,iter,fbest, ~, failure] = nelderMead(f,x0,[],[],[],[],iter_max*size(x0,1),tol);
     execution_time_SX(dim,1) = toc(t1);
     fbest_struct_SX(dim,1) = fbest;
     iter_struct_SX(dim,1) = iter;
     roc_struct_SX(dim,1) = compute_roc(xseq);
+    disp(['**** SIMPLEX METHOD FOR THE PB 76 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+
+    disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+
+    disp('**** SIMPLES METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['f(xk): ', num2str(fbest)])
+    disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
+    disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,1))])
+    disp('************************************')
+
+    if (failure)
+        disp('FAIL')
+        disp('************************************')
+    else
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
+
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
     failure_struct_SX(dim,1) = failure_struct_SX(dim,1) + failure;
 
     for i = 1:10
-        fprintf('solving the SX method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
         [~,~,iter,fbest, ~, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
         execution_time_SX(dim,i+1) = toc(t1);
@@ -129,6 +145,27 @@ for dim = 1:length(dimension)
         iter_struct_SX(dim,i+1) = iter;
         failure_struct_SX(dim,i+1) = failure_struct_SX(dim,i+1) + failure;
         roc_struct_SX(dim,i+1) = compute_roc(xseq);
+
+        disp(['**** SIMPLEX METHOD FOR THE PB 76 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+    
+        disp('**** SIMPLES METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
+        disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+
     end
 end
 
@@ -144,32 +181,31 @@ display(TSX)
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
 format short e
 
-iter_max = 6000;
+iter_max = 5000;
 
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
 
-param = [0.4, 1e-4, 40; 0.5, 1e-3, 48; 0.4, 1e-3, 40];
+param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 rng(seed);
 
-% % initializing structures to store some stats
-% execution_time_MN = zeros(length(dimension),11);
-% failure_struct_MN = zeros(length(dimension),11); %for each dimension we count the number of failure
-% iter_struct_MN = zeros(length(dimension),11);
-% fbest_struct_MN = zeros(length(dimension),11);
-% gradf_struct_MN = zeros(length(dimension),11);
-% roc_struct_MN = zeros(length(dimension),11);
+% initializing structures to store some stats
+execution_time_MN = zeros(length(dimension),11);
+failure_struct_MN = zeros(length(dimension),11); %for each dimension we count the number of failure
+iter_struct_MN = zeros(length(dimension),11);
+fbest_struct_MN = zeros(length(dimension),11);
+gradf_struct_MN = zeros(length(dimension),11);
+roc_struct_MN = zeros(length(dimension),11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
-    x_esatto = -2*1e-5 * ones(n,1);
 
     [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
 
 
     %defining the given initial point
-    x0 = (1:1:n)';
+    x0 = 2*ones(n,1);
     
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);
@@ -178,7 +214,6 @@ for dim = 1:length(dimension)
 
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
-    fprintf('solving the MN method for the first x0 with dim = %i \n', n)
     t1 = tic;
     [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
     execution_time_MN(dim,1) = toc(t1);
@@ -186,13 +221,33 @@ for dim = 1:length(dimension)
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
     roc_struct_MN(dim,1) = compute_roc(xseq);
+    disp(['**** MODIFIED NEWTON METHOD FOR THE PB 76 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+
+    disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+    disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['f(xk): ', num2str(fbest)])
+    disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+    disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+    disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+    disp('************************************')
+
+    if (failure)
+        disp('FAIL')
+        disp('************************************')
+    else
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
     failure_struct_MN(dim,1) = failure_struct_MN(dim,1) + failure ;
 
     for i = 1:10
-        fprintf('solving the MN method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
         [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
         execution_time_MN(dim,i+1) = toc(t1);
@@ -201,6 +256,28 @@ for dim = 1:length(dimension)
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
         roc_struct_MN(dim,i+1) = compute_roc(xseq);
+
+        disp(['**** MODIFIED NEWTON METHOD FOR THE PB 76 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+        disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+    
+        disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
     end
 end
 
