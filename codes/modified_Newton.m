@@ -117,8 +117,8 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     % pk = R \ y;
 
     % calcolo Bk secondo la definizione
-    autovett_min = eigs(Hessfk,1,'smallestreal');
-    tau_k = max([0, 1e-6 - autovett_min]);
+    autovett_min = eigs(Hessf(x0), 6, 'smallestreal', 'IsFunctionSymmetric',true, 'FailureTreatment','keep', 'MaxIterations', 500);
+    tau_k = max([0, 1e-6 - min(autovett_min)]);
     Bk = Hessfk + tau_k * speye(n);
     pk = -Bk\ gradfk;    
 
@@ -145,7 +145,10 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
         bt = bt + 1;
     end
     if bt == btmax && fnew > farmijo(fk, alpha, c1_gradfk_pk)
+        btseq(k+1, 1) = bt; 
         flag_bcktrck = true;
+        x0 = xnew;
+        k = k+1;
         break
     end
 
@@ -160,7 +163,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     Hessfk = Hessf(x0);
 
     % updating xseq
-    if cont == 3
+    if cont == 4
         cont = 1;
     else
         cont = cont + 1;
@@ -203,8 +206,8 @@ end
 xbest = x0;
 fbest = fk;
 iter = k;
-xseq = xseq(:,1:min(iter, 3));
+xseq = xseq(:,1:min(iter, 4));
 btseq = btseq(1:iter,1);
-gradfk_norm = norm(gradfk);
+gradfk_norm = norm(gradf(x0));
 
 end

@@ -59,8 +59,8 @@ x_esatto = fsolve(gradf, zeros(n,1), '');
 f(x_esatto)
 
 %% vediamo se il minimo varia all'aumentare della dimensione o se è costante
-x = -15:0.1:15;
-y = -15:0.1:15;
+x = -35:0.1:35;
+y = -35:0.1:35;
 [X, Y] = meshgrid(x, y);
 Z = arrayfun(@(x, y) f([x; y]), X, Y);
 
@@ -74,7 +74,7 @@ zlabel('f(x, y)');
 shading interp; 
 
 % % curve di livello
-% contour(X, Y, Z, 20); % '20' indica il numero di livelli
+% contour(X, Y, Z, 60); % '20' indica il numero di livelli
 % colorbar; % Aggiunge una barra colori per riferimento
 % xlabel('x');
 % ylabel('y');
@@ -86,20 +86,22 @@ tol = 1e-4;
 % x0 = (1:1:n)'; % pto iniziale es3_marti
 % x0 = ones(n,1); % pto iniziale Rosenbrock
 % x0(1:2:n) = -1.2;
-n = 1e3;
-x0 = -ones(n,1); %pto iniziale pb 79
+n = 1e5;
+x0 = 2*ones(n,1); %pto iniziale pb 76
 
-rho = 0.9;  c1 = 1e-3; btmax = 150; tau_kmax = 1e4; 
+% rho = 0.4;  c1 = 1e-4; btmax = 40; tau_kmax = 1e4; % per 1e3
+% rho = 0.5;  c1 = 1e-3; btmax = 48; tau_kmax = 1e4; % per 1e4
+ rho = 0.4;  c1 = 1e-3; btmax = 40; % per 1e5
 [xbest_MN, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
     = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax)
 
 
 %% PROVANEALDER MEAD
-n = 10;
+n = 50;
 % x0 = (1:1:n)'; % pto iniziale es3_marti
 % x0 = ones(n,1); % pto iniziale Rosenbrock
 % x0(1:2:n) = -1.2;
-x0 = -ones(n,1); %pto iniziale pb 79
+x0 = 2 *ones(n,1); %pto iniziale pb 76
 
 [xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[])
 
