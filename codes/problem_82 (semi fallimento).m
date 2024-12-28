@@ -1,4 +1,6 @@
-% PROBLEMA 76
+%% PROBLEM 82 --> MNM fallisce sempre
+% il problema ha minimo 0 nell'origine
+
 close all
 clear all
 clc
@@ -20,66 +22,63 @@ end
 end
 
 
-% implementing the function, the gradient and the hessiano for problem 76
-function val = function_pb76(x)
-    n = length(x);
 
-    val = (x(n) - x(1)^2/10)^2;
-    for k = 1:n-1
-        val = val + (x(k) - x(k+1)^2/10)^2;
-    end
+% implementing the function, the gradient and the hessian of problem 82
+function val = func_pb82(x)
+	n = length(x);
+	val = x(1)^2;
 
-    val = 0.5*val;
+	for k = 2:n
+		val = val + (cos(x(k-1)) + x(k) -1)^2;
+	end
 
+	val = 0.5*val;
 end
 
-f = @(x) function_pb76(x);
+f = @(x) func_pb82(x);
 
-function val = grad_pb76(x)
-    n = length(x);
+function grad = grad_pb82(x)
+	n = length(x);
+	grad = zeros(n,1);
+	grad(1,1) = x(1) + (cos(x(1)) + x(2) -1)*(-sin(x(1)));
+	grad(n,1) = cos(x(n-1)) + x(n) -1;
 
-    val = zeros(n, 1);
-    val(1,1) = (x(n) - x(1)^2/10) * (-0.2*x(1)) + (x(1) + x(2)^2/10);
-    val(n, 1) = (x(n-1) - x(n)^2/10) *(-0.2*x(n)) * (x(n) - x(1)^2/10);
-
-    for k =2:n-1
-        val(k,1) = (x(k-1) - x(k)^2/10) * (-0.2*x(k)) + (x(k) + x(k+1)^2/10);
-    end
-end
-
-gradf = @(x) grad_pb76(x);
-
-
-function val = hessian_pb76(x)
-    n = length(x);
-    diags = zeros(n,5); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
-
-    % principal diag
-    diags(2:n,1) = -0.2*x(1:n-1) + 3/50 *x(2:n) +1;
-    diags(1,1) =  -0.2*x(n) + 3/50 *x(1) +1;
-
-    % inferior diagonal
-    diags(1:n-1,3) = -0.2*x(2:n);
-
-    %superior diagonal
-    diags(2:n,2) =  -0.2*x(2:n);
-
-    % 2-inf e 2-suo diag
-    diags(1, 5) = -x(1)/5;
-    diags(n, 4) =-x(1)/5;
-
-    val = spdiags(diags, [0,1,-1, n-1, - (n-1)], n,n);
+	for k = 2:n-1
+		grad(n,1) = cos(x(k-1)) + x(k) -1 + (cos(x(k)) + x(k+1) -1)*(-sin(x(k)));
+	end
 end
 
 
-Hessf = @(x) hessian_pb76(x);
+gradf = @(x) grad_pb82(x);
+
+function matr = hessian_pb82(x)
+	n = length(x);
+
+	diags = zeros(n,3);
+
+	% principal diagonal
+	diags(1:n-1, 1) = 1 + sin(x(1:n-1)).^2 - cos(x(1:n-1)) .* (cos(x(1:n-1)) + x(2:n) -1);
+	diags(n,1) = 1;
+
+	% inferior diag
+	diags(1:n-1, 3) = -sin(x(1:n-1));
+
+	% superior diag
+	diags(2:n, 2) = -sin(x(1:n-1));
+
+	matr = spdiags(diags, [0,1,-1], n, n);
+end
+
+Hessf = @(x) hessian_pb82(x);
+
 
 tol = 1e-4;
-iter_max = 300;
+iter_max = 200;
 
 
 %% RUNNING THE EXPERIMENTS ON NEALDER MEAD
 format short e
+clc
 
 % setting the dimensionality
 dimension = [10 25 50];
@@ -97,7 +96,7 @@ for dim = 1:length(dimension)
     n = dimension(dim);
 
     % defining the given initial point
-    x0 = 2*ones(n,1);
+    x0 = 0.5*ones(n,1);
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);
@@ -111,7 +110,7 @@ for dim = 1:length(dimension)
     fbest_struct_SX(dim,1) = fbest;
     iter_struct_SX(dim,1) = iter;
     roc_struct_SX(dim,1) = compute_roc(xseq);
-    disp(['**** SIMPLEX METHOD FOR THE PB 76  ', num2str(1), ':  *****']);
+    disp(['**** SIMPLEX METHOD FOR THE PB 82 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
 
     disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
 
@@ -122,7 +121,7 @@ for dim = 1:length(dimension)
     disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,1))])
     disp('************************************')
 
-    if (flag)
+    if (failure)
         disp('FAIL')
         disp('************************************')
     else
@@ -137,7 +136,6 @@ for dim = 1:length(dimension)
     failure_struct_SX(dim,1) = failure_struct_SX(dim,1) + failure;
 
     for i = 1:10
-        fprintf('solving the SX method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
         [~,~,iter,fbest, ~, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
         execution_time_SX(dim,i+1) = toc(t1);
@@ -145,6 +143,27 @@ for dim = 1:length(dimension)
         iter_struct_SX(dim,i+1) = iter;
         failure_struct_SX(dim,i+1) = failure_struct_SX(dim,i+1) + failure;
         roc_struct_SX(dim,i+1) = compute_roc(xseq);
+
+        disp(['**** SIMPLEX METHOD FOR THE PB 82 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+    
+        disp('**** SIMPLES METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
+        disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+
     end
 end
 
@@ -159,13 +178,14 @@ display(TSX)
 
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
 format short e
+clc
 
-iter_max = 6000;
+iter_max = 5000;
 
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
 
-param = [0.4, 1e-4, 40; 0.5, 1e-3, 48; 0.4, 1e-3, 40];
+param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 rng(seed);
 
@@ -184,7 +204,7 @@ for dim = 1:length(dimension)
 
 
     %defining the given initial point
-    x0 = 2*ones(n,1);
+    x0 = 0.5*ones(n,1);
     
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);
@@ -193,7 +213,6 @@ for dim = 1:length(dimension)
 
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
-    fprintf('solving the MN method for the first x0 with dim = %i \n', n)
     t1 = tic;
     [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
     execution_time_MN(dim,1) = toc(t1);
@@ -201,13 +220,33 @@ for dim = 1:length(dimension)
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
     roc_struct_MN(dim,1) = compute_roc(xseq);
+    disp(['**** MODIFIED NEWTON METHOD FOR THE PB 82 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+
+    disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+    disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['f(xk): ', num2str(fbest)])
+    disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+    disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+    disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+    disp('************************************')
+
+    if (failure)
+        disp('FAIL')
+        disp('************************************')
+    else
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
 
     % if failure = true (failure == 1), the run was unsuccessful; otherwise
     % failure = 0
     failure_struct_MN(dim,1) = failure_struct_MN(dim,1) + failure ;
 
     for i = 1:10
-        fprintf('solving the MN method for the %i -th x0 with dim = %i \n', i+1, n)
         t1 = tic;
         [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
         execution_time_MN(dim,i+1) = toc(t1);
@@ -216,6 +255,28 @@ for dim = 1:length(dimension)
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
         roc_struct_MN(dim,i+1) = compute_roc(xseq);
+
+        disp(['**** MODIFIED NEWTON METHOD FOR THE PB 82 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+        disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+    
+        disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
     end
 end
 

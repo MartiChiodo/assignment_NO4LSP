@@ -85,17 +85,19 @@ title('Curve di livello della funzione f');
 tol = 1e-4;
 
 
-n = 1e3;
+n = 1e4;
 % x0 = 2*ones(n,1); %pto iniziale pb 76
-% x0 = 0.5*ones(n,1); %pto iniziale pb 82
-x0 = ones(n,1); % pto iniziale Rosenbrock
-x0(1:2:n) = -1.2;
+x0 = 0.5*ones(n,1); %pto iniziale pb 82
+% x0 = ones(n,1); % pto iniziale Rosenbrock
+% x0(1:2:n) = -1.2;
+% x0 = ones(n,1); % pto iniziale pb 60
+% x0(1:2:n) = 0;
 
-rho = 0.7;  c1 = 1e-4; btmax = 98; tau_kmax = 1e4; % per 1e3
-% rho = 0.5;  c1 = 1e-3; btmax = 48; tau_kmax = 1e4; % per 1e4
+rho = 0.6;  c1 = 1e-3; btmax = 98;  % per 1e3
+% rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
 % rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
-[xbest_MN, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax, ones(n,1));
+[~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], zeros(n,1))
 
 
 %% PROVANEALDER MEAD

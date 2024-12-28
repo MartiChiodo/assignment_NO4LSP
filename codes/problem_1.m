@@ -22,42 +22,42 @@ end
 
 
 % Parametric Rosenbrock function in dimension n 
-function f = parametric_rosenbrock(x, alpha)
+function f = parametric_rosenbrock(x)
     f = 0;
     n = length(x);
     for i = 2:n
-        f = f + alpha * (x(i) - x(i-1)^2)^2 + (1 - x(i-1))^2;
+        f = f + 100 * (x(i) - x(i-1)^2)^2 + (1 - x(i-1))^2;
     end
 end
 
-function gradf = grad_parametric_rosenbrock(x,alpha)
+function gradf = grad_parametric_rosenbrock(x)
     n = length(x);
     gradf = zeros(n,1);
     
     for k = 2:n-1
-        gradf(k,1) = -2*alpha*(x(k-1)^2 - x(k)) + 2*(x(k) -1) +4*alpha*x(k)*(x(k)^2 - x(k+1));
+        gradf(k,1) = -2*100*(x(k-1)^2 - x(k)) + 2*(x(k) -1) +4*100*x(k)*(x(k)^2 - x(k+1));
     end
 
-    gradf(1,1) = 2*(x(1) -1) + 4*alpha*x(1)*(x(1)^2 - x(2));
-    gradf(n,1) = -2*alpha*(x(n-1)^2 - x(n)) ;
+    gradf(1,1) = 2*(x(1) -1) + 4*100*x(1)*(x(1)^2 - x(2));
+    gradf(n,1) = -2*100*(x(n-1)^2 - x(n)) ;
 
 end
 
-function Hessf = hess_parametric_rosenbrock(x,alpha)
+function Hessf = hess_parametric_rosenbrock(x)
     n = length(x);
     diags = zeros(n,3);
     % diags(:,1) is the principal one, diags(:,2) is the superior one and
     % diags(:,3) is the inferior one
 
-    diags(1,1) = 2 + 12*alpha*x(1)^2 - 4*alpha*x(2);
-    diags(n,1) = 2*alpha;
-    diags(n-1,3) = -4*alpha*x(n-1);
-    diags(n,2) = -4*alpha*x(n-1);
+    diags(1,1) = 2 + 12*100*x(1)^2 - 4*100*x(2);
+    diags(n,1) = 2*100;
+    diags(n-1,3) = -4*100*x(n-1);
+    diags(n,2) = -4*100*x(n-1);
 
     for k = 2:n-1
-       diags(k,1) = 2*alpha + 12*alpha*x(k)^2 - 4*alpha*x(k+1) +2;
-       diags(k-1,3) = -4*alpha*x(k-1); %diag inferior: k is the first derivative
-       diags(k,2)= -4*alpha*x(k-1); %diag superior: k id the first derivative
+       diags(k,1) = 2*100 + 12*100*x(k)^2 - 4*100*x(k+1) +2;
+       diags(k-1,3) = -4*100*x(k-1); %diag inferior: k is the first derivative
+       diags(k,2)= -4*100*x(k-1); %diag superior: k id the first derivative
     end
     
 
@@ -66,9 +66,9 @@ function Hessf = hess_parametric_rosenbrock(x,alpha)
 end
 
 % the excercice asks to fix alpha = 100
-f = @(x) parametric_rosenbrock(x, 100);
-gradf = @(x) grad_parametric_rosenbrock(x,100);
-Hessf = @(x) hess_parametric_rosenbrock(x,100);
+f = @(x) parametric_rosenbrock(x);
+gradf = @(x) grad_parametric_rosenbrock(x);
+Hessf = @(x) hess_parametric_rosenbrock(x);
 
 tol = 1e-4;
 iter_max = 300;
@@ -76,6 +76,7 @@ iter_max = 300;
 
 %% RUNNING THE EXPERIMENTS ON NEALDER MEAD
 format short e
+clc
 
 % setting the dimensionality
 dimension = [10 25 50];
@@ -93,7 +94,8 @@ for dim = 1:length(dimension)
     n = dimension(dim);
 
     % defining the given initial point
-    x0 = 2*ones(n,1);
+    x0 = ones(n,1);
+    x0(1:2:n) = -1.2;
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);
@@ -175,13 +177,14 @@ display(TSX)
 
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
 format short e
+clc
 
 iter_max = 5000;
 
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
 
-param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
+param = [0.5, 1e-4, 48; 0.5, 1e-4, 48; 0.5, 1e-4, 48;];
 
 rng(seed);
 
@@ -200,7 +203,8 @@ for dim = 1:length(dimension)
 
 
     %defining the given initial point
-    x0 = 2*ones(n,1);
+    x0 = ones(n,1);
+    x0(1:2:n) = -1.2;
     
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
     x0_rndgenerated = zeros(n,10);

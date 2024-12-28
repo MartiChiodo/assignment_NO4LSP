@@ -173,24 +173,24 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     best_values(end+1) = fk;
     best_gradf(end+1) = norm(gradfk);
     if mod(k, 10) == 0
-        % figure(1);
-        % plot(best_values(5:end), '-o', 'MarkerSize', 4);
-        % xlabel('Iterations');
-        % ylabel('Best Evaluation');
-        % title('Progress minimum value Modified Newton Method');
-        % drawnow;
-
-        figure(2);
-        plot(best_gradf(5:end), '-o', 'MarkerSize', 4);
+        figure(1);
+        plot(best_values(5:end), '-o', 'MarkerSize', 4);
         xlabel('Iterations');
         ylabel('Best Evaluation');
-        title('Progress gradient value Modified Newton Method');
+        title('Progress minimum value Modified Newton Method');
         drawnow;
+
+        % figure(2);
+        % plot(best_gradf(5:end), '-o', 'MarkerSize', 4);
+        % xlabel('Iterations');
+        % ylabel('Best Evaluation');
+        % title('Progress gradient value Modified Newton Method');
+        % drawnow;
 
     end
 
     try
-        testo = ['distanza alla ', num2str(k), ' iterazione = ', num2str(norm(x_esatto-x0)), ' e fk = ', num2str(fk)];
+        testo = ['distanza alla ', num2str(k), ' iterazione = ', num2str(norm(x_esatto-x0)), ' e norm gradiente = ', num2str(norm(gradfk))];
         disp(testo)
     catch
     end

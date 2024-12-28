@@ -84,17 +84,20 @@ title('Curve di livello della funzione f');
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-4;
 
-% x0 = ones(n,1); % pto iniziale Rosenbrock
-% x0(1:2:n) = -1.2;
-n = 1e3;
+
+n = 1e4;
 % x0 = 2*ones(n,1); %pto iniziale pb 76
 x0 = 0.5*ones(n,1); %pto iniziale pb 82
+% x0 = ones(n,1); % pto iniziale Rosenbrock
+% x0(1:2:n) = -1.2;
+% x0 = ones(n,1); % pto iniziale pb 60
+% x0(1:2:n) = 0;
 
-rho = 0.7;  c1 = 1e-4; btmax = 98; tau_kmax = 1e4; % per 1e3
-% rho = 0.5;  c1 = 1e-3; btmax = 48; tau_kmax = 1e4; % per 1e4
-% rho = 0.4;  c1 = 1e-3; btmax = 40; % per 1e5
-[xbest_MN, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, tau_kmax, zeros(n,1));
+rho = 0.6;  c1 = 1e-3; btmax = 98;  % per 1e3
+% rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
+% rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
+[~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], zeros(n,1))
 
 
 %% PROVANEALDER MEAD
@@ -113,8 +116,8 @@ x0 = 2 *ones(n,1); %pto iniziale pb 76
 n = 1e3;
 
 % minimum point is such that gradf(x) = 0
-options = optimoptions('fsolve')
-[x,fval,exitflag,output]  = fsolve(gradf, 0.5*ones(n,1), 'FunctionTolerance', 1e-10)
-f(x_esatto)
+options = optimoptions('fsolve', 'FunctionTolerance', 1e-15, 'OptimalityTolerance', 1e-10);
+[x,fval,exitflag,output]  = fsolve(gradf, 0.5*ones(n,1),  options)
+f(x)
 
 
