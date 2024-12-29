@@ -1,5 +1,5 @@
-%% PROBLEMA 76
-% ha minimo pari a 0 nell'origine
+%% PROBLEMA 64
+% non capisco dov
 close all
 clear all
 clc
@@ -21,30 +21,42 @@ end
 end
 
 
-% implementing the function, the gradient and the hessiano for problem 76
+% implementing the function, the gradient and the hessiano for problem 64
 function val = function_pb76(x)
     n = length(x);
+    rho = 10;
+    h = 1/(n+1);
 
-    val = (x(n) - x(1)^2/10)^2;
-    for k = 1:n-1
-        val = val + (x(k) - x(k+1)^2/10)^2;
+    val = 0.5*(2*x(1) + rho*h^2* sinh(rho*x(1)) -x(2))^2 + 0.5*(2*x(n) + rho*h^2* sinh(rho*x(n)) -x(n-1) -1)^2;
+    for k = 2:n-1
+        val = val + 0.5*(2*x(k) + rho*h^2* sinh(rho*x(k)) -x(k-1) -x(k+1))^2;
     end
-
-    val = 0.5*val;
+    
 
 end
 
 f = @(x) function_pb76(x);
 
-function val = grad_pb76(x)
+function grad = grad_pb76(x)
     n = length(x);
+    rho = 10;
+    h = 1/(n+1);
 
-    val = zeros(n, 1);
-    val(1,1) = (x(n) - x(1)^2/10) * (-0.2*x(1)) + (x(1) + x(2)^2/10);
-    val(n, 1) = (x(n-1) - x(n)^2/10) *(-0.2*x(n)) * (x(n) - x(1)^2/10);
+    grad = zeros(n, 1);
+    if n>=4
+        grad(1,1) = (2*x(1) + rho*h^2*sinh(rho*x(1)) - x(2)) * (2 + rho^2*h^2*sinh(rho*x(1))) - (2*x(2) +  rho*h^2*sinh(rho*x(2)) - x(1) -x(3));
+        grad(2,1) = (2* rho^2*h^2*sinh(rho*x(2)))*(2*x(2) + rho*h^2*sinh(rho*x(2)) -x(1) -x(3)) - (2*x(1) +  rho*h^2*sinh(rho*x(1)) -x(2)) - (2*x(3) +  rho*h^2*sinh(rho*x(3)) - x(2) -x(3));
+        grad(n-1,1) = (2* rho^2*h^2*sinh(rho*x(n-1)))*(2*x(n-1) + rho*h^2*sinh(rho*x(n-1)) -x(n-2) -x(n)) - (2*x(n-2) +  rho*h^2*sinh(rho*x(n-2)) - x(n-3) -x(n-1)) - (2*x(n) +  rho*h^2*sinh(rho*x(n)) - x(n-1) - 1);
+    elseif n == 2
+        grad(1,1) = (2*x(1) + rho*h^2*sinh(rho*x(1)) - x(2)) * (2 + rho^2*h^2*sinh(rho*x(1))) - (2*x(2) +  rho*h^2*sinh(rho*x(2)) - x(1) -1); 
+    elseif n == 3
+        grad(1,1) = (2*x(1) + rho*h^2*sinh(rho*x(1)) - x(2)) * (2 + rho^2*h^2*sinh(rho*x(1))) - (2*x(2) +  rho*h^2*sinh(rho*x(2)) - x(1) -x(3));
+        grad(2,1) = (2* rho^2*h^2*sinh(rho*x(2)))*(2*x(2) + rho*h^2*sinh(rho*x(2)) -x(1) -x(3)) - (2*x(1) +  rho*h^2*sinh(rho*x(1)) -x(2)) - (2*x(3) +  rho*h^2*sinh(rho*x(3)) - x(2) - 1);
+    end
+    grad(n, 1) = -(2*x(n-1) + rho*h^2*sinh(rho*x(n-1)) - x(n-1) -x(n)) + (2* rho^2*h^2*sinh(rho*x(n)))*(2*x(n) + rho*h^2*sinh(rho*x(n)) -x(n-1) - 1);
 
-    for k =2:n-1
-        val(k,1) = (x(k-1) - x(k)^2/10) * (-0.2*x(k)) + (x(k) + x(k+1)^2/10);
+    for k =3:n-2
+        grad(k,1) = (2* rho^2*h^2*sinh(rho*x(k)))*(2*x(k) + rho*h^2*sinh(rho*x(k)) -x(k-1) -x(k+1)) - (2*x(k-1) +  rho*h^2*sinh(rho*x(k-1)) - x(k-2) -x(k)) - (2*x(k+1) +  rho*h^2*sinh(rho*x(k+1)) - x(k) -x(k+2));
     end
 end
 
@@ -53,23 +65,26 @@ gradf = @(x) grad_pb76(x);
 
 function val = hessian_pb76(x)
     n = length(x);
+    rho = 10;
+    h = 1/(n+1);
     diags = zeros(n,5); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
 
     % principal diag
-    diags(2:n,1) = -0.2*x(1:n-1) + 3/50 *x(2:n) +1;
-    diags(1,1) =  -0.2*x(n) + 3/50 *x(1) +1;
+    diags(2:n-1,1) = (2+rho^2 * h^2*sinh(rho*x(2:n-1))).^2 + (2*x(2:n-1) + rho*h^2*sinh(rho*x(2:n-1)) - x(1:n-2) - x(3:n))*rho^2*h^2.*sinh(rho*x(2:n-1)) + 2;
+    diags(1,1) =  (2+rho^2 * h^2*sinh(rho*x(1))).^2 + (2*x(1) + rho*h^2*sinh(rho*x(1)) - x(2))*rho^2*h^2*sinh(rho*x(1)) + 1;
+    diags(n,1) = (2+rho^2 * h^2*sinh(rho*x(n))).^2 + (2*x(n) + rho*h^2*sinh(rho*x(n)) - x(n-1) - 1)*rho^2*h^2*sinh(rho*x(n)) + 1;
 
     % inferior diagonal
-    diags(1:n-1,3) = -0.2*x(2:n);
+    diags(1:n-1,3) = -4 - rho^2*h^2+sinh(rho*x(1:n-1)) -  rho^2*h^2+sinh(rho*x(2:n));
 
     %superior diagonal
-    diags(2:n,2) =  -0.2*x(2:n);
+    diags(2:n,2) =   -4 - rho^2*h^2+sinh(rho*x(1:n-1)) -  rho^2*h^2+sinh(rho*x(2:n));
 
     % 2-inf e 2-suo diag
-    diags(1, 5) = -x(1)/5;
-    diags(n, 4) =-x(1)/5;
+    diags(1:n-2, 5) = ones(n-2,1);
+    diags(2:n, 4) = ones(n-1,1);
 
-    val = spdiags(diags, [0,1,-1, n-1, - (n-1)], n,n);
+    val = spdiags(diags, [0,1,-1, 2, -2], n,n);
 end
 
 
@@ -215,7 +230,7 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
@@ -249,7 +264,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, []);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;

@@ -58,9 +58,9 @@ n = 1e4;
 x_esatto = fsolve(gradf, zeros(n,1), '');
 f(x_esatto)
 
-%% vediamo se il minimo varia all'aumentare della dimensione o se è costante
-x = -105:0.1:100;
-y = -105:0.1:100; 
+%% forma della funzione
+x = -0.5:0.001:0.5;
+y = -0.5:0.001:0.5; 
 [X, Y] = meshgrid(x, y);
 Z = arrayfun(@(x, y) f([x; y]), X, Y);
 
@@ -73,31 +73,32 @@ ylabel('y');
 zlabel('f(x, y)');
 shading interp; 
 
-% curve di livello
-contour(X, Y, Z, 60); % '20' indica il numero di livelli
-colorbar; % Aggiunge una barra colori per riferimento
-xlabel('x');
-ylabel('y');
-title('Curve di livello della funzione f');
+% % curve di livello
+% contour(X, Y, Z, 60); % '20' indica il numero di livelli
+% colorbar; % Aggiunge una barra colori per riferimento
+% xlabel('x');
+% ylabel('y');
+% title('Curve di livello della funzione f');
 
 
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-4;
 
 
-n = 1e4;
+n = 1e5;
 % x0 = 2*ones(n,1); %pto iniziale pb 76
-x0 = 0.5*ones(n,1); %pto iniziale pb 82
-% x0 = ones(n,1); % pto iniziale Rosenbrock
-% x0(1:2:n) = -1.2;
+% x0 = 0.5*ones(n,1); %pto iniziale pb 82
+x0 = ones(n,1); % pto iniziale Rosenbrock
+x0(1:2:n) = -1.2;
 % x0 = ones(n,1); % pto iniziale pb 60
 % x0(1:2:n) = 0;
+% x0 = ones(n,1); %pro iniziale pb 64
 
-rho = 0.6;  c1 = 1e-3; btmax = 98;  % per 1e3
+rho = 0.3;  c1 = 1e-4; btmax = 38;  % per 1e3
 % rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
 % rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
 [~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], zeros(n,1))
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], 'ALG', ones(n,1))
 
 
 %% PROVANEALDER MEAD
@@ -105,7 +106,8 @@ n = 50;
 % x0 = (1:1:n)'; % pto iniziale es3_marti
 % x0 = ones(n,1); % pto iniziale Rosenbrock
 % x0(1:2:n) = -1.2;
-x0 = 2 *ones(n,1); %pto iniziale pb 76
+% x0 = 2 *ones(n,1); %pto iniziale pb 76
+x0 = ones(n,1); %pro iniziale pb 64
 
 [xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[])
 

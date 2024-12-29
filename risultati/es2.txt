@@ -1,0 +1,59 @@
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 1 (point [1.2; 1.2] ):  *****
+Time: 2.2878 seconds
+**** SIMPLEX METHOD : RESULTS *****
+************************************
+f(xk): 0.047589
+norma di gradf(xk): 0.24979
+N. of Iterations: 19/400
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE PB 1 (point [1.2; 1.2] ):  *****
+Time: 0.12637 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0883e-25
+norma di gradf(xk): 1.436e-11
+N. of Iterations: 8/200
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 1 (point [-1.2; 1] ):  *****
+Time: 0.64532 seconds
+**** SIMPLEX METHOD : RESULTS *****
+************************************
+f(xk): 1.02
+norma di gradf(xk): 2.8776
+N. of Iterations: 37/400
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD FOR THE PB 1 (point [-1.2; 1] ):  *****
+Time: 1.6311 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.744e-21
+norma di gradf(xk): 4.4733e-10
+N. of Iterations: 21/200
+************************************
+SUCCESS
+************************************
+ 
+
+T =
+
+  2×6 table
+
+                        failure      avg_fbest     avg_gradfk     avg_iter     avg_time_execution       roc    
+                       __________    __________    __________    __________    __________________    __________
+
+    simplex method     0.0000e+00    5.3381e-01           NaN    2.8000e+01        1.4666e+00               NaN
+    modified Newton    0.0000e+00    1.8720e-21    2.3085e-10    1.4500e+01        8.7872e-01        5.4327e-01
+
