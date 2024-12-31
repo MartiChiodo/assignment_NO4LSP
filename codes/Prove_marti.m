@@ -59,8 +59,8 @@ x_esatto = fsolve(gradf, zeros(n,1), '');
 f(x_esatto)
 
 %% forma della funzione
-x = -0.5:0.001:0.5;
-y = -0.5:0.001:0.5; 
+x = -0.3:0.0003:0.3;
+y = -0.3:0.0003:0.3; 
 [X, Y] = meshgrid(x, y);
 Z = arrayfun(@(x, y) f([x; y]), X, Y);
 
@@ -83,22 +83,22 @@ shading interp;
 
 %% PROVA MODIFIED NEWTON METHOD
 tol = 1e-4;
+clc
 
-
-n = 1e5;
+n = 1e3;
 % x0 = 2*ones(n,1); %pto iniziale pb 76
 % x0 = 0.5*ones(n,1); %pto iniziale pb 82
-x0 = ones(n,1); % pto iniziale Rosenbrock
-x0(1:2:n) = -1.2;
+% x0 = ones(n,1); % pto iniziale Rosenbrock
+% x0(1:2:n) = -1.2;
 % x0 = ones(n,1); % pto iniziale pb 60
 % x0(1:2:n) = 0;
-% x0 = ones(n,1); %pro iniziale pb 64
+x0 = ones(n,1); %pro iniziale pb 64
 
-rho = 0.3;  c1 = 1e-4; btmax = 38;  % per 1e3
+rho = 0.4;  c1 = 1e-4; btmax = 38;  % per 1e3
 % rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
 % rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
-[~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
-    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], 'ALG', ones(n,1))
+[ ~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
+    = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], 'ALG', -1)
 
 
 %% PROVANEALDER MEAD

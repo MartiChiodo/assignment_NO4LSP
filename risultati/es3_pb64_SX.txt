@@ -1,335 +1,285 @@
->> gradf(zeros(45,1))
-
-ans =
-
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     0
-     1
-     0
-
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 1, dimension 10):  *****
-Time: 4.5812 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 1, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.28397
-N. of Iterations: 241/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 2, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.18666
-N. of Iterations: 287/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 3, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.31258
-N. of Iterations: 383/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 4, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.42259
-N. of Iterations: 414/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 5, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.393
-N. of Iterations: 364/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 6, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.16003
-N. of Iterations: 370/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 7, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.22136
-N. of Iterations: 356/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 8, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.16234
-N. of Iterations: 384/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 9, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.18049
-N. of Iterations: 392/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 10, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.31118
-N. of Iterations: 350/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 11, dimension 10):  *****
-Time: 4.5812 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.22462
-N. of Iterations: 307/4000
-Rate of Convergence: 0.26186
-************************************
-SUCCESS
-************************************
- 
-ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 1, dimension 25):  *****
-Time: 7.1175 seconds
-**** SIMPLES METHOD : RESULTS *****
-************************************
-f(xk): 0.18898
-N. of Iterations: 765/10000
+f(xk): 0.16822
+N. of Iterations: 215/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 2, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 2, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.17544
-N. of Iterations: 2356/10000
+f(xk): 0.25012
+N. of Iterations: 249/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 3, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 3, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.24864
-N. of Iterations: 1928/10000
+f(xk): 0.27604
+N. of Iterations: 314/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 4, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 4, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.36009
-N. of Iterations: 3021/10000
+f(xk): 0.24487
+N. of Iterations: 311/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 5, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 5, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.30766
-N. of Iterations: 3320/10000
+f(xk): 0.13285
+N. of Iterations: 319/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 6, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 6, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.18318
-N. of Iterations: 2641/10000
+f(xk): 0.10393
+N. of Iterations: 319/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 7, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 7, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.26987
-N. of Iterations: 3081/10000
+f(xk): 0.3574
+N. of Iterations: 269/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 8, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 8, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.16344
-N. of Iterations: 4669/10000
+f(xk): 0.30445
+N. of Iterations: 305/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 9, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 9, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.2556
-N. of Iterations: 3550/10000
+f(xk): 0.29848
+N. of Iterations: 284/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 10, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 10, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.29302
-N. of Iterations: 2474/10000
+f(xk): 0.20644
+N. of Iterations: 291/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 11, dimension 25):  *****
-Time: 7.1175 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 11, dimension 10):  *****
+Time: 2.6321 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.28502
-N. of Iterations: 7860/10000
+f(xk): 0.28596
+N. of Iterations: 333/4000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 1, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 1, dimension 25):  *****
+Time: 5.3807 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 0.33113
-N. of Iterations: 2106/20000
+f(xk): 0.33413
+N. of Iterations: 600/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 2, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.29511
+N. of Iterations: 2903/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 3, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.2431
+N. of Iterations: 1569/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 4, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.15981
+N. of Iterations: 2722/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 5, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.28769
+N. of Iterations: 1872/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 6, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.31746
+N. of Iterations: 2667/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 7, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.35095
+N. of Iterations: 2683/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 8, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.31543
+N. of Iterations: 2911/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 9, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.38455
+N. of Iterations: 3085/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 10, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.35072
+N. of Iterations: 4020/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 11, dimension 25):  *****
+Time: 5.3807 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.28391
+N. of Iterations: 6711/10000
+Rate of Convergence: NaN
+************************************
+SUCCESS
+************************************
+ 
+ho finito la valutazione di funzione
+**** SIMPLEX METHOD FOR THE PB 64 (point 1, dimension 50):  *****
+Time: 14.4654 seconds
+**** SIMPLES METHOD : RESULTS *****
+************************************
+f(xk): 0.37402
+N. of Iterations: 1565/20000
 Rate of Convergence: 0
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 2, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 2, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 26118949327418.23
+f(xk): 57768.4224
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -337,11 +287,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 3, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 3, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 5688511136567.072
+f(xk): 11823.0343
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -349,11 +299,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 4, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 4, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 23314272962314.01
+f(xk): 47053.5039
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -361,11 +311,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 5, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 5, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 55347460813248.22
+f(xk): 115713.8701
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -373,11 +323,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 6, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 6, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 8795969155923.351
+f(xk): 17495.7159
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -385,11 +335,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 7, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 7, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 67778340605038.71
+f(xk): 140528.6831
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -397,11 +347,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 8, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 8, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 17505548912344.8
+f(xk): 35126.6171
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -409,11 +359,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 9, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 9, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 52569829152597.93
+f(xk): 110317.4333
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -421,11 +371,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 10, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 10, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 41161268227464.56
+f(xk): 86159.6891
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -433,11 +383,11 @@ FAIL
 ************************************
  
 ho finito la valutazione di funzione
-**** SIMPLEX METHOD FOR THE PB 76 (point 11, dimension 50):  *****
-Time: 18.8781 seconds
+**** SIMPLEX METHOD FOR THE PB 64 (point 11, dimension 50):  *****
+Time: 14.4654 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 29327339810293.03
+f(xk): 60459.5416
 N. of Iterations: 20000/20000
 Rate of Convergence: 0
 ************************************
@@ -449,10 +399,9 @@ TSX =
 
   3×5 table
 
-            average fbest      average number of iterations    average time of execution (sec)    numbers of failure    average rate of convergence
-          _________________    ____________________________    _______________________________    __________________    ___________________________
+          average fbest    average number of iterations    average time of execution (sec)    numbers of failure    average rate of convergence
+          _____________    ____________________________    _______________________________    __________________    ___________________________
 
-    10                 0.26                349.82                            3.62                        0.00                      0.26            
-    25                 0.25               3242.27                           30.53                        0.00                      0.00            
-    50    29782499100291.84              18373.27                          171.17                       10.00                      0.00            
-
+    10          0.24                   291.73                            2.81                        0.00                      0.00            
+    25          0.30                  2885.73                           26.64                        0.00                       NaN            
+    50      62040.63                 18324.09                          170.26                       10.00                      0.00            

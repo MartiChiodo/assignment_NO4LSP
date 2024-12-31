@@ -84,8 +84,10 @@ gradfk = gradf(x0);
 Hessfk = Hessf(x0);
 k = 0;
 
-best_values = [];
-best_gradf = [];
+best_values = zeros(itermax,1);
+best_values(1) = fk;
+best_gradf = zeros(itermax,1);
+best_gradf(1) = norm(gradfk);
 
 while k < itermax && sum(gradfk.^2) > tolgrad^2
 
@@ -114,7 +116,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
 
                 % mi preparo per un eventual step successivo
                 k_tau = k_tau+1;
-                tau_0 = max(beta, 5*tau_0);
+                tau_0 = max(beta, 2*tau_0);
             end
 
             if k_tau == tau_kmax && p > 0
@@ -141,6 +143,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
         Bk = Hessfk + tau_k * speye(n);
         pk = -Bk\ gradfk;
     end
+
 
     % BACKTRACKING
     % Reset the value of alpha
@@ -190,18 +193,18 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
     end
     xseq(:,cont) = x0;
 
-    best_values(end+1) = fk;
-    best_gradf(end+1) = norm(gradfk);
-    if mod(k, 10) == 0
+    best_values(k) = fk;
+    best_gradf(k) = norm(gradfk);
+    if mod(k, 20) == 0
         figure(1);
-        plot(best_values(5:end), '-o', 'MarkerSize', 4);
+        plot(best_values(11:k), '-o', 'MarkerSize', 4);
         xlabel('Iterations');
         ylabel('Best Evaluation');
         title('Progress minimum value Modified Newton Method');
         drawnow;
 
         % figure(2);
-        % plot(best_gradf(5:end), '-o', 'MarkerSize', 4);
+        % plot(best_gradf(5:k), '-o', 'MarkerSize', 4);
         % xlabel('Iterations');
         % ylabel('Best Evaluation');
         % title('Progress gradient value Modified Newton Method');
