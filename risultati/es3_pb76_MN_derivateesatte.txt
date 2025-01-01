@@ -1,585 +1,465 @@
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 1 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 2 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 1000):  *****
-Time: 0.53182 seconds
+Time: 3.4931 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 1 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 2 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 2, dimension 1000):  *****
-Time: 0.53182 seconds
+Time: 3.4931 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 3, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 4, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 5, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 6, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 7, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 8, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 9, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 10, dimension 1000):  *****
-Time: 0.53182 seconds
-Backtracking parameters (rho, c1): 0.4 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
-N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
-************************************
-SUCCESS
-************************************
- 
-**** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 10000):  *****
-Time: 22.2385 seconds
-Backtracking parameters (rho, c1): 0.3 0.0001
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
-************************************
-SUCCESS
-************************************
- 
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
+Warning: 0 of the 3 requested eigenvalues converged. Specify convergence flag output to determine the values that did not converge. 
 >> 
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 2, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 3, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 4, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 5, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 6, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 7, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 8, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 9, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 10, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 11, dimension 1000):  *****
-Time: 0.74544 seconds
+Time: 0.078515 seconds
 Backtracking parameters (rho, c1): 0.4 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.0059108
-norma di gradf(xk): 5.5905e-06
+f(xk): 6.7091e-10
+norma di gradf(xk): 3.6631e-05
 N. of Iterations: 4/5000
-Rate of Convergence: -57.5507
+Rate of Convergence: -11.7024
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 2, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 3, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 4, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 5, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 6, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 7, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 8, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 9, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 10, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 11, dimension 10000):  *****
-Time: 23.282 seconds
+Time: 0.033914 seconds
 Backtracking parameters (rho, c1): 0.3 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.024973
-norma di gradf(xk): 9.9857e-05
-N. of Iterations: 684/5000
-Rate of Convergence: 0.0015994
+f(xk): 2.4479e-17
+norma di gradf(xk): 6.9969e-09
+N. of Iterations: 4/5000
+Rate of Convergence: 67.0733
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 1, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 2, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 3, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 4, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 5, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 6, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 7, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 8, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 9, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 10, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 76 (point 11, dimension 100000):  *****
-Time: 35.489 seconds
+Time: 0.41389 seconds
 Backtracking parameters (rho, c1): 0.4 0.001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.021343
-norma di gradf(xk): 7.3798e-05
-N. of Iterations: 4/5000
-Rate of Convergence: -21.2317
+f(xk): 8.102e-21
+norma di gradf(xk): 1.273e-10
+N. of Iterations: 5/5000
+Rate of Convergence: -0.0021586
 ************************************
 SUCCESS
 ************************************
@@ -589,11 +469,25 @@ TMN =
 
   3×6 table
 
-              average fbest    average gradf_norm    average number of iterations    average time of execution (sec)    numbers of failure    average rate of convergence
-              _____________    __________________    ____________________________    _______________________________    __________________    ___________________________
+              avg fbest    avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
+              _________    ______________    ________________    ______________________    _________    _______
 
-    1000          0.01                0.00                        4.00                             0.58                        0.00                     -57.55           
-    10000         0.02                0.00                      684.00                            23.68                        0.00                       0.00           
-    100000        0.02                0.00                        4.00                            37.48                        0.00                     -21.23           
+    1000        0.00            0.00               4.00                   0.02               0.00       -11.70 
+    10000       0.00            0.00               4.00                   0.04               0.00        67.07 
+    100000      0.00            0.00               5.00                   0.36               0.00        -0.00 
+
+>> format long e
+>> TMN
+
+TMN =
+
+  3×6 table
+
+                   avg fbest             avg gradf_norm         avg num of iters      avg time of exec (sec)         n failure                 avg roc       
+              ____________________    ____________________    ____________________    ______________________    ____________________    _____________________
+
+    1000      6.70905159005777e-10    3.66307376356820e-05    4.00000000000000e+00     1.60891454545455e-02     0.00000000000000e+00    -1.17023843149583e+01
+    10000     2.44786254535097e-17    6.99694582717233e-09    4.00000000000000e+00     3.53922727272727e-02     0.00000000000000e+00     6.70732656700096e+01
+    100000    8.10203467240668e-21    1.27295205505892e-10    5.00000000000000e+00     3.63948618181818e-01     0.00000000000000e+00    -2.15864319733819e-03
 
 >> 

@@ -317,13 +317,37 @@ display(TMN)
 
 
 
-% %% FINITE DIFFERENCES
-% function grad_approx = findiff_grad_64(x, h)
-% n = length(x);
-%     grad_approx = zeros(n,1);
-% 
-%     if 
-% end
+%% FINITE DIFFERENCES
+clc
+
+function grad_approx = findiff_grad_64(x, h)
+n = length(x);
+    grad_approx = zeros(n,1);
+    rho = 10;
+    cost = 1/(n+1);
+
+    fk_quadro = @(x,k) (2*x(k) + rho*cost^2 *sinh(x(k)) - x(k-1) - x(k+1))^2;
+
+    eh_1 = zeros(n,1);
+    eh_1(1) = h;
+    eh_n = zeros(n,1);
+    eh_n(n) = h;
+    eh_2 = zeros(n,1);
+    eh_2(2) = h;
+    eh_n1 = zeros(n,1);
+    eh_n1(n-1) = h;
+
+    grad_approx(1,1) = ((2*(x(1)+h) + rho*cost^2 * sinh(x(1)+h) -x(2))^2 - (2*(x(1)-h) + rho*cost^2 * sinh(x(1)-h) - x(2))^2 + fk_quadro(x + eh_1, 2) - fk_quadro(x - eh_1, 2)) /(2*h);
+    grad_approx(n,1) =  ((2*(x(n)+h) + rho*cost^2 * sinh(x(n)+h) -x(n-1) -1)^2 - (2*(x(n)-h) + rho*cost^2 * sinh(x(n)-h) - x(n-1) -1)^2 + fk_quadro(x + eh_n, n-1) - fk_quadro(x - eh_n, n-1)) /(2*h);
+    grad_approx(2,1) = ((2*(x(1)) + rho*cost^2 * sinh(x(1)) -x(2) -h)^2 - (2*(x(1)) + rho*cost^2 * sinh(x(1)) - x(2) +h)^2 + fk_quadro(x + eh_2, 2) - fk_quadro(x - eh_2, 2) + fk_quadro(x + eh_2, 3) - fk_quadro(x - eh_2, 3)) /(2*h);
+    grad_approx(n-1,1) =  ((2*(x(n)) + rho*cost^2 * sinh(x(n)) -x(n-1) -h -1)^2 - (2*(x(n)) + rho*cost^2 * sinh(x(n)) - x(n-1) +h -1)^2 + fk_quadro(x + eh_n1, n-1) - fk_quadro(x - eh_n1, n-1) + fk_quadro(x + eh_n1, n-2) - fk_quadro(x - eh_n1, n-2)) /(2*h);
+
+    for k = 3:n-2
+            eh_k = zeros(n,1);
+            eh_k(k) = h;
+        grad_approx(k,1) = (fk_quadro(x + eh_k,k) -fk_quadro(x-eh_k, k) +fk_quadro(x + eh_k,k-1) -fk_quadro(x-eh_k, k-1) +fk_quadro(x + eh_k,k+1) -fk_quadro(x-eh_k, k+1) )/(2*h);
+    end
+end
 % 
 % 
 % function hessian_approx = findiff_hess_64(x, h)
@@ -416,3 +440,9 @@ display(TMN)
 % tic;
 % hessian = sparse_hessian(50*ones(1e4, 1), 1e-8);
 % time = toc
+
+h = 1e-12;
+gradf_approx = @(x) findiff_grad_64(x,h);
+
+gradf([2;5;9;-2;0])
+gradf_approx([2;5;9;-2;0])

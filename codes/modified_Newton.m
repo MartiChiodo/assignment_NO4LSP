@@ -128,7 +128,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
                 disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
                 disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * eye(n)))),...
                     num2str(max(eig(Hessfk + tau_0 * eye(n))) )] ); %togli
-                xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk);
+                xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk); failure = true;
                 return;
             end
         

@@ -40,11 +40,11 @@ function val = grad_pb76(x)
     n = length(x);
 
     val = zeros(n, 1);
-    val(1,1) = (x(n) - x(1)^2/10) * (-0.2*x(1)) + (x(1) + x(2)^2/10);
-    val(n, 1) = (x(n-1) - x(n)^2/10) *(-0.2*x(n)) * (x(n) - x(1)^2/10);
+    val(1,1) = (x(n) - x(1)^2/10) * (-0.2*x(1)) + (x(1) - x(2)^2/10);
+    val(n, 1) = (x(n-1) - x(n)^2/10) *(-0.2*x(n)) + (x(n) - x(1)^2/10);
 
     for k =2:n-1
-        val(k,1) = (x(k-1) - x(k)^2/10) * (-0.2*x(k)) + (x(k) + x(k+1)^2/10);
+        val(k,1) = (x(k-1) - x(k)^2/10) * (-0.2*x(k)) + (x(k) - x(k+1)^2/10);
     end
 end
 
@@ -56,8 +56,8 @@ function val = hessian_pb76(x)
     diags = zeros(n,5); %1st column is the principal diag, 2nd column is the superior diag and 3rd column is the inferior
 
     % principal diag
-    diags(2:n,1) = -0.2*x(1:n-1) + 3/50 *x(2:n) +1;
-    diags(1,1) =  -0.2*x(n) + 3/50 *x(1) +1;
+    diags(2:n,1) = -0.2*x(1:n-1) + 3/50 *x(2:n).^2 +1;
+    diags(1,1) =  -0.2*x(n) + 3/50 *x(1)^2 +1;
 
     % inferior diagonal
     diags(1:n-1,3) = -0.2*x(2:n);
@@ -225,7 +225,7 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
@@ -264,7 +264,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
@@ -314,16 +314,19 @@ display(TMN)
 clc
 
 function grad_approx = findiff_grad_76(x, h)
-n = length(x);
+    n = length(x);
+    if isscalar(h)
+        passo = h;
+    end
     grad_approx = zeros(n,1);
-    grad_approx(1,1) = (x(n) - (x(1)+h)^2/10)^2 + (x(1)+h - (x(2))^2/10)^2 - (x(n) - (x(1)-h)^2/10)^2 - (x(1)-h - (x(2))^2/10)^2;
+    grad_approx(1,1) =  passo*(4*x(1)  - 2/5 * x(2)^2 + (8*x(1)*(x(1)^2+passo^2))/100 - 4/5 * x(n)*x(1));
     
     for k = 2:n-1
-        grad_approx(k,1) = (x(k-1) - (x(k) +h)^2/10)^2 + (x(k)+h - x(k+1)^2/10)^2 -(x(k-1) - (x(k)-h)^2/10)^2 - (x(k)-h - x(k+1)^2/10)^2; 
+        grad_approx(k,1) = passo*(4*x(k)  - 2/5 * x(k+1)^2 + (8*x(k)*(x(k)^2+passo^2))/100 - 4/5 * x(k-1)*x(k));
     end
-    grad_approx(n,1) = (x(n-1) - (x(n) +h)^2/10)^2 + (x(n)+h - x(1)^2/10)^2 -(x(n-1) - (x(n)-h)^2/10)^2 - (x(n)-h - x(1)^2/10)^2;
+    grad_approx(n,1) = passo*(4*x(n)  - 2/5 * x(1)^2 + (8*x(n)*(x(n)^2+passo^2))/100 - 4/5 * x(n-1)*x(n));
     
-    grad_approx = grad_approx./(2*h);
+    grad_approx = grad_approx./(4*passo);
 end
 
 
@@ -331,14 +334,14 @@ function hessian_approx = findiff_hess_76(x, h)
     % Calcola la matrice Hessiana sparsa per la funzione f(x)
     % Input:
     %   - x: vettore colonna (punto in cui calcolare l'Hessiana)
-    %   - h: passo
+    %   - h: passo o vettore per la differenzaz rispetto ad una componente
     % Output:
     %   - H: matrice Hessiana sparsa
 
     n = length(x); % Dimensione del problema
-
-    fk_quadro = @(x,k) (x(k) - x(k+1)^2/10)^2;
-    fn_quadro = @(x) (x(n) - x(1)^2/10)^2;
+    if isscalar(h)
+        passo = h;
+    end
     
     % Preallocazione per la struttura sparsa
     i_indices = zeros(3*n,1);
@@ -348,25 +351,24 @@ function hessian_approx = findiff_hess_76(x, h)
 
     % Loop su k (dalla definizione della funzione)
     for k = 1:n
-        % defyning the perturbation
-        he_k = zeros(n,1);
-        he_k(k) = h;
-
         % Elementi diagonali H(k, k)
         if k == 1
-            H_kk = (fn_quadro(x+2*he_k) + fk_quadro(x+2*he_k, 1) -  2*fn_quadro(x+he_k) -2*fk_quadro(x+he_k,1) + fn_quadro(x) + fk_quadro(x,1))/(2*h^2);
+            % H_kk = (fn_quadro(x+2*he_k) + fk_quadro(x+2*he_k, 1) - 2*fn_quadro(x+he_k) -2*fk_quadro(x+he_k,1) + fn_quadro(x) + fk_quadro(x,1))/(2*h^2);
+            H_kk = (2*passo^2 - 2/5 * x(n)*passo^2+ 0.12 * x(k)^2*passo^2+ 0.24 * x(k)*passo^3 +0.14 * passo^4)/(2*passo^2); 
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
             cont = cont +1;
         elseif k < n
-            H_kk = (fk_quadro(x+2*he_k, k-1) + fk_quadro(x+2*he_k, k) -  2*fk_quadro(x+he_k, k-1) -2*fk_quadro(x+he_k,k) + fk_quadro(x,k-1) + fk_quadro(x,k))/(2*h^2);
+            % H_kk = (fk_quadro(x+2*he_k, k-1) + fk_quadro(x+2*he_k, k) -  2*fk_quadro(x+he_k, k-1) -2*fk_quadro(x+he_k,k) + fk_quadro(x,k-1) + fk_quadro(x,k))/(2*h^2);
+            H_kk = (2*passo^2 - 2/5 * x(k-1)*passo^2+ 0.12 * x(k)^2*passo^2+ 0.24 * x(k)*passo^3 +0.14 * passo^4)/(2*passo^2); 
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
             cont = cont +1;
         else
-            H_kk = (fk_quadro(x+2*he_k, k-1) + fn_quadro(x+2*he_k) -  2*fk_quadro(x+he_k, k-1) -2*fn_quadro(x+he_k) + fk_quadro(x,k-1) + fn_quadro(x))/(2*h^2);
+            % H_kk = (fk_quadro(x+2*he_k, k-1) + fn_quadro(x+2*he_k) -  2*fk_quadro(x+he_k, k-1) -2*fn_quadro(x+he_k) + fk_quadro(x,k-1) + fn_quadro(x))/(2*h^2);
+            H_kk = (2*passo^2 - 2/5 * x(n-1)*passo^2+ 0.12 * x(k)^2*passo^2+ 0.24 * x(k)*passo^3 +0.14 * passo^4)/(2*passo^2); 
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
@@ -374,10 +376,9 @@ function hessian_approx = findiff_hess_76(x, h)
         end
          
         % Elementi fuori diagonale H(k, k+1)
-        he_k1 = zeros(n,1);
-        he_k1(k+1) = h;
         if k < n
-            H_k_k1 = (fk_quadro(x+he_k1 +he_k,k) - fk_quadro(x+he_k, k) - fk_quadro(x+he_k,k) - fk_quadro(x, k))/(2*h^2); 
+            % H_k_k1 = (fk_quadro(x+he_k1 +he_k,k) - fk_quadro(x+he_k, k) - fk_quadro(x+he_k1,k) - fk_quadro(x, k))/(2*h^2); 
+            H_k_k1 = (-2/5 *passo^2*x(k+1) - 1/5 * passo^3)/(2*passo^2);
             i_indices(cont) = k;
             j_indices(cont) = k+1;
             values(cont) = H_k_k1;
@@ -390,11 +391,7 @@ function hessian_approx = findiff_hess_76(x, h)
             cont = cont+1;
         else
             % Caso circolare: H(n, 1)
-            he_n = zeros(n,1);
-            he_n(k) = h;
-            he_1 = zeros(n,1);
-            he_1(k) = h;
-            H_n1 = (fn_quadro(x+he_n +he_1) - fn_quadro(x+he_n) - fn_quadro(x+he_1) - fn_quadro(x))/(2*h^2);
+            H_n1 = (-2/5 *passo^2*x(1) - 1/5 * passo^3)/(2*passo^2);
             i_indices(cont) = 1;
             j_indices(cont) = n;
             values(cont) = H_n1;
@@ -413,11 +410,19 @@ function hessian_approx = findiff_hess_76(x, h)
     hessian_approx = sparse(i_indices, j_indices, values, n, n);
 end
 
-h = 1e-12;
+h = 1e-4;
 gradf_approx = @(x) findiff_grad_76(x,h);
 hessf_approx = @(x) findiff_hess_76(x,h);
 
-norm(gradf(2*ones(1e3,1)) - gradf_approx(2*ones(1e3,1)))
+n=15;
+
+vec = [2; 0.3; 0.3; 2; 0.9; 1; 0.2];
+gradf(vec)
+gradf_approx(vec)
+
+full(Hessf(vec))
+full(hessf_approx(vec))
+
 
 
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD WITH FIN DIFF
@@ -458,7 +463,7 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
@@ -497,7 +502,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'EIG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
