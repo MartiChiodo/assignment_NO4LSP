@@ -102,8 +102,7 @@ gradF(1:2:end)=(x(2:2:end).^2).^(x(1:2:end).^2+1).*log(x(2:2:end).^2)*2.*x(1:2:e
 end
 
 function HessF = Hessian_pb_13 (x)
-n=length(x);
-D=zeros(n,3); %matrix whose columns are the diags of the sparse hessian
+n=length(x); 
 diag_princ=zeros(n,1);
 diag_princ(2:2:end)= (x(1:2:end).^2).^(x(2:2:end).^2+1).*log(x(1:2:end).^2).^2.*4.*(x(2:2:end).^2) ...
     +2.*(x(1:2:end).^2).^(x(2:2:end).^2+1).*log(x(1:2:end).^2)+ ...
@@ -119,8 +118,8 @@ diag_upper(1:2:end)= 4*x(2:2:end).*(x(1:2:end).^(2*x(2:2:end).^2+1)) ...
     +4*x(2:2:end).^(2*x(1:2:end).^2+1).*x(1:2:end);
 %VA TOLTO L'ULTIMO PER AVERLO LUNGO n-1?
 diag_upper=diag_upper(1:end-1,:);
-D(:,1)=diag_upper; %for simmetry
-D(:,3)=diag_upper;
+%matrix whose columns are the diags of the sparse hessian
+D=[[0; diag_upper], diag_princ, [diag_upper; 0]];
 
 HessF=spdiags(D,-1:1,n,n);
 end
