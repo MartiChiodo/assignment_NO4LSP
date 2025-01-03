@@ -6,7 +6,7 @@ close all
 seed=min(339268,343310);
 rng(seed);
 
-%definition of the problem
+% Definition of the problem
 F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
 gradF_75= @(x) gradient_pb_75(x);
 hessF_75= @(x) hessian_pb_75(x);
@@ -14,26 +14,153 @@ h = 1e-8;
 approx_gradF_75= @(x) approxgradient_pb_75(x,h,'COST');
 approx_hessF_75= @(x) approxhessian_pb_75(x,h,'COST');
 
-%running the problem on modified nuewton method with exact gradient and
-%hessian
-n=1e4;
+%% RUNNING THE EXPERIMENTS ON NEALDER MEAD
+format short e
+
+iter_max = 200;
+tol = 1e-6;
+
+% setting the dimensionality
+dimension = [10 25 50];
+
+
+% initializing the structures to store some stats for every dimension and
+% starting point
+execution_time_SX = zeros(length(dimension),11);
+failures_SX = zeros(length(dimension),11); %we count the number of failures
+iter_SX = zeros(length(dimension),11);
+fbest_SX = zeros(length(dimension),11);
+roc_SX = zeros(length(dimension),11);
+
+for dim = 1:length(dimension)
+    n = dimension(dim);
+
+    % defining the given initial point
+    x0 = -1.2*ones(n,1);
+    x0(end) = -1;
+
+    % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
+    % where [a, b] = [x0-1, x0+1]
+    rng(seed);
+    x0_rndgenerated = zeros(n,10);
+    x0_rndgenerated(1:n, :) = x0(1:n) - 1 + 2.*rand(n,10);
+
+    % SOLVING SIMPLEX METHOD
+    % first initial point
+    t1 = tic;
+    [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,[],[],[],[],iter_max*size(x0,1),tol);
+    execution_time_SX(dim,1) = toc(t1);
+    fbest_SX(dim,1) = fbest;
+    iter_SX(dim,1) = iter;
+    roc_SX(dim,1) = compute_roc(xseq);
+    disp(['**** SIMPLEX METHOD FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+
+    disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+
+    disp('**** SIMPLES METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['f(xk): ', num2str(fbest)])
+    disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
+    disp(['Rate of Convergence: ', num2str(roc_SX(dim,1))])
+    disp('************************************')
+
+    if (failure)
+        disp('FAIL')
+        if (flag_bcktrck)
+            disp('Failure due to backtracking')
+        else
+            disp('Failure not due to backtracking')
+        end
+        disp('************************************')
+    else
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
+
+
+    % if failure = true (failure == 1), the run was unsuccessful; otherwise
+    % failure = 0
+    failures_SX(dim,1) = failures_SX(dim,1) + failure;
+
+    for i = 1:10
+        t1 = tic;
+        [~,~,iter,fbest, ~, failure] = nelderMead(F_75,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
+        execution_time_SX(dim,i+1) = toc(t1);
+        fbest_SX(dim,i+1) = fbest;
+        iter_SX(dim,i+1) = iter;
+        failures_SX(dim,i+1) = failures_SX(dim,i+1) + failure;
+        roc_SX(dim,i+1) = compute_roc(xseq);
+
+        disp(['**** SIMPLEX METHOD FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+    
+        disp('**** SIMPLES METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
+        disp(['Rate of Convergence: ', num2str(roc_SX(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            if (flag_bcktrck)
+                disp('Failure due to backtracking')
+            else
+                disp('Failure not due to backtracking')
+            end
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+
+    end
+end
+
+
+varNames = ["average fbest", "average number of iterations", "average time of execution (sec)", "number of failures", "average rate of convergence"];
+rowNames = string(dimension');
+TSX = table(sum(fbest_SX,2)/11, sum(iter_SX,2)/11, sum(execution_time_SX,2)/11, sum(failures_SX,2),sum(roc_SX,2)/11 ,'VariableNames', varNames, 'RowNames', rowNames);
+format bank
+display(TSX)
+
+
+
+% Running the problem on modified nuewton method with exact gradient and
+% hessian
+n=1e3;
 x0= -1.2*ones(n,1);
 x(n)= -1;
 rho=0.8; %tune
-c1=1e-2; %tune
+c1=1e-4; %tune
 % tic
 % [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,gradF_75, hessF_75, x0, 50*n, rho, c1, [], [], [], [], ones(n,1));
+%     = modified_Newton(F_75,gradF_75, hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
 % time=toc
 % rate_of_convergence = compute_roc(xseq)
 
-%running the problem on modified newton method with approximated gradient
-%and hessian
-tic
-[xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-    = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 50*n, rho, [], 150, [], [], [], ones(n,1));
-time=toc
-rate_of_convergence = compute_roc(xseq)
+% Running the problem on modified newton method with approximated gradient
+% and hessian
+% tic
+% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
+% time=toc
+% rate_of_convergence = compute_roc(xseq)
+
+%prove, poi togli
+% h=1e-12;
+% x=[-1;1;-1;1];
+% x=2*ones(4,1);
+% veraH = hessF_75(x)
+% approssimataH = approxhessian_pb_75(x,h,'REL')
+% he_k=zeros(4,1);
+% he_k(1)=h;
+% (F_75(x+2*he_k)-2*F_75(x+he_k)+F_75(x))/(h^2)
+% ((-2+2*h)^2 + (10*((1+1-2*h)^2))^2 - 2*((-2+h)^2) -2*((10*(1+1-h)^2)^2) + (-2)^2 + (10*((2)^2))^2 )/(2*(h^2))
+
 
 %functions definition of exact gradient
 function grad = gradient_pb_75 (x)
@@ -51,7 +178,7 @@ end
 function hess = hessian_pb_75(x)
     n=length(x);
     diag_princ=zeros(n,1); %d^2F/dx_k^2
-    diag_princ(1)=1;
+    diag_princ(1)=1+600*(x(2)-x(1))^2;
     diag_princ(2:n-1)= 600* ((1:n-2)'.^2 .* (x(2:n-1) - x(1:n-2)).^2 + (2:n-1)'.^2 .* (x(3:n) - x(2:n-1)).^2 );
     diag_princ(n)= 600 * (n-1)^2 * (x(n)-x(n-1))^2;
     diag_upper=zeros(n,1);
@@ -60,7 +187,6 @@ function hess = hessian_pb_75(x)
     %matrix whose columns are the diags of the sparse hessian
     D=[[diag_upper;0], diag_princ, [0;diag_upper]];
     hess=spdiags(D,-1:1,n,n);
-    hess = (hess + hess')/2; %to guarantee simmetry 
 end
 
 %function definition of approximated gradient (using forward differences)
@@ -148,75 +274,20 @@ function hess = approxhessian_pb_75 (x,h,type_h)
             values(iter) = values(iter-1);
             iter = iter+1;
         end
-
-%         %lower diagonal element (only exists if k<n)
-%         if k<n
-%             indices_i(iter) = k; 
-%             indices_j(iter) = k+1;
-%             he_kp1 = zeros(n,1);
-%             he_kp1(k+1) = hk;
-%             values(iter) = (f(x+he_k+he_kp1) - f(x+he_k) - f(x+he_kp1) + fx)/(hk^2);
-%             iter = iter+1; 
-%         end
     end
     hess = sparse(indices_i, indices_j, values, n, n);
-    
-
-%     diag_princ = zeros(n,1);
-%     diag_upper = zeros(n-1,1);
-%     diag_lower = zeros(n-1,1);
-%     % In this case I know that the hessian is sparse (tridiagonal).
-%     % We use the approximation of the hessian as the jacobian of the gradient
-%     % using the approximated gradient (VA BENE FARLO COSì O SI PUò FARE SOLO
-%     % COL GRADIENTE ESATTO??)
-%     gradfx = gradf(x);
-%     
-%     %gradf(x+he_1+he_4+he_7+...)
-%     hei_mod1 = zeros(n,1);
-%     hei_mod1(1:3:n) = h;
-%     gradfx_hei_mod1 = gradf(x + hei_mod1);
-%     
-%     %approximation of columns 1,4,7,... of the hessian
-%     cols_mod1 = (gradfx_hei_mod1 - gradfx)./h;
-%     diag_princ(1:3:end) = cols_mod1(1:3:end);
-%     diag_lower(1:3:end) = cols_mod1(2:3:end);
-%     diag_upper(3:3:end) = cols_mod1(3:3:end);
-%     
-%     %gradf(x+he_2+he_5+he_8+...)
-%     hei_mod2 = zeros(n,1);
-%     hei_mod2(2:3:n) = h;
-%     gradfx_hei_mod2 = gradf(x + hei_mod2);
-%     
-%     %approximation of columns 2,5,8,... of the hessian
-%     cols_mod2 = (gradfx_hei_mod2 - gradfx)./h;
-%     diag_princ(2:3:end) = cols_mod2(2:3:end);
-%     diag_lower(2:3:end) = cols_mod2(3:3:end);
-%     diag_upper(1:3:end) = cols_mod2(1:3:end-1);
-%     
-%     %gradf(x+he_3+he_6+he_9+...)
-%     hei_mod0 = zeros(n,1);
-%     hei_mod0(3:3:n) = h;
-%     gradfx_hei_mod0 = gradf(x + hei_mod0);
-%     
-%     %approximation of columns 3,6,9,... of the hessian
-%     cols_mod0 = (gradfx_hei_mod0 - gradfx)./h;
-%     diag_princ(3:3:end) = cols_mod0(2:3:end);
-%     diag_lower(3:3:end) = cols_mod0(3:3:end);
-%     diag_upper(2:3:end) = cols_mod0(1:3:end-1);
-%     
-%     D=[[diag_lower;0], diag_princ, [0;diag_upper]];
-%     hess=spdiags(D,-1:1,n,n);
 end
 
 
 %to compute the rate of convergence
-function rate_of_convergence = compute_roc(xseq)
-if size(xseq,2) >=4
+function rate_of_convergence = compute_roc(xseq, x_esatto)
+if size(xseq,2) >=4 && isempty(x_esatto)
     k = size(xseq,2) -1;
     norm_ekplus1 = norm(xseq(:, k+1) - xseq(:,k));
     norm_ek = norm(xseq(:, k) - xseq(:,k-1));
     norm_ekminus1 = norm(xseq(:, k-1) - xseq(:,k-2));
     rate_of_convergence = log(norm_ekplus1/norm_ek) / log(norm_ek/norm_ekminus1);
+elseif 
 else 
     rate_of_convergence = nan;
 end
