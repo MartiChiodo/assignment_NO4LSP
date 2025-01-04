@@ -75,7 +75,6 @@ for comp = 1:n
         eval(id) = f(x);
         id = id + 1;
     end
-
     [~, id_pt] = min(eval);
     best_direction(comp) = eval_pt(id_pt);
 end

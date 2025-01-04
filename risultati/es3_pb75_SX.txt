@@ -1,142 +1,142 @@
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 1, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.52129 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 1.9369
-N. of Iterations: 66/2000
-Rate of Convergence: -1.585
+f(xk): 1.9338
+N. of Iterations: 120/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 2, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.50903 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4336
-N. of Iterations: 77/2000
-Rate of Convergence: -1.585
+f(xk): 2.4105
+N. of Iterations: 124/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 3, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.56785 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.2462
-N. of Iterations: 91/2000
-Rate of Convergence: -1.585
+f(xk): 2.2935
+N. of Iterations: 148/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 4, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.52404 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4057
-N. of Iterations: 101/2000
-Rate of Convergence: -1.585
+f(xk): 2.4068
+N. of Iterations: 138/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 5, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.50793 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.2134
-N. of Iterations: 81/2000
-Rate of Convergence: -1.585
+f(xk): 2.2088
+N. of Iterations: 123/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 6, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.51015 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 1.8312
-N. of Iterations: 90/2000
-Rate of Convergence: -1.585
+f(xk): 1.8462
+N. of Iterations: 134/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 7, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.53029 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.8129
-N. of Iterations: 81/2000
-Rate of Convergence: -1.585
+f(xk): 2.7879
+N. of Iterations: 134/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 8, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.50208 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 1.7672
-N. of Iterations: 87/2000
-Rate of Convergence: -1.585
+f(xk): 1.7484
+N. of Iterations: 123/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 9, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.4968 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.5157
-N. of Iterations: 87/2000
-Rate of Convergence: -1.585
+f(xk): 2.5629
+N. of Iterations: 124/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 10, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.51467 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.2464
-N. of Iterations: 82/2000
-Rate of Convergence: -1.585
+f(xk): 2.2373
+N. of Iterations: 127/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 11, dimension 10):  *****
-Time: 0.30166 seconds
+Time: 0.5059 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.0414
-N. of Iterations: 78/2000
-Rate of Convergence: -1.585
+f(xk): 2.0343
+N. of Iterations: 120/2000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 1, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.90017 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.0899
-N. of Iterations: 167/5000
+f(xk): 2.0647
+N. of Iterations: 257/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -144,11 +144,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 2, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.93452 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4826
-N. of Iterations: 197/5000
+f(xk): 2.4804
+N. of Iterations: 274/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -156,11 +156,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 3, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 1.0094 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.2938
-N. of Iterations: 193/5000
+f(xk): 2.2891
+N. of Iterations: 288/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -168,11 +168,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 4, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.97063 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.5542
-N. of Iterations: 200/5000
+f(xk): 2.5699
+N. of Iterations: 272/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -180,11 +180,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 5, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 1.0371 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.3116
-N. of Iterations: 212/5000
+f(xk): 2.3119
+N. of Iterations: 296/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -192,11 +192,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 6, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.94685 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.5525
-N. of Iterations: 215/5000
+f(xk): 2.5462
+N. of Iterations: 275/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -204,11 +204,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 7, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 1.0141 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.2892
-N. of Iterations: 189/5000
+f(xk): 2.2893
+N. of Iterations: 291/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -216,11 +216,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 8, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.90613 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 1.8221
-N. of Iterations: 183/5000
+f(xk): 1.829
+N. of Iterations: 258/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -228,11 +228,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 9, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 0.95496 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4167
-N. of Iterations: 180/5000
+f(xk): 2.4113
+N. of Iterations: 271/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -240,11 +240,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 10, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 1.0125 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.0832
-N. of Iterations: 186/5000
+f(xk): 2.0812
+N. of Iterations: 291/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -252,11 +252,11 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 11, dimension 25):  *****
-Time: 0.62154 seconds
+Time: 1.0506 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.3767
-N. of Iterations: 202/5000
+f(xk): 2.3825
+N. of Iterations: 303/5000
 Rate of Convergence: NaN
 ************************************
 SUCCESS
@@ -264,132 +264,132 @@ SUCCESS
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 1, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.6939 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.1756
-N. of Iterations: 349/10000
-Rate of Convergence: -Inf
+f(xk): 2.1768
+N. of Iterations: 523/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 2, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.9861 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.445
-N. of Iterations: 427/10000
-Rate of Convergence: -Inf
+f(xk): 2.444
+N. of Iterations: 595/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 3, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 2.0301 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.5058
-N. of Iterations: 467/10000
-Rate of Convergence: -Inf
+f(xk): 2.5051
+N. of Iterations: 633/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 4, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.8328 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4794
-N. of Iterations: 394/10000
-Rate of Convergence: -Inf
+f(xk): 2.4756
+N. of Iterations: 559/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 5, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.7881 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.1642
-N. of Iterations: 408/10000
-Rate of Convergence: -Inf
+f(xk): 2.166
+N. of Iterations: 545/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 6, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 2.052 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
 f(xk): 2.288
-N. of Iterations: 539/10000
-Rate of Convergence: -Inf
+N. of Iterations: 639/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 7, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.9104 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.5509
-N. of Iterations: 400/10000
-Rate of Convergence: -Inf
+f(xk): 2.5499
+N. of Iterations: 594/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 8, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 2.033 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.1872
-N. of Iterations: 467/10000
-Rate of Convergence: -Inf
+f(xk): 2.188
+N. of Iterations: 638/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 9, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 1.8754 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.3056
-N. of Iterations: 428/10000
-Rate of Convergence: -Inf
+f(xk): 2.3032
+N. of Iterations: 586/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 10, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 2.0118 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.4679
-N. of Iterations: 453/10000
-Rate of Convergence: -Inf
+f(xk): 2.4671
+N. of Iterations: 597/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
  
 ho finito la valutazione di funzione
 **** SIMPLEX METHOD FOR THE PB 75 (point 11, dimension 50):  *****
-Time: 1.1429 seconds
+Time: 2.4603 seconds
 **** SIMPLES METHOD : RESULTS *****
 ************************************
-f(xk): 2.3426
-N. of Iterations: 433/10000
-Rate of Convergence: -Inf
+f(xk): 2.3419
+N. of Iterations: 643/10000
+Rate of Convergence: NaN
 ************************************
 SUCCESS
 ************************************
@@ -402,6 +402,6 @@ TSX =
           average fbest    average number of iterations    average time of execution (sec)    number of failures    average rate of convergence
           _____________    ____________________________    _______________________________    __________________    ___________________________
 
-    10        2.22                     83.73                            0.38                         0.00                      -1.58           
-    25        2.30                    193.09                            0.72                         0.00                        NaN           
-    50        2.36                    433.18                            1.41                         0.00                       -Inf           
+    10        2.22                    128.64                            0.52                         0.00                       NaN            
+    25        2.30                    279.64                            0.98                         0.00                       NaN            
+    50        2.36                    595.64                            1.97                         0.00                       NaN            

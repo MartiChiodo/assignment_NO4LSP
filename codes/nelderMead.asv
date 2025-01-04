@@ -64,7 +64,10 @@ end
 
 
 % preliminary analysis of the function in order to compute a smart complex
-eval_pt = [1, 50, -50, 100, -100, 300, -300, 600, -600, 1000, -1000, 3000, -3000, 6000, -6000 10000, -10000];
+%eval_pt = [1, 50, -50, 100, -100, 300, -300, 600, -600, 1000, -1000, 3000, -3000, 6000, -6000 10000, -10000];
+% Ciao, provo a cambiare un po' di cose nel pre-processing, comunque non cancello
+% niente di quello che c'era prima
+eval_pt = [1, 2, -2, 5, -5, 10, -10];
 best_direction = zeros(n,1);
 for comp = 1:n
     eval = zeros(length(eval_pt),1);
@@ -75,9 +78,13 @@ for comp = 1:n
         eval(id) = f(x);
         id = id + 1;
     end
-
     [~, id_pt] = min(eval);
     best_direction(comp) = eval_pt(id_pt);
+end
+%mi muovo anche in diagonale
+id=1
+for pt= eval_pt
+    x = x0 + pt;
 end
 
 disp("ho finito la valutazione di funzione")
@@ -206,21 +213,13 @@ xbest = x0(:,indices(1));
 iter = comp;
 fbest = fk_sorted(1);
 
-% cutting xseq
-temp = zeros(size(xseq));
-if iter>=3
-    temp(:,end) = xseq(:, cont);
-    if cont-1==0
-        temp(:,end-1) = xseq(:, 4);
-        temp(:,end-2) = xseq(:, 3);
-        if iter>=4
-            temp(:,end-3) = xseq(:, 2);
-        end
-    else
-        temp(:,end-1) = xseq(:, cont-1);
-    end
-end
-xseq = xseq(:,1:min(iter, 4));
+% cutting xseq and ordering in in such a way that the last column is the
+% most recent solution
+m = min(iter,4); %number of iterations available in xseq
+xseq = xseq(:,1:m);
+shift = mod(cont,m);
+xseq = circshift(xseq,-shift,2);
+
 
 if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;

@@ -18,7 +18,8 @@ approx_hessF_75= @(x) approxhessian_pb_75(x,h,'COST');
 format short e
 
 iter_max = 200;
-tol = 1e-6;
+tol = 1e-12;
+[rho, chi, gamma, sigma] = deal(1.1, 2.5, 0.6, 0.5);
 
 % setting the dimensionality
 dimension = [10 25 50];
@@ -49,7 +50,7 @@ for dim = 1:length(dimension)
     % SOLVING SIMPLEX METHOD
     % first initial point
     t1 = tic;
-    [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,[],[],[],[],iter_max*size(x0,1),tol);
+    [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,iter_max*size(x0,1),tol);
     execution_time_SX(dim,1) = toc(t1);
     fbest_SX(dim,1) = fbest;
     iter_SX(dim,1) = iter;
@@ -86,7 +87,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [~,~,iter,fbest, ~, failure] = nelderMead(F_75,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
+        [~,~,iter,fbest, ~, failure] = nelderMead(F_75,x0_rndgenerated(:,i),rho,chi,gamma,sigma,iter_max*size(x0,1),tol);
         execution_time_SX(dim,i+1) = toc(t1);
         fbest_SX(dim,i+1) = fbest;
         iter_SX(dim,i+1) = iter;
@@ -95,13 +96,13 @@ for dim = 1:length(dimension)
 
         disp(['**** SIMPLEX METHOD FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
-        disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+        disp(['Time: ', num2str(execution_time_SX(dim,i+1)), ' seconds']);
     
         disp('**** SIMPLES METHOD : RESULTS *****')
         disp('************************************')
         disp(['f(xk): ', num2str(fbest)])
         disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
-        disp(['Rate of Convergence: ', num2str(roc_SX(dim,1))])
+        disp(['Rate of Convergence: ', num2str(roc_SX(dim,i+1))])
         disp('************************************')
     
         if (failure)
@@ -128,13 +129,321 @@ TSX = table(sum(fbest_SX,2)/11, sum(iter_SX,2)/11, sum(execution_time_SX,2)/11, 
 format bank
 display(TSX)
 
+%% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD 
+% with exact gradient and hessian
+format short e
+
+% setting the values for the dimension
+dimension = [1e3 1e4 1e5];
+
+param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
+
+
+% initializing structures to store some stats
+execution_time_MN = zeros(length(dimension),11);
+failure_struct_MN = zeros(length(dimension),11); % number of failures
+iter_struct_MN = zeros(length(dimension),11);
+fbest_struct_MN = zeros(length(dimension),11);
+gradf_struct_MN = zeros(length(dimension),11);
+roc_struct_MN = zeros(length(dimension),11);
+
+for dim = 1:length(dimension)
+    n = dimension(dim);
+    iter_max = 50*n;
+    [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
+    x_esatto = ones(n,1);
+
+    %defining the given initial point
+    x0 = -1.2*ones(n,1);
+    x0(n) = -1;
+    
+    % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
+    rng(seed);
+    x0_rndgenerated = zeros(n,10);
+    x0_rndgenerated(1:n, :) = x0(1:n) - 1 + 2.*rand(n,10);
+    
+
+    % SOLVING MODIFIED NEWTON METHOD METHOD
+    % first initial point
+    t1 = tic;
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+        = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+    execution_time_MN(dim,1) = toc(t1);
+    fbest_struct_MN(dim,1) = fbest;
+    iter_struct_MN(dim,1) = iter;
+    gradf_struct_MN(dim,1) = gradfk_norm;
+    roc_struct_MN(dim,1) = compute_roc(xseq, x_esatto);
+    disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+
+    disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+    disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+
+    disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+    disp('************************************')
+    disp(['f(xk): ', num2str(fbest)])
+    disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+    disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+    disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+    disp('************************************')
+
+    if (failure)
+        disp('FAIL')
+        if (flag_bcktrck)
+            disp('Failure due to backtracking')
+        else
+            disp('Failure not due to backtracking')
+        end
+        disp('************************************')
+    else
+        disp('SUCCESS')
+        disp('************************************')
+    end
+    disp(' ')
+
+    % if failure = true (failure == 1), the run was unsuccessful; otherwise
+    % failure = 0
+    failure_struct_MN(dim,1) = failure_struct_MN(dim,1) + failure ;
+
+    for i = 1:10
+        t1 = tic;
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+            = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+        execution_time_MN(dim,i+1) = toc(t1);
+        fbest_struct_MN(dim,i+1) = fbest;
+        iter_struct_MN(dim,i+1) = iter;
+        failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
+        gradf_struct_MN(dim,i+1) = gradfk_norm;
+        roc_struct_MN(dim,i+1) = compute_roc(xseq, x_esatto);
+
+        disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+
+        disp(['Time: ', num2str(execution_time_MN(dim,i+1)), ' seconds']);
+        disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+    
+        disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,i+1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            if (flag_bcktrck)
+                disp('Failure due to backtracking')
+            else
+                disp('Failure not due to backtracking')
+            end
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+    end
+end
+
+
+varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
+rowNames = string(dimension');
+TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
+format bank
+display(TMN)
+
+
+%% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD 
+% with approximated gradient and hessian
+format short e
+
+iter_max_factor = 10;
+tol = 1e-6;
+
+% setting the values for the dimension
+h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
+dimension = [1e3 1e4 1e5];
+param = [0.5, 1e-4, 40; 0.4, 1e-4, 28; 0.5, 1e-3, 36];
+type_h = 'COST';
+
+% initializing structures to store some stats
+execution_time_MN_h = zeros(length(dimension),6);
+failure_struct_MN_h = zeros(length(dimension),6); 
+iter_struct_MN_h = zeros(length(dimension),6);
+fbest_struct_MN_h = zeros(length(dimension),6);
+gradf_struct_MN_h = zeros(length(dimension),6);
+roc_struct_MN_h = zeros(length(dimension),6);
+
+
+for id_h = 1:length(h_values)
+    h = h_values(id_h);
+
+    approx_gradF_75 = @(x) approxgradient_pb_75 (x,h,type_h);
+    approx_hessF_75 = @(x) approxhessian_pb_75 (x,h,type_h);
+
+    % initializing structures to store some stats
+    execution_time_MN = zeros(length(dimension),11);
+    failure_struct_MN = zeros(length(dimension),11); % number of failures
+    iter_struct_MN = zeros(length(dimension),11);
+    fbest_struct_MN = zeros(length(dimension),11);
+    gradf_struct_MN = zeros(length(dimension),11);
+    roc_struct_MN = zeros(length(dimension),11);
+    
+    
+    for dim = 1:length(dimension)
+        n = dimension(dim);
+        x_esatto = ones(n,1);
+        iter_max = iter_max_factor*n;
+        [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
+    
+        %defining the given initial point
+        x0 = -1.2*ones(n,1);
+        x0(n) = -1;
+        
+        % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
+        rng(seed);
+        x0_rndgenerated = zeros(n,10);
+        x0_rndgenerated(1:n, :) = x0(1:n) - 1 + 2.*rand(n,10);
+        
+    
+        % SOLVING MODIFIED NEWTON METHOD METHOD
+        % first initial point
+        t1 = tic;
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+            = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+        execution_time_MN(dim,1) = toc(t1);
+        fbest_struct_MN(dim,1) = fbest;
+        iter_struct_MN(dim,1) = iter;
+        gradf_struct_MN(dim,1) = gradfk_norm;
+        roc_struct_MN(dim,1) = compute_roc(xseq,x_esatto);
+        disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
+    
+        disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+        disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+    
+        disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+        disp('************************************')
+        disp(['f(xk): ', num2str(fbest)])
+        disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+        disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+        disp('************************************')
+    
+        if (failure)
+            disp('FAIL')
+            if (flag_bcktrck)
+                disp('Failure due to backtracking')
+            else
+                disp('Failure not due to backtracking')
+            end
+            disp('************************************')
+        else
+            disp('SUCCESS')
+            disp('************************************')
+        end
+        disp(' ')
+    
+        % if failure = true (failure == 1), the run was unsuccessful; otherwise
+        % failure = 0
+        failure_struct_MN(dim,1) = failure_struct_MN(dim,1) + failure ;
+    
+        for i = 1:10
+            t1 = tic;
+            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+                = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+            execution_time_MN(dim,i+1) = toc(t1);
+            fbest_struct_MN(dim,i+1) = fbest;
+            iter_struct_MN(dim,i+1) = iter;
+            failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
+            gradf_struct_MN(dim,i+1) = gradfk_norm;
+            roc_struct_MN(dim,i+1) = compute_roc(xseq,x_esatto);
+    
+            disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
+    
+            disp(['Time: ', num2str(execution_time_MN(dim,i+1)), ' seconds']);
+            disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
+        
+            disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
+            disp('************************************')
+            disp(['f(xk): ', num2str(fbest)])
+            disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
+            disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
+            disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,i+1))])
+            disp('************************************')
+        
+            if (failure)
+                disp('FAIL')
+                if (flag_bcktrck)
+                    disp('Failure due to backtracking')
+                else
+                    disp('Failure not due to backtracking')
+                end
+                disp('************************************')
+            else
+                disp('SUCCESS')
+                disp('************************************')
+            end
+            disp(' ')
+        end
+    end
+    
+    
+    
+    varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
+    rowNames = string(dimension');
+    TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
+    format bank
+    display(TMN)
+
+    execution_time_MN_h(:,id_h) = sum(execution_time_MN,2)/11;
+    failure_struct_MN_h(:,id_h) = sum(failure_struct_MN,2); 
+    iter_struct_MN_h(:,id_h) = sum(iter_struct_MN,2)/11;
+    fbest_struct_MN_h(:,id_h) = sum(fbest_struct_MN,2)/11;
+    gradf_struct_MN_h(:,id_h) = sum(gradf_struct_MN,2)/11;
+    roc_struct_MN_h(:,id_h) = sum(roc_struct_MN,2)/11;
+end
+
 
 %% 
+% Running the problem on Nelder_Mead method 
+tol=1e-14;
+n=50;
+x0= -1.2*ones(n,1);
+x0(n)= -1;
+x_esatto = ones(n,1);
+F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
+
+rho=1.5; %tune
+chi=2.5; %tune
+gamma=0.6; %tune
+sigma=0.5; %tune
+
+[~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
+roc = compute_roc(xseq,x_esatto)
+
+% %TOGLI
+% % Definizione della funzione F(x) per n=2
+% F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
+% 
+% % Creazione di una griglia di punti
+% x1_range = linspace(-2, 2, 100); % Intervallo per x1
+% x2_range = linspace(-2, 2, 100); % Intervallo per x2
+% [X1, X2] = meshgrid(x1_range, x2_range);
+% 
+% % Calcolo dei valori della funzione
+% Z = F(X1, X2);
+% 
+% % Visualizzazione della funzione
+% figure;
+% surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
+% colormap jet; % Colori accesi
+% colorbar; % Barra dei colori
+% xlabel('x_1');
+% ylabel('x_2');
+% zlabel('F(x)');
+
 % Running the problem on modified nuewton method with exact gradient and
 % hessian
-n=1e4;
-x0= -1.2*ones(n,1);
-x(n)= -1;
+%n=1e4;
 rho=0.8; %tune
 c1=1e-4; %tune
 % tic
@@ -145,11 +454,11 @@ c1=1e-4; %tune
 
 % Running the problem on modified newton method with approximated gradient
 % and hessian
-tic
-[xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-    = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
-time=toc
-rate_of_convergence = compute_roc(xseq,ones(n,1))
+% tic
+% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
+% time=toc
+% rate_of_convergence = compute_roc(xseq,ones(n,1))
 
 %prove, poi togli
 % h=1e-12;
