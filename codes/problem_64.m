@@ -164,7 +164,7 @@ for dim = 1:length(dimension)
 
         disp(['**** SIMPLEX METHOD FOR THE PB 64 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
-        disp(['Time: ', num2str(execution_time_SX(dim,1)), ' seconds']);
+        disp(['Time: ', num2str(execution_time_SX(dim,i+1)), ' seconds']);
     
         disp('**** SIMPLES METHOD : RESULTS *****')
         disp('************************************')
@@ -280,7 +280,7 @@ for dim = 1:length(dimension)
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE PB 64 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
-        disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+        disp(['Time: ', num2str(execution_time_MN(dim,i+1)), ' seconds']);
         disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
     
         disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
@@ -613,7 +613,7 @@ for id_h = 1:length(h_values)
     
             disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 64 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
     
-            disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
+            disp(['Time: ', num2str(execution_time_MN(dim,i+1)), ' seconds']);
             disp(['Backtracking parameters (rho, c1): ', num2str(rho), ' ', num2str(c1)]);
         
             disp('**** MODIFIED NEWTON METHOD : RESULTS *****')
