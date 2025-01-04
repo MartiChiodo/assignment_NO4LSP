@@ -212,13 +212,13 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
 
     end
 
-    if x_esatto == -1
-        testo = ['norm gradiente = ', num2str(norm(gradfk)), ' alla iterazione ',  num2str(k)];
-        disp(testo)
-    elseif length(x_esatto) > 1 
-        testo = ['distanza alla ', num2str(k), ' iterazione = ', num2str(norm(x_esatto-x0)), ' e norm gradiente = ', num2str(norm(gradfk))];
-        disp(testo)
-    end
+%     if x_esatto == -1
+%         testo = ['norm gradiente = ', num2str(norm(gradfk)), ' alla iterazione ',  num2str(k)];
+%         disp(testo)
+%     elseif length(x_esatto) > 1 
+%         testo = ['distanza alla ', num2str(k), ' iterazione = ', num2str(norm(x_esatto-x0)), ' e norm gradiente = ', num2str(norm(gradfk))];
+%         disp(testo)
+%     end
 
 
 end
@@ -231,7 +231,10 @@ end
 xbest = x0;
 fbest = fk;
 iter = k;
-xseq = xseq(:,1:min(iter, 4));
+m = min(iter,4); %number of iterations available in xseq
+xseq = xseq(:,1:m);
+shift = mod(cont,m);
+xseq = circshift(xseq,-shift,2);
 btseq = btseq(1:iter,1);
 gradfk_norm = norm(gradf(x0));
 

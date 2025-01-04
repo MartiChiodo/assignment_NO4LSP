@@ -75,7 +75,6 @@ for comp = 1:n
         eval(id) = f(x);
         id = id + 1;
     end
-
     [~, id_pt] = min(eval);
     best_direction(comp) = eval_pt(id_pt);
 end
@@ -206,8 +205,13 @@ xbest = x0(:,indices(1));
 iter = comp;
 fbest = fk_sorted(1);
 
-% cutting xseq
-xseq = xseq(:,1:min(iter, 4));
+% cutting xseq and ordering in in such a way that the last column is the
+% most recent solution
+m = min(iter,4); %number of iterations available in xseq
+xseq = xseq(:,1:m);
+shift = mod(cont,m);
+xseq = circshift(xseq,-shift,2);
+
 
 if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;

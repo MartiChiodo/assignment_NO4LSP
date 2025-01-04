@@ -1,5 +1,7 @@
 function [xbest,xseq,iter,fbest, flag, failure]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 
+close all
+
 % [xbest,iter,fbest]= nelderMead(f,x0,rho,chi,gamma,sigma,kmax,tol)
 % 
 % Functiopn that finds the minimizer of the function f using the Nealder
@@ -62,7 +64,10 @@ end
 
 
 % preliminary analysis of the function in order to compute a smart complex
-eval_pt = [1, 50, -50, 100, -100, 300, -300, 600, -600, 1000, -1000, 3000, -3000, 6000, -6000 10000, -10000];
+%eval_pt = [1, 50, -50, 100, -100, 300, -300, 600, -600, 1000, -1000, 3000, -3000, 6000, -6000 10000, -10000];
+% Ciao, provo a cambiare un po' di cose nel pre-processing, comunque non cancello
+% niente di quello che c'era prima
+eval_pt = [1, 2, -2, 5, -5, 10, -10];
 best_direction = zeros(n,1);
 for comp = 1:n
     eval = zeros(length(eval_pt),1);
@@ -73,9 +78,13 @@ for comp = 1:n
         eval(id) = f(x);
         id = id + 1;
     end
-
     [~, id_pt] = min(eval);
     best_direction(comp) = eval_pt(id_pt);
+end
+%mi muovo anche in diagonale
+id=1
+for pt= eval_pt
+    x = x0 + pt;
 end
 
 disp("ho finito la valutazione di funzione")
@@ -87,8 +96,8 @@ if size(x0,2)==1
     simplex0(:,1)=x0;
     for i=1:n
         ei=zeros(n,1);
-        %ei(i) = best_direction(i);
-        ei(i) = x
+        ei(i) = best_direction(i);
+        % ei(i) = 0.05*x(i); % according to Matlab implementation
         simplex0(:,i+1)= x0 + ei;
     end 
     x0=simplex0;
@@ -105,7 +114,7 @@ end
 [fk_sorted,indices]=sort(fk);
 
 
-xseq = zeros(n,3);
+xseq = zeros(n,4);
 cont = 1;
 xseq(:,cont) = x0(:,indices(1));
 best_values = []; % list I will use to plot the convergence of the method
@@ -179,7 +188,7 @@ while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
     [fk_sorted,indices]=sort(fk);
 
     % updating xseq
-    if cont == 3
+    if cont == 4
         cont = 1;
     else
         cont = cont + 1;
@@ -188,12 +197,14 @@ while comp<kmax && (fk_sorted(n) - fk_sorted(1)) > tol
 
     best_values(end+1) = fk_sorted(1);
     % plot
-    figure(1);
-    plot(best_values, '-o', 'MarkerSize', 4);
-    xlabel('Iterations');
-    ylabel('Best Evaluation');
-    title('Progress minimum value Nealder Mead');
-    drawnow;
+    if mod(comp, 10) == 0
+        figure(1);
+        plot(best_values, '-o', 'MarkerSize', 4);
+        xlabel('Iterations');
+        ylabel('Best Evaluation');
+        title('Progress minimum value Nealder Mead');
+        drawnow;
+    end
 
 end
 
@@ -202,8 +213,13 @@ xbest = x0(:,indices(1));
 iter = comp;
 fbest = fk_sorted(1);
 
-% cutting xseq
-xseq = xseq(:,1:min(iter, 3));
+% cutting xseq and ordering in in such a way that the last column is the
+% most recent solution
+m = min(iter,4); %number of iterations available in xseq
+xseq = xseq(:,1:m);
+shift = mod(cont,m);
+xseq = circshift(xseq,-shift,2);
+
 
 if iter == kmax && (fk_sorted(n) - fk_sorted(1)) > tol 
     failure = true;
