@@ -447,6 +447,21 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
     hessian_approx = sparse(i_indices, j_indices, values, n, n);
 end
 
+h = 1e-10;
+type_h = 'REL';
+gradf_approx = @(x) findiff_grad_76(x,h, type_h);
+Hessf_approx = @(x) findiff_hess_76(x,h, type_h);
+
+vec = 0.5*ones(7,1);
+vec = [0.2; 0.4; -0.2; 0.5; 0.1; -1; 0.1];
+
+gradf(vec)
+gradf_approx(vec)
+
+full(Hessf(vec))
+tic
+full(Hessf_approx(vec))
+time = toc
 
 
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD WITH FIN DIFF
@@ -454,7 +469,7 @@ format short e
 clc
 
 iter_max = 5000;
-tol = 1e-3;
+tol = 1e-4;
 
 
 
@@ -462,7 +477,7 @@ tol = 1e-3;
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
 param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
-type_h = 'COST';
+type_h = 'REL';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);

@@ -195,9 +195,9 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
 
     best_values(k) = fk;
     best_gradf(k) = norm(gradfk);
-    if mod(k, 20) == 0
+    if mod(k, 10) == 0
         figure(1);
-        plot(best_values(11:k), '-o', 'MarkerSize', 4);
+        plot(best_values(6:k), '-o', 'MarkerSize', 4);
         xlabel('Iterations');
         ylabel('Best Evaluation');
         title('Progress minimum value Modified Newton Method');
