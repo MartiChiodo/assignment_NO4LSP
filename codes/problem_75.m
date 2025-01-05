@@ -7,10 +7,11 @@ seed=min(339268,343310);
 rng(seed);
 
 % Definition of the problem
+%n=1e4; %togli
 F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
 gradF_75= @(x) gradient_pb_75(x);
 hessF_75= @(x) hessian_pb_75(x);
-h = 1e-8;
+%h = 1e-8;
 approx_gradF_75= @(x) approxgradient_pb_75(x,h,'COST');
 approx_hessF_75= @(x) approxhessian_pb_75(x,h,'COST');
 
@@ -257,12 +258,13 @@ display(TMN)
 format short e
 
 iter_max_factor = 10;
-tol = 1e-6;
+tol = 1e-4;
 
 % setting the values for the dimension
-h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
-dimension = [1e3 1e4 1e5];
-param = [0.5, 1e-4, 40; 0.4, 1e-4, 28; 0.5, 1e-3, 36];
+h_values = [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12];
+dimension = [1e3, 1e4, 1e5];
+
+param = [0.6, 1e-4, 65; 0.6, 1e-4, 65; 0.6, 1e-4, 65];
 type_h = 'COST';
 
 % initializing structures to store some stats
@@ -405,20 +407,20 @@ end
 
 %% 
 % Running the problem on Nelder_Mead method 
-tol=1e-14;
-n=50;
+tol=1e-6;
+% n=50;
 x0= -1.2*ones(n,1);
 x0(n)= -1;
 x_esatto = ones(n,1);
-F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
+% F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
 
-rho=1.5; %tune
-chi=2.5; %tune
-gamma=0.6; %tune
-sigma=0.5; %tune
-
-[~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
-roc = compute_roc(xseq,x_esatto)
+% rho=1.5; %tune
+% chi=2.5; %tune
+% gamma=0.6; %tune
+% sigma=0.5; %tune
+% 
+% [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
+% roc = compute_roc(xseq,x_esatto)
 
 % %TOGLI
 % % Definizione della funzione F(x) per n=2
@@ -444,8 +446,8 @@ roc = compute_roc(xseq,x_esatto)
 % Running the problem on modified nuewton method with exact gradient and
 % hessian
 %n=1e4;
-rho=0.8; %tune
-c1=1e-4; %tune
+rho=0.6; %tune
+c1=1e-3; %tune
 % tic
 % [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
 %     = modified_Newton(F_75,gradF_75, hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
@@ -454,11 +456,11 @@ c1=1e-4; %tune
 
 % Running the problem on modified newton method with approximated gradient
 % and hessian
-% tic
-% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
-% time=toc
-% rate_of_convergence = compute_roc(xseq,ones(n,1))
+tic
+[xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+    = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 10*n, rho, c1, 65, [], [], [], ones(n,1));
+time=toc
+rate_of_convergence = compute_roc(xseq,ones(n,1))
 
 %prove, poi togli
 % h=1e-12;
