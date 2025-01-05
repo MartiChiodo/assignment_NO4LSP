@@ -519,7 +519,7 @@ tol = 1e-3;
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
 param = [0.4, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38;];
-type_h = 'COST';
+type_h = 'REL';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
