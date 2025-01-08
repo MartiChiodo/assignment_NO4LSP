@@ -103,7 +103,7 @@ end
 disp(' ')
 
 t1 = tic;
-[xbest_MN_a, xseq_MN_a, iter_MN_a, fbest_MN_a, gradfk_norm_MN_a, btseq_MN_a, flag_bcktrck_MN_a, failure_MN_a] = modified_Newton(f,gradf, Hessf, x0_a, 5000, rho, c1, btmax, tol, tau_kmax, 'ALG', 0);
+[xbest_MN_a, xseq_MN_a, iter_MN_a, fbest_MN_a, gradfk_norm_MN_a, btseq_MN_a, flag_bcktrck_MN_a, failure_MN_a, ~] = modified_Newton(f,gradf, Hessf, x0_a, 5000, rho, c1, btmax, tol, tau_kmax, 'ALG', 0);
 time_MN_a =  toc(t1);
 disp('**** MODIFIED NEWTON METHOD FOR THE PB 1 (point [1.2; 1.2] ):  *****');
 disp(['Time: ', num2str(time_MN_a), ' seconds']);
@@ -149,7 +149,7 @@ end
 disp(' ')
 
 t1 = tic;
-[xbest_MN_b, xseq_MN_b, iter_MN_b, fbest_MN_b, gradfk_norm_MN_b, btseq_MN_b, flag_bcktrck_MN_b, failure_MN_b] = modified_Newton(f,gradf, Hessf, x0_b, 5000, rho, c1, btmax, tol, tau_kmax, 'ALG', 0);
+[xbest_MN_b, xseq_MN_b, iter_MN_b, fbest_MN_b, gradfk_norm_MN_b, btseq_MN_b, flag_bcktrck_MN_b, failure_MN_b, ~] = modified_Newton(f,gradf, Hessf, x0_b, 5000, rho, c1, btmax, tol, tau_kmax, 'ALG', 0);
 time_MN_b =  toc(t1);
 disp('**** MODIFIED NEWTON METHOD FOR THE PB 1 (point [-1.2; 1] ):  *****');
 disp(['Time: ', num2str(time_MN_b), ' seconds']);

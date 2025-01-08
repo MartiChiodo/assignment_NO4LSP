@@ -213,6 +213,7 @@ iter_struct_MN = zeros(length(dimension),11);
 fbest_struct_MN = zeros(length(dimension),11);
 gradf_struct_MN = zeros(length(dimension),11);
 roc_struct_MN = zeros(length(dimension),11);
+ultima_direz_discesa = zeros(length(dimension), 11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
@@ -231,12 +232,13 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
-    roc_struct_MN(dim,1) = compute_roc(xseq);
+    roc_struct_MN(dim,1) = compute_roc(xseq); 
+    ultima_direz_discesa(dim,1) = pk_scalare_gradf;
     disp(['**** MODIFIED NEWTON METHOD FOR THE PB 64 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
 
     disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
@@ -270,13 +272,14 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
         roc_struct_MN(dim,i+1) = compute_roc(xseq);
+        ultima_direz_discesa(dim,i+1) = pk_scalare_gradf;
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE PB 64 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
@@ -305,8 +308,13 @@ for dim = 1:length(dimension)
         end
         disp(' ')
     end
+
 end
 
+% plotto pk_scalar_gradfk
+bar(ultima_direz_discesa')
+ylabel('cos(angolo)')
+title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
@@ -361,8 +369,6 @@ function grad_approx = findiff_grad_64(x, h, type_h)
         - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) -x(k-2) -x(k)) - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) -x(k) -x(k+2)))/(4*hk);
 
     end
-
-    
 end
 
 
@@ -564,7 +570,7 @@ for id_h = 1:length(h_values)
         % SOLVING MODIFIED NEWTON METHOD METHOD
         % first initial point
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
         execution_time_MN(dim,1) = toc(t1);
         fbest_struct_MN(dim,1) = fbest;
         iter_struct_MN(dim,1) = iter;
@@ -603,7 +609,7 @@ for id_h = 1:length(h_values)
     
         for i = 1:10
             t1 = tic;
-            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
             execution_time_MN(dim,i+1) = toc(t1);
             fbest_struct_MN(dim,i+1) = fbest;
             iter_struct_MN(dim,i+1) = iter;

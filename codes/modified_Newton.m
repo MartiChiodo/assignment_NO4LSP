@@ -1,4 +1,4 @@
-function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
     = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax, alg_modificare_hess, x_esatto)
 
 close all
@@ -135,6 +135,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
             % Calcolo della direzione pk sfruttando la fattorizzazione di Cholesky
             y = -R' \ gradfk;
             pk = R \ y;
+            pk_scalare_gradf = (pk' * gradfk)/(norm(pk) * norm(gradfk));
     
         case 'EIG'
         % calcolo Bk secondo la definizione

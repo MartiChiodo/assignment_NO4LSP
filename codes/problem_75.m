@@ -167,7 +167,7 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
         = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
@@ -207,7 +207,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
             = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
@@ -310,7 +310,7 @@ for id_h = 1:length(h_values)
         % SOLVING MODIFIED NEWTON METHOD METHOD
         % first initial point
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
             = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,1) = toc(t1);
         fbest_struct_MN(dim,1) = fbest;
@@ -350,7 +350,7 @@ for id_h = 1:length(h_values)
     
         for i = 1:10
             t1 = tic;
-            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
                 = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
             execution_time_MN(dim,i+1) = toc(t1);
             fbest_struct_MN(dim,i+1) = fbest;
