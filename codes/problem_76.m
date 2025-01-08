@@ -297,6 +297,9 @@ end
 bar(ultima_direz_discesa')
 ylabel('cos(angolo)')
 title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
+
+
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
