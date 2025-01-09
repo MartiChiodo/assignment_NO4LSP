@@ -348,14 +348,21 @@ function grad_approx = findiff_grad_64(x, h, type_h)
             hn = h*abs(x(n));
     end
 
-    grad_approx(1,1) = (rho*cost^2*(2*cosh(rho*x(1))*sinh(rho*h1))*(4*h1 +4*x(1) - 2*x(2)) + rho^2*cost^4 * (sinh(rho*x(1) + rho * h1)^2 - sinh(rho*x(1) - rho * h1)^2) ...
-            - 4*h1 * (2*x(2) + rho*cost^2 * sinh(rho*x(2)) -x(1) -x(3)))/(4*h1);
-    grad_approx(2,1) = (rho*cost^2*(2*cosh(rho*x(2))*sinh(rho*h2))*(4*h2 +4*x(2) - 2*x(1) - 2*x(3)) + rho^2*cost^4 * (sinh(rho*x(2) + rho * h2)^2 - sinh(rho*x(2) - rho * h2)^2) ...
-        - 4*h1 * (2*x(1) + rho*cost^2 * sinh(rho*x(1)) -x(2)) - 4*h2 * (2*x(3) + rho*cost^2 * sinh(rho*x(3)) -x(2) -x(4)))/(4*h2);
-    grad_approx(n,1) = (rho*cost^2*(2*cosh(rho*x(n))*sinh(rho*hn))*(4*hn +4*x(n) - 2*x(n-1) -2) + rho^2*cost^4 * (sinh(rho*x(n) + rho * hn)^2 - sinh(rho*x(n) - rho * hn)^2) ...
-        - 4*hn * (2*x(n-1) + rho*cost^2 * sinh(rho*x(n-1)) -x(n-2) -x(n)))/(4*hn);
-    grad_approx(n-1,1) = (rho*cost^2*(2*cosh(rho*x(n-1))*sinh(rho*hn1))*(4*hn1 +4*x(n-1) - 2*x(n-2) - 2*x(n)) + rho^2*cost^4 * (sinh(rho*x(n-1) + rho * hn1)^2 - sinh(rho*x(n-1) - rho * hn1)^2) ...
-        - 4*hn1 * (2*x(n-2) + rho*cost^2 * sinh(rho*x(n-2)) -x(n-1) -x(n-3)) - 4*hn1 * (2*x(n) + rho*cost^2 * sinh(rho*x(n)) -x(n-1) -1))/(4*hn1);
+    k = 1; hk = h1;
+    grad_approx(1,1) = (4*hk*rho*cost^2*(2*sinh(rho*x(k))*cosh(rho*hk)) + rho^2*cost^4*4*sinh(rho*x(k))*cosh(rho*hk)*sinh(rho*hk)*cosh(rho*x(k)) + 2*(2*x(k) - x(k+1))*(4*hk + rho*cost^2*2*sinh(rho*hk) * cosh(rho*x(k))) ...
+        - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) - x(k) - x(k+2)))/(4*hk);
+
+    k = 2; hk = h2;
+    grad_approx(2,1) = (4*hk*rho*cost^2*(2*sinh(rho*x(k))*cosh(rho*hk)) +  rho^2*cost^4*4*sinh(rho*x(k))*cosh(rho*hk)*sinh(rho*hk)*cosh(rho*x(k)) + 2*(2*x(k) - x(k-1) - x(k+1))*(4*hk + rho*cost^2*2*sinh(rho*hk) * cosh(rho*x(k)))  ...
+        - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) - x(k)) - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) - x(k) - x(k+2)))/(4*hk);
+    
+    k = n; hk = hn;
+    grad_approx(n,1) = (4*hk*rho*cost^2*(2*sinh(rho*x(k))*cosh(rho*hk)) + rho^2*cost^4*4*sinh(rho*x(k))*cosh(rho*hk)*sinh(rho*hk)*cosh(rho*x(k)) + 2*(2*x(k) - x(k-1) - 1)*(4*hk + rho*cost^2*2*sinh(rho*hk) * cosh(rho*x(k)))  ...
+        - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) - x(k-2) - x(k)) )/(4*hk);
+    
+    k = n-1; hk = hn1;
+    grad_approx(n-1,1) = (4*hk*rho*cost^2*(2*sinh(rho*x(k))*cosh(rho*hk)) +  rho^2*cost^4*4*sinh(rho*x(k))*cosh(rho*hk)*sinh(rho*hk)*cosh(rho*x(k)) + 2*(2*x(k) - x(k-1) - x(k+1))*(4*hk + rho*cost^2*2*sinh(rho*hk) * cosh(rho*x(k))) ...
+        - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) - x(k-2) - x(k)) - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) - x(k) - 1))/(4*hk);
 
     for k = 3:n-2
         switch type_h
@@ -365,8 +372,8 @@ function grad_approx = findiff_grad_64(x, h, type_h)
             hk = h*abs(x(k));
         end
     
-    grad_approx(k,1) = (rho*cost^2*(2*cosh(rho*x(k))*sinh(rho*hk))*(4*hk +4*x(k) - 2*x(k-1) - 2*x(k+1)) + rho^2*cost^4 * (sinh(rho*x(k) + rho * hk)^2 - sinh(rho*x(k) - rho * hk)^2) ...
-        - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) -x(k-2) -x(k)) - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) -x(k) -x(k+2)))/(4*hk);
+    grad_approx(k,1) = (4*hk*rho*cost^2*(2*sinh(rho*x(k))*cosh(rho*hk)) +  rho^2*cost^4*4*sinh(rho*x(k))*cosh(rho*hk)*sinh(rho*hk)*cosh(rho*x(k)) + 2*(2*x(k) - x(k-1) - x(k+1))*(4*hk + rho*cost^2*2*sinh(rho*hk) * cosh(rho*x(k))) ...
+        - 4*hk * (2*x(k-1) + rho*cost^2 * sinh(rho*x(k-1)) - x(k-2) - x(k)) - 4*hk * (2*x(k+1) + rho*cost^2 * sinh(rho*x(k+1)) - x(k) - x(k+2)))/(4*hk);
 
     end
 end
@@ -393,11 +400,6 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
 
     % Loop su k (dalla definizione della funzione)
     for k = 1:n
-        % defyning the perturbation
-        he_k = zeros(n,1);
-        he_k(k) = h;
-
-        % Elementi diagonali H(k, k)
         if k == 1
             switch type_h
                 case 'COST'
@@ -461,7 +463,7 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
             cont = cont+1;
 
             % diagonali inferiori e superiori
-            H_k_k1 = 2*hk*(-4*hk + rho*cost^2*sinh(rho*x(k+1)) - rho*cost^2*sinh(rho*x(k+1)+rho*hk) + rho * cost^2*sinh(rho*x(k)) - rho*cost^2*sinh(rho*x(k) + rho*hk))/(2*hk^2); 
+            % H_k_k1 = 2*hk*(-4*hk + rho*cost^2*sinh(rho*x(k+1)) - rho*cost^2*sinh(rho*x(k+1)+rho*hk) + rho * cost^2*sinh(rho*x(k)) - rho*cost^2*sinh(rho*x(k) + rho*hk))/(2*hk^2); 
             H_k_k1 = 2*hk*(-4*hk + rho*cost^2*((1-cosh(rho*hk)) * (sinh(rho*x(k+1)) + sinh(rho*x(k))) - sinh(rho*hk)*(cosh(rho*x(k+1)) + cosh(rho*x(k)))))/(2*hk^2);
             i_indices(cont) = k;
             j_indices(cont) = k+1;
@@ -496,12 +498,12 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
 end
 
 
-h = 1e-10;
+h = 1e-2;
 type_h = 'COST';
 gradf_approx = @(x) findiff_grad_64(x,h, type_h);
 Hessf_approx = @(x) findiff_hess_64(x,h, type_h);
 
-vec = [1; 2*ones(7,1); 1];
+vec = [1; 1*ones(7,1); 1];
 % vec = [0.2; 0.4; -0.2; 0.5; 0; 0.3; 0];
 
 gradf(vec)
@@ -524,7 +526,7 @@ tol = 1e-3;
 % setting the values for the dimension
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
-param = [0.4, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38;];
+param = [0.4, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38];
 type_h = 'REL';
 
 % initializing structures to store some stats
@@ -559,7 +561,7 @@ for id_h = 1:length(h_values)
     
     
         %defining the given initial point
-        x0 = 2*ones(n,1);
+        x0 = ones(n,1);
         
         % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
         rng(seed);

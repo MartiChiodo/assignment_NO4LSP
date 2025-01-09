@@ -116,7 +116,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
 
                 % mi preparo per un eventual step successivo
                 k_tau = k_tau+1;
-                tau_0 = max(beta, 5*tau_0);
+                tau_0 = max(beta, 2*tau_0);
             end
 
             if k_tau == tau_kmax && p > 0
