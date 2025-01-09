@@ -202,7 +202,7 @@ clc
 dimension = [1e3 1e4 1e5];
 iter_max = 15000;
 
-param = [0.5, 1e-7, 48; 0.5, 1e-4, 48; 0.5, 1e-4, 48];
+param = [0.5, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38;];
 
 rng(seed);
 
@@ -320,6 +320,7 @@ legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
 TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
+format bank
 display(TMN)
 
 

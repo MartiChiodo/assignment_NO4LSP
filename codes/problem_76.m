@@ -256,7 +256,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] = modified_Newton(f,gradf, Hessf, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] = modified_Newton(f,gradf, Hessf, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
@@ -478,7 +478,7 @@ tol = 1e-4;
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
 param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
-type_h = 'REL';
+type_h = 'COST';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -562,7 +562,7 @@ for id_h = 1:length(h_values)
     
         for i = 1:10
             t1 = tic;
-            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
+            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] = modified_Newton(f,gradf_approx, hessf_approx, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', 0);       
             execution_time_MN(dim,i+1) = toc(t1);
             fbest_struct_MN(dim,i+1) = fbest;
             iter_struct_MN(dim,i+1) = iter;
@@ -604,7 +604,7 @@ for id_h = 1:length(h_values)
     varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
     rowNames = string(dimension');
     TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
-    format bank
+    format short e
     display(TMN)
 
     execution_time_MN_h(:,id_h) = sum(execution_time_MN,2)/11;
