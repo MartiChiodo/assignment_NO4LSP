@@ -134,9 +134,10 @@ display(TSX)
 % with exact gradient and hessian
 format short e
 
-% setting the values for the dimension
+% setting the values for the dimension and the parameters
 dimension = [1e3 1e4 1e5];
-
+max_iter_per_dimension = [1e3, 1e4, 1e5];
+tol = 1e-6;
 param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 
@@ -150,7 +151,7 @@ roc_struct_MN = zeros(length(dimension),11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
-    iter_max = 50*n;
+    iter_max = max_iter_per_dimension(dim);
     [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
     x_esatto = ones(n,1);
 
@@ -167,7 +168,7 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
         = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
@@ -191,6 +192,8 @@ for dim = 1:length(dimension)
         disp('FAIL')
         if (flag_bcktrck)
             disp('Failure due to backtracking')
+            disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+            disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
         else
             disp('Failure not due to backtracking')
         end
@@ -207,8 +210,8 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
-            = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+            = modified_Newton(F_75,gradF_75, hessF_75, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
         iter_struct_MN(dim,i+1) = iter;
@@ -233,6 +236,10 @@ for dim = 1:length(dimension)
             disp('FAIL')
             if (flag_bcktrck)
                 disp('Failure due to backtracking')
+                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+                disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
+
+
             else
                 disp('Failure not due to backtracking')
             end
@@ -257,15 +264,15 @@ display(TMN)
 % with approximated gradient and hessian
 format short e
 
-iter_max_factor = 10;
+max_iter_per_dimension=[1e3, 5*1e3, 1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
-h_values = [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12];
+h_values = [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12]; 
 dimension = [1e3, 1e4, 1e5];
 
-param = [0.6, 1e-4, 65; 0.6, 1e-4, 65; 0.6, 1e-4, 65];
-type_h = 'COST';
+param = [0.8, 1e-5, 90; 0.8, 1e-5, 90; 0.8, 1e-5, 90];
+type_h = 'REL';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -294,7 +301,7 @@ for id_h = 1:length(h_values)
     for dim = 1:length(dimension)
         n = dimension(dim);
         x_esatto = ones(n,1);
-        iter_max = iter_max_factor*n;
+        iter_max = max_iter_per_dimension(dim);
         [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
     
         %defining the given initial point
@@ -310,7 +317,7 @@ for id_h = 1:length(h_values)
         % SOLVING MODIFIED NEWTON METHOD METHOD
         % first initial point
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
             = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,1) = toc(t1);
         fbest_struct_MN(dim,1) = fbest;
@@ -334,6 +341,9 @@ for id_h = 1:length(h_values)
             disp('FAIL')
             if (flag_bcktrck)
                 disp('Failure due to backtracking')
+                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
+                disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
+
             else
                 disp('Failure not due to backtracking')
             end
@@ -350,8 +360,8 @@ for id_h = 1:length(h_values)
     
         for i = 1:10
             t1 = tic;
-            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, ~] ...
-                = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
+            [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
+                = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
             execution_time_MN(dim,i+1) = toc(t1);
             fbest_struct_MN(dim,i+1) = fbest;
             iter_struct_MN(dim,i+1) = iter;
@@ -376,6 +386,9 @@ for id_h = 1:length(h_values)
                 disp('FAIL')
                 if (flag_bcktrck)
                     disp('Failure due to backtracking')
+                    disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
+                    disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
+
                 else
                     disp('Failure not due to backtracking')
                 end
@@ -423,25 +436,25 @@ x_esatto = ones(n,1);
 % roc = compute_roc(xseq,x_esatto)
 
 % %TOGLI
-% % Definizione della funzione F(x) per n=2
-% F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
-% 
-% % Creazione di una griglia di punti
-% x1_range = linspace(-2, 2, 100); % Intervallo per x1
-% x2_range = linspace(-2, 2, 100); % Intervallo per x2
-% [X1, X2] = meshgrid(x1_range, x2_range);
-% 
-% % Calcolo dei valori della funzione
-% Z = F(X1, X2);
-% 
-% % Visualizzazione della funzione
-% figure;
-% surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
-% colormap jet; % Colori accesi
-% colorbar; % Barra dei colori
-% xlabel('x_1');
-% ylabel('x_2');
-% zlabel('F(x)');
+% Definizione della funzione F(x) per n=2
+F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
+
+% Creazione di una griglia di punti
+x1_range = linspace(-2, 2, 100); % Intervallo per x1
+x2_range = linspace(-2, 2, 100); % Intervallo per x2
+[X1, X2] = meshgrid(x1_range, x2_range);
+
+% Calcolo dei valori della funzione
+Z = F(X1, X2);
+
+% Visualizzazione della funzione
+figure;
+surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
+colormap jet; % Colori accesi
+colorbar; % Barra dei colori
+xlabel('x_1');
+ylabel('x_2');
+zlabel('F(x)');
 
 % Running the problem on modified nuewton method with exact gradient and
 % hessian
@@ -456,11 +469,11 @@ c1=1e-3; %tune
 
 % Running the problem on modified newton method with approximated gradient
 % and hessian
-tic
-[xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-    = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 10*n, rho, c1, 65, [], [], [], ones(n,1));
-time=toc
-rate_of_convergence = compute_roc(xseq,ones(n,1))
+% tic
+% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
+%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 10*n, rho, c1, 65, [], [], [], ones(n,1));
+% time=toc
+% rate_of_convergence = compute_roc(xseq,ones(n,1))
 
 %prove, poi togli
 % h=1e-12;
