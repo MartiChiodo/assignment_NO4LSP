@@ -168,13 +168,13 @@ for dim = 1:length(dimension)
 end
 
 
-varNames = ["avg fbest", "avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
+varNames = ["dimension", "average fbest", "average number of iterations", "average time of execution (sec)", "numbers of failure", "average rate of convergence"];
 rowNames = string(dimension');
-TSX = table( round(sum(fbest_struct_SX,2)/11, 4), round(sum(iter_struct_SX,2)/11, 4), round(sum(execution_time_SX,2)/11, 4), sum(failure_struct_SX,2), round(sum(roc_struct_SX,2)/11, 4) ,'VariableNames', varNames, 'RowNames', rowNames);
+TSX = table(dimension', round(sum(fbest_struct_SX,2)/11, 4), round(sum(iter_struct_SX,2)/11, 4), round(sum(execution_time_SX,2)/11, 4), sum(failure_struct_SX,2),sum(roc_struct_SX,2)/11 ,'VariableNames', varNames, 'RowNames', rowNames);
 format short e
 display(TSX)
 
-
+writetable(TSX,'pb76_SX_table.csv');
 
 
 %% RUNNING THE EXPERIMENTS ON MODIFIED NEWTON METHOD
@@ -302,12 +302,13 @@ legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
 
 
 
-varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
+varNames = ["dimension", "avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
-TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 , sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
+TMN = table(dimension', round(sum(fbest_struct_MN,2)/11, 4), round(sum(gradf_struct_MN,2)/11, 4) , round(sum(iter_struct_MN,2)/11, 4), round(sum(execution_time_MN,2)/11, 4), sum(failure_struct_MN,2), round(sum(roc_struct_MN,2)/11, 4),'VariableNames', varNames, 'RowNames', rowNames);
 format short e
 display(TMN)
 
+writetable(TMN,'pb76_MN_table.csv');
 
 
 
