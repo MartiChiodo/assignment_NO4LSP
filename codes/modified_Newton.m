@@ -1,4 +1,4 @@
-function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+function [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
     = modified_Newton(f,gradf, Hessf, x0, itermax, rho, c1, btmax, tolgrad, tau_kmax, alg_modificare_hess, x_esatto)
 
 close all
@@ -126,8 +126,8 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
             % Controllo finale del successo del Cholesky
             if failure_chol
                 disp("ALGORITMO 3.3 HA FALLITO: Hessiana non regolarizzabile");
-                disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * eye(n)))),...
-                    num2str(max(eig(Hessfk + tau_0 * eye(n))) )] ); %togli
+                disp(["minimo e massimo autovalore di HessF:", num2str(min(eig(Hessfk + tau_0 * speye(n)))),...
+                    num2str(max(eig(Hessfk + tau_0 * speye(n))) )] ); 
                 xbest = x0; fbest = fk; iter = k; gradfk_norm = norm(gradfk); failure = true;
                 return;
             end
@@ -135,7 +135,7 @@ while k < itermax && sum(gradfk.^2) > tolgrad^2
             % Calcolo della direzione pk sfruttando la fattorizzazione di Cholesky
             y = -R' \ gradfk;
             pk = R \ y;
-            pk_scalare_gradf = (pk' * gradfk)/(norm(pk) * norm(gradfk));
+            cos_pk_gradf = (pk' * gradfk)/(norm(pk) * norm(gradfk));
     
         case 'EIG'
         % calcolo Bk secondo la definizione
