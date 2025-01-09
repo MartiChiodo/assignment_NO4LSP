@@ -52,6 +52,7 @@ Because of the definition of the function, $0$ is the lowest value that the func
 
 
 \subsection*{Nealder Mead Method}
+We now report a table containing some general results obtained by running the Nealder Mead method on the function $F(\mathbf{x})$.
 
 \begin{figure*}[htbp]
     \centering
@@ -59,12 +60,25 @@ Because of the definition of the function, $0$ is the lowest value that the func
     \caption{Resultats obtained by running the symplex method on the function $F(\mathbf{x})$.}
 \end{figure*}
 
+First thing we can notice is that for smaller dimensionalities the symplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
+From the plot in figure $\eqref{fig:iter}$, we can see that for most points belonging to $\mathbb{R}^{50}$, the method keeps iterating until the maximum number of iterations is reached without satisfying the stopping criterion.
+This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definiotion, so the method needs to perform more iterations to reach the minimum.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 0.5\textwidth]{img/pb76_SX_iter.png}
+    \caption{Number of iterations needed by the Nealder Mead method to find the minimum of the function $F(\mathbf{x})$ for each starting point.}
+    \label{fig:iter}
+\end{figure}
+
 
 \subsection*{Modified Newton Method}
-
+We now report a table containing some general results obtained by running the Modified Newton method on the function $F(\mathbf{x})$.
+We obviously expect the method to perform better than the symplex method because of the exact derivatives used in the computation of the descent direction.
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_MN.png}
     \caption{Resultats obtained by running the Modified Newton Method on the function $F(\mathbf{x})$ using the exact derivatives.}
 \end{figure*}
+
+This time, the method always converges to the minimum in very few iterations, even for higher dimensionalities. 
