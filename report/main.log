@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.25)  9 JAN 2025 12:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.10.25)  10 JAN 2025 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -698,33 +698,50 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
  (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (chap/introduzione.tex) [1
+) (chap/introduzione.tex
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 5.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 5.
+) [1
 
-{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}] (chap/pb64.tex) [2] (chap/pb75.tex) [3] (chap/pb76.tex
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 3.
-<img/pb76_table_SX.png, id=23, 536.50438pt x 95.35625pt>
+{C:/Users/Lenovo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] (chap/pb64.tex) [2] (chap/pb75.tex) [3] (chap/pb76.tex
+<img/pb76_table_SX.png, id=34, 536.50438pt x 95.35625pt>
 File: img/pb76_table_SX.png Graphic file (type png)
 <use img/pb76_table_SX.png>
-Package pdftex.def Info: img/pb76_table_SX.png  used on input line 59.
+Package pdftex.def Info: img/pb76_table_SX.png  used on input line 60.
 (pdftex.def)             Requested size: 435.32422pt x 77.37198pt.
-<img/pb76_SX_iter.png, id=29, 632.3625pt x 474.27188pt>
+<img/pb76_SX_iter.png, id=40, 632.3625pt x 474.27188pt>
 File: img/pb76_SX_iter.png Graphic file (type png)
 <use img/pb76_SX_iter.png>
-Package pdftex.def Info: img/pb76_SX_iter.png  used on input line 68.
+Package pdftex.def Info: img/pb76_SX_iter.png  used on input line 69.
 (pdftex.def)             Requested size: 241.84843pt x 181.38307pt.
- [4{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./img/pb76_table_SX.png>]
-<img/pb76_table_MN.png, id=51, 685.56125pt x 91.84312pt>
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 74.
+ (C:\Users\Lenovo\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<img/pb76_SX_es10.png, id=45, 632.3625pt x 474.27188pt>
+File: img/pb76_SX_es10.png Graphic file (type png)
+<use img/pb76_SX_es10.png>
+Package pdftex.def Info: img/pb76_SX_es10.png  used on input line 81.
+(pdftex.def)             Requested size: 169.29684pt x 126.96959pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 82.
+<img/pb76_SX_es25.png, id=46, 632.3625pt x 474.27188pt>
+File: img/pb76_SX_es25.png Graphic file (type png)
+<use img/pb76_SX_es25.png>
+Package pdftex.def Info: img/pb76_SX_es25.png  used on input line 89.
+(pdftex.def)             Requested size: 169.29684pt x 126.96959pt.
+ [4 <./img/pb76_table_SX.png>]
+<img/pb76_table_MN.png, id=59, 680.5425pt x 93.85063pt>
 File: img/pb76_table_MN.png Graphic file (type png)
 <use img/pb76_table_MN.png>
-Package pdftex.def Info: img/pb76_table_MN.png  used on input line 80.
-(pdftex.def)             Requested size: 435.32422pt x 58.32112pt.
-) [5 <./img/pb76_SX_iter.png (PNG copy)> <./img/pb76_table_MN.png>] (chap/conclusioni.tex) [6]
-runsystem(latexminted cleantemp  --timestamp 20250109123027 FAD58DE7366495DB4650CFEFAC2FCD61)...disabled (restricted).
+Package pdftex.def Info: img/pb76_table_MN.png  used on input line 106.
+(pdftex.def)             Requested size: 435.32422pt x 60.0341pt.
+) [5 <./img/pb76_SX_iter.png (PNG copy)> <./img/pb76_SX_es10.png (PNG copy)> <./img/pb76_SX_es25.png (PNG copy)> <./img/pb76_table_MN.png>] (chap/conclusioni.tex) [6]
+runsystem(latexminted cleantemp  --timestamp 20250110181930 FAD58DE7366495DB4650CFEFAC2FCD61)...disabled (restricted).
 
  (main.aux)
  ***********
@@ -735,17 +752,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20918 strings out of 474486
- 401919 string characters out of 5743282
- 1950542 words of memory out of 5000000
- 42827 multiletter control sequences out of 15000+600000
- 628686 words of font info for 94 fonts, out of 8000000 for 9000
+ 21010 strings out of 474486
+ 403550 string characters out of 5743282
+ 1951542 words of memory out of 5000000
+ 42908 multiletter control sequences out of 15000+600000
+ 639619 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 85i,9n,93p,555b,496s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (6 pages, 249000 bytes).
+ 85i,9n,93p,562b,614s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi5.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy5.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy7.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Lenovo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (6 pages, 373904 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 160 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,14 @@
+{\large DIRE QUALCOSA SU COME SI CALCOLA ROC}
+
+The experimental rate of convergence can be approximated by
+% ho già definito questa cosa perché mi serve il label
+\begin{equation}
+    q \approx \frac{ \log \left(\frac{\| \hat{e}^{(k+1)} \|}{\| \hat{e}^{(k)} \|} \right)}{ \log \left(\frac{\| \hat{e}^{(k)} \|}{\| \hat{e}^{(k-1)} \|} \right)}
+    \quad \text{ for $k$ large enough}
+    \label{definizione_roc}
+\end{equation}
+where $\hat{e}^{(k)} = x^{(k)} - x^{(k-1)}$ approximates the error at the $k$-th iteration.
+
+
+\bigskip
+{\large Specificare gli STOPPING CRITERION per gli algoritmi}

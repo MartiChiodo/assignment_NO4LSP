@@ -97,17 +97,17 @@ x0 = ones(n,1); %pro iniziale pb 64
 rho = 0.4;  c1 = 1e-4; btmax = 38;  % per 1e3
 % rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
 % rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
-[ ~, ~, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN] ...
+[ ~, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN, cos] ...
     = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], 'ALG', -1)
 
 
 %% PROVANEALDER MEAD
-n = 50;
+n = 10;
 % x0 = (1:1:n)'; % pto iniziale es3_marti
 % x0 = ones(n,1); % pto iniziale Rosenbrock
 % x0(1:2:n) = -1.2;
-% x0 = 2 *ones(n,1); %pto iniziale pb 76
-x0 = ones(n,1); %pro iniziale pb 64
+x0 = 2 *ones(n,1); %pto iniziale pb 76
+% x0 = ones(n,1); %pro iniziale pb 64
 
 [xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[])
 

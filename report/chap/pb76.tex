@@ -47,10 +47,11 @@ Due to the particular structure of the function, the Hessian matrix as a sparse 
     \frac{\partial^2 F}{\partial x_k \partial x_{k-1}}(\mathbf{x}) &= -\frac{1}{5}x_{k}, \quad 1 < k \leq n  &
     \frac{\partial^2 F}{\partial x_1 \partial x_{n}}(\mathbf{x}) &= -\frac{1}{5}x_{n}
 \end{align*}
-We can now easily notice that the gradient of the function is null when all the components of the vector $\mathbf{x}$ are equal to 0. The Hessian matrix is positive definite, so the point $\mathbf{x} = \mathbf{0}$ is a minimum of the function $F(\mathbf{x})$. 
-Because of the definition of the function, $0$ is the lowest value that the function can assume, so the minimum is global.
+We can now easily notice that the gradient of the function is null when all the components of the vector $\mathbf{x}$ are equal to 0, in this case the Hessian matrix is positive definite, so the point $\mathbf{x} = \mathbf{0}$ is a minimum of the function $F(\mathbf{x})$. 
+Because of the definition of the function, $0$ is the lowest value the function can assume, so the minimum found is global.
 
 
+\medskip
 \subsection*{Nealder Mead Method}
 We now report a table containing some general results obtained by running the Nealder Mead method on the function $F(\mathbf{x})$.
 
@@ -62,7 +63,7 @@ We now report a table containing some general results obtained by running the Ne
 
 First thing we can notice is that for smaller dimensionalities the symplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
 From the plot in figure $\eqref{fig:iter}$, we can see that for most points belonging to $\mathbb{R}^{50}$, the method keeps iterating until the maximum number of iterations is reached without satisfying the stopping criterion.
-This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definiotion, so the method needs to perform more iterations to reach the minimum.
+This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method needs to perform more iterations to reach the minimum.
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 0.5\textwidth]{img/pb76_SX_iter.png}
@@ -70,8 +71,33 @@ This behaviour can probably be explained by the fact that when the dimensionalit
     \label{fig:iter}
 \end{figure}
 
+From the previous table, we can notice that the experimental rate of convergnce is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$.
+This can be seen in the following plots, showing that, in the last iterations, the approximated value of the minimum is almost stationary.
+\begin{figure}[htbp]
+    \centering
+    % Prima immagine
+    \begin{subfigure}[t]{0.35\textwidth}  % Larghezza del 45% del testo
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_SX_es10.png}
+        \caption{dimension $10$}
+        \label{fig:R6}
+    \end{subfigure}
+    \hspace{1cm} %spaziatura tra le immagini
+    % Seconda immagine
+    \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_SX_es25.png}
+        \caption{dimension $25$}
+        \label{fig:R8}
+    \end{subfigure}
+    % Didascalia generale
+    \caption{ \small Plots of the progresses of the Nealder Mead method for different dimensionalities.}
+    \label{fig:overall}
+\end{figure}
 
-\subsection*{Modified Newton Method}
+
+\medskip
+\subsection*{Modified Newton Method - Exact Derivatives}
 We now report a table containing some general results obtained by running the Modified Newton method on the function $F(\mathbf{x})$.
 We obviously expect the method to perform better than the symplex method because of the exact derivatives used in the computation of the descent direction.
 
@@ -81,4 +107,6 @@ We obviously expect the method to perform better than the symplex method because
     \caption{Resultats obtained by running the Modified Newton Method on the function $F(\mathbf{x})$ using the exact derivatives.}
 \end{figure*}
 
-This time, the method always converges to the minimum in very few iterations, even for higher dimensionalities. 
+This time, the method always converges to the minimum point in very few iterations, even for higher dimensionalities. 
+We can also appreciate the fact that the approximated rate of convergence is close to $2$, as expected for a Newton method.
+
