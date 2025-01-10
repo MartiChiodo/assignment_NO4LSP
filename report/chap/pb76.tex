@@ -110,3 +110,24 @@ We obviously expect the method to perform better than the symplex method because
 This time, the method always converges to the minimum point in very few iterations, even for higher dimensionalities. 
 We can also appreciate the fact that the approximated rate of convergence is close to $2$, as expected for a Newton method.
 
+
+\medskip
+\subsection*{Modified Newton Method - Approximated Derivatives}
+Approximating the derivatives of the function $F(\mathbf{x})$ using finite differences is trickier than it seems because of the issues due to numerical cancellation, which may happen when we are subtracting two close quantities, and because we are willing to find a formula whose computation is the least costly possible.
+
+Let's start by approximating the first order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula with step $h$.
+$$ \frac{\partial F }{\partial x_k} (\mathbf{x}) \approx \frac{F(\mathbf{x} + h \vec{e}_k) - F(\mathbf{x} - h \vec{e}_k)}{2h} = 
+\frac{\sum_{i = 1}^{n} f_i(\mathbf{x} + h \vec{e}_k)^2 - \sum_{i = 1}^{n} f_i(\mathbf{x} - h \vec{e}_k)^2}{4h}$$
+First of all, we can notice that each term $f_i^2$ only depends on $x_i$ and $x_{i+1}$, so $f_i(\mathbf{x} + h \vec{e}_k)^2 - f_i(\mathbf{x} - h \vec{e}_k)^2 = 0$ for all $i \neq k-1, k$ (or $i \neq 1,n$ if we are considering $k = 1$). 
+This allows to simplify the formula, even in order to decrease the computational cost, as follows
+$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{k-1}(\mathbf{x} + h \vec{e}_k)^2 - f_{k-1}(\mathbf{x} - h \vec{e}_k)^2 + f_{k}(\mathbf{x} + h \vec{e}_k)^2 - f_{k}(\mathbf{x} - h \vec{e}_k)^2}{4h}  \quad 1 < k \leq n$$
+$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{n}(\mathbf{x} + h \vec{e}_k)^2 - f_{n}(\mathbf{x} - h \vec{e}_k)^2 + f_{k}(\mathbf{x} + h \vec{e}_k)^2 - f_{k}(\mathbf{x} - h \vec{e}_k)^2}{4h}  \quad k = 1$$
+In order to avoid numerical cancellation, we can expand the numerator obtaining
+
+\begin{align*}
+    \frac{\partial F }{\partial x_1} (\mathbf{x}) & \approx \frac{4hx_1 - 2/5 h x_2^2 - 4/5 h x_n x_1 + 8/100 h x_1 (x_1^2 + h^2)}{4h} \\
+    \frac{\partial F }{\partial x_k} (\mathbf{x}) & \approx \frac{4hx_k - 2/5 h x_{k+1}^2 - 4/5 h x_{k-1} x_k + 8/100 h x_k (x_k^2 + h^2)}{4h} \\
+    \frac{\partial F }{\partial x_n} (\mathbf{x}) & \approx \frac{4hx_n - 2/5 h x_{1}^2 - 4/5 h x_{n-1} x_n + 8/100 h x_n (x_n^2 + h^2)}{4h}
+\end{align*}
+
+
