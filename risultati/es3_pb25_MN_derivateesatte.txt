@@ -1,5 +1,5 @@
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 1, dimension 1000):  *****
-Time: 5.231 seconds
+Time: 6.4083 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -12,7 +12,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 2, dimension 1000):  *****
-Time: 1.5195 seconds
+Time: 2.4908 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -25,7 +25,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 3, dimension 1000):  *****
-Time: 1.7189 seconds
+Time: 2.8523 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -38,7 +38,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 4, dimension 1000):  *****
-Time: 1.4698 seconds
+Time: 1.5626 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -51,7 +51,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 5, dimension 1000):  *****
-Time: 1.8974 seconds
+Time: 2.1493 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -64,7 +64,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 6, dimension 1000):  *****
-Time: 1.8734 seconds
+Time: 1.5743 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -77,7 +77,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 7, dimension 1000):  *****
-Time: 1.3343 seconds
+Time: 1.5365 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -90,7 +90,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 8, dimension 1000):  *****
-Time: 1.204 seconds
+Time: 1.8915 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -103,7 +103,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 9, dimension 1000):  *****
-Time: 1.69 seconds
+Time: 1.8221 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -116,7 +116,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 10, dimension 1000):  *****
-Time: 1.564 seconds
+Time: 1.0725 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -129,7 +129,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 11, dimension 1000):  *****
-Time: 1.7359 seconds
+Time: 2.1194 seconds
 Backtracking parameters (rho, c1): 0.5 1e-07
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -142,7 +142,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 1, dimension 10000):  *****
-Time: 1.2835 seconds
+Time: 1.7428 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -155,7 +155,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 2, dimension 10000):  *****
-Time: 1.5803 seconds
+Time: 1.8719 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -168,7 +168,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 3, dimension 10000):  *****
-Time: 1.5996 seconds
+Time: 1.5727 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -181,7 +181,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 4, dimension 10000):  *****
-Time: 1.4762 seconds
+Time: 1.5853 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -194,7 +194,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 5, dimension 10000):  *****
-Time: 1.6687 seconds
+Time: 2.3278 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -207,7 +207,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 6, dimension 10000):  *****
-Time: 1.42 seconds
+Time: 1.7384 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -220,7 +220,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 7, dimension 10000):  *****
-Time: 1.5491 seconds
+Time: 1.8125 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -233,7 +233,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 8, dimension 10000):  *****
-Time: 1.9704 seconds
+Time: 2.1083 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -246,7 +246,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 9, dimension 10000):  *****
-Time: 1.359 seconds
+Time: 2.0561 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -259,7 +259,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 10, dimension 10000):  *****
-Time: 1.8938 seconds
+Time: 1.7325 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -272,7 +272,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 11, dimension 10000):  *****
-Time: 2.0395 seconds
+Time: 1.5996 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -285,7 +285,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 1, dimension 100000):  *****
-Time: 2.3887 seconds
+Time: 2.2299 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -298,7 +298,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 2, dimension 100000):  *****
-Time: 3.9037 seconds
+Time: 3.7286 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -311,7 +311,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 3, dimension 100000):  *****
-Time: 3.4952 seconds
+Time: 5.7539 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -324,7 +324,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 4, dimension 100000):  *****
-Time: 3.0374 seconds
+Time: 3.658 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -337,7 +337,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 5, dimension 100000):  *****
-Time: 3.8619 seconds
+Time: 4.561 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -350,7 +350,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 6, dimension 100000):  *****
-Time: 3.6635 seconds
+Time: 4.1908 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -363,7 +363,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 7, dimension 100000):  *****
-Time: 4.0879 seconds
+Time: 3.4098 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -376,7 +376,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 8, dimension 100000):  *****
-Time: 3.6037 seconds
+Time: 3.7372 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -389,7 +389,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 9, dimension 100000):  *****
-Time: 3.1968 seconds
+Time: 3.0516 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -402,7 +402,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 10, dimension 100000):  *****
-Time: 3.5543 seconds
+Time: 4.0301 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -415,7 +415,7 @@ SUCCESS
 ************************************
  
 **** MODIFIED NEWTON METHOD FOR THE PB 25 (point 11, dimension 100000):  *****
-Time: 3.6224 seconds
+Time: 4.1426 seconds
 Backtracking parameters (rho, c1): 0.5 0.0001
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
@@ -435,8 +435,22 @@ TMN =
               avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
               __________    ______________    ________________    ______________________    __________    __________
 
-    1000      4.2800e-11      2.0733e-05         2.5727e+01             1.9307e+00          0.0000e+00    5.9605e+00
-    10000     4.2443e-10      1.1244e-05         2.6818e+01             1.6218e+00          0.0000e+00    6.1992e+00
-    100000    2.8365e-14      2.2207e-06         2.7636e+01             3.4923e+00          0.0000e+00    1.3941e+00
+    1000      4.2800e-11      2.0733e-05         2.5727e+01             2.3163e+00          0.0000e+00    5.9605e+00
+    10000     4.2443e-10      1.1244e-05         2.6818e+01             1.8316e+00          0.0000e+00    6.1992e+00
+    100000    2.8365e-14      2.2207e-06         2.7636e+01             3.8631e+00          0.0000e+00    1.3941e+00
+
+>> format short
+>> TMN
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
+              __________    ______________    ________________    ______________________    _________    _______
+
+    1000        4.28e-11      2.0733e-05           25.727                 2.3163                0        5.9605 
+    10000     4.2443e-10      1.1244e-05           26.818                 1.8316                0        6.1992 
+    100000    2.8365e-14      2.2207e-06           27.636                 3.8631                0        1.3941 
 
 >> 

@@ -484,7 +484,9 @@ tol = 1e-4;
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
 param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
-type_h = 'COST';
+type_h = 'REL';
+
+tables = struct;
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -612,6 +614,8 @@ for id_h = 1:length(h_values)
     TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
     format short e
     display(TMN)
+    
+    tables.(['Table' num2str(id_h)]) = TMN;
 
     execution_time_MN_h(:,id_h) = sum(execution_time_MN,2)/11;
     failure_struct_MN_h(:,id_h) = sum(failure_struct_MN,2); 

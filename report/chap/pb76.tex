@@ -58,7 +58,7 @@ We now report a table containing some general results obtained by running the Ne
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_SX.png}
-    \caption{Resultats obtained by running the symplex method on the function $F(\mathbf{x})$.}
+    \caption{Resultats obtained by running the symplex method on the problem $76$.}
 \end{figure*}
 
 First thing we can notice is that for smaller dimensionalities the symplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
@@ -67,12 +67,12 @@ This behaviour can probably be explained by the fact that when the dimensionalit
 \begin{figure}[htbp]
     \centering
     \includegraphics[width = 0.5\textwidth]{img/pb76_SX_iter.png}
-    \caption{Number of iterations needed by the Nealder Mead method to find the minimum of the function $F(\mathbf{x})$ for each starting point.}
+    \caption{Number of iterations needed by the Nealder Mead method to find the minimum of the problem $76$ for each starting point.}
     \label{fig:iter}
 \end{figure}
 
-From the previous table, we can notice that the experimental rate of convergnce is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$.
-This can be seen in the following plots, showing that, in the last iterations, the approximated value of the minimum is almost stationary.
+From the previous table, we can notice that the experimental rate of convergnce is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$ which defines the experimental rate of convergence.
+This can be seen in the following plots, showing that, in the last iterations, the approximated value of the minimum seems to be stationary.
 \begin{figure}[htbp]
     \centering
     % Prima immagine
@@ -91,7 +91,7 @@ This can be seen in the following plots, showing that, in the last iterations, t
         \label{fig:R8}
     \end{subfigure}
     % Didascalia generale
-    \caption{ \small Plots of the progresses of the Nealder Mead method for different dimensionalities.}
+    \caption{ \small Plots of the progresses of the Nealder Mead method for different dimensionalities for the problem $76$.}
     \label{fig:overall}
 \end{figure}
 
@@ -104,18 +104,19 @@ We obviously expect the method to perform better than the symplex method because
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_MN.png}
-    \caption{Resultats obtained by running the Modified Newton Method on the function $F(\mathbf{x})$ using the exact derivatives.}
+    \caption{Resultats obtained by running the Modified Newton Method on the problem $76$ using the exact derivatives.}
 \end{figure*}
 
 This time, the method always converges to the minimum point in very few iterations, even for higher dimensionalities. 
 We can also appreciate the fact that the approximated rate of convergence is close to $2$, as expected for a Newton method.
-
+Comparing this table with the previous one (showing the results obtained by running the symplex method), we can see that the Modified Newton method identifies as minimum a point in which the evaluation of the function is much smaller. 
+This behavior aligns with theoretical expectations, as the Modified Newton method leverages the exact derivatives of the function $F(\mathbf{x})$ to determine the descent direction, while the symplex method depends only on function evaluations.
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
 Approximating the derivatives of the function $F(\mathbf{x})$ using finite differences is more challenging than it appears due to potential numerical cancellation issues, which can occur when subtracting two nearly equal quantities. Additionally, we aim to derive a formula that minimizes computational cost.
 
-Let's begin by approximating the first-order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula with step $h_k$. The subscript $k$ is specified because the following formulas are valid both with a constant increment, $h_k = k$ for all $h = 1, \dots, n$, and with a specific increment $h_k = h |\hat{x}_k| \; k= 1, \dots, n$, where $\mathbf{\hat{x}}$ is the point at which we approximate the derivatives.
+Let's begin by approximating the first-order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula with step $h_k$. The subscript $k$ is specified because the following formula are valid both with a constant increment, $h_k = k$ for all $h = 1, \dots, n$, and with a specific increment $h_k = h |\hat{x}_k| \; k= 1, \dots, n$, where $\mathbf{\hat{x}}$ is the point at which we approximate the derivatives.
 $$ \frac{\partial F }{\partial x_k} (\mathbf{x}) \approx \frac{F(\mathbf{x} + h_k \vec{e}_k) - F(\mathbf{x} - h_k \vec{e}_k)}{2h_k} = 
 \frac{\sum_{i = 1}^{n} f_i(\mathbf{x} + h_k \vec{e}_k)^2 - \sum_{i = 1}^{n} f_i(\mathbf{x} - h_k \vec{e}_k)^2}{4h_k}$$
 We can observe that each term $f_i^2$ only depends on $x_i$ and $x_{i+1}$, so $f_i(\mathbf{x} + h_k\vec{e}_k)^2 - f_i(\mathbf{x} - h_k\vec{e}_k)^2 = 0$ for all $i \neq k-1, k$ (or $i \neq 1,n$ if we are considering $k = 1$). 
@@ -133,3 +134,80 @@ In order to avoid numerical cancellation, the numerator has been expanded obtain
 We can now proceed to approximate the second order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula; this time we need to use two different increments $h_i$ and $h_j$ based on the two components with respect to which we are differentiating.
 The general formula is the following
 $$ \frac{\partial^2 F}{\partial x_i \partial x_j} (\mathbf{x})  = \frac{F(\mathbf{x} + h_i \vec{e}_i + h_j \vec{e}_j) - F(\mathbf{x} + h_i \vec{e}_i) - F(\mathbf{x} - h_j \vec{e}_j) + F(\mathbf{x})}{h_i h_j}$$
+
+The approximation of the Hessian matrix has to be approached taking into account its sparsity in order to reduce the computational cost, indeed in the Matlab script we have implemented a function that approximates the Hessian matrix just by computing the non-null terms which are the following
+\begin{align*}
+    & \frac{\partial^2 F}{\partial x_k^2} (\mathbf{x})  \approx 2h_k - \frac{2}{5} x_{k-1} h_k + \frac{12}{100} x_k^2 h_k^2 + \frac{24}{100}x_k h_k^3 + \frac{14}{100} h_k^2 \quad & 1 < k \leq n \\
+    & \frac{\partial^2 F}{\partial x_k^2} (\mathbf{x})  \approx 2h_k - \frac{2}{5} x_{n} h_k + \frac{12}{100} x_k^2 h_k^2 + \frac{24}{100}x_k h_k^3 + \frac{14}{100} h_k^2 \quad  & k = 1 \\
+    & \frac{\partial^2 F}{\partial x_k \partial x_{k+1}} (\mathbf{x})  \approx - \frac{2}{5} h_k h_{k+1} x_{k+1} - \frac{1}{5} h_k^2 h_{k+1} \quad & 1 \leq k < n 
+\end{align*}
+The values of the inferior diagonal are obtained by exploiting the symmetry of the Hessian matrix.
+
+The terms have been computed following the same approach described above: the numerator has been expanded negletting the $f_i^2()$ that are not affected by the varation of the components with respect to which we are differentiating.
+
+
+We now report some barplots showing the results obtained by running the Modified Newton method on the function $F(\mathbf{x})$ using the approximated derivatives.
+
+\begin{figure}[htbp]
+    \centering
+    % Prima immagine
+    \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_log(fbest).png}
+        \caption{Costant Increment $h$}
+    \end{subfigure}
+    \hspace{1cm} %spaziatura tra le immagini
+    % Seconda immagine
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_REL_log(fbest).png}
+        \caption{Specific Increment }
+    \end{subfigure}
+    % Didascalia generale
+    \caption{ \small Values of the average $\log(f_{best})$ in function of the increment while running the Modified Newton Method with approximated derivatives on the problem $76$.}
+    \label{logfbest_difffinite}
+\end{figure}
+
+As we can see from the plots $\eqref{logfbest_difffinite}$, expecially for larger values of the increments, the algorithm converges to a point such that the value of the function is higher accordingly to the fact that the approximated derivatives are less accurate. Nonetheless, the method succeeds to find an acceptable approximation of the minimum value even when computing the descent direction with just an approximation of the derivatives.
+
+\begin{figure*}[htbp]
+    \centering
+    % Prima immagine
+    \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_timeofexec.png}
+        \caption{Costant Increment $h$}
+    \end{subfigure}
+    \hspace{1cm} %spaziatura tra le immagini
+    % Seconda immagine
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_REL_timeofexec.png}
+        \caption{Specific Increment }
+    \end{subfigure}
+    % Didascalia generale
+    \caption{ \small Average time of execution in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $76$.}
+\end{figure*}
+
+
+\begin{figure*}[htbp]
+    \centering
+    % Prima immagine
+    \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_rateofconv.png}
+        \caption{Costant Increment $h$}
+    \end{subfigure}
+    \hspace{1cm} %spaziatura tra le immagini
+    % Seconda immagine
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_REL_rateofconv.png}
+        \caption{Specific Increment }
+    \end{subfigure}
+    % Didascalia generale
+    \caption{ \small Average values of the experimental rate of convergence in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $76$.}
+\end{figure*}
+
+
+The others plots show that the average time of execution and the average rate of convergence are not significantly affected by the approximation of the derivatives for none of the values oh the increment $h$.
