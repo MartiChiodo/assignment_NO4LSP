@@ -208,9 +208,9 @@ clc
 
 % setting the values for the dimension
 dimension = [1e3 1e4 1e5];
-iter_max = 15000;
+iter_max = 3000;
 
-param = [0.5, 1e-7, 48; 0.5, 1e-4, 48; 0.5, 1e-4, 48];
+param = [0.5, 1e-4, 48; 0.5, 1e-4, 48; 0.5, 1e-4, 48];
 
 rng(seed);
 
@@ -300,7 +300,7 @@ for dim = 1:length(dimension)
         disp(['f(xk): ', num2str(fbest)])
         disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
         disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
-        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+        disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,i+1))])
         disp('************************************')
     
         if (failure)
@@ -354,7 +354,7 @@ function grad_approx = findiff_grad_25(x, h, type_h)
             end
     
             if mod(k,2) == 0
-                grad_approx(k,1) = (-40*passok*(x(k-1)^2 - x(k)))/(4*passok);
+                grad_approx(k,1) = (-40*passok*(10*x(k-1)^2 - 10*x(k)))/(4*passok);
             else
                 grad_approx(k,1) = (80 * x(k)*passok*(10*x(k)^2 + 10*passok^2 - 10*x(k+1)) + 4*passok*(x(k)-1))/(4*passok);
             end
@@ -374,7 +374,7 @@ function grad_approx = findiff_grad_25(x, h, type_h)
             elseif k == n
                  grad_approx(k,1) = (80 * x(k)*passok*(10*x(k)^2 + 10*passok^2 -10*x(1)))/(4*passok);
             elseif mod(k,2) == 0
-                grad_approx(k,1) = (-40*passok*(x(k-1)^2 - x(k)))/(4*passok);
+                grad_approx(k,1) = (-40*passok*(10*x(k-1)^2 - 10*x(k)))/(4*passok);
             else
                 grad_approx(k,1) = (80 * x(k)*passok*(10*x(k)^2 + 10*passok^2 - 10*x(k+1)) + 4*passok*(x(k)-1))/(4*passok);
             end
@@ -413,7 +413,7 @@ function hessian_approx = findiff_hess_25(x, h, type_h)
                     hk = h*abs(x(k));
             end
 
-            H_kk = (40*hk^2*(10*x(k)^2 -10*x(k+1)) + 1400*hk^4 + 2400*h^3*x(k) + 800*x(k)^2*hk^2 + 2*hk^2 + 200*hk^2)/(2*hk^2);
+            H_kk = (40*hk^2*(10*x(k)^2 -10*x(k+1)) + 1400*hk^4 + 2400*hk^3*x(k) + 800*x(k)^2*hk^2 + 2*hk^2 + 200*hk^2)/(2*hk^2);
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
@@ -430,7 +430,7 @@ function hessian_approx = findiff_hess_25(x, h, type_h)
                     hk = h*abs(x(k));
             end
 
-            H_kk = (40*hk^2*(10*x(k)^2 -10*x(1)) + 1400*hk^4 + 2400*h^3*x(k) + 800*x(k)^2*hk^2)/(2*hk^2);
+            H_kk = (40*hk^2*(10*x(k)^2 -10*x(1)) + 1400*hk^4 + 2400*hk^3*x(k) + 800*x(k)^2*hk^2)/(2*hk^2);
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
@@ -446,7 +446,7 @@ function hessian_approx = findiff_hess_25(x, h, type_h)
                     hk = h*abs(x(k));
             end
 
-            H_kk = (40*hk^2*(10*x(k)^2 -10*x(k+1)) + 1400*hk^4 + 2400*h^3*x(k) + 800*x(k)^2*hk^2 + 2*hk^2)/(2*hk^2);
+            H_kk = (40*hk^2*(10*x(k)^2 -10*x(k+1)) + 1400*hk^4 + 2400*hk^3*x(k) + 800*x(k)^2*hk^2 + 2*hk^2)/(2*hk^2);
             i_indices(cont) = k;
             j_indices(cont) = k;
             values(cont) = H_kk;
@@ -523,12 +523,12 @@ function hessian_approx = findiff_hess_25(x, h, type_h)
 end
 
 
-h = 1e-4;
+h = 1e-2;
 type_h = 'COST';
 gradf_approx = @(x) findiff_grad_25(x,h, type_h);
 Hessf_approx = @(x) findiff_hess_25(x,h, type_h);
 
-vec = [1; 1*ones(13,1); 1];
+vec = [1; 0.5*ones(13,1); 1];
 % vec = [0.2; 0.4; -0.2; 0.5; 0; 0.3; 0];
 
 gradf(vec)
@@ -552,8 +552,10 @@ tol = 1e-3;
 % setting the values for the dimension
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
 dimension = [1e3 1e4 1e5];
-param = [0.4, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38];
+param = [0.5, 1e-4, 48; 0.5, 1e-4, 48; 0.5, 1e-4, 48;];
 type_h = 'REL';
+
+tables = struct;
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -657,7 +659,7 @@ for id_h = 1:length(h_values)
             disp(['f(xk): ', num2str(fbest)])
             disp(['norma di gradf(xk): ', num2str(gradfk_norm)])
             disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max)])
-            disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,1))])
+            disp(['Rate of Convergence: ', num2str(roc_struct_MN(dim,i+1))])
             disp('************************************')
         
             if (failure)
@@ -683,6 +685,8 @@ for id_h = 1:length(h_values)
     TMN = table(sum(fbest_struct_MN,2)/11, sum(gradf_struct_MN,2)/11 ,sum(iter_struct_MN,2)/11, sum(execution_time_MN,2)/11, sum(failure_struct_MN,2), sum(roc_struct_MN,2)/11,'VariableNames', varNames, 'RowNames', rowNames);
     format short e
     display(TMN)
+
+    tables.(['Table' num2str(id_h)]) = TMN;
 
     execution_time_MN_h(:,id_h) = sum(execution_time_MN,2)/11;
     failure_struct_MN_h(:,id_h) = sum(failure_struct_MN,2); 

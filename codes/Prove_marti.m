@@ -94,12 +94,17 @@ n = 1e3;
 % x0(1:2:n) = 0;
 x0 = ones(n,1); %pro iniziale pb 64
 
+x0 = ones(n,1);
+x0(1:2:n) = -1.2;
+
 rho = 0.4;  c1 = 1e-4; btmax = 38;  % per 1e3
 % rho = 0.5;  c1 = 1e-3; btmax = 48;  % per 1e4
 % rho = 0.4;  c1 = 1e-3; btmax = 36; % per 1e5
 [ ~, xseq_MN, iter_MN, fbest_MN, gradfk_norm_MN, btseq_MN, flag_bcktrck_MN, failure_MN, cos] ...
     = modified_Newton(f,gradf, Hessf, x0, 5000, rho, c1, btmax, tol, [], 'ALG', -1)
 
+
+compute_roc(xseq_MN)
 
 %% PROVANEALDER MEAD
 n = 10;
@@ -112,14 +117,19 @@ x0 = 2 *ones(n,1); %pto iniziale pb 76
 [xbest, xseq,iter,fbest, flag, failure] = nelderMead(f,x0,[],[],[],[],n*500,[])
 
 
-
 %%
 
-n = 1e3;
-
-% minimum point is such that gradf(x) = 0
-options = optimoptions('fsolve', 'FunctionTolerance', 1e-15, 'OptimalityTolerance', 1e-10);
-[x,fval,exitflag,output]  = fsolve(gradf, 0.5*ones(n,1),  options)
-f(x)
+% function to compute the rate of convergence
+function rate_of_convergence = compute_roc(xseq)
+if size(xseq,2) >=4
+    k = size(xseq,2) -1;
+    norm_ekplus1 = norm(xseq(:, k+1) - xseq(:,k));
+    norm_ek = norm(xseq(:, k) - xseq(:,k-1));
+    norm_ekminus1 = norm(xseq(:, k-1) - xseq(:,k-2));
+    rate_of_convergence = log(norm_ekplus1/norm_ek) / log(norm_ek/norm_ekminus1);
+else 
+    rate_of_convergence = nan;
+end
+end
 
 

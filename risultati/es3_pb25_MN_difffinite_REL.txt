@@ -1,0 +1,2648 @@
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 4.5555 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.08948
+norma di gradf(xk): 0.00091367
+N. of Iterations: 77/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 2.6753 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089494
+norma di gradf(xk): 0.00096915
+N. of Iterations: 87/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 2.4305 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089495
+norma di gradf(xk): 0.00097157
+N. of Iterations: 87/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 2.0101 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089487
+norma di gradf(xk): 0.000949
+N. of Iterations: 86/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 2.3459 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089491
+norma di gradf(xk): 0.00096611
+N. of Iterations: 85/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 2.4713 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089497
+norma di gradf(xk): 0.00098002
+N. of Iterations: 87/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 2.8489 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089488
+norma di gradf(xk): 0.00095018
+N. of Iterations: 87/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 2.8209 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089492
+norma di gradf(xk): 0.00096323
+N. of Iterations: 86/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 3.4165 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089493
+norma di gradf(xk): 0.00096378
+N. of Iterations: 86/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 3.3266 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089487
+norma di gradf(xk): 0.00094661
+N. of Iterations: 87/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 2.2835 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.089494
+norma di gradf(xk): 0.00097005
+N. of Iterations: 86/3000
+Rate of Convergence: 0.99998
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 5.6083 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.8928
+norma di gradf(xk): 0.00090863
+N. of Iterations: 86/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 7.4731 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096123
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 7.8172 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89283
+norma di gradf(xk): 0.00094708
+N. of Iterations: 96/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 8.4408 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.0009612
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 6.798 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096263
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 4.5507 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096494
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 6.3237 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096215
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 5.6478 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.0009645
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 5.0085 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00095783
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 5.3683 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096173
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 5.3625 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0.89284
+norma di gradf(xk): 0.00096023
+N. of Iterations: 94/3000
+Rate of Convergence: 0.99999
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 40.8992 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9218
+norma di gradf(xk): 0.00090361
+N. of Iterations: 95/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 43.1812 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9219
+norma di gradf(xk): 0.00095147
+N. of Iterations: 104/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 44.6284 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9218
+norma di gradf(xk): 0.0009428
+N. of Iterations: 106/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 41.7451 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9217
+norma di gradf(xk): 0.0008795
+N. of Iterations: 104/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 568.7166 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9188
+norma di gradf(xk): 0.021521
+N. of Iterations: 3000/3000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure not due to backtracking
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 22.8137 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9189
+norma di gradf(xk): 0.00092965
+N. of Iterations: 137/3000
+Rate of Convergence: 1.0004
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 19.0525 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9219
+norma di gradf(xk): 0.00095168
+N. of Iterations: 104/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 16.8641 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9218
+norma di gradf(xk): 0.00090302
+N. of Iterations: 103/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 18.0033 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9219
+norma di gradf(xk): 0.00095136
+N. of Iterations: 104/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 17.7859 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9218
+norma di gradf(xk): 0.00091376
+N. of Iterations: 105/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 17.9382 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.9218
+norma di gradf(xk): 0.00092517
+N. of Iterations: 105/3000
+Rate of Convergence: 1
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      8.9491e-02      9.5849e-04         8.5545e+01             2.8350e+00          0.0000e+00    9.9998e-01
+    10000     8.9284e-01      9.5565e-04         9.3455e+01             6.2181e+00          0.0000e+00    9.9999e-01
+    100000    8.9213e+00      2.7976e-03         3.6973e+02             7.7421e+01          1.0000e+00           NaN
+
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 0.531 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.5267e-09
+norma di gradf(xk): 4.7082e-05
+N. of Iterations: 17/3000
+Rate of Convergence: 1.4037
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 0.51105 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.973e-09
+norma di gradf(xk): 4.7453e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 0.98765
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 0.64159 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.2688e-09
+norma di gradf(xk): 3.8814e-05
+N. of Iterations: 28/3000
+Rate of Convergence: 1.7511
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 0.56224 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.3292e-09
+norma di gradf(xk): 3.7304e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.8833
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 0.52592 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.965e-09
+norma di gradf(xk): 3.1835e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.3329
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 0.57456 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.065e-09
+norma di gradf(xk): 3.519e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.9455
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 0.60516 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.1031e-09
+norma di gradf(xk): 3.5329e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.8399
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 0.63339 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.4409e-09
+norma di gradf(xk): 5.6589e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.0082
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 0.60063 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.9241e-09
+norma di gradf(xk): 3.2383e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.8433
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 0.62535 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.2856e-09
+norma di gradf(xk): 3.9001e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.866
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 0.57986 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.5021e-09
+norma di gradf(xk): 3.8008e-05
+N. of Iterations: 27/3000
+Rate of Convergence: 1.7554
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 0.80747 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1343e-08
+norma di gradf(xk): 1.1516e-05
+N. of Iterations: 18/3000
+Rate of Convergence: 1.0016
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 1.0858 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0429e-08
+norma di gradf(xk): 1.0495e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0164
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 1.4977 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0423e-08
+norma di gradf(xk): 1.0347e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0265
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 0.87522 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0458e-08
+norma di gradf(xk): 1.1347e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0289
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 0.85155 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0448e-08
+norma di gradf(xk): 1.1076e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0275
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 0.85279 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.4027e-08
+norma di gradf(xk): 5.952e-05
+N. of Iterations: 28/3000
+Rate of Convergence: 1.1249
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 0.86479 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0441e-08
+norma di gradf(xk): 1.1303e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.037
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 0.86883 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0447e-08
+norma di gradf(xk): 1.1401e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0364
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 0.86964 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0435e-08
+norma di gradf(xk): 1.0899e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0273
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 0.909 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0428e-08
+norma di gradf(xk): 1.0698e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0252
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 0.88458 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0445e-08
+norma di gradf(xk): 1.1068e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0253
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 3.025 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1343e-07
+norma di gradf(xk): 3.6416e-05
+N. of Iterations: 18/3000
+Rate of Convergence: 1.0016
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 4.9238 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0448e-07
+norma di gradf(xk): 3.6066e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0344
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 5.0578 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0826e-07
+norma di gradf(xk): 6.2539e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.1618
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 5.6795 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0303e-07
+norma di gradf(xk): 4.5353e-05
+N. of Iterations: 31/3000
+Rate of Convergence: 1.106
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 5.2723 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0837e-07
+norma di gradf(xk): 6.3347e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.1616
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 5.5518 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0808e-07
+norma di gradf(xk): 5.588e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.113
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 5.1749 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0819e-07
+norma di gradf(xk): 6.2384e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.1606
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 5.1757 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0828e-07
+norma di gradf(xk): 5.6626e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.1135
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 5.167 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0443e-07
+norma di gradf(xk): 3.5566e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.0318
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 5.2911 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0845e-07
+norma di gradf(xk): 6.3497e-05
+N. of Iterations: 29/3000
+Rate of Convergence: 1.1607
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 5.5576 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0264e-07
+norma di gradf(xk): 4.162e-05
+N. of Iterations: 31/3000
+Rate of Convergence: 1.0643
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      2.5803e-09      3.9908e-05         2.6182e+01             5.8098e-01          0.0000e+00    1.6015e+00
+    10000     1.0848e-08      1.5425e-05         2.7909e+01             9.4249e-01          0.0000e+00    1.0343e+00
+    100000    1.0706e-07      5.0845e-05         2.8364e+01             5.0797e+00          0.0000e+00    1.1008e+00
+
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 0.47031 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1289e-15
+norma di gradf(xk): 2.8926e-08
+N. of Iterations: 16/3000
+Rate of Convergence: 0.95967
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 0.50247 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.7501e-15
+norma di gradf(xk): 2.6287e-07
+N. of Iterations: 27/3000
+Rate of Convergence: 1.1604
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 0.55616 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0045e-17
+norma di gradf(xk): 1.9653e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.931
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 0.5198 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.5354e-16
+norma di gradf(xk): 4.4711e-08
+N. of Iterations: 27/3000
+Rate of Convergence: 3.7597
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 0.59701 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.2484e-14
+norma di gradf(xk): 9.0858e-07
+N. of Iterations: 27/3000
+Rate of Convergence: 2.4807
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 0.52554 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.2376e-16
+norma di gradf(xk): 2.4408e-07
+N. of Iterations: 27/3000
+Rate of Convergence: 1.3383
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 0.53026 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.004e-17
+norma di gradf(xk): 1.4626e-10
+N. of Iterations: 28/3000
+Rate of Convergence: 1.8853
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 0.71209 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9.7365e-16
+norma di gradf(xk): 2.0344e-07
+N. of Iterations: 27/3000
+Rate of Convergence: 0.91515
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 1.4537 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.113e-17
+norma di gradf(xk): 9.7281e-10
+N. of Iterations: 27/3000
+Rate of Convergence: 3.76
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 0.72515 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1321e-17
+norma di gradf(xk): 1.0135e-09
+N. of Iterations: 27/3000
+Rate of Convergence: 3.6388
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 0.64274 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.124e-17
+norma di gradf(xk): 1.0481e-09
+N. of Iterations: 27/3000
+Rate of Convergence: 2.6286
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 0.74225 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1289e-14
+norma di gradf(xk): 9.1471e-08
+N. of Iterations: 16/3000
+Rate of Convergence: 0.95967
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 0.96744 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.001e-16
+norma di gradf(xk): 2.5255e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7943
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 0.87689 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0022e-16
+norma di gradf(xk): 4.1896e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.615
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 0.93829 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0028e-16
+norma di gradf(xk): 4.668e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7851
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 0.91847 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0008e-16
+norma di gradf(xk): 2.3679e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7415
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 0.92777 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.8913e-15
+norma di gradf(xk): 2.656e-07
+N. of Iterations: 28/3000
+Rate of Convergence: 1.4755
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 0.90933 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0014e-16
+norma di gradf(xk): 3.221e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.749
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 0.95196 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0012e-16
+norma di gradf(xk): 2.634e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.813
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 0.96061 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0015e-16
+norma di gradf(xk): 2.8267e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7243
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 0.90361 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.002e-16
+norma di gradf(xk): 3.8505e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.64
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 0.89699 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0033e-16
+norma di gradf(xk): 5.1043e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8138
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 2.9918 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.1289e-13
+norma di gradf(xk): 2.8926e-07
+N. of Iterations: 16/3000
+Rate of Convergence: 0.95967
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 5.0078 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0015e-15
+norma di gradf(xk): 1.066e-09
+N. of Iterations: 29/3000
+Rate of Convergence: 1.6504
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 5.9974 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0023e-15
+norma di gradf(xk): 4.8182e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.979
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 6.6069 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.4715e-15
+norma di gradf(xk): 3.9876e-08
+N. of Iterations: 30/3000
+Rate of Convergence: 1.732
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 5.1983 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0025e-15
+norma di gradf(xk): 4.9216e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9701
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 5.5016 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.6805e-15
+norma di gradf(xk): 4.763e-08
+N. of Iterations: 30/3000
+Rate of Convergence: 1.8256
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 5.2723 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0025e-15
+norma di gradf(xk): 4.8249e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9514
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 5.1368 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.5016e-15
+norma di gradf(xk): 4.3651e-08
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7436
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 5.2007 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0016e-15
+norma di gradf(xk): 1.0976e-09
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7186
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 5.2585 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0024e-15
+norma di gradf(xk): 4.8902e-10
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9757
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 7.2225 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.8596e-15
+norma di gradf(xk): 5.4357e-08
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7178
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      1.5971e-15      1.5418e-07         2.6273e+01             6.5774e-01          0.0000e+00    2.2234e+00
+    10000     1.2801e-15      3.2746e-08         2.7727e+01             9.0851e-01          0.0000e+00    1.6465e+00
+    100000    1.1401e-14      4.3534e-08         2.8182e+01             5.3995e+00          0.0000e+00    1.7476e+00
+
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 0.43874 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.9916e-20
+norma di gradf(xk): 9.1878e-09
+N. of Iterations: 16/3000
+Rate of Convergence: 1.049
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 0.5206 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.313e-25
+norma di gradf(xk): 6.5871e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.271
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 0.54447 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.3964e-24
+norma di gradf(xk): 3.4415e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8445
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 0.49608 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0732e-17
+norma di gradf(xk): 6.5248e-09
+N. of Iterations: 27/3000
+Rate of Convergence: 4.0339
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 0.57356 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.6477e-25
+norma di gradf(xk): 7.325e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.5773
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 0.52961 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.3029e-25
+norma di gradf(xk): 6.3848e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.5698
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 0.51777 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7.9817e-25
+norma di gradf(xk): 1.1368e-12
+N. of Iterations: 28/3000
+Rate of Convergence: 1.9726
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 0.63666 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1794e-25
+norma di gradf(xk): 6.5456e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.7361
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 0.52669 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.855e-24
+norma di gradf(xk): 3.0765e-12
+N. of Iterations: 27/3000
+Rate of Convergence: 4.4935
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 0.55184 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7.6218e-24
+norma di gradf(xk): 2.8097e-12
+N. of Iterations: 27/3000
+Rate of Convergence: 4.3443
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 0.54523 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.1608e-22
+norma di gradf(xk): 1.1296e-09
+N. of Iterations: 27/3000
+Rate of Convergence: 2.2161
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 0.72979 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1755e-24
+norma di gradf(xk): 7.8505e-15
+N. of Iterations: 17/3000
+Rate of Convergence: 2.3919
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 0.98144 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.1782e-24
+norma di gradf(xk): 3.8755e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9122
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 1.1878 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.6754e-24
+norma di gradf(xk): 3.5154e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.6512
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 1.0169 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.4367e-24
+norma di gradf(xk): 8.1669e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8884
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 1.0933 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.9949e-24
+norma di gradf(xk): 4.0101e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.82
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 0.92928 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1607e-24
+norma di gradf(xk): 2.0304e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.0096
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 1.3263 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.5397e-24
+norma di gradf(xk): 4.5801e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8455
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 1.0857 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.9675e-24
+norma di gradf(xk): 4.3562e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.0009
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 0.94444 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.8706e-24
+norma di gradf(xk): 3.7344e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9809
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 0.99162 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.0707e-24
+norma di gradf(xk): 4.2821e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.684
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 1.0786 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.5136e-24
+norma di gradf(xk): 6.6789e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8482
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 3.3437 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1755e-23
+norma di gradf(xk): 2.4825e-14
+N. of Iterations: 17/3000
+Rate of Convergence: 2.3919
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 4.9968 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.794e-23
+norma di gradf(xk): 1.2899e-11
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7902
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 5.2328 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.214e-23
+norma di gradf(xk): 6.3835e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.3942
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 5.7643 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1562e-23
+norma di gradf(xk): 6.2576e-12
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8568
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 5.2009 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.2114e-23
+norma di gradf(xk): 6.3819e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.4123
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 5.4175 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1561e-23
+norma di gradf(xk): 6.2929e-12
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8541
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 5.1287 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.2053e-23
+norma di gradf(xk): 6.382e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.4189
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 5.3131 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1561e-23
+norma di gradf(xk): 6.2626e-12
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8606
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 4.948 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.472e-23
+norma di gradf(xk): 1.4483e-11
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8335
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 5.1944 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.2197e-23
+norma di gradf(xk): 6.3856e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.3807
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 5.3019 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.1565e-23
+norma di gradf(xk): 6.2742e-12
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8949
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      9.7930e-19      1.5323e-09         2.6636e+01             5.3466e-01          0.0000e+00    2.6462e+00
+    10000     5.4167e-24      4.1125e-12         2.7909e+01             1.0332e+00          0.0000e+00    1.9121e+00
+    100000    3.5379e-23      7.0934e-12         2.8636e+01             5.0765e+00          0.0000e+00    2.0989e+00
+
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 0.43384 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.8894
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 0.50183 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0773e-29
+norma di gradf(xk): 1.7633e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.278
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 0.532 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.6757e-26
+norma di gradf(xk): 4.6141e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8435
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 0.6104 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.0676e-31
+norma di gradf(xk): 8.8819e-14
+N. of Iterations: 28/3000
+Rate of Convergence: 1.3477
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 0.57503 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.0244e-28
+norma di gradf(xk): 8.1978e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.5771
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 0.54721 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9.7467e-29
+norma di gradf(xk): 1.0413e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.5775
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 0.63901 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.4877e-26
+norma di gradf(xk): 1.7541e-12
+N. of Iterations: 28/3000
+Rate of Convergence: 1.9732
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 0.60204 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.2803e-30
+norma di gradf(xk): 1.8618e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.7584
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 0.52805 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.8913e-24
+norma di gradf(xk): 2.0343e-12
+N. of Iterations: 27/3000
+Rate of Convergence: 4.5092
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 0.6852 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.1135e-24
+norma di gradf(xk): 1.8777e-12
+N. of Iterations: 27/3000
+Rate of Convergence: 4.3601
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 0.76941 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.0338e-30
+norma di gradf(xk): 1.376e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.1062
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 0.67635 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.8894
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 0.98261 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7.9899e-26
+norma di gradf(xk): 4.9563e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9131
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 0.94749 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.5681e-26
+norma di gradf(xk): 4.3512e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.6529
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 0.92399 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.2314e-25
+norma di gradf(xk): 1.05e-11
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8899
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 0.93827 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.5717e-26
+norma di gradf(xk): 5.0988e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8202
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 1.0907 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.8982e-30
+norma di gradf(xk): 1.1243e-13
+N. of Iterations: 29/3000
+Rate of Convergence: 2.0161
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 0.89411 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9.433e-26
+norma di gradf(xk): 5.9079e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8465
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 1.0591 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.3209e-25
+norma di gradf(xk): 5.7444e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.0023
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 1.2283 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.5717e-26
+norma di gradf(xk): 4.6245e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9839
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 1.0804 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.5983e-26
+norma di gradf(xk): 5.398e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.685
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 1.123 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.7791e-25
+norma di gradf(xk): 9.1195e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 1.8487
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 3.4453 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.8894
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 5.0445 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.1179e-25
+norma di gradf(xk): 1.5846e-11
+N. of Iterations: 29/3000
+Rate of Convergence: 1.7923
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 5.3259 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.9896e-28
+norma di gradf(xk): 1.6068e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.4003
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 6.4398 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.7902e-30
+norma di gradf(xk): 2.3829e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8678
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 5.1949 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.8562e-28
+norma di gradf(xk): 1.5893e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.4194
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 7.3193 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.7024e-30
+norma di gradf(xk): 2.7231e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8626
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 5.2222 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.843e-28
+norma di gradf(xk): 1.5994e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.4269
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 5.3507 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.0552e-30
+norma di gradf(xk): 2.4482e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8702
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 4.8928 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.7662e-25
+norma di gradf(xk): 1.8652e-11
+N. of Iterations: 29/3000
+Rate of Convergence: 1.835
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 5.0327 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7.3832e-28
+norma di gradf(xk): 1.5964e-12
+N. of Iterations: 29/3000
+Rate of Convergence: 2.3867
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 6.1536 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.3864e-30
+norma di gradf(xk): 2.8633e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.9083
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      8.2336e-25      1.0721e-12         2.6909e+01             5.8400e-01          0.0000e+00    2.5655e+00
+    10000     8.1861e-26      5.0739e-12         2.7909e+01             9.9495e-01          0.0000e+00    1.9589e+00
+    100000    9.9167e-26      3.8119e-12         2.8636e+01             5.4020e+00          0.0000e+00    2.1508e+00
+
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 1, dimension 1000):  *****
+Time: 0.58655 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.9104
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 2, dimension 1000):  *****
+Time: 0.89817 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.619e-30
+norma di gradf(xk): 1.5887e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.2781
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 3, dimension 1000):  *****
+Time: 0.80946 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.4652e-31
+norma di gradf(xk): 3.9721e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 2.0595
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 4, dimension 1000):  *****
+Time: 0.76424 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9.2445e-31
+norma di gradf(xk): 1.1916e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.3477
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 5, dimension 1000):  *****
+Time: 0.61598 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.904e-28
+norma di gradf(xk): 7.8269e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.577
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 6, dimension 1000):  *****
+Time: 0.56593 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.1388e-29
+norma di gradf(xk): 1.3982e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.5776
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 7, dimension 1000):  *****
+Time: 0.60669 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 29/3000
+Rate of Convergence: 1.9223
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 8, dimension 1000):  *****
+Time: 0.53033 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.4976e-30
+norma di gradf(xk): 1.318e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.7586
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 9, dimension 1000):  *****
+Time: 0.58464 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 8.0119e-31
+norma di gradf(xk): 1.2561e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.3689
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 10, dimension 1000):  *****
+Time: 0.56374 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.0477e-30
+norma di gradf(xk): 1.3174e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 1.3592
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 11, dimension 1000):  *****
+Time: 0.65523 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9.2445e-31
+norma di gradf(xk): 1.1916e-13
+N. of Iterations: 28/3000
+Rate of Convergence: 2.1098
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 1, dimension 10000):  *****
+Time: 1.0954 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.9104
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 2, dimension 10000):  *****
+Time: 1.3563 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.0815e-31
+norma di gradf(xk): 5.6173e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 1.9409
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 3, dimension 10000):  *****
+Time: 0.96361 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.2326e-31
+norma di gradf(xk): 5.6173e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 2.1174
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 4, dimension 10000):  *****
+Time: 1.0168 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 30/3000
+Rate of Convergence: 1.9758
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 5, dimension 10000):  *****
+Time: 1.0303 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 30/3000
+Rate of Convergence: 1.9601
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 6, dimension 10000):  *****
+Time: 1.0218 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.4711e-31
+norma di gradf(xk): 7.9446e-14
+N. of Iterations: 29/3000
+Rate of Convergence: 2.0162
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 7, dimension 10000):  *****
+Time: 1.3096 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.6978e-31
+norma di gradf(xk): 6.8798e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 1.97
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 8, dimension 10000):  *****
+Time: 1.0752 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.2326e-31
+norma di gradf(xk): 5.6173e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 1.8978
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 9, dimension 10000):  *****
+Time: 0.98644 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.163e-32
+norma di gradf(xk): 3.9721e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 1.8895
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 10, dimension 10000):  *****
+Time: 0.98729 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 30/3000
+Rate of Convergence: 2.0629
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 11, dimension 10000):  *****
+Time: 0.96009 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 6.163e-32
+norma di gradf(xk): 3.9721e-14
+N. of Iterations: 30/3000
+Rate of Convergence: 2.0077
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 1, dimension 100000):  *****
+Time: 3.0333 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 0
+norma di gradf(xk): 0
+N. of Iterations: 17/3000
+Rate of Convergence: 2.9104
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 2, dimension 100000):  *****
+Time: 5.2656 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.7256e-30
+norma di gradf(xk): 1.7314e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.9928
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 3, dimension 100000):  *****
+Time: 5.8666 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.7117e-30
+norma di gradf(xk): 2.2469e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7579
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 4, dimension 100000):  *****
+Time: 7.0067 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.499e-30
+norma di gradf(xk): 2.7804e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8679
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 5, dimension 100000):  *****
+Time: 5.9109 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.5884e-30
+norma di gradf(xk): 2.1756e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7378
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 6, dimension 100000):  *****
+Time: 5.5392 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 4.6222e-30
+norma di gradf(xk): 2.5742e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8627
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 7, dimension 100000):  *****
+Time: 5.4343 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1.9105e-30
+norma di gradf(xk): 1.8631e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7583
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 8, dimension 100000):  *****
+Time: 5.5804 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 3.2664e-30
+norma di gradf(xk): 2.4485e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.8703
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 9, dimension 100000):  *****
+Time: 6.0821 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.0954e-30
+norma di gradf(xk): 1.986e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.9886
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 10, dimension 100000):  *****
+Time: 6.4013 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2.0338e-30
+norma di gradf(xk): 1.9459e-13
+N. of Iterations: 30/3000
+Rate of Convergence: 1.7666
+************************************
+SUCCESS
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 25 (point 11, dimension 100000):  *****
+Time: 5.9633 seconds
+Backtracking parameters (rho, c1): 0.5 0.0001
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5.3618e-30
+norma di gradf(xk): 2.9458e-13
+N. of Iterations: 31/3000
+Rate of Convergence: 1.9084
+************************************
+SUCCESS
+************************************
+ 
+
+TMN =
+
+  3×6 table
+
+              avg fbest     avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure      avg roc  
+              __________    ______________    ________________    ______________________    __________    __________
+
+    1000      3.4895e-29      1.5896e-13         2.7273e+01             6.5282e-01          0.0000e+00    2.0245e+00
+    10000     1.5407e-31      3.6019e-14         2.8727e+01             1.0730e+00          0.0000e+00    2.0681e+00
+    100000    2.8014e-30      2.0634e-13         2.9182e+01             5.6440e+00          0.0000e+00    1.9474e+00
+
+>> 
