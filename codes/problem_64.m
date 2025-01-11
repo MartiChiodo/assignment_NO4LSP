@@ -449,8 +449,18 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
 
         % Elementi fuori diagonale H(k, k+1) e H(k,k+2)
         if k < n-1
+
+            switch type_h
+                case 'COST'
+                    hk1 = h;
+                    hk2 = h;
+                case 'REL'
+                    hk1 = h*abs(x(k+1));
+                    hk2 = h*abs(x(k+2));
+            end
+
             % diagonali superiori e inferiori a livello 2
-            H_k_k2 = (2*hk^2)/(2*hk^2);
+            H_k_k2 = (2*hk2^2)/(2*hk*hk2);
             i_indices(cont) = k;
             j_indices(cont) = k+2;
             values(cont) = H_k_k2;
@@ -464,7 +474,8 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
 
             % diagonali inferiori e superiori
             % H_k_k1 = 2*hk*(-4*hk + rho*cost^2*sinh(rho*x(k+1)) - rho*cost^2*sinh(rho*x(k+1)+rho*hk) + rho * cost^2*sinh(rho*x(k)) - rho*cost^2*sinh(rho*x(k) + rho*hk))/(2*hk^2); 
-            H_k_k1 = 2*hk*(-4*hk + rho*cost^2*((1-cosh(rho*hk)) * (sinh(rho*x(k+1)) + sinh(rho*x(k))) - sinh(rho*hk)*(cosh(rho*x(k+1)) + cosh(rho*x(k)))))/(2*hk^2);
+            H_k_k1 = (-4*hk*hk1 + 2*hk*rho*cost^2*(sinh(rho * x(k+1)) *( 1- cosh(rho*hk1))  - cosh(rho*x(k+1)) * sinh(rho*hk1)) ...
+                -4*hk*hk1 + 2*hk1*rho*cost^2*(sinh(rho * x(k)) *( 1- cosh(rho*hk))  - cosh(rho*x(k)) * sinh(rho*hk)))/(2*hk*hk1);
             i_indices(cont) = k;
             j_indices(cont) = k+1;
             values(cont) = H_k_k1;
@@ -475,19 +486,28 @@ function hessian_approx = findiff_hess_64(x, h, type_h)
             j_indices(cont) = k;
             values(cont) = H_k_k1;
             cont = cont+1;
+
         elseif k == n-1
+
+            switch type_h
+                case 'COST'
+                    hk1 = h;
+                case 'REL'
+                    hk1 = h*abs(x(k+1));
+            end
+
             % se k = n-1 ho solo H(k,k+1)
-            % H_n1 = 2*hk*(-4*hk + rho*cost^2*sinh(rho*x(k+1)) - rho*cost^2*sinh(rho*x(k+1)+rho*hk) + rho * cost^2*sinh(rho*x(k)) - rho*cost^2*sinh(rho*x(k) + rho*hk))/(2*hk^2);
-            H_n1 = 2*hk*(-4*hk + rho*cost^2*((1-cosh(rho*hk)) * (sinh(rho*x(1)) + sinh(rho*x(n))) - sinh(rho*hk)*(cosh(rho*x(1)) + cosh(rho*x(n)))))/(2*hk^2);
+            H_n1_n = (-4*hk*hk1 + 2*hk*rho*cost^2*(sinh(rho * x(k+1)) *( 1-  cosh(rho*hk1))  - cosh(rho*x(k+1)) * sinh(rho*hk1)) ...
+                -4*hk*hk1 + 2*hk1*rho*cost^2*(sinh(rho*x(k)) *( 1-  cosh(rho*hk))  - cosh(rho*x(k)) * sinh(rho*hk)))/(2*hk*hk1);
             i_indices(cont) = k;
             j_indices(cont) = k+1;
-            values(cont) = H_n1;
+            values(cont) = H_n1_n;
             cont = cont +1;
 
             % impongo la simmetria
             i_indices(cont) = k+1;
             j_indices(cont) = k;
-            values(cont) = H_n1;
+            values(cont) = H_n1_n;
             cont = cont +1;
         end
 
@@ -499,7 +519,7 @@ end
 
 
 h = 1e-2;
-type_h = 'COST';
+type_h = 'REL';
 gradf_approx = @(x) findiff_grad_64(x,h, type_h);
 Hessf_approx = @(x) findiff_hess_64(x,h, type_h);
 
@@ -525,9 +545,9 @@ tol = 1e-3;
 
 % setting the values for the dimension
 h_values = [1e-2 1e-4 1e-6 1e-8 1e-10 1e-12];
-dimension = [1e3 1e4 1e5];
+dimension = [1e5];
 param = [0.4, 1e-4, 38; 0.4, 1e-4, 38; 0.4, 1e-4, 38];
-type_h = 'REL';
+type_h = 'COST';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);

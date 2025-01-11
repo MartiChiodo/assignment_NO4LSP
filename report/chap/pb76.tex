@@ -113,21 +113,23 @@ We can also appreciate the fact that the approximated rate of convergence is clo
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
-Approximating the derivatives of the function $F(\mathbf{x})$ using finite differences is trickier than it seems because of the issues due to numerical cancellation, which may happen when we are subtracting two close quantities, and because we are willing to find a formula whose computation is the least costly possible.
+Approximating the derivatives of the function $F(\mathbf{x})$ using finite differences is more challenging than it appears due to potential numerical cancellation issues, which can occur when subtracting two nearly equal quantities. Additionally, we aim to derive a formula that minimizes computational cost.
 
-Let's start by approximating the first order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula with step $h$.
-$$ \frac{\partial F }{\partial x_k} (\mathbf{x}) \approx \frac{F(\mathbf{x} + h \vec{e}_k) - F(\mathbf{x} - h \vec{e}_k)}{2h} = 
-\frac{\sum_{i = 1}^{n} f_i(\mathbf{x} + h \vec{e}_k)^2 - \sum_{i = 1}^{n} f_i(\mathbf{x} - h \vec{e}_k)^2}{4h}$$
-First of all, we can notice that each term $f_i^2$ only depends on $x_i$ and $x_{i+1}$, so $f_i(\mathbf{x} + h \vec{e}_k)^2 - f_i(\mathbf{x} - h \vec{e}_k)^2 = 0$ for all $i \neq k-1, k$ (or $i \neq 1,n$ if we are considering $k = 1$). 
+Let's begin by approximating the first-order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula with step $h_k$. The subscript $k$ is specified because the following formulas are valid both with a constant increment, $h_k = k$ for all $h = 1, \dots, n$, and with a specific increment $h_k = h |\hat{x}_k| \; k= 1, \dots, n$, where $\mathbf{\hat{x}}$ is the point at which we approximate the derivatives.
+$$ \frac{\partial F }{\partial x_k} (\mathbf{x}) \approx \frac{F(\mathbf{x} + h_k \vec{e}_k) - F(\mathbf{x} - h_k \vec{e}_k)}{2h_k} = 
+\frac{\sum_{i = 1}^{n} f_i(\mathbf{x} + h_k \vec{e}_k)^2 - \sum_{i = 1}^{n} f_i(\mathbf{x} - h_k \vec{e}_k)^2}{4h_k}$$
+We can observe that each term $f_i^2$ only depends on $x_i$ and $x_{i+1}$, so $f_i(\mathbf{x} + h_k\vec{e}_k)^2 - f_i(\mathbf{x} - h_k\vec{e}_k)^2 = 0$ for all $i \neq k-1, k$ (or $i \neq 1,n$ if we are considering $k = 1$). 
 This allows to simplify the formula, even in order to decrease the computational cost, as follows
-$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{k-1}(\mathbf{x} + h \vec{e}_k)^2 - f_{k-1}(\mathbf{x} - h \vec{e}_k)^2 + f_{k}(\mathbf{x} + h \vec{e}_k)^2 - f_{k}(\mathbf{x} - h \vec{e}_k)^2}{4h}  \quad 1 < k \leq n$$
-$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{n}(\mathbf{x} + h \vec{e}_k)^2 - f_{n}(\mathbf{x} - h \vec{e}_k)^2 + f_{k}(\mathbf{x} + h \vec{e}_k)^2 - f_{k}(\mathbf{x} - h \vec{e}_k)^2}{4h}  \quad k = 1$$
-In order to avoid numerical cancellation, we can expand the numerator obtaining
-
+$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{k-1}(\mathbf{x} + h_k\vec{e}_k)^2 - f_{k-1}(\mathbf{x} - h_k\vec{e}_k)^2 + f_{k}(\mathbf{x} + h_k\vec{e}_k)^2 - f_{k}(\mathbf{x} - h_k\vec{e}_k)^2}{4h_k}  \quad 1 < k \leq n$$
+$$\frac{\partial F }{\partial x_k} (\mathbf{x}) \approx  \frac{f_{n}(\mathbf{x} + h_k\vec{e}_k)^2 - f_{n}(\mathbf{x} - h_k\vec{e}_k)^2 + f_{k}(\mathbf{x} + h_k\vec{e}_k)^2 - f_{k}(\mathbf{x} - h_k\vec{e}_k)^2}{4h_k}  \quad k = 1$$
+In order to avoid numerical cancellation, the numerator has been expanded obtaining the following formula
 \begin{align*}
-    \frac{\partial F }{\partial x_1} (\mathbf{x}) & \approx \frac{4hx_1 - 2/5 h x_2^2 - 4/5 h x_n x_1 + 8/100 h x_1 (x_1^2 + h^2)}{4h} \\
-    \frac{\partial F }{\partial x_k} (\mathbf{x}) & \approx \frac{4hx_k - 2/5 h x_{k+1}^2 - 4/5 h x_{k-1} x_k + 8/100 h x_k (x_k^2 + h^2)}{4h} \\
-    \frac{\partial F }{\partial x_n} (\mathbf{x}) & \approx \frac{4hx_n - 2/5 h x_{1}^2 - 4/5 h x_{n-1} x_n + 8/100 h x_n (x_n^2 + h^2)}{4h}
+    \frac{\partial F }{\partial x_1} (\mathbf{x}) & \approx \frac{4h_k x_1 - 2/5 h_k x_2^2 - 4/5 h_k x_n x_1 + 8/100 h_k x_1 (x_1^2 + h_k^2)}{4h_k} \\
+    \frac{\partial F }{\partial x_k} (\mathbf{x}) & \approx \frac{4h_k x_k - 2/5 h_k x_{k+1}^2 - 4/5 h_k x_{k-1} x_k + 8/100 h_k x_k (x_k^2 + h_k^2)}{4h_k} \\
+    \frac{\partial F }{\partial x_n} (\mathbf{x}) & \approx \frac{4h_k x_n - 2/5 h_k x_{1}^2 - 4/5 h_k x_{n-1} x_n + 8/100 h_k x_n (x_n^2 + h_k^2)}{4h_k}
 \end{align*}
 
 
+We can now proceed to approximate the second order derivatives of the function $F(\mathbf{x})$ using the centered finite difference formula; this time we need to use two different increments $h_i$ and $h_j$ based on the two components with respect to which we are differentiating.
+The general formula is the following
+$$ \frac{\partial^2 F}{\partial x_i \partial x_j} (\mathbf{x})  = \frac{F(\mathbf{x} + h_i \vec{e}_i + h_j \vec{e}_j) - F(\mathbf{x} + h_i \vec{e}_i) - F(\mathbf{x} - h_j \vec{e}_j) + F(\mathbf{x})}{h_i h_j}$$

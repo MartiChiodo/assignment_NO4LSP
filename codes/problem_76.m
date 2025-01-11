@@ -376,8 +376,10 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
             switch type_h
                 case 'REL'
                     passok = h*abs(x(k));
+                    passok1 = h*abs(x(k+1));
                 case 'COST'
                     passok = h;
+                    passok1 = h;
             end
             % H_kk = (fn_quadro(x+2*he_k) + fk_quadro(x+2*he_k, 1) - 2*fn_quadro(x+he_k) -2*fk_quadro(x+he_k,1) + fn_quadro(x) + fk_quadro(x,1))/(2*h^2);
             H_kk = (2*passok^2 - 2/5 * x(n)*passok^2+ 0.12 * x(k)^2*passok^2+ 0.24 * x(k)*passok^3 +0.14 * passok^4)/(2*passok^2); 
@@ -389,8 +391,10 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
             switch type_h
                 case 'REL'
                     passok = h*abs(x(k));
+                    passok1 = h*abs(x(k+1));
                 case 'COST'
                     passok = h;
+                    passok1 = h;
             end
             % H_kk = (fk_quadro(x+2*he_k, k-1) + fk_quadro(x+2*he_k, k) -  2*fk_quadro(x+he_k, k-1) -2*fk_quadro(x+he_k,k) + fk_quadro(x,k-1) + fk_quadro(x,k))/(2*h^2);
             H_kk = (2*passok^2 - 2/5 * x(k-1)*passok^2+ 0.12 * x(k)^2*passok^2+ 0.24 * x(k)*passok^3 +0.14 * passok^4)/(2*passok^2); 
@@ -402,8 +406,10 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
             switch type_h
                 case 'REL'
                     passok = h*abs(x(n));
+                    passok1 = h*abs(x(1));
                 case 'COST'
                     passok = h;
+                    passok1 = h;
             end
             % H_kk = (fk_quadro(x+2*he_k, k-1) + fn_quadro(x+2*he_k) -  2*fk_quadro(x+he_k, k-1) -2*fn_quadro(x+he_k) + fk_quadro(x,k-1) + fn_quadro(x))/(2*h^2);
             H_kk = (2*passok^2 - 2/5 * x(n-1)*passok^2+ 0.12 * x(k)^2*passok^2+ 0.24 * x(k)*passok^3 +0.14 * passok^4)/(2*passok^2); 
@@ -416,7 +422,7 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
         % Elementi fuori diagonale H(k, k+1)
         if k < n
             % H_k_k1 = (fk_quadro(x+he_k1 +he_k,k) - fk_quadro(x+he_k, k) - fk_quadro(x+he_k1,k) - fk_quadro(x, k))/(2*h^2); 
-            H_k_k1 = (-2/5 *passok^2*x(k+1) - 1/5 * passok^3)/(2*passok^2);
+            H_k_k1 = (-2/5 *passok*passok1*x(k+1) - 1/5 * passok1^2*passok1)/(2*passok*passok1);
             i_indices(cont) = k;
             j_indices(cont) = k+1;
             values(cont) = H_k_k1;
@@ -429,7 +435,7 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
             cont = cont+1;
         else
             % Caso circolare: H(n, 1)
-            H_n1 = (-2/5 *passok^2*x(1) - 1/5 * passok^3)/(2*passok^2);
+            H_n1 = (-2/5 *passok*passok1*x(1) - 1/5 * passok1^2*passok1)/(2*passok*passok1);
             i_indices(cont) = 1;
             j_indices(cont) = n;
             values(cont) = H_n1;
