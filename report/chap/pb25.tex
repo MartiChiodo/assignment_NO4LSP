@@ -45,7 +45,7 @@ By analyzing the derivatives of the problem, we can deduce that the gradient of 
 \end{figure*}
 We now report a table showing some general results obtained by running the Nealder Mead method on the problem.
 
-Looking at the table, it is clear that even if the method satisfies the stopping criterion for all dimensionalities does not converge to the minimum point, actually the minimum value it finds increases with the dimensionality.
+Looking at the table, it is clear that even if the method satisfies the stopping criterion for all dimensionalities it does not reach the point we declared be a global minimum, actually the minimum value the algorithm finds increases with the dimensionality.
 We are not too surprised by the por performance of the symplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objecive function.
 
 
@@ -58,10 +58,10 @@ We now report a table showing some general results obtained by running the Modif
     \caption{Results obtained by running the Modified Newton method on the problem $25$ using the exact derivatives.}
 \end{figure*}
 
-As expected from the theoretical background we have about thhese methods, the Modified Newton method with exact derivatives performs significantly better than the Nealder Mead method. The table shows that the method converges to the minimum point for all dimensionalities tested, and the minimum value found is consistently close to zero. 
+As expected from the theoretical background we have about these methods, the Modified Newton method performs significantly better than the Nealder Mead method. The table shows that the method converges to a point in which the norm of the gradient is below the fixed tollerance for all dimensionalities tested, and the minimum value found is consistently close to zero. 
 This is because the Modified Newton method leverages the gradient and Hessian information, allowing it to make more informed steps towards the minimum and thus to converge in fewer iterations.
 
-However, we can notice that the ratio between the average time of execution and the average number of iterations is smaller for the symplex method. This means that each iteration performed by the Modified Newton method is more high-performance but they are also more costly. 
+However, we can notice that the ratio between the average time of execution and the average number of iterations is smaller for the symplex method. This means that each iteration performed by the Modified Newton method is more high-performance but also more costly in terms of computational effort. 
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
@@ -106,8 +106,8 @@ If the dimensionality $n$ is an odd number, the changes only concern the term  $
 \end{align*}
 
 
-According to what we expect, seeking for the minimum using the approximations of the derivatives affects the performance of the Modified Newton method, expecially for larger values of the increment $h$. From a theoretical point of view, this can be justified because the approximated derivatives are nearer to their analitical value when the increment $h$ is tending toward $0$.
-Then, we are not surprised that for $h = 10^{-2}$ the algorithm often converges to a point which value is not very close to $0$ and it needs much more iterations to satisfy the stopping criterion.
+According to what we expect, seeking for the minimum using the approximations of the derivatives affects the performance of the Modified Newton method, expecially for larger values of the increment $h$. 
+In fact, from the theory, we know that the finite difference formula approximates the analytical derivative with an error that depends on the value of the increment $h$. Specifically, the error diminishes as $h$ approaches $0$.
 
 \begin{figure}[htbp]
     \centering
@@ -129,6 +129,10 @@ Then, we are not surprised that for $h = 10^{-2}$ the algorithm often converges 
     \label{logfbest_difffinite25}
 \end{figure}
 
+Therefore, it is not surprising that for $h = 10^{-2}$, the algorithm often converges to a point whose value is not very close to $0$ and requires significantly more iterations to meet the stopping criterion.
+This is clearly shown in the following bar plots (Figure \ref{logfbest_difffinite25}), which display the average value of $\log (f_{best})$, where $f_{best}$ is the minimum found by the Modified Newton method, as a function of the increment $h$ used to approximate the derivatives. Notice that we applied a logarithmic transformation to the value of $f_{best}$ for clarity, as the values were close to $0$.
+As we can see from the barplot, as the value of $h$ diminish the minimum found is smaller (i.e. $\log(f_{best})$ increases in absolute value while being a negative quantity) as a consequence of the more precise approximations of the derivatives the Modified Newton method uses.
+
 
 \begin{figure*}[htbp]
     \centering
@@ -149,7 +153,7 @@ Then, we are not surprised that for $h = 10^{-2}$ the algorithm often converges 
     \caption{ \small Average time of execution in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $25$.}
 \end{figure*}
 
-\begin{figure*}[htbp]
+\begin{figure}[htbp]
     \centering
     % Prima immagine
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
@@ -166,7 +170,8 @@ Then, we are not surprised that for $h = 10^{-2}$ the algorithm often converges 
     \end{subfigure}
     % Didascalia generale
     \caption{ \small Average number of iterations in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $25$.}
-\end{figure*}
+    \label{avgiterations25}
+\end{figure}
 
 
 \begin{figure*}[htbp]
@@ -189,3 +194,4 @@ Then, we are not surprised that for $h = 10^{-2}$ the algorithm often converges 
 \end{figure*}
 
 
+It can be intresting notice from the barplots comparing the average number of iterations needed by the Modified Newton method (Figure $\eqref{avgiterations25}$) that a specific increment based on the point in which we are approximating the derivative seems to make the method perform better than using the costant increment.  
