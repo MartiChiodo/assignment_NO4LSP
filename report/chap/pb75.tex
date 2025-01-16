@@ -1,2 +1,52 @@
 \section{Model}
-The function described in this problem is the following
+The function described in this problem is the following 
+\begin{equation*}
+\begin{aligned}
+    &F(\boldsymbol{x}) = \frac{1}{2}\sum_{k=1}^n f_k^2(\boldsymbol{x}) \\
+    &f_k(\boldsymbol{x}) = x_k-1, & k=1 \\
+    &f_k(\boldsymbol{x}) = 10(k-1)(x_k-x_{k-1})^2, & 1<k\leq n
+\end{aligned}
+\end{equation*}
+where $n$ is the length of the input vector $\boldsymbol{x}$.
+With the given starting point for minimization being 
+$$\boldsymbol{x_0}=[-1.2,-1.2,...,-1.2,-1]' \in \mathbbm{R}^n.$$
+The gradient of $F(\boldsymbol{x})$ is the following (note that, besides the first and last components, all the others have the same structure).
+\begin{equation*}
+    \nabla F(\mathbf{x}) = 
+    \begin{bmatrix}
+        \frac{\partial F}{\partial x_1}(\mathbf{\boldsymbol{x}}) \\
+        \vdots \\
+        \frac{\partial F}{\partial x_k}(\mathbf{\boldsymbol{x}}) \\
+        \vdots \\
+        \frac{\partial F}{\partial x_n}(\mathbf{\boldsymbol{x}})
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        \frac{\partial }{\partial x_1}\frac{1}{2}(f_1^2+f_2^2)(\boldsymbol{x}) \\
+        \vdots \\
+        \frac{\partial F}{\partial x_k}\frac{1}{2}(f_k^2+f_{k+1}^2)(\boldsymbol{x}) \\
+        \vdots \\
+        \frac{\partial F}{\partial x_n}\frac{1}{2}f_n^2(\boldsymbol{x})
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        x_1-1-200\cdot (x_2-x_1)^3 \\
+        \vdots \\
+        200 \cdot \Big((k-1)^2(x_k-x_{k-1})^3-k^2(x_{k+1}-x_k)^3\Big)\\
+        \vdots \\
+        200 \cdot (n-1)^2(x_n-x_{n-1})^3
+    \end{bmatrix}
+\end{equation*}
+The Hessian matrix of $F(\boldsymbol{x})$ is sparse since only on three diagonals elements different from zeros are present. They are the following:
+\begin{align*}
+    \frac{\partial^2 F}{\partial x_1^2} (\boldsymbol{x}) &= 1+600\cdot(x_2-x_1)^2 \\
+    \frac{\partial^2 F}{\partial x_k^2} (\boldsymbol{x}) &= 600\cdot\Big((k-1)^2(x_k-x_{k-1})^2+k^2(x_{k+1}-x_k)^2 \Big), \quad 1 < k < n  & \\
+    \frac{\partial^2 F}{\partial x_n^2} (\boldsymbol{x}) &=600\cdot(n-1)^2(x_n-x_{n-1})^2 \\
+    \frac{\partial^2 F}{\partial x_k \partial x_{k-1}} (\boldsymbol{x}) &= -600\cdot (k-1)^2(x_k-x_{k-1})^2, \quad 1<k\leq n.
+\end{align*}
+It is easy to notice that $F$, being the sum of squared functions, is always non negative. Furthermore, $F(\boldsymbol{x})=0$ if and only if $\boldsymbol{x}=[1,1,...,1]'$ since $f_1(\boldsymbol{x})^2=0$ if and only if $x_1=1$ and, for every $1<k\leq n$, $f_k(\boldsymbol{x})=0$ if and only if $x_k=x_{k-1}$.
+
+More formally, we can see that $\boldsymbol{x}=[1,1,...,1]'$ solves the equation $\nabla F(\boldsymbol{x})=\boldsymbol{0}$. Since $F$ is convex (being the sum of convex functions) and differentiable, we know that any stationary point is a global minimum point for $F$. 
+
+Then $\boldsymbol{x}=[1,1,...,1]'$ is the only global minimum point for $F$.
+\section*{Nelder Mead Method}
