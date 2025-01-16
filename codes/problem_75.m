@@ -148,6 +148,7 @@ iter_struct_MN = zeros(length(dimension),11);
 fbest_struct_MN = zeros(length(dimension),11);
 gradf_struct_MN = zeros(length(dimension),11);
 roc_struct_MN = zeros(length(dimension),11);
+ultima_direz_discesa = zeros(length(dimension), 11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
@@ -168,13 +169,14 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
         = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
     roc_struct_MN(dim,1) = compute_roc(xseq, x_esatto);
+    ultima_direz_discesa(dim,1) = cos_pk_gradf;
     disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
 
     disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
@@ -192,7 +194,7 @@ for dim = 1:length(dimension)
         disp('FAIL')
         if (flag_bcktrck)
             disp('Failure due to backtracking')
-            disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+            disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
             disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
         else
             disp('Failure not due to backtracking')
@@ -210,7 +212,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
             = modified_Newton(F_75,gradF_75, hessF_75, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
@@ -218,6 +220,7 @@ for dim = 1:length(dimension)
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
         roc_struct_MN(dim,i+1) = compute_roc(xseq, x_esatto);
+        ultima_direz_discesa(dim,i+1) = cos_pk_gradf;
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
@@ -236,7 +239,7 @@ for dim = 1:length(dimension)
             disp('FAIL')
             if (flag_bcktrck)
                 disp('Failure due to backtracking')
-                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
                 disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
 
 
@@ -252,6 +255,12 @@ for dim = 1:length(dimension)
     end
 end
 
+% plotto cos_pk_gradf
+bar(ultima_direz_discesa')
+ylabel('cos(angolo)')
+title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
+
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
@@ -264,7 +273,7 @@ display(TMN)
 % with approximated gradient and hessian
 format short e
 
-max_iter_per_dimension=[1e3, 5*1e3, 1e4];
+max_iter_per_dimension=[1e3, 1e4, 8*1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
@@ -296,6 +305,7 @@ for id_h = 1:length(h_values)
     fbest_struct_MN = zeros(length(dimension),11);
     gradf_struct_MN = zeros(length(dimension),11);
     roc_struct_MN = zeros(length(dimension),11);
+    ultima_direz_discesa = zeros(length(dimension), 11);
     
     
     for dim = 1:length(dimension)
@@ -324,6 +334,7 @@ for id_h = 1:length(h_values)
         iter_struct_MN(dim,1) = iter;
         gradf_struct_MN(dim,1) = gradfk_norm;
         roc_struct_MN(dim,1) = compute_roc(xseq,x_esatto);
+        ultima_direz_discesa(dim,1) = cos_pk_gradf;
         disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
     
         disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
@@ -368,6 +379,7 @@ for id_h = 1:length(h_values)
             failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
             gradf_struct_MN(dim,i+1) = gradfk_norm;
             roc_struct_MN(dim,i+1) = compute_roc(xseq,x_esatto);
+            ultima_direz_discesa(dim,i+1) = cos_pk_gradf;
     
             disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
     
@@ -401,6 +413,11 @@ for id_h = 1:length(h_values)
         end
     end
     
+% plotto cos_pk_gradf
+bar(ultima_direz_discesa')
+ylabel('cos(angolo)')
+title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
     
     
     varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
