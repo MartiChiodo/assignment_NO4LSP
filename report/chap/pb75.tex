@@ -49,4 +49,16 @@ It is easy to notice that $F$, being the sum of squared functions, is always non
 More formally, we can see that $\boldsymbol{x}=[1,1,...,1]'$ solves the equation $\nabla F(\boldsymbol{x})=\boldsymbol{0}$. Since $F$ is convex (being the sum of convex functions) and differentiable, we know that any stationary point is a global minimum point for $F$. 
 
 Then $\boldsymbol{x}=[1,1,...,1]'$ is the only global minimum point for $F$.
+
+INSERISCI IMMAGINE IN 2D E COMMENTA SUI POSSIBILI PROBLEMI
+
 \section*{Nelder Mead Method}
+We runned the minimisation problem with Nelder Mead method using the following parameters:
+\begin{eqnarray*}
+    \text{reflection } \rho &=& 1.1 \\
+    \text{expansion } \chi &=& 2.5 \\
+    \text{contraction } \rho &=& 0.6 \\
+    \text{shrinking } \rho &=& 0.5.
+\end{eqnarray*}
+The aim, with this choice, is to try to keep the simplex big enough so that
+the method will not get stuck too easily in the almost flat areas of the function's graph.
