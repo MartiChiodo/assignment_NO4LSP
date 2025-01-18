@@ -50,7 +50,25 @@ More formally, we can see that $\boldsymbol{x}=[1,1,...,1]'$ solves the equation
 
 Then $\boldsymbol{x}=[1,1,...,1]'$ is the only global minimum point for $F$.
 
-INSERISCI IMMAGINE IN 2D E COMMENTA SUI POSSIBILI PROBLEMI
+We plot the function for $n=2$ in a neighborhood of the minimum point.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/function_pb75_angolo1.jpg}
+        \caption{}
+    \end{subfigure}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/function_pb75_angolo2.jpg}
+        \caption{}
+    \end{subfigure}
+    \caption{function $F(\boldsymbol{x})$ for $n=2$}
+\label{fig:funzione 2D pb 75}
+\end{figure}
+We can easily see that the central area, where the minimum point is located,
+is quite flat. This means that the minimization methods used might have some troubles
+when reaching this area because they might get stuck before reaching the minimizer.
 
 \section*{Nelder Mead Method}
 We runned the minimisation problem with Nelder Mead method using the following parameters:
@@ -62,3 +80,25 @@ We runned the minimisation problem with Nelder Mead method using the following p
 \end{eqnarray*}
 The aim, with this choice, is to try to keep the simplex big enough so that
 the method will not get stuck too easily in the almost flat areas of the function's graph.
+
+We now report a table summarizing the results obtained by running the Nelder-Mead method
+on the considered problem for dimensions $n=$10, 25, 50 and for a total of 11 starting 
+points for each dimension, obtained as perturbations of the given one.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_SX.png}
+    \caption{Results obtained by running the Nelder Mead method on problem 75}
+\label{pb 75 table SX}
+\end{figure}
+
+We notice that the method reports zero failures, which means that it never stopped because of the maximum 
+number of iterations allowed (in this case $200\cdot n$) had been reached. However, the best value of the 
+function $F$ that has been found is not so close to the expected value (which as observed before should be 0).
+The problem is in the starting point. In fact, even with the random perturbations, it always falls in the flat area 
+of the function. Tuning the parameters in a way that encourages the expansion of the simplex's area is not enough 
+to prevent the method from getting stuck here. It can be seen that, if we use as a staring point for example $[0,0,...,0]'$, 
+the results are a bit closer to the exact one (around 0.35). 
+
+The Nelder Mead method does not guarantee convergence and it is sensitive to the starting point and this becomes evident 
+in this optimisation problem.

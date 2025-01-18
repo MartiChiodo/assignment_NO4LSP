@@ -39,7 +39,7 @@ for dim = 1:length(dimension)
     x_esatto = ones(n,1);
 
     % defining the given initial point
-    x0 = -1.2*ones(n,1);
+    x0 = -1-2*ones(n,1);
     x0(end) = -1;
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
