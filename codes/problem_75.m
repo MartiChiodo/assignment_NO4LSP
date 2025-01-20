@@ -39,7 +39,7 @@ for dim = 1:length(dimension)
     x_esatto = ones(n,1);
 
     % defining the given initial point
-    x0 = -1.2*ones(n,1);
+    x0 = -1-2*ones(n,1);
     x0(end) = -1;
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
@@ -273,7 +273,7 @@ display(TMN)
 % with approximated gradient and hessian
 format short e
 
-max_iter_per_dimension=[1e3, 1e4, 8*1e4];
+max_iter_per_dimension=[2*1e3, 2*1e4, 8*1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
@@ -575,6 +575,10 @@ function hess = approxhessian_pb_75 (x,h,type_h)
                 hk = h;
             case 'REL'
                 hk = h*abs(x(k));
+                if k>1
+                    hkm1 = h*abs(x(k-1));
+                end
+
         end
 
         %diagonal element
@@ -607,7 +611,7 @@ function hess = approxhessian_pb_75 (x,h,type_h)
             %(2f_k^2(x)-f_k^2(x+h_ek)-f_k^2(x+he_k-1))/(2hk^2)
             values(iter) = (2*(10*(k-1)*(x(k)-x(k-1))^2)^2 ...
                 -(10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk^2);
+                -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk*hkm1);
             iter = iter+1; 
 
             %for simmetry, upper diagonal element
