@@ -452,23 +452,19 @@ x_esatto = ones(n,1);
 % [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
 % roc = compute_roc(xseq,x_esatto)
 
-% %TOGLI
-% Definizione della funzione F(x) per n=2
+% I draw the graph for n=2
+% Function definition for n=2
 F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
 
-% Creazione di una griglia di punti
-x1_range = linspace(-2, 2, 100); % Intervallo per x1
-x2_range = linspace(-2, 2, 100); % Intervallo per x2
+x1_range = linspace(-2, 2, 100); 
+x2_range = linspace(-2, 2, 100); 
 [X1, X2] = meshgrid(x1_range, x2_range);
-
-% Calcolo dei valori della funzione
 Z = F(X1, X2);
 
-% Visualizzazione della funzione
 figure;
-surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
-colormap jet; % Colori accesi
-colorbar; % Barra dei colori
+surf(X1, X2, Z, 'EdgeColor', 'none'); 
+colormap jet; 
+colorbar;
 xlabel('x_1');
 ylabel('x_2');
 zlabel('F(x)');
@@ -509,9 +505,6 @@ function grad = gradient_pb_75 (x)
     n=length(x);
     grad=zeros(n,1);
     grad(1)= x(1)-1-200*(x(2)-x(1))^3;
-    %for k=2:n-1
-    %    grad(k)=200*((k-1)^2 * (x(k)-x(k-1))^3 - k^2 * (x(k+1)-x(k))^3 );
-    %end
     grad(2:n-1)= 200*((1:n-2)'.^2 .* (x(2:n-1)-x(1:n-2)).^3 - (2:n-1)'.^2 .* (x(3:n)-x(2:n-1)).^3 );
     grad(n)= 200*(n-1)^2*(x(n)-x(n-1))^3;
 end

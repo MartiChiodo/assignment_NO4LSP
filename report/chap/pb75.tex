@@ -1,15 +1,15 @@
-\section{Model}
+\subsection*{Model}
 The function described in this problem is the following 
 \begin{equation*}
 \begin{aligned}
     &F(\boldsymbol{x}) = \frac{1}{2}\sum_{k=1}^n f_k^2(\boldsymbol{x}) \\
     &f_k(\boldsymbol{x}) = x_k-1, & k=1 \\
-    &f_k(\boldsymbol{x}) = 10(k-1)(x_k-x_{k-1})^2, & 1<k\leq n
+    &f_k(\boldsymbol{x}) = 10(k-1)(x_k - x_{k-1})^2, & 1<k\leq n
 \end{aligned}
 \end{equation*}
 where $n$ is the length of the input vector $\boldsymbol{x}$.
 With the given starting point for minimization being 
-$$\boldsymbol{x_0}=[-1.2,-1.2,...,-1.2,-1]' \in \mathbbm{R}^n.$$
+\[\boldsymbol{x_0}=[-1.2,-1.2,...,-1.2,-1]' \in \mathbbm{R}^n.\]
 The gradient of $F(\boldsymbol{x})$ is the following (note that, besides the first and last components, all the others have the same structure).
 \begin{equation*}
     \nabla F(\mathbf{x}) = 
@@ -64,7 +64,7 @@ We plot the function for $n=2$ in a neighborhood of the minimum point.
         \caption{}
     \end{subfigure}
     \caption{function $F(\boldsymbol{x})$ for $n=2$}
-\label{fig:funzione 2D pb 75}
+%\label{fig:funzione 2D pb 75}
 \end{figure}
 We can easily see that the central area, where the minimum point is located,
 is quite flat. This means that the minimization methods used might have some troubles
@@ -88,8 +88,8 @@ points for each dimension, obtained as perturbations of the given one.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/pb75_table_SX.png}
-    \caption{Results obtained by running the Nelder Mead method on problem 75}
-\label{pb 75 table SX}
+    \caption{Results obtained by running the Nelder Mead method on problem 75} 
+    \label{pb 75 table SX}
 \end{figure}
 
 We notice that the method reports zero failures, which means that it never stopped because of the maximum 
@@ -102,3 +102,21 @@ the results are a bit closer to the exact one (around 0.35).
 
 The Nelder Mead method does not guarantee convergence and it is sensitive to the starting point and this becomes evident 
 in this optimisation problem.
+
+Concerning the rate of convergence, the fact that \verb+Nan+ is always reported is due to the construction of the method
+itself. In fact not necessarily at every iteration the best point of the current simplex is updated; expecially when contraction
+and shrinking phases are reached, it means that new promising points were not found, so it is quite likely that the current best point
+does not change among consecutive iterations. This is a problem when it comes to apply the formula for the experimental rate of 
+convergence $\eqref{definizione_roc}$, since it leads the denominator to be 0.
+
+\medskip
+\subsection*{Modified Newton Method - Approximated Derivatives}
+As previously shown, we can easily compute the exact derivatives for the gradient and the Hessian matrix of $F(x)$. The Hessian should be stored
+as a sparse matrix due to its large dimension. We can then apply the Modified Newton Method to the considered problem, obtaining the following 
+results. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN.png}
+    \caption{Results obtained by running the Nelder Mead method on problem 75} 
+    \label{pb 75 table MN}
+\end{figure}
