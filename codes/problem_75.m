@@ -11,7 +11,7 @@ rng(seed);
 F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
 gradF_75= @(x) gradient_pb_75(x);
 hessF_75= @(x) hessian_pb_75(x);
-%h = 1e-8;
+%h = 1e-2; %togli
 approx_gradF_75= @(x) approxgradient_pb_75(x,h,'COST');
 approx_hessF_75= @(x) approxhessian_pb_75(x,h,'COST');
 
@@ -138,7 +138,7 @@ format short e
 dimension = [1e3 1e4 1e5];
 max_iter_per_dimension = [1e3, 1e4, 1e5];
 tol = 1e-6;
-param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
+param = [0.4, 1e-4, 36; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 
 % initializing structures to store some stats
@@ -255,12 +255,12 @@ for dim = 1:length(dimension)
     end
 end
 
-% plotto cos_pk_gradf
-bar(ultima_direz_discesa')
-ylabel('cos(angolo)')
-title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
-legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
-
+% % plotto cos_pk_gradf
+% bar(ultima_direz_discesa')
+% ylabel('cos(angolo)')
+% title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+% legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
+% 
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
@@ -566,6 +566,7 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         switch type_h
             case 'COST'
                 hk = h;
+                hkm1 = h;
             case 'REL'
                 hk = h*abs(x(k));
                 if k>1
@@ -597,14 +598,32 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         end
 
         %lower diagonal element (only exists if k>1)
-        if k>1
+        if k>1 && k<n
             indices_i(iter) = k; 
             indices_j(iter) = k-1;
-            %(f(x+he_k+he_km1) - f(x+he_k) - f(x+he_km1) + fx)/(hk^2) =
-            %(2f_k^2(x)-f_k^2(x+h_ek)-f_k^2(x+he_k-1))/(2hk^2)
-            values(iter) = (2*(10*(k-1)*(x(k)-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk*hkm1);
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1)^2)^2 ...
+                    + (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    - (10*k*(x(k+1)-x(k))^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2 ...
+                    + (10*k*(x(k+1)-x(k))^2)^2)/(2*hk*hkm1);
+            iter = iter+1; 
+
+            %for simmetry, upper diagonal element
+            indices_i(iter) = k-1; 
+            indices_j(iter) = k;
+            values(iter) = values(iter-1);
+            iter = iter+1;
+
+        elseif k==n
+            indices_i(iter) = k; 
+            indices_j(iter) = k-1;
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2)/(2*hk*hkm1);
             iter = iter+1; 
 
             %for simmetry, upper diagonal element

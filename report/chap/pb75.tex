@@ -70,13 +70,13 @@ We can easily see that the central area, where the minimum point is located,
 is quite flat. This means that the minimization methods used might have some troubles
 when reaching this area because they might get stuck before reaching the minimizer.
 
-\section*{Nelder Mead Method}
+\subsection*{Nelder Mead Method}
 We runned the minimisation problem with Nelder Mead method using the following parameters:
 \begin{eqnarray*}
     \text{reflection } \rho &=& 1.1 \\
     \text{expansion } \chi &=& 2.5 \\
-    \text{contraction } \rho &=& 0.6 \\
-    \text{shrinking } \rho &=& 0.5.
+    \text{contraction } \gamma &=& 0.6 \\
+    \text{shrinking } \sigma &=& 0.5.
 \end{eqnarray*}
 The aim, with this choice, is to try to keep the simplex big enough so that
 the method will not get stuck too easily in the almost flat areas of the function's graph.
@@ -88,7 +88,7 @@ points for each dimension, obtained as perturbations of the given one.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/pb75_table_SX.png}
-    \caption{Results obtained by running the Nelder Mead method on problem 75} 
+    \caption{Results obtained by running the Nelder Mead method on problem 75.} 
     \label{pb 75 table SX}
 \end{figure}
 
@@ -110,13 +110,84 @@ does not change among consecutive iterations. This is a problem when it comes to
 convergence $\eqref{definizione_roc}$, since it leads the denominator to be 0.
 
 \medskip
-\subsection*{Modified Newton Method - Approximated Derivatives}
+\subsection*{Modified Newton Method - Exact Derivatives}
 As previously shown, we can easily compute the exact derivatives for the gradient and the Hessian matrix of $F(x)$. The Hessian should be stored
 as a sparse matrix due to its large dimension. We can then apply the Modified Newton Method to the considered problem, obtaining the following 
 results. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{img/pb75_table_MN.png}
-    \caption{Results obtained by running the Nelder Mead method on problem 75} 
+    \caption{Results obtained by running the Modified Newton method on problem 75 using exact derivatives.} 
     \label{pb 75 table MN}
 \end{figure}
+As expected, this method is performing much better due to the exploitation of the information contained in the gradient and the Hessian. 
+In every tested dimension $n$ it reaches the exact solution within the maximum number of iterations fixed for the corresponding dimension
+(in this case $n$ has been used). For the others parameters the following values have been used:
+\begin{itemize}
+    \item tolerance for the norm of the gradient: $10^{-6}$ for every dimension
+    \item parameter $\rho \in (0,1)$ for the reduction of the steplength in backtracking: $\rho$= 
+    $\begin{cases}
+        0.4 \quad n=10^3 \\
+        0.3 \quad n=10^4 \\
+        0.4 \quad n=10^5
+    \end{cases}$
+    \item parameter $c_1 \in (0,1)$ for the Armijo condition: $c_1$= 
+    $\begin{cases}
+        10^{-4} \quad n=10^3 \\
+        10^{-4} \quad n=10^4 \\
+        10^{-3} \quad n=10^5
+    \end{cases}$
+    \item maximum number of backtracking steps allowed: \texttt{btmax} = 
+    $\begin{cases}
+        36 \quad n=10^3 \\
+        28 \quad n=10^4 \\
+        36 \quad n=10^5
+    \end{cases}$ 
+\end{itemize}
+The values of $\rho$ and \texttt{btmax} for every dimension has been chosen in such a way that stagnation is not allowed. 
+In fact $\rho^{\texttt{btmax}}>\epsilon_m$, where the machine precision is $\epsilon_m \approx 10^{-16}$.
+
+That experimental rate of convergence is approximately 1, so we are losing some of the strength of pure Newton method. 
+
+In the following figure we can see two examples of the progress of the minimum value of $F(x)$.
+\begin{figure}[htbp]
+    \centering
+    % Prima immagine
+    \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
+        \centering
+        \includegraphics[width=\textwidth]{img/pb75_1e3_MN_convergence.jpg}
+        \caption{$n=10^3$}
+    \end{subfigure}
+    \hspace{1cm} %spaziatura tra le immagini
+    % Seconda immagine
+    \begin{subfigure}[t]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb75_1e4_MN_convergence.jpg}
+        \caption{$n=10^4$}
+    \end{subfigure}
+    % Didascalia generale
+    \caption{Example of convergence to zero of the value of $F(x)$.}
+    \label{convergenze MN 75}
+\end{figure}
+Notice how fast it decreases in the first iterations, while the convergence becomes smaller when entering the almost flat area of the function.
+
+\medskip
+\subsection*{Modified Newton Method - Approximated Derivatives}
+Let us now analyze what happens if we suppose not to be able to compute the exact derivatives of function $F$.
+
+Using forward difference with step $h_k$ (where $h_k$ can either be constant or $h_k=h|\hat{x}_k|$ where $k=1,...,n$ and $\hat{x}$ is the point 
+where the approximation is calculated), we can obtain an approximation of the gradient of $F$. Note that we can exploit the structure of the function
+in order to avoid the evaluation of the whole $F$. This makes the evaluation much faster.
+\begin{eqnarray*}
+    \frac{\partial F}{\partial x_k}(x) &\approx& \frac{F(x+h_k \vec{e_k})-F(x)}{h_k} 
+    = \frac{f_k^2(x+h_k \vec{e_k}) +f_{k+1}^2(x+h_k\vec{e_k}) -f_k^2(x) -f_{k+1}^2(x) }{2h_k} \quad 1\leq k<n \\
+    \frac{\partial F}{\partial x_n}(x) &\approx& \frac{f_n^2(x+h_n\vec{e_n}) - f_n^2(x)}{2h_n}.
+\end{eqnarray*}
+The same reasoning can be applied to approximate the Hessian using the general formula 
+$$\frac{\partial^2 f}{\partial x_i \partial x_j} (x) \approx \frac{f(x+h_i\vec{e_i}+h_j\vec{e_j}) - f(x+h_i\vec{e_i}) - f(x+h_j\vec{e_j}) + f(x) }{h_ih_j}$$
+obtaining the following 
+\begin{eqnarray*}
+    \frac{\partial^2 F}{\partial x_k^2} &\approx& \frac{f_k^2(x+2h_k\vec{e_k}) + f_{k+1}^2(x+2h_k\vec{e_k}) -2f_k^2(x+h_k\vec{e_k}) -2f_{k+1}^2(x+h_k\vec{e_k}) +f_k^2(x) + f_{k+1}^2(x) }{2h_k^2} \quad 1 \leq k <n \\
+    \frac{\partial^2 F}{\partial x_n^2} &\approx& \frac{f_n^2(x+2h_n\vec{e_n}) - 2f_n^2(x+h_n\vec{e_n} + f_n^2(x)) }{2h_n^2} \\
+    \frac{\partial^2 F}{\partial x_k \partial x_{k-1}} &\approx& \frac{ }{}
+\end{eqnarray*}
