@@ -164,7 +164,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [~,~,iter,fbest, ~, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
+        [~,xseq,iter,fbest, ~, failure] = nelderMead(f,x0_rndgenerated(:,i),[],[],[],[],iter_max*size(x0,1),tol);
         execution_time_SX(dim,i+1) = toc(t1);
         fbest_struct_SX(dim,i+1) = fbest;
         iter_struct_SX(dim,i+1) = iter;
@@ -179,7 +179,7 @@ for dim = 1:length(dimension)
         disp('************************************')
         disp(['f(xk): ', num2str(fbest)])
         disp(['N. of Iterations: ', num2str(iter),'/',num2str(iter_max*size(x0,1))])
-        disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,1))])
+        disp(['Rate of Convergence: ', num2str(roc_struct_SX(dim,i+1))])
         disp('************************************')
     
         if (failure)

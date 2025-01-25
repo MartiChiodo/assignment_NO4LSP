@@ -48,31 +48,72 @@ Due to the particular structure of the function, the Hessian matrix as a sparse 
     \frac{\partial^2 F}{\partial x_1 \partial x_{n}}(\mathbf{x}) &= -\frac{1}{5}x_{n}
 \end{align*}
 We can now easily notice that the gradient of the function is null when all the components of the vector $\mathbf{x}$ are equal to 0, in this case the Hessian matrix is positive definite, so the point $\mathbf{x} = \mathbf{0}$ is a minimum of the function $F(\mathbf{x})$. 
-Because of the definition of the function, $0$ is the lowest value the function can assume, so the minimum found is global.
+Because of the definition of the function, $0$ is the lowest value the function can assume, so the minimum found is a global one.
 
+We now report some plots of the function for $n= 2$ to better understand the behaviour of it in a neighborhood of the minimum value.
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_fig.png}
+        \caption{}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_clivello.png}
+        \caption{}
+    \end{subfigure}
+    \caption{function $F(\boldsymbol{x})$ for $n=2$}<<<s
+\end{figure}
+
+Differently from the previous problems, the plots do not show flat regions in the neighborhood of the minim value for this problem; that is why we expect both method to well perform and easily found the minimum value in few iterations.  
 
 \medskip
 \subsection*{Nealder Mead Method}
-We now report a table containing some general results obtained by running the Nealder Mead method on the function $F(\mathbf{x})$.
+To optimize the function using the Nealder Mead method the following parameters have been fixed:
+\begin{equation*}
+    \text{reflection } \rho = 1 \quad
+    \text{expansion } \chi = 2 \quad
+    \text{contraction } \gamma = 0.5 \quad
+    \text{shrinking } \sigma = 0.5
+\end{equation*}
+
+Table $\eqref{Sx76}$ contains some general results obtained by running the Nealder Mead method on the function $F(\mathbf{x})$.
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_SX.png}
     \caption{Resultats obtained by running the symplex method on the problem $76$.}
+    \label{Sx76}
 \end{figure*}
 
 First thing we can notice is that for smaller dimensionalities the symplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
 From the plot in figure $\eqref{fig:iter}$, we can see that for most points belonging to $\mathbb{R}^{50}$, the method keeps iterating until the maximum number of iterations is reached without satisfying the stopping criterion.
-This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method needs to perform more iterations to reach the minimum.
-\begin{figure}[htbp]
+This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method would needs to perform more iterations to reach the minimum.
+
+However, as expected due to the shape of the function, the algorithm consistently approximates the minimum point close to $0$ (as we can see from the barplot $\eqref{76log(fbest)}$), even for the only starting point in dimension $50$ from which the method is able to converge.
+
+\begin{figure}[H]
     \centering
-    \includegraphics[width = 0.5\textwidth]{img/pb76_SX_iter.png}
-    \caption{Number of iterations needed by the Nealder Mead method to find the minimum of the problem $76$ for each starting point.}
-    \label{fig:iter}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_SX_iter.png}
+        \caption{Number of iterations used by the method for each starting point.}
+        \label{fig:iter}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{img/pb76_SX_log(fbest).png}
+        \caption{ $\log(f_{best})$ found by the method for each starting point.}
+        \label{76log(fbest)}
+    \end{subfigure}
+    \caption{}
 \end{figure}
 
 From the previous table, we can notice that the experimental rate of convergnce is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$ which defines the experimental rate of convergence.
-This can be seen in the following plots, showing that, in the last iterations, the approximated value of the minimum seems to be stationary.
+This can be seen in the plots $\eqref{76rocnan}$, showing that, in the last iterations, the approximated value of the minimum seems to be stationary.
 \begin{figure}[htbp]
     \centering
     % Prima immagine
@@ -80,7 +121,6 @@ This can be seen in the following plots, showing that, in the last iterations, t
         \centering
         \includegraphics[width=\textwidth]{img/pb76_SX_es10.png}
         \caption{dimension $10$}
-        \label{fig:R6}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -88,23 +128,30 @@ This can be seen in the following plots, showing that, in the last iterations, t
         \centering
         \includegraphics[width=\textwidth]{img/pb76_SX_es25.png}
         \caption{dimension $25$}
-        \label{fig:R8}
     \end{subfigure}
     % Didascalia generale
     \caption{ \small Plots of the progresses of the Nealder Mead method for different dimensionalities for the problem $76$.}
-    \label{fig:overall}
+    \label{76rocnan}
 \end{figure}
 
 
 \medskip
 \subsection*{Modified Newton Method - Exact Derivatives}
-We now report a table containing some general results obtained by running the Modified Newton method on the function $F(\mathbf{x})$.
+The experiments have been performed also using the Modified Newton method and the parameters have been fixed to the following values:
+\begin{align*}
+    \rho =  0.4, \quad c_1 = 10^{-4}, \quad bt\_max = 36 \quad &\text{ for dimension } 10^3 \\
+    \rho =  0.3, \quad c_1 = 10^{-4}, \quad bt\_max = 28 \quad &\text{ for dimension } 10^4 \\
+    \rho =  0.4, \quad c_1 = 10^{-3}, \quad bt\_max = 36 \quad &\text{ for dimension } 10^5 
+\end{align*}
+
+Table $\eqref{76MN}$ contains some general results obtained by running the Modified Newton method on the function $F(\mathbf{x})$.
 We obviously expect the method to perform better than the symplex method because of the exact derivatives used in the computation of the descent direction.
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_MN.png}
     \caption{Resultats obtained by running the Modified Newton Method on the problem $76$ using the exact derivatives.}
+    \label{76MN}
 \end{figure*}
 
 This time, the method always converges to the minimum point in very few iterations, even for higher dimensionalities. 
@@ -187,7 +234,11 @@ As we can see from the plots $\eqref{logfbest_difffinite76}$, expecially for lar
     \end{subfigure}
     % Didascalia generale
     \caption{ \small Average time of execution in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $76$.}
+    \label{76itermn}
 \end{figure*}
+
+In general, we can notice that for this specific problem the exact derivatives or the approximated ones while running the Modified Newton method does not significately affect the results. As a matter of fact we can see that the average minimum point found is consistently close to $0$ for each choice of the increment $h$ (as shown by the barplots $\eqref{logfbest_difffinite76}$) and also the average time of execution remains almost the same as we can see from the barplots $\eqref{76itermn}$. 
+Lastly, also the average rate of convergence, shown in barplots $\eqref{76rocmn}$,  computed while running the method with approxiamated derivates is close to $2$ for each increment.
 
 
 \begin{figure*}[htbp]
@@ -207,7 +258,7 @@ As we can see from the plots $\eqref{logfbest_difffinite76}$, expecially for lar
     \end{subfigure}
     % Didascalia generale
     \caption{ \small Average values of the experimental rate of convergence in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $76$.}
+    \label{76rocmn}
 \end{figure*}
 
-
-The others plots show that the average time of execution and the average rate of convergence are not significantly affected by the approximation of the derivatives for none of the values oh the increment $h$.
+In conclusion, as deducted at the beginning, for this specific problem, which does not have a flat neighborhood of the minimum, optimizing the function using a method which takes advantage of the information contained in the derivatives is a great choice because it can easily converge in few iterations.

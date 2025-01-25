@@ -4,7 +4,7 @@ The function described in this problem is the following
     \begin{aligned}
     & F(\mathbf{x}) = \frac{1}{2} \sum_{k=1}^{n} f_k^2(x) \\
     & f_k(\mathbf{x}) = 10 \left(x_k^2 - x_{k+1}\right), \quad  & \mod (k,2) = 1\\   
-    & f_n(\mathbf{x}) = x_{k_1} -1, \quad & \mod(k,2) = 0
+    & f_k(\mathbf{x}) = x_{k-1} -1, \quad & \mod(k,2) = 0
     \end{aligned}
 \end{equation*}
 where $n$ denotes the dimensionality of the input vector $\mathbf{x}$. As convention, we set $x_{n+1} = x_1$ when it is necessary, that is when the dimensionality $n$ is an odd number.
@@ -31,35 +31,66 @@ If $n$ is odd, there are two changements in the Hessian matrix: the derivative $
     \frac{\partial^2 F}{\partial x_n \partial x_1} (\mathbf{x}) &= \frac{\partial^2 F}{\partial x_1 \partial x_n} (\mathbf{x}) = -200x_n
 \end{align*}
 
-
 By analyzing the derivatives of the problem, we can deduce that the gradient of the function is nullified by the vector composed of ones which also nullifies the value of $F(\mathbf{x})$. 
-
+As a matter of fact, we can notice that the terms $f_k()$ for an odd value of $k$ are nullified only when $x_{k - 1} = 1$, while the terms $f_k()$ for an even value of $k$ are nullified when $1 = x_k^2 = x_{k+1}$. This leads to the conclusion that the function $F(\mathbf{x})$ assume is lower value, in other words is nullified, when for the vector $\mathbf{x} = \mathbbm{1}$, which, indeed, is a global minimum.
+\\ To better understand the behavior of the function $F(\mathbf{x})$ in the neighbourhood of the minimizer we have found, we now report a plot of the function in 2D for $n = 2$. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{img/pb25_fig.png}
+    \caption{2D plot of the function $F(x_1, x_2)$.}
+\end{figure}
+From the plot, we can notice that the function is almost flat near the minimum; this may affect the performances of the algorithms implemented because flat regions may be the cause of slow convergence or even stagnation for optimization solvers. 
 
  
 \medskip
 \subsection*{Nealder Mead Method}
+We runned the experiments with Nealder Mea method using the following parameters:
+\begin{equation*}
+    \text{reflection } \rho = 1 \quad
+    \text{expansion } \chi = 2 \quad
+    \text{contraction } \gamma = 0.5 \quad
+    \text{shrinking } \sigma = 0.5
+\end{equation*}
+and fixing the tollerance to $10^{-4}$.
+\\ For each dimensionality, $n \in \{10; 25; 50\}$, $11$ experiments have been runned, each of them starting from a different initial point; in particular, one of these initial point is the one declared at the beginning, the others have been obtained as perturbations of the first initial guess.
+
+The table $\eqref{SX25}$ shows some general results of these experiments, such as the value of the minimum point found, the average number of iterations used by the method, the average time of execution, the number of failures declared for each dimensionality and the average rate of convergence.
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb25_SX_table.png}
     \caption{Results obtained by running the symplex method on the problem $25$.}
+    \label{SX25}
 \end{figure*}
-We now report a table showing some general results obtained by running the Nealder Mead method on the problem.
 
 Looking at the table, it is clear that even if the method satisfies the stopping criterion for all dimensionalities it does not reach the point we declared be a global minimum, actually the minimum value the algorithm finds increases with the dimensionality.
-We are not too surprised by the por performance of the symplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objecive function.
+We are not too surprised by the por performance of the symplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objecive function and thus it is possible that it got stuck in the flat zone of the function.
+
+The column that should contain the average rate of convergence is filled with \verb+NaN+ values. This occurs because the best value found by the method remains almost stationary in the last few iterations, usually during the shrinking phase. As a result, in the formula $\eqref{definizione_roc}$, we encounter an indeterminate form $0/0$ which leads to a \verb+NaN+ value.
 
 
 \medskip
 \subsection*{Modified Newton Method - Exact Derivatives}
-We now report a table showing some general results obtained by running the Modified Newton method on the problem.
+We can now proceed by applying the Modified Newton Method to the problem we are considering using the exact derivatives we computed before. As already said, it is important to store the Hessian matrix in a sparse structure because we are running experiments for dimensionality that vary in the set $\{10^3, 10^4, 10^5\}$. 
+As we have already done previously, for each dimension we run $11$ experiments, the first one with the declared initial guess and the others with perturbations of it.
+
+For each dimensionality we have used the same set of parameters, which are:
+\begin{equation*}
+    \text{tollerance } tol = 10^{-4}  \quad
+    \rho = 0.5 \quad 
+    c_1 = 10^{-4} \quad
+    \text{maximum number of backtracking step } = 48
+\end{equation*}
+
+The table $\eqref{MN25}$ is analogous to the previous one and shows some general results obtained by running the Modified Newton method on the problem.
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb25_MN_table.png}
     \caption{Results obtained by running the Modified Newton method on the problem $25$ using the exact derivatives.}
+    \label{MN25}
 \end{figure*}
 
 As expected from the theoretical background we have about these methods, the Modified Newton method performs significantly better than the Nealder Mead method. The table shows that the method converges to a point in which the norm of the gradient is below the fixed tollerance for all dimensionalities tested, and the minimum value found is consistently close to zero. 
-This is because the Modified Newton method leverages the gradient and Hessian information, allowing it to make more informed steps towards the minimum and thus to converge in fewer iterations.
+This is because the Modified Newton method uses the gradient and Hessian information, allowing it to make more informed steps towards the minimum and thus to converge in fewer iterations.
 
 However, we can notice that the ratio between the average time of execution and the average number of iterations is smaller for the symplex method. This means that each iteration performed by the Modified Newton method is more high-performance but also more costly in terms of computational effort. 
 
@@ -191,7 +222,11 @@ As we can see from the barplot, as the value of $h$ diminish the minimum found i
     \end{subfigure}
     % Didascalia generale
     \caption{ \small Average values of the experimental rate of convergence in function of the increment $h$  while running the Modified Newton Method with approximated derivatives on the problem $25$.}
+    \label{25roc}
 \end{figure*}
 
 
 It can be intresting notice from the barplots comparing the average number of iterations needed by the Modified Newton method (Figure $\eqref{avgiterations25}$) that a specific increment based on the point in which we are approximating the derivative seems to make the method perform better than using the costant increment.  
+
+Lastly we can also notice that the average rate of convergence, shown in the barplots $\eqref(25roc)$, is still close to the expected value $2$ and it is on average higher when the increment is costant for each component of the point in which we are approxiamating the derivatives.
+This means that all the efforts we put in to avoid numerical cancellation and to derive a more efficient formula for the finite differences have paid off. The results show that the Modified Newton method with approximated derivatives can still achieve a good performance, especially when using a specific increment based on the point in which we are approximating the derivative. 
