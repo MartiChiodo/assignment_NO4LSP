@@ -11,7 +11,7 @@ where $n$ denotes the dimensionality of the input vector $\mathbf{x}$.
 \\ The starting point for the minimization is the vector $\mathbf{x}_0 = [2, 2, \ldots, 2]$.
 
 
-To be able to say something more about the behaviour of the problem is useful to look at the gradient of the function $F(\mathbf{x})$ and at its Hessian matrix.
+To be able to say something more about the behavior of the problem is useful to look at the gradient of the function $F(\mathbf{x})$ and at its Hessian matrix.
 \begin{equation*}
     \nabla F(\mathbf{x}) = 
     \begin{bmatrix}
@@ -50,7 +50,7 @@ Due to the particular structure of the function, the Hessian matrix as a sparse 
 We can now easily notice that the gradient of the function is null when all the components of the vector $\mathbf{x}$ are equal to 0, in this case the Hessian matrix is positive definite, so the point $\mathbf{x} = \mathbf{0}$ is a minimum of the function $F(\mathbf{x})$. 
 Because of the definition of the function, $0$ is the lowest value the function can assume, so the minimum found is a global one.
 
-We now report some plots of the function for $n= 2$ to better understand the behaviour of it in a neighborhood of the minimum value.
+We now report some plots of the function for $n= 2$ to better understand the behavior of it in a neighborhood of the minimum value.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.45\textwidth}
@@ -84,13 +84,13 @@ Table $\eqref{Sx76}$ contains some general results obtained by running the Neald
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_SX.png}
-    \caption{Resultats obtained by running the symplex method on the problem $76$.}
+    \caption{Results obtained by running the simplex method on the problem $76$.}
     \label{Sx76}
 \end{figure*}
 
-First thing we can notice is that for smaller dimensionalities the symplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
+First thing we can notice is that for smaller dimensionalities the simplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
 From the plot in figure $\eqref{fig:iter}$, we can see that for most points belonging to $\mathbb{R}^{50}$, the method keeps iterating until the maximum number of iterations is reached without satisfying the stopping criterion.
-This behaviour can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method would needs to perform more iterations to reach the minimum.
+This behavior can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method would needs to perform more iterations to reach the minimum.
 
 However, as expected due to the shape of the function, the algorithm consistently approximates the minimum point close to $0$ (as we can see from the barplot $\eqref{76log(fbest)}$), even for the only starting point in dimension $50$ from which the method is able to converge.
 
@@ -112,7 +112,7 @@ However, as expected due to the shape of the function, the algorithm consistentl
     \caption{}
 \end{figure}
 
-From the previous table, we can notice that the experimental rate of convergnce is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$ which defines the experimental rate of convergence.
+From the previous table, we can notice that the experimental rate of convergence is always \verb+Nan+: this is due to the fact that in the last iterations the value of $\mathbf{x}^{(k)}$ does not change much and thus it yields a division by zero in the formula $\eqref{definizione_roc}$ which defines the experimental rate of convergence.
 This can be seen in the plots $\eqref{76rocnan}$, showing that, in the last iterations, the approximated value of the minimum seems to be stationary.
 \begin{figure}[htbp]
     \centering
@@ -145,19 +145,19 @@ The experiments have been performed also using the Modified Newton method and th
 \end{align*}
 
 Table $\eqref{76MN}$ contains some general results obtained by running the Modified Newton method on the function $F(\mathbf{x})$.
-We obviously expect the method to perform better than the symplex method because of the exact derivatives used in the computation of the descent direction.
+We obviously expect the method to perform better than the simplex method because of the exact derivatives used in the computation of the descent direction.
 
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb76_table_MN.png}
-    \caption{Resultats obtained by running the Modified Newton Method on the problem $76$ using the exact derivatives.}
+    \caption{Results obtained by running the Modified Newton Method on the problem $76$ using the exact derivatives.}
     \label{76MN}
 \end{figure*}
 
 This time, the method always converges to the minimum point in very few iterations, even for higher dimensionalities. 
 We can also appreciate the fact that the approximated rate of convergence is close to $2$, as expected for a Newton method.
-Comparing this table with the previous one (showing the results obtained by running the symplex method), we can see that the Modified Newton method identifies as minimum a point in which the evaluation of the function is much smaller. 
-This behavior aligns with theoretical expectations, as the Modified Newton method leverages the exact derivatives of the function $F(\mathbf{x})$ to determine the descent direction, while the symplex method depends only on function evaluations.
+Comparing this table with the previous one (showing the results obtained by running the simplex method), we can see that the Modified Newton method identifies as minimum a point in which the evaluation of the function is much smaller. 
+This behavior aligns with theoretical expectations, as the Modified Newton method leverages the exact derivatives of the function $F(\mathbf{x})$ to determine the descent direction, while the simplex method depends only on function evaluations.
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
@@ -190,7 +190,7 @@ The approximation of the Hessian matrix has to be approached taking into account
 \end{align*}
 The values of the inferior diagonal are obtained by exploiting the symmetry of the Hessian matrix.
 
-The terms have been computed following the same approach described above: the numerator has been expanded negletting the $f_i^2()$ that are not affected by the varation of the components with respect to which we are differentiating.
+The terms have been computed following the same approach described above: the numerator has been expanded neglecting the $f_i^2()$ that are not affected by the variation of the components with respect to which we are differentiating.
 
 
 We now report some barplots showing the results obtained by running the Modified Newton method on the function $F(\mathbf{x})$ using the approximated derivatives.
@@ -201,7 +201,7 @@ We now report some barplots showing the results obtained by running the Modified
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_log(fbest).png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -215,7 +215,7 @@ We now report some barplots showing the results obtained by running the Modified
     \label{logfbest_difffinite76}
 \end{figure}
 
-As we can see from the plots $\eqref{logfbest_difffinite76}$, expecially for larger values of the increments, the algorithm converges to a point such that the value of the function is higher accordingly to the fact that the approximated derivatives are less accurate. Nonetheless, the method succeeds to find an acceptable approximation of the minimum value even when computing the descent direction with just an approximation of the derivatives.
+As we can see from the plots $\eqref{logfbest_difffinite76}$, especially for larger values of the increments, the algorithm converges to a point such that the value of the function is higher accordingly to the fact that the approximated derivatives are less accurate. Nonetheless, the method succeeds to find an acceptable approximation of the minimum value even when computing the descent direction with just an approximation of the derivatives.
 
 \begin{figure*}[htbp]
     \centering
@@ -223,7 +223,7 @@ As we can see from the plots $\eqref{logfbest_difffinite76}$, expecially for lar
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_timeofexec.png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -237,8 +237,8 @@ As we can see from the plots $\eqref{logfbest_difffinite76}$, expecially for lar
     \label{76itermn}
 \end{figure*}
 
-In general, we can notice that for this specific problem the exact derivatives or the approximated ones while running the Modified Newton method does not significately affect the results. As a matter of fact we can see that the average minimum point found is consistently close to $0$ for each choice of the increment $h$ (as shown by the barplots $\eqref{logfbest_difffinite76}$) and also the average time of execution remains almost the same as we can see from the barplots $\eqref{76itermn}$. 
-Lastly, also the average rate of convergence, shown in barplots $\eqref{76rocmn}$,  computed while running the method with approxiamated derivates is close to $2$ for each increment.
+In general, we can notice that for this specific problem the exact derivatives or the approximated ones while running the Modified Newton method does not significantly affect the results. As a matter of fact we can see that the average minimum point found is consistently close to $0$ for each choice of the increment $h$ (as shown by the barplots $\eqref{logfbest_difffinite76}$) and also the average time of execution remains almost the same as we can see from the barplots $\eqref{76itermn}$. 
+Lastly, also the average rate of convergence, shown in barplots $\eqref{76rocmn}$,  computed while running the method with approximated derivatives is close to $2$ for each increment.
 
 
 \begin{figure*}[htbp]
@@ -247,7 +247,7 @@ Lastly, also the average rate of convergence, shown in barplots $\eqref{76rocmn}
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_rateofconv.png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine

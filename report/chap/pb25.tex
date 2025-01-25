@@ -16,16 +16,16 @@ In order to compute the derivatives of this problem we have to consider separate
     & \frac{\partial F}{\partial x_k} (\mathbf{x}) = \frac{\partial}{\partial x_k} \left[\frac{1}{2} f_{k}^2(\mathbf{x}) + \frac{1}{2} f_{k+1}^2(\mathbf{x})\right] = 200x_k (x_k^2 - x_{k+1}) + (x_k -1)\quad & \mod(k,2) = 1
 \end{align*}
 
-If the dimensionality $n$ is odd, the only changement is in the first component of the gradient, which becomes
+If the dimensionality $n$ is odd, the only change is in the first component of the gradient, which becomes
 $$ \frac{\partial F}{\partial x_1} (\mathbf{x})  = \frac{\partial}{\partial x_k} \left[\frac{1}{2} f_{k}^2(\mathbf{x}) + \frac{1}{2} f_{k+1}^2(\mathbf{x}) + \frac{1}{2}f_n^2(\mathbf{x}) \right] = 200x_1 (x_1^2 - x_{2}) + (x_1 -1)  - 100(x_n^2 - x_1)$$
 
-Looking at the structure of the problem we are considering, it is obvious that the Hessian matrix is a sparse matrix whose particular structure depends again on wheter $n$ is even or odd. In the first case, the Hessian is a block tridiagonal matrix with the following non-zero terms
+Looking at the structure of the problem we are considering, it is obvious that the Hessian matrix is a sparse matrix whose particular structure depends again on whether $n$ is even or odd. In the first case, the Hessian is a block trigonal matrix with the following non-zero terms
 \begin{align*}
     \frac{\partial^2 F}{\partial x_k^2} (\mathbf{x}) &= 100, & \frac{\partial^2 F}{\partial x_k \partial x_{k+1}} (\mathbf{x}) &= 0, & \frac{\partial^2 F}{\partial x_k \partial x_{k-1}} (\mathbf{x}) &= -200x_{k-1} & \mod(k,2) &= 0 \\
     \frac{\partial^2 F}{\partial x_k^2} (\mathbf{x}) &= 600x_k^2 - 200x_{k+1} + 1, & \frac{\partial^2 F}{\partial x_k \partial x_{k+1}} (\mathbf{x}) &= -200x_k, & \frac{\partial^2 F}{\partial x_k \partial x_{k-1}} (\mathbf{x}) &= 0 & \mod(k,2) &= 1 \\
 \end{align*}
 
-If $n$ is odd, there are two changements in the Hessian matrix: the derivative $\frac{\partial^2 F}{\partial x_1^2} (\mathbf{x}) $ is affected by the presence of $x_1$ in the term $f_n()$ and the extremal diagonals are not zero anymore. We report the terms of the Hessian matrix that differs from the previous case
+If $n$ is odd, there are two changes in the Hessian matrix: the derivative $\frac{\partial^2 F}{\partial x_1^2} (\mathbf{x}) $ is affected by the presence of $x_1$ in the term $f_n()$ and the external diagonals are not zero anymore. We report the terms of the Hessian matrix that differs from the previous case
 \begin{align*}
     \frac{\partial^2 F}{\partial x_1^2}  (\mathbf{x}) &= 600x_k^2 - 200x_{k+1} + 101 \\
     \frac{\partial^2 F}{\partial x_n \partial x_1} (\mathbf{x}) &= \frac{\partial^2 F}{\partial x_1 \partial x_n} (\mathbf{x}) = -200x_n
@@ -33,7 +33,7 @@ If $n$ is odd, there are two changements in the Hessian matrix: the derivative $
 
 By analyzing the derivatives of the problem, we can deduce that the gradient of the function is nullified by the vector composed of ones which also nullifies the value of $F(\mathbf{x})$. 
 As a matter of fact, we can notice that the terms $f_k()$ for an odd value of $k$ are nullified only when $x_{k - 1} = 1$, while the terms $f_k()$ for an even value of $k$ are nullified when $1 = x_k^2 = x_{k+1}$. This leads to the conclusion that the function $F(\mathbf{x})$ assume is lower value, in other words is nullified, when for the vector $\mathbf{x} = \mathbbm{1}$, which, indeed, is a global minimum.
-\\ To better understand the behavior of the function $F(\mathbf{x})$ in the neighbourhood of the minimizer we have found, we now report a plot of the function in 2D for $n = 2$. 
+\\ To better understand the behavior of the function $F(\mathbf{x})$ in the neighborhood of the minimizer we have found, we now report a plot of the function in 2D for $n = 2$. 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{img/pb25_fig.png}
@@ -44,26 +44,26 @@ From the plot, we can notice that the function is almost flat near the minimum; 
  
 \medskip
 \subsection*{Nealder Mead Method}
-We runned the experiments with Nealder Mea method using the following parameters:
+We run the experiments with Nealder Mea method using the following parameters:
 \begin{equation*}
     \text{reflection } \rho = 1 \quad
     \text{expansion } \chi = 2 \quad
     \text{contraction } \gamma = 0.5 \quad
     \text{shrinking } \sigma = 0.5
 \end{equation*}
-and fixing the tollerance to $10^{-4}$.
-\\ For each dimensionality, $n \in \{10; 25; 50\}$, $11$ experiments have been runned, each of them starting from a different initial point; in particular, one of these initial point is the one declared at the beginning, the others have been obtained as perturbations of the first initial guess.
+and fixing the tolerance to $10^{-4}$.
+\\ For each dimensionality, $n \in \{10; 25; 50\}$, $11$ experiments have been run, each of them starting from a different initial point; in particular, one of these initial point is the one declared at the beginning, the others have been obtained as perturbations of the first initial guess.
 
 The table $\eqref{SX25}$ shows some general results of these experiments, such as the value of the minimum point found, the average number of iterations used by the method, the average time of execution, the number of failures declared for each dimensionality and the average rate of convergence.
 \begin{figure*}[htbp]
     \centering
     \includegraphics[width = 0.9\textwidth]{img/pb25_SX_table.png}
-    \caption{Results obtained by running the symplex method on the problem $25$.}
+    \caption{Results obtained by running the simplex method on the problem $25$.}
     \label{SX25}
 \end{figure*}
 
 Looking at the table, it is clear that even if the method satisfies the stopping criterion for all dimensionalities it does not reach the point we declared be a global minimum, actually the minimum value the algorithm finds increases with the dimensionality.
-We are not too surprised by the por performance of the symplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objecive function and thus it is possible that it got stuck in the flat zone of the function.
+We are not too surprised by the por performance of the simplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objective function and thus it is possible that it got stuck in the flat zone of the function.
 
 The column that should contain the average rate of convergence is filled with \verb+NaN+ values. This occurs because the best value found by the method remains almost stationary in the last few iterations, usually during the shrinking phase. As a result, in the formula $\eqref{definizione_roc}$, we encounter an indeterminate form $0/0$ which leads to a \verb+NaN+ value.
 
@@ -75,7 +75,7 @@ As we have already done previously, for each dimension we run $11$ experiments, 
 
 For each dimensionality we have used the same set of parameters, which are:
 \begin{equation*}
-    \text{tollerance } tol = 10^{-4}  \quad
+    \text{tolerance } tol = 10^{-4}  \quad
     \rho = 0.5 \quad 
     c_1 = 10^{-4} \quad
     \text{maximum number of backtracking step } = 48
@@ -89,10 +89,10 @@ The table $\eqref{MN25}$ is analogous to the previous one and shows some general
     \label{MN25}
 \end{figure*}
 
-As expected from the theoretical background we have about these methods, the Modified Newton method performs significantly better than the Nealder Mead method. The table shows that the method converges to a point in which the norm of the gradient is below the fixed tollerance for all dimensionalities tested, and the minimum value found is consistently close to zero. 
+As expected from the theoretical background we have about these methods, the Modified Newton method performs significantly better than the Nealder Mead method. The table shows that the method converges to a point in which the norm of the gradient is below the fixed tolerance for all dimensionalities tested, and the minimum value found is consistently close to zero. 
 This is because the Modified Newton method uses the gradient and Hessian information, allowing it to make more informed steps towards the minimum and thus to converge in fewer iterations.
 
-However, we can notice that the ratio between the average time of execution and the average number of iterations is smaller for the symplex method. This means that each iteration performed by the Modified Newton method is more high-performance but also more costly in terms of computational effort. 
+However, we can notice that the ratio between the average time of execution and the average number of iterations is smaller for the simplex method. This means that each iteration performed by the Modified Newton method is more high-performance but also more costly in terms of computational effort. 
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
@@ -100,11 +100,11 @@ Approximating the derivatives of the function $F(\mathbf{x})$ using finite diffe
 
 As done previously we will first consider the case in which the dimensionality $n$ is an even integer and then we will specify what changes if $n$ is an odd number.
 
-Let's begin by approximating the first order derivatives by using the centered finite difference formula with increment $h_k$. We keep track of the subscript $k$ in order to derive formula which are valid both for the case with costant increments and the case in which the increments depend on the components respect to which we are differentiating.
+Let's begin by approximating the first order derivatives by using the centered finite difference formula with increment $h_k$. We keep track of the subscript $k$ in order to derive formula which are valid both for the case with constant increments and the case in which the increments depend on the components respect to which we are differentiating.
 The general formula is
 $$ \frac{\partial F }{\partial x_k} (\mathbf{x}) \approx \frac{F(\mathbf{x} + h_k \vec{e}_k) - F(\mathbf{x} - h_k \vec{e}_k)}{2h_k} = 
 \frac{\sum_{i = 1}^{n} f_i(\mathbf{x} + h_k \vec{e}_k)^2 - \sum_{i = 1}^{n} f_i(\mathbf{x} - h_k \vec{e}_k)^2}{4h_k}$$
-but it would not be much wise to apply it directly to out problem because it would be unnecessary to evaluate all the terms $f_i^2(\mathbf{x})$ which are not affected by the varation of the $k$-th component of the vector $\mathbf{x}$.
+but it would not be much wise to apply it directly to out problem because it would be unnecessary to evaluate all the terms $f_i^2(\mathbf{x})$ which are not affected by the variation of the $k$-th component of the vector $\mathbf{x}$.
 In particular, we can notice that if we are differentiating with respect to an even component the only term we need to compute is $f_{k-1}^2()$, while if we are differentiating with respect to an odd component we only need to expand the terms $f_k^2()$ and $f_{k+1}^2()$.
 Omitting the calculus, we obtain the following formula
 \begin{align*}
@@ -118,7 +118,7 @@ If $n$ is an odd number, the approximation of $\frac{\partial F}{\partial x_1} (
  = \frac{80x_1 h_1(10x_1^2 + 10 h_1^2 -10x_{2}) - 4h_1 (x_1 -1) -40h_1 (10x_n^2 - 10x_1) }{4h_1}
 \end{align*}
 
-For what concerns the second order derivatives, we can apply a similar reasoning based on negletting the terms $f_i^2(\mathbf{x})$ which are not affected by the variation of the $k$-th component of $\mathbf{x}$ but starting from the general formula
+For what concerns the second order derivatives, we can apply a similar reasoning based on neglecting the terms $f_i^2(\mathbf{x})$ which are not affected by the variation of the $k$-th component of $\mathbf{x}$ but starting from the general formula
 $$ \frac{\partial^2 F}{\partial x_i \partial x_j} (\mathbf{x})  = \frac{F(\mathbf{x} + h_i \vec{e}_i + h_j \vec{e}_j) - F(\mathbf{x} + h_i \vec{e}_i) - F(\mathbf{x} - h_j \vec{e}_j) + F(\mathbf{x})}{h_i h_j}$$
 Due to the particular structure of the problem we are considering, many second order derivatives are zero, thus we are going to approximate solely the ones we know are not null.
 \begin{align*}
@@ -128,16 +128,16 @@ Due to the particular structure of the problem we are considering, many second o
     & \frac{\partial^2 F}{\partial x_k \partial x_{k+1}} (\mathbf{x}) \approx \frac{f_{k}^2 (\mathbf{x} + h_k \vec{e}_k + h_{k+1} \vec{e}_{k+1}) - f_{k}^2 (\mathbf{x} + h_k \vec{e}_k) - f_{k}^2 (\mathbf{x} + h_{k+1} \vec{e}_{k+1}) + f_{k}(\mathbf{x})}{2h_k h_{k+1}} \\
     & \qquad = \frac{20h_{k+1} (-10h_k^2 - 20h_k x_k)}{2h_k h_{k+1}}, & \mod(k,2) = 1
 \end{align*}
-We explicitely approximated just the superior diagonal, the inferior one is obtained by imposing the simmetry of the hessian matrix.
+We explicitly approximated just the superior diagonal, the inferior one is obtained by imposing the symmetry of the hessian matrix.
 
-If the dimensionality $n$ is an odd number, the changes only concern the term  $\frac{\partial^2 F}{\partial x_1^2} (\mathbf{x})$ and the extremal diagonal which are not null anymore. In particular, these terms become
+If the dimensionality $n$ is an odd number, the changes only concern the term  $\frac{\partial^2 F}{\partial x_1^2} (\mathbf{x})$ and the external diagonal which are not null anymore. In particular, these terms become
 \begin{align*}
     \frac{\partial^2 F}{\partial x_1^2} (\mathbf{x}) & \approx\frac{40h_1^2 (10x_1^2 - 10x_{2}) + 1400 h_1^4 + 2400h_1^3 x_1 + 800 x_1 h_1^2 + 202h_1^2 }{2 h_k1^2} \\
     \frac{\partial^2 F}{ \partial x_n \partial x_1} & = \frac{\partial^2 F}{ \partial x_1 \partial x_n} \approx \frac{20h_1(-20x_n h_n - 10h_n^2 )}{2h_1 h_n}
 \end{align*}
 
 
-According to what we expect, seeking for the minimum using the approximations of the derivatives affects the performance of the Modified Newton method, expecially for larger values of the increment $h$. 
+According to what we expect, seeking for the minimum using the approximations of the derivatives affects the performance of the Modified Newton method, especially for larger values of the increment $h$. 
 In fact, from the theory, we know that the finite difference formula approximates the analytical derivative with an error that depends on the value of the increment $h$. Specifically, the error diminishes as $h$ approaches $0$.
 
 \begin{figure}[htbp]
@@ -171,7 +171,7 @@ As we can see from the barplot, as the value of $h$ diminish the minimum found i
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb25_MN_difffinite_COST_timeofexec.png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -190,7 +190,7 @@ As we can see from the barplot, as the value of $h$ diminish the minimum found i
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb25_MN_difffinite_COST_avgiterations.png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -211,7 +211,7 @@ As we can see from the barplot, as the value of $h$ diminish the minimum found i
     \begin{subfigure}[t]{0.45\textwidth}  % Larghezza del 45% del testo
         \centering
         \includegraphics[width=\textwidth]{img/pb76_MN_difffinite_COST_rateofconv.png}
-        \caption{Costant Increment $h$}
+        \caption{Constant Increment $h$}
     \end{subfigure}
     \hspace{1cm} %spaziatura tra le immagini
     % Seconda immagine
@@ -226,7 +226,7 @@ As we can see from the barplot, as the value of $h$ diminish the minimum found i
 \end{figure*}
 
 
-It can be intresting notice from the barplots comparing the average number of iterations needed by the Modified Newton method (Figure $\eqref{avgiterations25}$) that a specific increment based on the point in which we are approximating the derivative seems to make the method perform better than using the costant increment.  
+It can be interesting notice from the barplots comparing the average number of iterations needed by the Modified Newton method (Figure $\eqref{avgiterations25}$) that a specific increment based on the point in which we are approximating the derivative seems to make the method perform better than using the constant increment.  
 
-Lastly we can also notice that the average rate of convergence, shown in the barplots $\eqref(25roc)$, is still close to the expected value $2$ and it is on average higher when the increment is costant for each component of the point in which we are approxiamating the derivatives.
+Lastly we can also notice that the average rate of convergence, shown in the barplots $\eqref(25roc)$, is still close to the expected value $2$ and it is on average higher when the increment is constant for each component of the point in which we are approximating the derivatives.
 This means that all the efforts we put in to avoid numerical cancellation and to derive a more efficient formula for the finite differences have paid off. The results show that the Modified Newton method with approximated derivatives can still achieve a good performance, especially when using a specific increment based on the point in which we are approximating the derivative. 
