@@ -11,7 +11,7 @@ rng(seed);
 F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
 gradF_75= @(x) gradient_pb_75(x);
 hessF_75= @(x) hessian_pb_75(x);
-%h = 1e-8;
+%h = 1e-2; %togli
 approx_gradF_75= @(x) approxgradient_pb_75(x,h,'COST');
 approx_hessF_75= @(x) approxhessian_pb_75(x,h,'COST');
 
@@ -138,7 +138,7 @@ format short e
 dimension = [1e3 1e4 1e5];
 max_iter_per_dimension = [1e3, 1e4, 1e5];
 tol = 1e-6;
-param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
+param = [0.4, 1e-4, 36; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 
 % initializing structures to store some stats
@@ -255,12 +255,12 @@ for dim = 1:length(dimension)
     end
 end
 
-% plotto cos_pk_gradf
-bar(ultima_direz_discesa')
-ylabel('cos(angolo)')
-title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
-legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
-
+% % plotto cos_pk_gradf
+% bar(ultima_direz_discesa')
+% ylabel('cos(angolo)')
+% title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+% legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
+% 
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
@@ -277,11 +277,11 @@ max_iter_per_dimension=[2*1e3, 2*1e4, 8*1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
-h_values = [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12]; 
+h_values = [1e-12]; %1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 
 dimension = [1e3, 1e4, 1e5];
 
 param = [0.8, 1e-5, 90; 0.8, 1e-5, 90; 0.8, 1e-5, 90];
-type_h = 'REL';
+type_h = 'COST';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -436,72 +436,22 @@ end
 
 
 %% 
-% Running the problem on Nelder_Mead method 
-tol=1e-6;
-% n=50;
-x0= -1.2*ones(n,1);
-x0(n)= -1;
-x_esatto = ones(n,1);
-% F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
-
-% rho=1.5; %tune
-% chi=2.5; %tune
-% gamma=0.6; %tune
-% sigma=0.5; %tune
-% 
-% [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
-% roc = compute_roc(xseq,x_esatto)
-
-% %TOGLI
-% Definizione della funzione F(x) per n=2
+% I draw the graph for n=2
+% Function definition for n=2
 F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
 
-% Creazione di una griglia di punti
-x1_range = linspace(-2, 2, 100); % Intervallo per x1
-x2_range = linspace(-2, 2, 100); % Intervallo per x2
+x1_range = linspace(-2, 2, 100); 
+x2_range = linspace(-2, 2, 100); 
 [X1, X2] = meshgrid(x1_range, x2_range);
-
-% Calcolo dei valori della funzione
 Z = F(X1, X2);
 
-% Visualizzazione della funzione
 figure;
-surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
-colormap jet; % Colori accesi
-colorbar; % Barra dei colori
+surf(X1, X2, Z, 'EdgeColor', 'none'); 
+colormap jet; 
+colorbar;
 xlabel('x_1');
 ylabel('x_2');
 zlabel('F(x)');
-
-% Running the problem on modified nuewton method with exact gradient and
-% hessian
-%n=1e4;
-rho=0.6; %tune
-c1=1e-3; %tune
-% tic
-% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,gradF_75, hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
-% time=toc
-% rate_of_convergence = compute_roc(xseq,ones(n,1))
-
-% Running the problem on modified newton method with approximated gradient
-% and hessian
-% tic
-% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 10*n, rho, c1, 65, [], [], [], ones(n,1));
-% time=toc
-% rate_of_convergence = compute_roc(xseq,ones(n,1))
-
-%prove, poi togli
-% h=1e-12;
-% x=[-1;1;-1;1];
-% x=2*ones(4,1);
-% veraH = hessF_75(x)
-% approssimataH = approxhessian_pb_75(x,h,'REL')
-% he_k=zeros(4,1);
-% he_k(1)=h;
-% (F_75(x+2*he_k)-2*F_75(x+he_k)+F_75(x))/(h^2)
-% ((-2+2*h)^2 + (10*((1+1-2*h)^2))^2 - 2*((-2+h)^2) -2*((10*(1+1-h)^2)^2) + (-2)^2 + (10*((2)^2))^2 )/(2*(h^2))
 
 
 %functions definition of exact gradient
@@ -509,9 +459,6 @@ function grad = gradient_pb_75 (x)
     n=length(x);
     grad=zeros(n,1);
     grad(1)= x(1)-1-200*(x(2)-x(1))^3;
-    %for k=2:n-1
-    %    grad(k)=200*((k-1)^2 * (x(k)-x(k-1))^3 - k^2 * (x(k+1)-x(k))^3 );
-    %end
     grad(2:n-1)= 200*((1:n-2)'.^2 .* (x(2:n-1)-x(1:n-2)).^3 - (2:n-1)'.^2 .* (x(3:n)-x(2:n-1)).^3 );
     grad(n)= 200*(n-1)^2*(x(n)-x(n-1))^3;
 end
@@ -573,6 +520,7 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         switch type_h
             case 'COST'
                 hk = h;
+                hkm1 = h;
             case 'REL'
                 hk = h*abs(x(k));
                 if k>1
@@ -604,14 +552,32 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         end
 
         %lower diagonal element (only exists if k>1)
-        if k>1
+        if k>1 && k<n
             indices_i(iter) = k; 
             indices_j(iter) = k-1;
-            %(f(x+he_k+he_km1) - f(x+he_k) - f(x+he_km1) + fx)/(hk^2) =
-            %(2f_k^2(x)-f_k^2(x+h_ek)-f_k^2(x+he_k-1))/(2hk^2)
-            values(iter) = (2*(10*(k-1)*(x(k)-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk*hkm1);
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1)^2)^2 ...
+                    + (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    - (10*k*(x(k+1)-x(k))^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2 ...
+                    + (10*k*(x(k+1)-x(k))^2)^2)/(2*hk*hkm1);
+            iter = iter+1; 
+
+            %for simmetry, upper diagonal element
+            indices_i(iter) = k-1; 
+            indices_j(iter) = k;
+            values(iter) = values(iter-1);
+            iter = iter+1;
+
+        elseif k==n
+            indices_i(iter) = k; 
+            indices_j(iter) = k-1;
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2)/(2*hk*hkm1);
             iter = iter+1; 
 
             %for simmetry, upper diagonal element

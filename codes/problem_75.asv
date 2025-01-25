@@ -39,7 +39,7 @@ for dim = 1:length(dimension)
     x_esatto = ones(n,1);
 
     % defining the given initial point
-    x0 = -1.2*ones(n,1);
+    x0 = -1-2*ones(n,1);
     x0(end) = -1;
 
     % in order to generate random number in [a,b] I apply the formula r = a + (b-a).*rand(n,1)
@@ -134,10 +134,11 @@ display(TSX)
 % with exact gradient and hessian
 format short e
 
-% setting the values for the dimension
+% setting the values for the dimension and the parameters
 dimension = [1e3 1e4 1e5];
-
-param = [0.4, 1e-4, 40; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
+max_iter_per_dimension = [1e3, 1e4, 1e5];
+tol = 1e-6;
+param = [0.4, 1e-4, 36; 0.3, 1e-4, 28; 0.4, 1e-3, 36];
 
 
 % initializing structures to store some stats
@@ -147,10 +148,11 @@ iter_struct_MN = zeros(length(dimension),11);
 fbest_struct_MN = zeros(length(dimension),11);
 gradf_struct_MN = zeros(length(dimension),11);
 roc_struct_MN = zeros(length(dimension),11);
+ultima_direz_discesa = zeros(length(dimension), 11);
 
 for dim = 1:length(dimension)
     n = dimension(dim);
-    iter_max = 50*n;
+    iter_max = max_iter_per_dimension(dim);
     [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
     x_esatto = ones(n,1);
 
@@ -167,13 +169,14 @@ for dim = 1:length(dimension)
     % SOLVING MODIFIED NEWTON METHOD METHOD
     % first initial point
     t1 = tic;
-    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+    [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
         = modified_Newton(F_75,gradF_75, hessF_75, x0, iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
     execution_time_MN(dim,1) = toc(t1);
     fbest_struct_MN(dim,1) = fbest;
     iter_struct_MN(dim,1) = iter;
     gradf_struct_MN(dim,1) = gradfk_norm;
     roc_struct_MN(dim,1) = compute_roc(xseq, x_esatto);
+    ultima_direz_discesa(dim,1) = cos_pk_gradf;
     disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
 
     disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
@@ -191,7 +194,7 @@ for dim = 1:length(dimension)
         disp('FAIL')
         if (flag_bcktrck)
             disp('Failure due to backtracking')
-            disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+            disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
             disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
         else
             disp('Failure not due to backtracking')
@@ -209,7 +212,7 @@ for dim = 1:length(dimension)
 
     for i = 1:10
         t1 = tic;
-        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, pk_scalare_gradf] ...
+        [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure, cos_pk_gradf] ...
             = modified_Newton(F_75,gradF_75, hessF_75, x0_rndgenerated(:,i), iter_max, rho, c1, btmax, tol, [], 'ALG', x_esatto);       
         execution_time_MN(dim,i+1) = toc(t1);
         fbest_struct_MN(dim,i+1) = fbest;
@@ -217,6 +220,7 @@ for dim = 1:length(dimension)
         failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
         gradf_struct_MN(dim,i+1) = gradfk_norm;
         roc_struct_MN(dim,i+1) = compute_roc(xseq, x_esatto);
+        ultima_direz_discesa(dim,i+1) = cos_pk_gradf;
 
         disp(['**** MODIFIED NEWTON METHOD FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
 
@@ -235,7 +239,7 @@ for dim = 1:length(dimension)
             disp('FAIL')
             if (flag_bcktrck)
                 disp('Failure due to backtracking')
-                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(pk_scalare_gradf)])
+                disp(['cosine of the angle between the last computed direction pk and the gradient: ', num2str(cos_pk_gradf)])
                 disp(['last values of steplength alphak: ', mat2str((rho.^btseq(max(1:length(btseq)-10):end))')])
 
 
@@ -251,6 +255,12 @@ for dim = 1:length(dimension)
     end
 end
 
+% % plotto cos_pk_gradf
+% bar(ultima_direz_discesa')
+% ylabel('cos(angolo)')
+% title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+% legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
+% 
 
 varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
 rowNames = string(dimension');
@@ -263,7 +273,7 @@ display(TMN)
 % with approximated gradient and hessian
 format short e
 
-max_iter=[1e3, 5*]
+max_iter_per_dimension=[2*1e3, 2*1e4, 8*1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
@@ -295,12 +305,13 @@ for id_h = 1:length(h_values)
     fbest_struct_MN = zeros(length(dimension),11);
     gradf_struct_MN = zeros(length(dimension),11);
     roc_struct_MN = zeros(length(dimension),11);
+    ultima_direz_discesa = zeros(length(dimension), 11);
     
     
     for dim = 1:length(dimension)
         n = dimension(dim);
         x_esatto = ones(n,1);
-        iter_max = iter_max_factor*n;
+        iter_max = max_iter_per_dimension(dim);
         [rho, c1, btmax] = deal(param(dim, 1), param(dim, 2), param(dim, 3));
     
         %defining the given initial point
@@ -323,6 +334,7 @@ for id_h = 1:length(h_values)
         iter_struct_MN(dim,1) = iter;
         gradf_struct_MN(dim,1) = gradfk_norm;
         roc_struct_MN(dim,1) = compute_roc(xseq,x_esatto);
+        ultima_direz_discesa(dim,1) = cos_pk_gradf;
         disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(1), ', dimension ', num2str(n), '):  *****']);
     
         disp(['Time: ', num2str(execution_time_MN(dim,1)), ' seconds']);
@@ -367,6 +379,7 @@ for id_h = 1:length(h_values)
             failure_struct_MN(dim,i+1) = failure_struct_MN(dim,i+1) + failure;
             gradf_struct_MN(dim,i+1) = gradfk_norm;
             roc_struct_MN(dim,i+1) = compute_roc(xseq,x_esatto);
+            ultima_direz_discesa(dim,i+1) = cos_pk_gradf;
     
             disp(['**** MODIFIED NEWTON METHOD WITH FIN DIFF ( ', type_h, ' with h = ', num2str(h), ') FOR THE PB 75 (point ', num2str(i+1), ', dimension ', num2str(n), '):  *****']);
     
@@ -400,6 +413,11 @@ for id_h = 1:length(h_values)
         end
     end
     
+% plotto cos_pk_gradf
+bar(ultima_direz_discesa')
+ylabel('cos(angolo)')
+title('Ultimo valore assunto da t(pk)*gradfk/(norm_pk * norm_gradfk)')
+legend({'dim = 1e3', 'dim = 1e4', 'dim = 1e5'}, "Box", 'on', 'Location', 'best')
     
     
     varNames = ["avg fbest", "avg gradf_norm","avg num of iters", "avg time of exec (sec)", "n failure", "avg roc"];
@@ -434,23 +452,19 @@ x_esatto = ones(n,1);
 % [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
 % roc = compute_roc(xseq,x_esatto)
 
-% %TOGLI
-% Definizione della funzione F(x) per n=2
+% I draw the graph for n=2
+% Function definition for n=2
 F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
 
-% Creazione di una griglia di punti
-x1_range = linspace(-2, 2, 100); % Intervallo per x1
-x2_range = linspace(-2, 2, 100); % Intervallo per x2
+x1_range = linspace(-2, 2, 100); 
+x2_range = linspace(-2, 2, 100); 
 [X1, X2] = meshgrid(x1_range, x2_range);
-
-% Calcolo dei valori della funzione
 Z = F(X1, X2);
 
-% Visualizzazione della funzione
 figure;
-surf(X1, X2, Z, 'EdgeColor', 'none'); % Superficie liscia
-colormap jet; % Colori accesi
-colorbar; % Barra dei colori
+surf(X1, X2, Z, 'EdgeColor', 'none'); 
+colormap jet; 
+colorbar;
 xlabel('x_1');
 ylabel('x_2');
 zlabel('F(x)');
@@ -491,9 +505,6 @@ function grad = gradient_pb_75 (x)
     n=length(x);
     grad=zeros(n,1);
     grad(1)= x(1)-1-200*(x(2)-x(1))^3;
-    %for k=2:n-1
-    %    grad(k)=200*((k-1)^2 * (x(k)-x(k-1))^3 - k^2 * (x(k+1)-x(k))^3 );
-    %end
     grad(2:n-1)= 200*((1:n-2)'.^2 .* (x(2:n-1)-x(1:n-2)).^3 - (2:n-1)'.^2 .* (x(3:n)-x(2:n-1)).^3 );
     grad(n)= 200*(n-1)^2*(x(n)-x(n-1))^3;
 end
@@ -555,8 +566,13 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         switch type_h
             case 'COST'
                 hk = h;
+                hkm1 = h;
             case 'REL'
                 hk = h*abs(x(k));
+                if k>1
+                    hkm1 = h*abs(x(k-1));
+                end
+
         end
 
         %diagonal element
@@ -582,14 +598,42 @@ function hess = approxhessian_pb_75 (x,h,type_h)
         end
 
         %lower diagonal element (only exists if k>1)
-        if k>1
+        if k>1 && k<n
             indices_i(iter) = k; 
             indices_j(iter) = k-1;
             %(f(x+he_k+he_km1) - f(x+he_k) - f(x+he_km1) + fx)/(hk^2) =
             %(2f_k^2(x)-f_k^2(x+h_ek)-f_k^2(x+he_k-1))/(2hk^2)
-            values(iter) = (2*(10*(k-1)*(x(k)-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
-                -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk^2);
+%             values(iter) = (2*(10*(k-1)*(x(k)-x(k-1))^2)^2 ...
+%                 -(10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+%                 -(10*(k-1)*(x(k)-x(k-1)-hk)^2)^2 )/(2*hk*hkm1);
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1))^2 ...
+                    + (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    - (10*k*(x(k+1)-x(k))^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2 ...
+                    + (10*k*(x(k+1)-x(k))^2)^2)/(2*hk*hkm1);
+            iter = iter+1; 
+
+            %for simmetry, upper diagonal element
+            indices_i(iter) = k-1; 
+            indices_j(iter) = k;
+            values(iter) = values(iter-1);
+            iter = iter+1;
+
+        elseif k==n
+            indices_i(iter) = k; 
+            indices_j(iter) = k-1;
+            %(f(x+he_k+he_km1) - f(x+he_k) - f(x+he_km1) + fx)/(hkhkm) 
+            values(iter) = ((10*(k-1)*(x(k)+hk - x(k-1)-hkm1))^2 ...
+                    + (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)+hk-x(k-1))^2)^2 ...
+                    - (10*k*(x(k+1)-x(k)-hk)^2)^2 ...
+                    - (10*(k-1)*(x(k)-x(k-1)-hkm1)^2)^2 ...
+                    - (10*k*(x(k+1)-x(k))^2)^2 ...
+                    + (10*(k-1)*(x(k)-x(k-1))^2)^2 ...
+                    + (10*k*(x(k+1)-x(k))^2)^2)/(2*hk*hkm1);
             iter = iter+1; 
 
             %for simmetry, upper diagonal element

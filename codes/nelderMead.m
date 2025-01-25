@@ -56,7 +56,7 @@ flag = false;
 failure = false;
 
 if rank(x0) < n && size(x0,2) > 1
-    % se il simplesso è degenere ritorniamo flag = true
+    % se simplesso degenere ritorniamo flag = true
     flag = true;
     xbest = nan; iter = 0; fbest = nan;
     return
@@ -83,7 +83,7 @@ disp("ho finito la valutazione di funzione")
 
 
 if size(x0,2)==1 
-    %se in input c'è un solo punto costruiamo il simplesso di partenza 
+    %se in input un solo punto costruiamo il simplesso di partenza 
     simplex0=zeros(n,n+1);
     simplex0(:,1)=x0;
     for i=1:n

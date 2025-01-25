@@ -14,9 +14,9 @@ close all
 % Hessf = function handle that compute the Hessian of the function f in a given point;
 % x0 = starting point in R^n;
 % itermax = maximum number of outter iterations;
-% rho = ﻿fixed factor, lesser than 1, used for reducing alpha0;
-% c1 = ﻿the factor of the Armijo condition that must be a scalar in (0,1);
-% btmax =  ﻿maximum number of steps for updating alpha during the backtracking strategy;
+% rho = fixed factor, lesser than 1, used for reducing alpha0;
+% c1 = the factor of the Armijo condition that must be a scalar in (0,1);
+% btmax =  maximum number of steps for updating alpha during the backtracking strategy;
 % tolgrad = value used as stopping criterion w.r.t. the norm of the gradient;
 % tau_kmax = maximum number of iterations permitted to compute Bk at each step;
 % alg_modificare_hess = 'ALG' or 'EIG'
