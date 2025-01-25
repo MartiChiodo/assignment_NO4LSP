@@ -277,11 +277,11 @@ max_iter_per_dimension=[2*1e3, 2*1e4, 8*1e4];
 tol = 1e-4;
 
 % setting the values for the dimension
-h_values = [1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 1e-12]; 
+h_values = [1e-12]; %1e-2, 1e-4, 1e-6, 1e-8, 1e-10, 
 dimension = [1e3, 1e4, 1e5];
 
 param = [0.8, 1e-5, 90; 0.8, 1e-5, 90; 0.8, 1e-5, 90];
-type_h = 'REL';
+type_h = 'COST';
 
 % initializing structures to store some stats
 execution_time_MN_h = zeros(length(dimension),6);
@@ -436,22 +436,6 @@ end
 
 
 %% 
-% Running the problem on Nelder_Mead method 
-tol=1e-6;
-% n=50;
-x0= -1.2*ones(n,1);
-x0(n)= -1;
-x_esatto = ones(n,1);
-% F_75= @(x) 0.5*((x(1)-1)^2 + sum( (10*(1:length(x)-1)'.*(x(2:end)-x(1:end-1)).^2).^2 ) );
-
-% rho=1.5; %tune
-% chi=2.5; %tune
-% gamma=0.6; %tune
-% sigma=0.5; %tune
-% 
-% [~, xseq,iter,fbest, ~, failure] = nelderMead(F_75,x0,rho,chi,gamma,sigma,200*n,tol);
-% roc = compute_roc(xseq,x_esatto)
-
 % I draw the graph for n=2
 % Function definition for n=2
 F = @(x1, x2) 0.5 * ((x1 - 1).^2 + (10 * (2 - 1) * (x2 - x1).^2).^2);
@@ -468,36 +452,6 @@ colorbar;
 xlabel('x_1');
 ylabel('x_2');
 zlabel('F(x)');
-
-% Running the problem on modified nuewton method with exact gradient and
-% hessian
-%n=1e4;
-rho=0.6; %tune
-c1=1e-3; %tune
-% tic
-% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,gradF_75, hessF_75, x0, 50*n, rho, c1, 150, [], [], [], ones(n,1));
-% time=toc
-% rate_of_convergence = compute_roc(xseq,ones(n,1))
-
-% Running the problem on modified newton method with approximated gradient
-% and hessian
-% tic
-% [xbest, xseq, iter, fbest, gradfk_norm, btseq, flag_bcktrck, failure] ...
-%     = modified_Newton(F_75,approx_gradF_75, approx_hessF_75, x0, 10*n, rho, c1, 65, [], [], [], ones(n,1));
-% time=toc
-% rate_of_convergence = compute_roc(xseq,ones(n,1))
-
-%prove, poi togli
-% h=1e-12;
-% x=[-1;1;-1;1];
-% x=2*ones(4,1);
-% veraH = hessF_75(x)
-% approssimataH = approxhessian_pb_75(x,h,'REL')
-% he_k=zeros(4,1);
-% he_k(1)=h;
-% (F_75(x+2*he_k)-2*F_75(x+he_k)+F_75(x))/(h^2)
-% ((-2+2*h)^2 + (10*((1+1-2*h)^2))^2 - 2*((-2+h)^2) -2*((10*(1+1-h)^2)^2) + (-2)^2 + (10*((2)^2))^2 )/(2*(h^2))
 
 
 %functions definition of exact gradient

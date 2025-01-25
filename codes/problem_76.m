@@ -315,7 +315,7 @@ display(TMN)
 clc
 
 function grad_approx = findiff_grad_76(x, h, type_h)
-    %   - type_h: indica se la derivata è calcolata con h costante o h
+    %    type h: indica se derivata calcolata con h costante o h
     %   relativo
     n = length(x);
 
@@ -352,7 +352,7 @@ function hessian_approx = findiff_hess_76(x, h, type_h)
     % Input:
     %   - x: vettore colonna (punto in cui calcolare l'Hessiana)
     %   - h: passo o vettore per la differenzaz rispetto ad una componente
-    %   - type_h: indica se la derivata è calcolata con h costante o h
+    %   - type h: indica se derivata calcolata con h costante o h
     %   relativo
     % Output:
     %   - H: matrice Hessiana sparsa

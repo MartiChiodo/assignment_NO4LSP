@@ -1,527 +1,531 @@
+
+
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 0.13962 seconds
+Time: 0.023421 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 271.7537
-norma di gradf(xk): 20797.2755
-N. of Iterations: 7/2000
-Rate of Convergence: 1.034
+f(xk): 79842.5
+norma di gradf(xk): 2255701.2823
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.56172
-last values of steplength alphak: zeros(1,0)
+cosine of the angle between the last computed direction pk and the gradient: -0.052135
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 7.4318 seconds
+Time: 0.012332 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 136327.2752
-norma di gradf(xk): 319610.0163
-N. of Iterations: 419/2000
-Rate of Convergence: 0.21752
+f(xk): 17470687002.8518
+norma di gradf(xk): 8313180546.1801
+N. of Iterations: 3/2000
+Rate of Convergence: 3.8509
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.38022
-last values of steplength alphak: [1 1 1 1 1 1 0.64 1 1 0.035184372088832 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 0.69684 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 618026.5172
-norma di gradf(xk): 1150272.8556
-N. of Iterations: 41/2000
-Rate of Convergence: 0.27145
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.30667
-last values of steplength alphak: [1 1 1 1 1 1 0.4096 1 0.512 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 3.887 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 481874.7031
-norma di gradf(xk): 840814.2058
-N. of Iterations: 54/2000
-Rate of Convergence: 0.50005
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.27497
-last values of steplength alphak: [1 0.4096 1 1 1 0.8 1 0.00922337203685479 0.035184372088832 0.018014398509482 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 0.64441 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 895389.3161
-norma di gradf(xk): 1113829.6484
-N. of Iterations: 34/2000
-Rate of Convergence: 0.24759
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.31783
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.00737869762948383 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 9.4473 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 5313067.7476
-norma di gradf(xk): 4204951.0982
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.97842
-************************************
-FAIL
-Failure not due to backtracking
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 0.54103 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 131143.4752
-norma di gradf(xk): 358314.6307
-N. of Iterations: 44/2000
-Rate of Convergence: 4.4718
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.20676
-last values of steplength alphak: [1 1 1 1 1 1 1 0.8 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 0.39514 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 319441.6515
-norma di gradf(xk): 896884.8019
-N. of Iterations: 39/2000
-Rate of Convergence: 0.20108
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.37338
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 0.43762 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 137723.8003
-norma di gradf(xk): 300498.3052
-N. of Iterations: 45/2000
-Rate of Convergence: 0.94353
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.23722
-last values of steplength alphak: [1 1 1 1 1 0.4096 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 0.4449 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 149862.1294
-norma di gradf(xk): 322535.8068
-N. of Iterations: 48/2000
-Rate of Convergence: 0.93666
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.28338
-last values of steplength alphak: [1 1 1 1 1 0.2097152 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 0.53076 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 42267.26
-norma di gradf(xk): 186718.0561
-N. of Iterations: 63/2000
-Rate of Convergence: 0.97141
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.63448
-last values of steplength alphak: [1 0.0281474976710656 1 1 0.2097152 1 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 0.48002 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 3572.761
-norma di gradf(xk): 1058763.283
-N. of Iterations: 14/20000
-Rate of Convergence: 0.99923
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.50695
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 0.89832 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 198971440.2826
-norma di gradf(xk): 166288840.8263
-N. of Iterations: 66/20000
-Rate of Convergence: 0.14505
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.19944
-last values of steplength alphak: [1 1 1 1 1 1 1 1 0.134217728 0.068719476736 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 8.5563 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 69513056.8065
-norma di gradf(xk): 97776563.12
-N. of Iterations: 593/20000
-Rate of Convergence: 0.80555
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.36479
-last values of steplength alphak: [0.4096 1 1 1 1 1 1 0.4096 0.4096 0.32768 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 1.1312 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 137724614.2045
-norma di gradf(xk): 116180745.6652
-N. of Iterations: 84/20000
-Rate of Convergence: 4.8408
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.48544
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 0.93049 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 104138150.4343
-norma di gradf(xk): 170777504.149
-N. of Iterations: 66/20000
-Rate of Convergence: 0.96443
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.22563
-last values of steplength alphak: [1 1 1 1 0.512 1 0.64 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 1.5092 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 18743121.5216
-norma di gradf(xk): 36769143.9063
-N. of Iterations: 122/20000
-Rate of Convergence: 1.0406
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.53579
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.262144 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 1.2095 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 141439205.6958
-norma di gradf(xk): 98878920.8675
-N. of Iterations: 91/20000
-Rate of Convergence: 0.19935
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.43844
-last values of steplength alphak: [1 0.068719476736 1 1 1 1 1 0.512 1 0.0281474976710656 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 0.88745 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 185088117.1273
-norma di gradf(xk): 133350409.5877
-N. of Iterations: 62/20000
-Rate of Convergence: 0.36767
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.21067
-last values of steplength alphak: [1 1 1 1 1 1 1 1 0.512 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 1.1312 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 121697044.1648
-norma di gradf(xk): 103203229.966
-N. of Iterations: 87/20000
-Rate of Convergence: 0.16777
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.4096
-last values of steplength alphak: [1 1 1 0.0858993459200001 0.00302231454903658 0.000507060240091293 4.35561429658802e-05 1.91561942608237e-06 1.64550455732121e-07 2.76069853871624e-08 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 0.79725 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 279061663.5115
-norma di gradf(xk): 778399032.3474
-N. of Iterations: 53/20000
-Rate of Convergence: 2.5419
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0589
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.64 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 0.91514 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 87366366.6424
-norma di gradf(xk): 68961673.5367
-N. of Iterations: 68/20000
-Rate of Convergence: 0.95504
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.26728
-last values of steplength alphak: [1 1 0.4096 1 0.32768 1 1 1 1 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 1.0066 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 357263.8416
-norma di gradf(xk): 259401527.0498
-N. of Iterations: 9/80000
-Rate of Convergence: 1.0001
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.66583
+cosine of the angle between the last computed direction pk and the gradient: -0.10874
 last values of steplength alphak: zeros(1,0)
 ************************************
  
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 272.1897 seconds
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 3, dimension 1000):  *****
+Time: 0.0073189 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 26883752869.6518
-norma di gradf(xk): 12722321124.3142
-N. of Iterations: 2726/80000
-Rate of Convergence: 0.23683
+f(xk): 1439127981.8939
+norma di gradf(xk): 1094671714.7331
+N. of Iterations: 5/2000
+Rate of Convergence: 0.013022
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.26514
+cosine of the angle between the last computed direction pk and the gradient: -0.12165
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 4, dimension 1000):  *****
+Time: 0.002735 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 18232107284.2495
+norma di gradf(xk): 6972024995.5257
+N. of Iterations: 2/2000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.015896
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 5, dimension 1000):  *****
+Time: 0.006713 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 838863039.0019
+norma di gradf(xk): 517046894.6432
+N. of Iterations: 9/2000
+Rate of Convergence: 1.0451
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.3454
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 6, dimension 1000):  *****
+Time: 0.0054482 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2219971276.7037
+norma di gradf(xk): 1847320845.8773
+N. of Iterations: 6/2000
+Rate of Convergence: 1.106
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.17241
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 7, dimension 1000):  *****
+Time: 0.0057676 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 517776091.4753
+norma di gradf(xk): 737356410.3483
+N. of Iterations: 7/2000
+Rate of Convergence: 0.92107
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.23732
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 8, dimension 1000):  *****
+Time: 0.0032469 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 5125963759.1061
+norma di gradf(xk): 2761629978.6821
+N. of Iterations: 4/2000
+Rate of Convergence: 0.0079243
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.073155
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 9, dimension 1000):  *****
+Time: 0.0046483 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 803098234.2798
+norma di gradf(xk): 766280265.3639
+N. of Iterations: 7/2000
+Rate of Convergence: 0.46722
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.2839
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 10, dimension 1000):  *****
+Time: 0.0054745 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 9439874880.2167
+norma di gradf(xk): 7491890680.3091
+N. of Iterations: 4/2000
+Rate of Convergence: 0.30221
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.059797
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 11, dimension 1000):  *****
+Time: 0.0062548 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 107930047.4443
+norma di gradf(xk): 144012123.8562
+N. of Iterations: 10/2000
+Rate of Convergence: 1.0471
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.52919
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 1, dimension 10000):  *****
+Time: 0.014726 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7998402.5
+norma di gradf(xk): 225977922.3981
+N. of Iterations: 1/20000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.061217
+last values of steplength alphak: zeros(0,1)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 2, dimension 10000):  *****
+Time: 0.041696 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1501944996482.954
+norma di gradf(xk): 768879952115.8698
+N. of Iterations: 5/20000
+Rate of Convergence: 0.99356
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.090519
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 3, dimension 10000):  *****
+Time: 0.041041 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 91941680257.1266
+norma di gradf(xk): 51663842505.3064
+N. of Iterations: 9/20000
+Rate of Convergence: 0.1794
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.42341
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 4, dimension 10000):  *****
+Time: 0.031955 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 486902311193.1517
+norma di gradf(xk): 307624899169.5121
+N. of Iterations: 7/20000
+Rate of Convergence: 0.24456
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.17507
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 5, dimension 10000):  *****
+Time: 0.035169 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2624685062139.147
+norma di gradf(xk): 759584406550.441
+N. of Iterations: 8/20000
+Rate of Convergence: 1.1256
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.35809
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 6, dimension 10000):  *****
+Time: 0.021565 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 2013698070485.24
+norma di gradf(xk): 975306507045.1787
+N. of Iterations: 5/20000
+Rate of Convergence: 0.61045
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.068319
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 7, dimension 10000):  *****
+Time: 0.014927 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 12721210872896.83
+norma di gradf(xk): 3336433415676.779
+N. of Iterations: 3/20000
+Rate of Convergence: 2.6757
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.018882
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 8, dimension 10000):  *****
+Time: 0.022518 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 1207753376756.347
+norma di gradf(xk): 662792937999.4598
+N. of Iterations: 5/20000
+Rate of Convergence: 0.90398
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.11304
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 9, dimension 10000):  *****
+Time: 0.024336 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 636826498006.6122
+norma di gradf(xk): 374756186174.9948
+N. of Iterations: 6/20000
+Rate of Convergence: 0.91602
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.14344
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 10, dimension 10000):  *****
+Time: 0.45343 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 10068854050.5884
+norma di gradf(xk): 8830651800.7211
+N. of Iterations: 32/20000
+Rate of Convergence: 1.0251
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.76902
+last values of steplength alphak: [1 1 0.00472236648286965 1 0.2097152 1 1 1 1 1 1.8971375900642e-09]
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 11, dimension 10000):  *****
+Time: 0.073022 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 15949708977855.36
+norma di gradf(xk): 4041052514041.561
+N. of Iterations: 3/20000
+Rate of Convergence: 0.56148
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.038755
+last values of steplength alphak: zeros(1,0)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 1, dimension 100000):  *****
+Time: 0.13228 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 799984002.5
+norma di gradf(xk): 22603049245.6442
+N. of Iterations: 1/80000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.073115
+last values of steplength alphak: zeros(0,1)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 2, dimension 100000):  *****
+Time: 1.7558 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 130302728092352
+norma di gradf(xk): 13917262433844.64
+N. of Iterations: 19/80000
+Rate of Convergence: 0.97479
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.035359
 last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 633.0775 seconds
+Time: 0.70746 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 34819569870.9906
-norma di gradf(xk): 18727373669.2172
-N. of Iterations: 7648/80000
-Rate of Convergence: 0.41801
+f(xk): 150691013950389.7
+norma di gradf(xk): 33559531149108.58
+N. of Iterations: 8/80000
+Rate of Convergence: 0.069277
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.47594
-last values of steplength alphak: [1 1 1 1 1 0.512 1 1 0.4096 0.16777216 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.25776
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 9.4568 seconds
+Time: 0.24392 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 87947140407.9072
-norma di gradf(xk): 25098210401.8999
-N. of Iterations: 130/80000
-Rate of Convergence: 0.12218
+f(xk): 7714516125019418
+norma di gradf(xk): 1566012234834466
+N. of Iterations: 3/80000
+Rate of Convergence: 0.21841
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.10354
-last values of steplength alphak: [0.068719476736 1 1 1 1 0.4096 1 0.8 1 0.0225179981368525 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.034374
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 131.8056 seconds
+Time: 2.2262 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 266099970688.9369
-norma di gradf(xk): 77875315315.2231
-N. of Iterations: 1221/80000
-Rate of Convergence: 0.22302
+f(xk): 112304992432208.5
+norma di gradf(xk): 15798013488573.8
+N. of Iterations: 25/80000
+Rate of Convergence: 1.0219
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.28266
-last values of steplength alphak: [1 1 0.0281474976710656 1 1 1 0.262144 0.018014398509482 0.0549755813888 0.0115292150460685 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.91819
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 12.8374 seconds
+Time: 0.62044 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 32129855235.7034
-norma di gradf(xk): 19836914270.0522
-N. of Iterations: 177/80000
-Rate of Convergence: 0.064884
+f(xk): 254916742341688.7
+norma di gradf(xk): 51279137118864.2
+N. of Iterations: 7/80000
+Rate of Convergence: 0.03817
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.28543
-last values of steplength alphak: [1 1 1 1 1 0.16777216 1 1 0.4096 0.0225179981368525 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.22174
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 11.2856 seconds
+Time: 0.5734 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 52455659116.054
-norma di gradf(xk): 17492091000.3664
-N. of Iterations: 155/80000
-Rate of Convergence: 0.24322
+f(xk): 2808349579614513
+norma di gradf(xk): 532377960057060.9
+N. of Iterations: 7/80000
+Rate of Convergence: 1.5389
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.18157
-last values of steplength alphak: [0.2097152 1 1 1 1 0.64 1 0.8 1 0.04398046511104 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.15344
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 6.9402 seconds
+Time: 0.80787 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 105979229863.6396
-norma di gradf(xk): 23783419360.8562
-N. of Iterations: 92/80000
-Rate of Convergence: 0.0033155
+f(xk): 555659872222228.8
+norma di gradf(xk): 95323330728912.42
+N. of Iterations: 10/80000
+Rate of Convergence: 1.0963
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.19884
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.00193428131138341 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.35915
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 11.5474 seconds
+Time: 1.6895 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 4347356352.9073
-norma di gradf(xk): 3721866075.0872
-N. of Iterations: 191/80000
-Rate of Convergence: 0.98126
+f(xk): 142947591884352.8
+norma di gradf(xk): 23001799060613.55
+N. of Iterations: 18/80000
+Rate of Convergence: 1.0634
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.36425
-last values of steplength alphak: [0.134217728 0.262144 1 1 1 0.0281474976710656 0.0549755813888 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.66859
+last values of steplength alphak: [1 1 1 1 1 1 0.262144 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 10.5494 seconds
+Time: 0.54465 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 45774038060.9362
-norma di gradf(xk): 20881677064.6507
-N. of Iterations: 161/80000
-Rate of Convergence: 1.1867
+f(xk): 312798683199308.4
+norma di gradf(xk): 83725365853018.41
+N. of Iterations: 6/80000
+Rate of Convergence: 0.89707
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.25389
-last values of steplength alphak: [1 0.8 1 1 0.00154742504910673 1 1 0.512 0.035184372088832 0.04398046511104 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.080336
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.01) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 7.8853 seconds
+Time: 1.6773 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 27602096479.133
-norma di gradf(xk): 26678568966.9077
-N. of Iterations: 126/80000
-Rate of Convergence: 0.26178
+f(xk): 107722940950392.7
+norma di gradf(xk): 10574965380793.43
+N. of Iterations: 18/80000
+Rate of Convergence: 0.97071
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.66599
-last values of steplength alphak: [0.16777216 0.16777216 0.2097152 0.262144 0.262144 0.32768 0.4096 0.32768 0.2097152 0.0549755813888 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.23492
+last values of steplength alphak: [1 1 1 0.134217728 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 
@@ -529,531 +533,539 @@ TMN =
 
   3×6 table
 
-                avg fbest       avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
-              ______________    ______________    ________________    ______________________    _________    _______
+                   avg fbest           avg gradf_norm      avg num of iters    avg time of exec (sec)    n failure    avg roc
+              ___________________    __________________    ________________    ______________________    _________    _______
 
-    1000           747763.24         883202.43         254.00                   2.24              11.00       0.98  
-    10000       122158759.38      161058620.66         118.73                   1.68              11.00       1.18  
-    100000    62185366019.06    22461559888.69        1148.73                 100.78              11.00       0.43  
+    1000            5108679949.07         2786151832.44          5.27                   0.01               11.00        NaN  
+    10000        3385886245320.53      1026104662818.38          7.64                   0.07               11.00        NaN  
+    100000    1117291915426441.12    220508382104954.72         11.09                   1.00               11.00        NaN  
 
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 0.34142 seconds
+Time: 0.051229 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.2437
-norma di gradf(xk): 0.45821
-N. of Iterations: 56/2000
-Rate of Convergence: 1.1398
+f(xk): 79842.5
+norma di gradf(xk): 2258050.6018
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.16612
-last values of steplength alphak: [1 1 0.035184372088832 1 1 1 0.1073741824 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00033989
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 0.46991 seconds
+Time: 0.47687 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 2.2232
-norma di gradf(xk): 18.8447
-N. of Iterations: 103/2000
-Rate of Convergence: 1.1891
+f(xk): 27019447.743
+norma di gradf(xk): 1810192.6339
+N. of Iterations: 97/2000
+Rate of Convergence: 1
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.059726
-last values of steplength alphak: [0.512 0.4096 0.512 0.512 0.8 0.32768 0.4096 0.512 0.8 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.99919
+last values of steplength alphak: [3.21387608851799e-07 8.42498333348461e-08 2.57110087081439e-07 4.31359146674412e-08 1.05312291668558e-07 3.21387608851799e-07 3.21387608851799e-07 6.73998666678769e-08 1.05312291668558e-07 1.05312291668558e-07 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 6.3243 seconds
+Time: 0.038692 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.70049
-norma di gradf(xk): 0.34987
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99999
+f(xk): 17264042814.4687
+norma di gradf(xk): 6916724616.3982
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -4.2174e-05
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 0.59203 seconds
+Time: 0.0038435 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.6077
-norma di gradf(xk): 1.6926
-N. of Iterations: 146/2000
-Rate of Convergence: 0.98398
+f(xk): 17664104454.8512
+norma di gradf(xk): 9729918453.8659
+N. of Iterations: 7/2000
+Rate of Convergence: 1.4159
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.090533
-last values of steplength alphak: [1 1 1 0.2097152 1 1 1 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00080946
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 6.1838 seconds
+Time: 0.0023056 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.72955
-norma di gradf(xk): 0.15668
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99995
+f(xk): 17280372411.7477
+norma di gradf(xk): 6993052549.1228
+N. of Iterations: 3/2000
+Rate of Convergence: 1.0995
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00055745
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 1.8194 seconds
+Time: 0.0016515 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.8276
-norma di gradf(xk): 5.3206
-N. of Iterations: 545/2000
-Rate of Convergence: 0.99046
+f(xk): 17701961162.5816
+norma di gradf(xk): 6684141944.7073
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.055315
-last values of steplength alphak: [1 1 1 1 0.0858993459200001 1 1 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -5.504e-05
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 0.44275 seconds
+Time: 0.0028031 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.8626
-norma di gradf(xk): 5.6519
-N. of Iterations: 97/2000
-Rate of Convergence: 0.95013
+f(xk): 15857315353.6712
+norma di gradf(xk): 6576220415.7235
+N. of Iterations: 5/2000
+Rate of Convergence: 0.34361
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.11185
-last values of steplength alphak: [1 0.2097152 1 0.64 1 1 0.0858993459200001 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0016476
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 6.1833 seconds
+Time: 0.0018593 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.77273
-norma di gradf(xk): 0.12521
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99961
+f(xk): 20237397190.8721
+norma di gradf(xk): 7859099320.6537
+N. of Iterations: 2/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -9.0154e-05
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 0.43379 seconds
+Time: 0.0008982 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 3.8399
-norma di gradf(xk): 111.3615
-N. of Iterations: 97/2000
-Rate of Convergence: 1.2547
+f(xk): 19477603921.353
+norma di gradf(xk): 7777621631.221
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -4.3369e-05
+last values of steplength alphak: zeros(0,1)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 10, dimension 1000):  *****
+Time: 0.26526 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 100194844.1654
+norma di gradf(xk): 11972427.2189
+N. of Iterations: 28/2000
+Rate of Convergence: 0.62389
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.39311
+last values of steplength alphak: [1 1 1 1 1 0.8 0.512 0.512 1 0.64 1.8971375900642e-09]
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 11, dimension 1000):  *****
+Time: 0.041833 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 21909416350.0492
+norma di gradf(xk): 8357189801.4552
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -8.5936e-05
+last values of steplength alphak: zeros(0,1)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 1, dimension 10000):  *****
+Time: 0.0090884 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 7998402.5
+norma di gradf(xk): 226212097.6736
+N. of Iterations: 1/20000
+Rate of Convergence: NaN
+************************************
+FAIL
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00039975
+last values of steplength alphak: zeros(0,1)
+************************************
+ 
+**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 2, dimension 10000):  *****
+Time: 0.2888 seconds
+Backtracking parameters (rho, c1): 0.8 1e-05
+**** MODIFIED NEWTON METHOD : RESULTS *****
+************************************
+f(xk): 203085279220.6654
+norma di gradf(xk): 149631669116.3686
+N. of Iterations: 13/20000
+Rate of Convergence: 1.6893
 ************************************
 FAIL
 Failure due to backtracking
 cosine of the angle between the last computed direction pk and the gradient: -0.025061
-last values of steplength alphak: [1 0.512 1 0.16777216 1 1 0.4096 1 0.8 1 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 0.4163 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 5.3664
-norma di gradf(xk): 162.1636
-N. of Iterations: 89/2000
-Rate of Convergence: 0.58645
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.019764
-last values of steplength alphak: [1 0.8 0.512 1 1 1 0.4096 1 1 0.134217728 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 6.3563 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 0.73612
-norma di gradf(xk): 0.14069
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99988
-************************************
-FAIL
-Failure not due to backtracking
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 0.33592 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 2.1754
-norma di gradf(xk): 48.6702
-N. of Iterations: 38/20000
-Rate of Convergence: 0.34154
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.17112
-last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.512 1.8971375900642e-09]
-************************************
- 
-**** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 1.0626 seconds
-Backtracking parameters (rho, c1): 0.8 1e-05
-**** MODIFIED NEWTON METHOD : RESULTS *****
-************************************
-f(xk): 640.0939
-norma di gradf(xk): 11656.9542
-N. of Iterations: 176/20000
-Rate of Convergence: 0.40745
-************************************
-FAIL
-Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.038809
-last values of steplength alphak: [0.0858993459200001 1 0.8 1 0.2097152 1 0.32768 0.32768 0.64 0.262144 1.8971375900642e-09]
+last values of steplength alphak: [1 1 1 0.64 0.32768 1 0.512 0.262144 0.262144 0.4096 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 1.8528 seconds
+Time: 0.053795 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 499.1927
-norma di gradf(xk): 16150.9545
-N. of Iterations: 312/20000
-Rate of Convergence: 0.15923
+f(xk): 17061183341131.17
+norma di gradf(xk): 2190179422633.709
+N. of Iterations: 1/20000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.027994
-last values of steplength alphak: [1 1 0.64 1 0.64 0.262144 0.8 0.262144 0.512 0.068719476736 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -5.608e-05
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 1.1227 seconds
+Time: 0.044205 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 205.6976
-norma di gradf(xk): 5160.1316
-N. of Iterations: 191/20000
-Rate of Convergence: 0.75532
+f(xk): 1892847464389.473
+norma di gradf(xk): 874654690842.3195
+N. of Iterations: 10/20000
+Rate of Convergence: 0.37058
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.050909
-last values of steplength alphak: [1 0.134217728 1 1 0.64 1 1 1 1 0.8 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.012578
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 2.4711 seconds
+Time: 0.03957 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 31.3092
-norma di gradf(xk): 210.4723
-N. of Iterations: 441/20000
-Rate of Convergence: 0.9958
+f(xk): 3388670961890.634
+norma di gradf(xk): 1088740893837.821
+N. of Iterations: 8/20000
+Rate of Convergence: 1.3018
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.16616
-last values of steplength alphak: [1 1 1 1 0.0858993459200001 1 1 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0042444
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 1.6963 seconds
+Time: 3.2916 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 361.5313
-norma di gradf(xk): 8974.8053
-N. of Iterations: 300/20000
-Rate of Convergence: 1.0001
+f(xk): 114485964.8389
+norma di gradf(xk): 51522964.0779
+N. of Iterations: 575/20000
+Rate of Convergence: 0.99984
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.073548
-last values of steplength alphak: [1 1 0.262144 0.4096 0.32768 0.16777216 0.0858993459200001 0.262144 0.1073741824 0.1073741824 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.61832
+last values of steplength alphak: [0.32768 0.32768 0.262144 0.262144 0.262144 0.2097152 0.2097152 0.2097152 0.16777216 0.16777216 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 1.1491 seconds
+Time: 0.051399 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 251.7959
-norma di gradf(xk): 5659.5746
-N. of Iterations: 200/20000
-Rate of Convergence: 0.13625
+f(xk): 18206983665613.76
+norma di gradf(xk): 2312076991089.059
+N. of Iterations: 2/20000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.11819
-last values of steplength alphak: [0.8 1 1 1 1 0.00377789318629572 1 1 0.32768 0.04398046511104 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00011348
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 1.21 seconds
+Time: 0.031548 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1063.2106
-norma di gradf(xk): 7978.6348
-N. of Iterations: 206/20000
-Rate of Convergence: 0.26998
+f(xk): 6626049808257.907
+norma di gradf(xk): 4026741617563.234
+N. of Iterations: 7/20000
+Rate of Convergence: 4.3447
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.09002
-last values of steplength alphak: [1 0.035184372088832 1 0.4096 1 1 1 1 0.8 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0011203
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 0.94245 seconds
+Time: 0.012631 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 735.4077
-norma di gradf(xk): 9428.7178
-N. of Iterations: 155/20000
-Rate of Convergence: 0.53153
+f(xk): 17343055159692.56
+norma di gradf(xk): 2180352392919.317
+N. of Iterations: 1/20000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.054816
-last values of steplength alphak: [1 1 0.2097152 1 0.32768 1 0.32768 0.8 0.64 0.32768 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -5.758e-05
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 1.0524 seconds
+Time: 0.021882 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 356.6236
-norma di gradf(xk): 10474.3367
-N. of Iterations: 180/20000
-Rate of Convergence: 2.4075
+f(xk): 4382169000143.29
+norma di gradf(xk): 1769351842262.664
+N. of Iterations: 5/20000
+Rate of Convergence: 0.10598
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.043221
-last values of steplength alphak: [0.8 1 1 0.64 1 0.8 0.32768 1 0.262144 0.64 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.002253
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 1.1606 seconds
+Time: 0.011096 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 88.8671
-norma di gradf(xk): 464.5386
-N. of Iterations: 201/20000
-Rate of Convergence: 0.98798
+f(xk): 17296984382213.71
+norma di gradf(xk): 2379043059529.479
+N. of Iterations: 2/20000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.011667
-last values of steplength alphak: [1 1 1 0.16777216 1 1 1 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00049273
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 0.79393 seconds
+Time: 0.10144 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 535.9072
-norma di gradf(xk): 110210.271
-N. of Iterations: 13/80000
-Rate of Convergence: 3.6207
+f(xk): 799984002.5
+norma di gradf(xk): 22625282105.6196
+N. of Iterations: 1/80000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.132
-last values of steplength alphak: [1 1 1 1 1 1 1 0.64 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00047335
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 10.883 seconds
+Time: 1.6133 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 5498396.9843
-norma di gradf(xk): 2128985.3519
-N. of Iterations: 191/80000
-Rate of Convergence: 0.98528
+f(xk): 7927915709356.079
+norma di gradf(xk): 5956171118974.209
+N. of Iterations: 17/80000
+Rate of Convergence: 0.55301
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.093934
-last values of steplength alphak: [1 1 0.4096 1 1 1 1 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.046072
+last values of steplength alphak: [1 1 1 1 1 0.8 1 0.64 0.8 0.4096 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 870.9086 seconds
+Time: 0.96807 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 178397.6083
-norma di gradf(xk): 972747.4488
-N. of Iterations: 9816/80000
-Rate of Convergence: 0.24354
+f(xk): 126068850298071.9
+norma di gradf(xk): 64786933430987.06
+N. of Iterations: 8/80000
+Rate of Convergence: 1.2006
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.078794
-last values of steplength alphak: [1 1 1 1 1 1 0.32768 1 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0028872
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 13.5092 seconds
+Time: 37.1565 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 2566398.6188
-norma di gradf(xk): 8452172.5125
-N. of Iterations: 215/80000
-Rate of Convergence: 1.2911
+f(xk): 46423264663.8459
+norma di gradf(xk): 10561553219.9045
+N. of Iterations: 496/80000
+Rate of Convergence: 0.8028
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0049556
-last values of steplength alphak: [0.64 1 1 1 1 0.134217728 1 1 1 0.262144 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.95415
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 0.8 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 600.6642 seconds
+Time: 0.55203 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 44432.0295
-norma di gradf(xk): 297006.538
-N. of Iterations: 7081/80000
-Rate of Convergence: 0.9255
+f(xk): 5865082977310541
+norma di gradf(xk): 800373993265734.4
+N. of Iterations: 6/80000
+Rate of Convergence: 0.084805
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.093452
-last values of steplength alphak: [0.64 0.32768 0.068719476736 1 1 0.64 0.2097152 1 0.262144 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0064419
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 16.6608 seconds
+Time: 0.83772 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 427300.9369
-norma di gradf(xk): 1757936.323
-N. of Iterations: 296/80000
-Rate of Convergence: 0.2084
+f(xk): 2307523183358576
+norma di gradf(xk): 627748793302634.9
+N. of Iterations: 10/80000
+Rate of Convergence: 10.2393
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.075784
-last values of steplength alphak: [1 1 0.8 1 0.8 1 0.8 1 1 0.04398046511104 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0051458
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 15.6078 seconds
+Time: 0.52611 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 834779.6927
-norma di gradf(xk): 2726663.2418
-N. of Iterations: 271/80000
-Rate of Convergence: 1.5558
+f(xk): 1651147255146252
+norma di gradf(xk): 441164562275053.6
+N. of Iterations: 7/80000
+Rate of Convergence: 0.18804
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.054397
-last values of steplength alphak: [0.64 1 1 0.64 0.4096 0.8 0.32768 0.4096 0.32768 0.512 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.006292
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 27.8775 seconds
+Time: 1.0658 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 274052.5343
-norma di gradf(xk): 2095075.3541
-N. of Iterations: 469/80000
-Rate of Convergence: 0.63464
+f(xk): 187387174203865.3
+norma di gradf(xk): 74403125762919.62
+N. of Iterations: 12/80000
+Rate of Convergence: 0.44662
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.047919
-last values of steplength alphak: [0.00590295810358706 1 0.134217728 0.068719476736 1 0.4096 0.1073741824 1 0.8 0.512 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.014996
+last values of steplength alphak: [0.8 1 1 1 0.512 0.8 0.512 0.512 1 0.32768 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 13.567 seconds
+Time: 0.51075 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 220801.8377
-norma di gradf(xk): 1508652.4483
-N. of Iterations: 249/80000
-Rate of Convergence: 1.0002
+f(xk): 1683049473616843
+norma di gradf(xk): 794033324223225
+N. of Iterations: 7/80000
+Rate of Convergence: 0.25234
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.031425
-last values of steplength alphak: [0.0858993459200001 1 0.8 0.32768 0.262144 1 1 1 0.2097152 0.2097152 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00056579
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 18.192 seconds
+Time: 2.7541 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 242690.446
-norma di gradf(xk): 2350310.3951
-N. of Iterations: 323/80000
-Rate of Convergence: 4.7151
+f(xk): 2476007977043.68
+norma di gradf(xk): 428246274331.6917
+N. of Iterations: 40/80000
+Rate of Convergence: 0.51839
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.035405
-last values of steplength alphak: [1 1 1 0.0281474976710656 0.00922337203685479 1 1 1 0.2097152 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.26294
+last values of steplength alphak: [1 1 1 1 1 1 0.64 0.4096 0.2097152 0.1073741824 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 0.0001) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 14.3001 seconds
+Time: 1.7035 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 211763.191
-norma di gradf(xk): 827226.4559
-N. of Iterations: 261/80000
-Rate of Convergence: 4.6432
+f(xk): 10680179381474.25
+norma di gradf(xk): 5633769721989.807
+N. of Iterations: 21/80000
+Rate of Convergence: 1.3412
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.10415
-last values of steplength alphak: [1 0.512 1 1 1 0.2097152 1 0.0858993459200001 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.052985
+last values of steplength alphak: [0.4096 0.8 1 0.4096 0.512 1 0.64 0.64 0.32768 0.4096 1.8971375900642e-09]
 ************************************
  
 
@@ -1061,499 +1073,539 @@ TMN =
 
   3×6 table
 
-              avg fbest    avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
-              _________    ______________    ________________    ______________________    _________    _______
+                   avg fbest           avg gradf_norm      avg num of iters    avg time of exec (sec)    n failure    avg roc
+              ___________________    __________________    ________________    ______________________    _________    _______
 
-    1000           1.90           27.84           830.27                   2.69              11.00       1.01  
-    10000        385.08         6927.98           218.18                   1.28              11.00       0.73  
-    100000    954504.53      2111544.21          1744.09                 145.72              11.00       1.80  
+    1000           13410864344.91         5537273582.15         13.36                   0.08               11.00        NaN  
+    10000        7854650140629.14      1542822755895.97         56.82                   0.35               11.00        NaN  
+    100000    1076490021840971.88    255869282382834.12         56.82                   4.34               11.00        NaN  
 
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 6.0593 seconds
+Time: 0.29146 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.72013
-norma di gradf(xk): 0.14947
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99977
+f(xk): 885.2067
+norma di gradf(xk): 36932.7279
+N. of Iterations: 25/2000
+Rate of Convergence: 0.012408
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -2.047e-05
+last values of steplength alphak: [0.0281474976710656 0.000166153499473115 0.018014398509482 0.04398046511104 0.068719476736 0.0549755813888 0.000633825300114116 0.0144115188075856 0.000405648192073034 0.000990352031428306 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 6.1161 seconds
+Time: 0.27216 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.73441
-norma di gradf(xk): 0.13874
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.461
+f(xk): 4726022.0733
+norma di gradf(xk): 18142280.9795
+N. of Iterations: 11/2000
+Rate of Convergence: 1.1011
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -1.8709e-05
+last values of steplength alphak: [1 1 1 1 1 0.000207691874341394 0.8 0.16777216 0.0858993459200001 0.134217728 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 6.2012 seconds
+Time: 0.32119 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.69536
-norma di gradf(xk): 0.17963
-N. of Iterations: 2000/2000
-Rate of Convergence: 117.6135
+f(xk): 1984.4635
+norma di gradf(xk): 33915.7057
+N. of Iterations: 36/2000
+Rate of Convergence: 5.4339
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00021789
+last values of steplength alphak: [0.0115292150460685 0.2097152 0.4096 0.00922337203685479 0.0858993459200001 0.00590295810358706 0.0858993459200001 0.0858993459200001 0.0225179981368525 0.16777216 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 6.0888 seconds
+Time: 0.045098 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.73573
-norma di gradf(xk): 0.14557
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99998
+f(xk): 6411588.8659
+norma di gradf(xk): 18567094.7106
+N. of Iterations: 9/2000
+Rate of Convergence: 2.532
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -3.7398e-05
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 6.1641 seconds
+Time: 0.23579 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.72377
-norma di gradf(xk): 0.15101
-N. of Iterations: 2000/2000
-Rate of Convergence: 2.9837
+f(xk): 791839.9392
+norma di gradf(xk): 2833457.88
+N. of Iterations: 19/2000
+Rate of Convergence: 2.0573
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00024742
+last values of steplength alphak: [0.000633825300114116 0.16777216 0.00241785163922926 0.134217728 0.0858993459200001 0.512 0.0115292150460685 0.0281474976710656 0.0281474976710656 0.0549755813888 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 6.1942 seconds
+Time: 0.32517 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.91164
-norma di gradf(xk): 0.23287
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.99943
+f(xk): 2246888.3587
+norma di gradf(xk): 5781162.33
+N. of Iterations: 35/2000
+Rate of Convergence: 0.11254
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00053393
+last values of steplength alphak: [0.018014398509482 0.0225179981368525 0.2097152 0.1073741824 0.512 0.00377789318629572 0.00590295810358706 0.04398046511104 0.04398046511104 0.068719476736 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 6.1338 seconds
+Time: 0.30499 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.7128
-norma di gradf(xk): 0.17291
-N. of Iterations: 2000/2000
-Rate of Convergence: 1.2782
+f(xk): 4184020.3632
+norma di gradf(xk): 8886702.975
+N. of Iterations: 28/2000
+Rate of Convergence: 2.0568
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.000369
+last values of steplength alphak: [0.0549755813888 0.00737869762948383 0.04398046511104 0.035184372088832 0.0115292150460685 0.00590295810358706 0.2097152 0.00302231454903658 0.068719476736 0.134217728 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 6.1513 seconds
+Time: 0.30297 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.74848
-norma di gradf(xk): 0.13611
-N. of Iterations: 2000/2000
-Rate of Convergence: 1.0001
+f(xk): 661063.6266
+norma di gradf(xk): 2703722.6666
+N. of Iterations: 27/2000
+Rate of Convergence: 0.15576
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00010723
+last values of steplength alphak: [0.32768 0.2097152 0.4096 0.262144 0.0549755813888 0.8 0.0115292150460685 0.32768 0.0858993459200001 0.00302231454903658 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 6.1317 seconds
+Time: 0.32995 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.71813
-norma di gradf(xk): 0.16345
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.47366
+f(xk): 396662.2704
+norma di gradf(xk): 2309894.1869
+N. of Iterations: 39/2000
+Rate of Convergence: 2.528
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.0002471
+last values of steplength alphak: [0.035184372088832 0.8 0.0549755813888 0.0281474976710656 0.0225179981368525 0.262144 0.0115292150460685 0.00922337203685479 0.16777216 0.4096 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 6.3058 seconds
+Time: 0.29446 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.74047
-norma di gradf(xk): 0.14927
-N. of Iterations: 2000/2000
-Rate of Convergence: 1.0001
+f(xk): 2323154.8402
+norma di gradf(xk): 9643349.6164
+N. of Iterations: 23/2000
+Rate of Convergence: 0.087411
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -7.9009e-05
+last values of steplength alphak: [0.035184372088832 0.2097152 0.00737869762948383 0.16777216 0.00377789318629572 0.0858993459200001 0.035184372088832 0.0115292150460685 0.0225179981368525 0.04398046511104 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 6.3111 seconds
+Time: 0.30542 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.73095
-norma di gradf(xk): 0.15174
-N. of Iterations: 2000/2000
-Rate of Convergence: 0.40308
+f(xk): 11800.4497
+norma di gradf(xk): 178408.4481
+N. of Iterations: 30/2000
+Rate of Convergence: 0.043108
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.0001104
+last values of steplength alphak: [0.512 0.035184372088832 0.262144 0.00922337203685479 0.0549755813888 0.134217728 0.00154742504910673 0.0144115188075856 0.1073741824 0.0549755813888 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 87.6048 seconds
+Time: 0.48989 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56385
-norma di gradf(xk): 0.10101
-N. of Iterations: 20000/20000
-Rate of Convergence: 0.00068009
+f(xk): 126169.2198
+norma di gradf(xk): 4832109.3947
+N. of Iterations: 43/20000
+Rate of Convergence: 1.2912
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -5.523e-05
+last values of steplength alphak: [0.000507060240091293 0.00241785163922926 0.00154742504910673 0.00377789318629572 0.00922337203685479 0.0549755813888 0.00302231454903658 0.00590295810358706 0.00472236648286965 0.00590295810358706 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 86.068 seconds
+Time: 0.5396 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.74577
-norma di gradf(xk): 0.17775
-N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+f(xk): 146207557.9085
+norma di gradf(xk): 659374684.7728
+N. of Iterations: 47/20000
+Rate of Convergence: 0.73096
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00040027
+last values of steplength alphak: [0.2097152 0.068719476736 0.32768 0.0144115188075856 0.0115292150460685 0.00922337203685479 0.0549755813888 0.00922337203685479 0.035184372088832 0.0225179981368525 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 81.959 seconds
+Time: 0.35906 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.7401
-norma di gradf(xk): 0.16731
-N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+f(xk): 20741519.9026
+norma di gradf(xk): 244059161.9119
+N. of Iterations: 16/20000
+Rate of Convergence: 1.514
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -8.9418e-06
+last values of steplength alphak: [1 0.0225179981368525 1 1 1 0.0858993459200001 0.4096 0.00922337203685479 0.000633825300114116 0.035184372088832 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 89.7788 seconds
+Time: 0.78076 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56321
-norma di gradf(xk): 0.11641
-N. of Iterations: 18686/20000
-Rate of Convergence: NaN
+f(xk): 8837778.0109
+norma di gradf(xk): 78665684.5694
+N. of Iterations: 98/20000
+Rate of Convergence: 24.1122
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.99748
-last values of steplength alphak: [1 1 0.00922337203685479 0.000792281625142645 8.50705917302348e-05 9.13438523331817e-06 1.53249554086589e-06 2.57110087081439e-07 4.31359146674412e-08 3.70534685559414e-09 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00026729
+last values of steplength alphak: [0.00590295810358706 0.04398046511104 0.00922337203685479 0.0144115188075856 0.00472236648286965 0.00737869762948383 0.00377789318629572 0.0115292150460685 0.00590295810358706 0.16777216 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 94.4431 seconds
+Time: 0.43461 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.4939
-norma di gradf(xk): 0.082754
-N. of Iterations: 20000/20000
-Rate of Convergence: 0.0026595
+f(xk): 27595578.0869
+norma di gradf(xk): 219324895.565
+N. of Iterations: 32/20000
+Rate of Convergence: 9.4545
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -8.1854e-05
+last values of steplength alphak: [0.16777216 0.16777216 0.0549755813888 0.0549755813888 0.16777216 0.32768 0.0858993459200001 0.134217728 0.0858993459200001 0.8 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 63.6733 seconds
+Time: 0.6202 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56685
-norma di gradf(xk): 0.12386
-N. of Iterations: 13582/20000
-Rate of Convergence: NaN
+f(xk): 4311066.1719
+norma di gradf(xk): 69981887.5499
+N. of Iterations: 70/20000
+Rate of Convergence: 21.7894
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.99969
-last values of steplength alphak: [1 1 1 0.0281474976710656 0.00302231454903658 0.000106338239662794 2.23007451985307e-05 3.21387608851799e-07 3.4508731733953e-08 7.2370055773323e-09 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00028825
+last values of steplength alphak: [0.134217728 0.2097152 0.0858993459200001 0.068719476736 0.1073741824 0.035184372088832 0.1073741824 0.262144 0.04398046511104 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 94.0998 seconds
+Time: 0.35661 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.49189
-norma di gradf(xk): 0.085097
-N. of Iterations: 20000/20000
-Rate of Convergence: 1.0002
+f(xk): 204768272.2781
+norma di gradf(xk): 814893427.487
+N. of Iterations: 16/20000
+Rate of Convergence: 0.039112
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -1.7642e-05
+last values of steplength alphak: [1 0.16777216 0.0549755813888 0.0281474976710656 0.00590295810358706 0.0281474976710656 0.000324518553658427 0.134217728 1 0.000633825300114116 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 94.5627 seconds
+Time: 0.37252 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.48094
-norma di gradf(xk): 0.088211
-N. of Iterations: 20000/20000
-Rate of Convergence: 0.53846
+f(xk): 39458126.9661
+norma di gradf(xk): 414870519.4969
+N. of Iterations: 18/20000
+Rate of Convergence: 8.7683
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -1.6049e-05
+last values of steplength alphak: [1 0.00922337203685479 1 0.2097152 0.262144 0.512 0.035184372088832 1 0.00472236648286965 0.0549755813888 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 92.4043 seconds
+Time: 0.33882 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.49819
-norma di gradf(xk): 0.088131
-N. of Iterations: 20000/20000
-Rate of Convergence: 0.99999
+f(xk): 183307024.6077
+norma di gradf(xk): 1260599698.1571
+N. of Iterations: 12/20000
+Rate of Convergence: 0.089724
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -3.7231e-06
+last values of steplength alphak: [1 1 1 1 0.64 0.000259614842926742 0.8 1 1 0.00241785163922926 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 150.3572 seconds
+Time: 0.38978 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.59203
-norma di gradf(xk): 0.10451
-N. of Iterations: 20000/20000
-Rate of Convergence: 0
+f(xk): 16766276.3714
+norma di gradf(xk): 145089353.5309
+N. of Iterations: 25/20000
+Rate of Convergence: 0.52449
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -6.5471e-05
+last values of steplength alphak: [0.2097152 0.1073741824 0.16777216 0.068719476736 0.16777216 0.1073741824 0.068719476736 0.0549755813888 0.0144115188075856 0.00472236648286965 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 176.077 seconds
+Time: 0.10545 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.58273
-norma di gradf(xk): 0.11408
-N. of Iterations: 20000/20000
-Rate of Convergence: 160497.6667
+f(xk): 279566542.8258
+norma di gradf(xk): 861951209.0711
+N. of Iterations: 9/20000
+Rate of Convergence: 7.6419
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -1.3044e-05
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 11.9869 seconds
+Time: 2.837 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.5965
-norma di gradf(xk): 131.5837
-N. of Iterations: 150/80000
-Rate of Convergence: 0.83804
+f(xk): 28324637.8043
+norma di gradf(xk): 832367785.0302
+N. of Iterations: 31/80000
+Rate of Convergence: 1.265
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0085918
-last values of steplength alphak: [0.32768 0.04398046511104 0.134217728 0.134217728 0.134217728 0.16777216 0.2097152 0.134217728 0.1073741824 0.0858993459200001 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -3.9011e-05
+last values of steplength alphak: [0.0858993459200001 0.000166153499473115 0.0115292150460685 0.0858993459200001 0.00302231454903658 0.1073741824 0.000324518553658427 0.0225179981368525 0.0225179981368525 0.0225179981368525 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 60.1482 seconds
+Time: 104.4191 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 3.6391
-norma di gradf(xk): 323.9387
-N. of Iterations: 748/80000
-Rate of Convergence: 3.0054
+f(xk): 415174.8209
+norma di gradf(xk): 311197.4947
+N. of Iterations: 1864/80000
+Rate of Convergence: 0.65019
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0040529
-last values of steplength alphak: [0.068719476736 0.32768 0.0549755813888 0.00590295810358706 0.068719476736 0.134217728 0.8 0.068719476736 0.0281474976710656 0.0858993459200001 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.11659
+last values of steplength alphak: [0.4096 0.512 0.512 0.64 0.64 0.64 0.64 0.64 0.64 0.4096 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 250.5324 seconds
+Time: 4.3666 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 5.3248
-norma di gradf(xk): 250.2847
-N. of Iterations: 2287/80000
-Rate of Convergence: 1.2449
+f(xk): 920639540.9034
+norma di gradf(xk): 8893531907.0663
+N. of Iterations: 55/80000
+Rate of Convergence: 0.36876
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0050796
-last values of steplength alphak: [0.64 0.512 0.64 0.32768 1 0.4096 0.4096 0.512 0.8 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00011855
+last values of steplength alphak: [0.035184372088832 0.04398046511104 0.0549755813888 0.035184372088832 0.035184372088832 0.0281474976710656 0.018014398509482 0.0144115188075856 0.0225179981368525 0.00472236648286965 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 55.9999 seconds
+Time: 4.6328 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 3.3925
-norma di gradf(xk): 192.4868
-N. of Iterations: 793/80000
-Rate of Convergence: 27.2714
+f(xk): 1913334507.6825
+norma di gradf(xk): 15149699407.7233
+N. of Iterations: 58/80000
+Rate of Convergence: 1.094
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0033469
-last values of steplength alphak: [0.0115292150460685 0.8 0.068719476736 1 0.32768 1 0.512 0.32768 0.00377789318629572 0.1073741824 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -7.9357e-05
+last values of steplength alphak: [0.0115292150460685 0.018014398509482 0.018014398509482 0.0549755813888 0.00737869762948383 0.00737869762948383 0.0225179981368525 0.000990352031428306 0.0144115188075856 0.0115292150460685 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 553.3048 seconds
+Time: 2.5962 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 3.9257
-norma di gradf(xk): 335.6937
-N. of Iterations: 4855/80000
-Rate of Convergence: 0.82293
+f(xk): 14111078291.7552
+norma di gradf(xk): 93668730673.1178
+N. of Iterations: 25/80000
+Rate of Convergence: 1.0629
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0051278
-last values of steplength alphak: [0.64 0.018014398509482 0.512 0.04398046511104 1 0.512 1 0.8 0.134217728 0.512 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00012503
+last values of steplength alphak: [0.00472236648286965 0.4096 0.16777216 0.0144115188075856 0.018014398509482 0.4096 0.64 0.1073741824 0.068719476736 0.0549755813888 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 50.2856 seconds
+Time: 12.5296 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 5.4077
-norma di gradf(xk): 230.4128
-N. of Iterations: 667/80000
-Rate of Convergence: 0.034778
+f(xk): 4152959.7002
+norma di gradf(xk): 13259565.9666
+N. of Iterations: 220/80000
+Rate of Convergence: 0.8011
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.012885
-last values of steplength alphak: [0.512 0.32768 0.8 1 0.32768 0.8 1 0.64 0.8 0.00590295810358706 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.015115
+last values of steplength alphak: [0.0225179981368525 0.035184372088832 0.035184372088832 0.035184372088832 0.0281474976710656 0.0225179981368525 0.035184372088832 0.018014398509482 0.0115292150460685 0.00922337203685479 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 43.0403 seconds
+Time: 4.3527 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 11.0378
-norma di gradf(xk): 632.4408
-N. of Iterations: 530/80000
-Rate of Convergence: 0.81435
+f(xk): 4861292394.4222
+norma di gradf(xk): 36297370029.4266
+N. of Iterations: 62/80000
+Rate of Convergence: 1.1139
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.005006
-last values of steplength alphak: [0.262144 0.262144 1 1 0.512 0.4096 1 0.16777216 1 0.16777216 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.00012081
+last values of steplength alphak: [0.0858993459200001 0.0549755813888 0.4096 0.04398046511104 0.16777216 0.1073741824 0.035184372088832 0.0858993459200001 0.0281474976710656 0.0225179981368525 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 93.1161 seconds
+Time: 1220.9084 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 4.8528
-norma di gradf(xk): 385.1985
-N. of Iterations: 1055/80000
-Rate of Convergence: 1.2455
+f(xk): 5839.7942
+norma di gradf(xk): 1714.1492
+N. of Iterations: 21962/80000
+Rate of Convergence: 0.068716
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.002099
-last values of steplength alphak: [0.512 1 0.32768 0.0281474976710656 0.8 0.512 0.8 0.00302231454903658 0.64 0.8 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.94674
+last values of steplength alphak: [0.000132922799578492 0.000633825300114116 2.57110087081439e-07 2.37142198758025e-09 0.000132922799578492 5.02168138830936e-07 8.50705917302348e-05 0.000106338239662794 6.2771017353867e-07 4.31359146674412e-08 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 38.498 seconds
+Time: 3.7111 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 16.7477
-norma di gradf(xk): 390.3753
-N. of Iterations: 498/80000
-Rate of Convergence: 0.086795
+f(xk): 1332235280.5437
+norma di gradf(xk): 15578461542.5052
+N. of Iterations: 52/80000
+Rate of Convergence: 5.6539
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0053454
-last values of steplength alphak: [0.04398046511104 1 0.8 1 1 1 1 1 1 0.018014398509482 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -6.7993e-05
+last values of steplength alphak: [0.0115292150460685 0.00472236648286965 0.0858993459200001 0.00737869762948383 0.00737869762948383 0.0144115188075856 0.0281474976710656 0.018014398509482 0.000990352031428306 0.00737869762948383 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 460.2054 seconds
+Time: 53.7505 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 34.6182
-norma di gradf(xk): 1164.0933
-N. of Iterations: 3623/80000
-Rate of Convergence: 0.99602
+f(xk): 121181.7661
+norma di gradf(xk): 1462512.861
+N. of Iterations: 1049/80000
+Rate of Convergence: 1.2503
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0033345
-last values of steplength alphak: [1 1 0.4096 1 1 0.16777216 1 0.2097152 1 1 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -0.0083807
+last values of steplength alphak: [0.0225179981368525 0.0225179981368525 0.035184372088832 0.018014398509482 0.0281474976710656 0.16777216 0.0144115188075856 0.262144 0.0225179981368525 0.0281474976710656 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-06) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 45.8591 seconds
+Time: 2.2801 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 6.616
-norma di gradf(xk): 608.6102
-N. of Iterations: 587/80000
-Rate of Convergence: 0.42156
+f(xk): 6314682620.1516
+norma di gradf(xk): 50947976019.2315
+N. of Iterations: 26/80000
+Rate of Convergence: 0.5188
 ************************************
 FAIL
 Failure due to backtracking
-cosine of the angle between the last computed direction pk and the gradient: -0.0059382
-last values of steplength alphak: [0.8 0.64 0.16777216 0.4096 1 0.262144 0.16777216 1 0.4096 0.8 1.8971375900642e-09]
+cosine of the angle between the last computed direction pk and the gradient: -2.0128e-05
+last values of steplength alphak: [0.0281474976710656 0.04398046511104 0.00737869762948383 0.32768 0.4096 0.134217728 0.0858993459200001 0.0115292150460685 0.16777216 0.04398046511104 1.8971375900642e-09]
 ************************************
  
 
@@ -1561,328 +1613,336 @@ TMN =
 
   3×6 table
 
-              avg fbest    avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
-              _________    ______________    ________________    ______________________    _________    _______
+                avg fbest      avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure    avg roc
+              _____________    ______________    ________________    ______________________    _________    _______
 
-    1000        0.74             0.16             2000.00                  6.17              11.00       11.66 
-    10000       0.57             0.11            19297.09                101.00              11.00         NaN 
-    100000      8.83           422.28             1435.73                151.18              11.00        3.34 
+    1000         1977810.04        6283356.57          25.64                   0.28              11.00       1.47  
+    10000       84698719.30      433967511.96          35.09                   0.44              11.00       6.91  
+    100000    2680571129.94    20125742941.32        2309.45                 128.76              11.00       1.26  
 
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 6.0996 seconds
+Time: 5.9908 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56017
-norma di gradf(xk): 0.75111
+f(xk): 0.11982
+norma di gradf(xk): 0.3518
 N. of Iterations: 2000/2000
-Rate of Convergence: 2.9558
+Rate of Convergence: -0.72243
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 6.3843 seconds
+Time: 6.3619 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56807
-norma di gradf(xk): 0.72589
+f(xk): 0.13003
+norma di gradf(xk): 0.3639
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.8686e-06
+Rate of Convergence: 0.14212
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 6.2508 seconds
+Time: 0.29568 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.55161
-norma di gradf(xk): 0.77867
-N. of Iterations: 2000/2000
-Rate of Convergence: 23830020.5562
+f(xk): 5701756430.1032
+norma di gradf(xk): 451300941471205.1
+N. of Iterations: 29/2000
+Rate of Convergence: 1.3338
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.040553
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 6.2605 seconds
+Time: 6.411 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.49401
-norma di gradf(xk): 0.11967
+f(xk): 0.047787
+norma di gradf(xk): 0.16402
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.91091
+Rate of Convergence: 0.5
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 6.2209 seconds
+Time: 6.3347 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.55708
-norma di gradf(xk): 0.75734
+f(xk): 0.09995
+norma di gradf(xk): 0.30355
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.0012
+Rate of Convergence: -3929.8589
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 6.424 seconds
+Time: 6.349 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.4543
-norma di gradf(xk): 0.1175
+f(xk): 0.066461
+norma di gradf(xk): 0.2185
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.0563
+Rate of Convergence: 1.7407e-07
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 6.543 seconds
+Time: 6.4511 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.43673
-norma di gradf(xk): 0.20361
+f(xk): 0.1765
+norma di gradf(xk): 0.47772
 N. of Iterations: 2000/2000
-Rate of Convergence: 3014.0455
+Rate of Convergence: 3.6803e-06
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 6.4423 seconds
+Time: 6.3254 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.57058
-norma di gradf(xk): 0.71992
+f(xk): 0.072989
+norma di gradf(xk): 0.23241
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.30109
+Rate of Convergence: -401.9062
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 6.4942 seconds
+Time: 6.4116 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.45146
-norma di gradf(xk): 0.15373
+f(xk): 0.08102
+norma di gradf(xk): 0.25793
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.1416
+Rate of Convergence: 4.4551e-05
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 6.4243 seconds
+Time: 0.35091 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.51408
-norma di gradf(xk): 0.33969
-N. of Iterations: 2000/2000
-Rate of Convergence: 4.8943e-05
+f(xk): 1540414366.8716
+norma di gradf(xk): 4415524169945.283
+N. of Iterations: 47/2000
+Rate of Convergence: 1.3556
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.044471
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 6.4409 seconds
+Time: 6.1974 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.56228
-norma di gradf(xk): 0.74822
+f(xk): 0.083285
+norma di gradf(xk): 0.26347
 N. of Iterations: 2000/2000
-Rate of Convergence: 9.8548e-07
+Rate of Convergence: 12077.4843
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 156.2207 seconds
+Time: 101.0743 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.31552
-norma di gradf(xk): 0.076295
+f(xk): 0.014987
+norma di gradf(xk): 0.039859
 N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+Rate of Convergence: -46.5729
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 115.0077 seconds
+Time: 87.8791 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.27191
-norma di gradf(xk): 0.12298
+f(xk): 0.034698
+norma di gradf(xk): 0.11253
 N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+Rate of Convergence: 39.6585
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 93.2754 seconds
+Time: 87.6284 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.26452
-norma di gradf(xk): 0.079753
+f(xk): 0.032422
+norma di gradf(xk): 0.10679
 N. of Iterations: 20000/20000
-Rate of Convergence: 8781968.5183
+Rate of Convergence: 132.1383
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 108.0695 seconds
+Time: 88.1954 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.28395
-norma di gradf(xk): 0.093115
+f(xk): 0.025262
+norma di gradf(xk): 0.082347
 N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+Rate of Convergence: 3.6612
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 92.4217 seconds
+Time: 87.9906 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.26667
-norma di gradf(xk): 0.031968
+f(xk): 0.026145
+norma di gradf(xk): 0.089876
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.69759
+Rate of Convergence: 0.5532
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 94.3083 seconds
+Time: 88.4847 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.25421
-norma di gradf(xk): 0.077641
+f(xk): 0.019675
+norma di gradf(xk): 0.062193
 N. of Iterations: 20000/20000
-Rate of Convergence: 5.0841
+Rate of Convergence: 5.9459
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 88.8351 seconds
+Time: 88.3652 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.3325
-norma di gradf(xk): 0.036548
+f(xk): 0.022667
+norma di gradf(xk): 0.072372
 N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+Rate of Convergence: 3.3536e-08
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 92.7145 seconds
+Time: 0.052305 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.24743
-norma di gradf(xk): 0.030177
-N. of Iterations: 20000/20000
-Rate of Convergence: 17.9625
+f(xk): 17327381955058.04
+norma di gradf(xk): 1.061590002916701e+26
+N. of Iterations: 2/20000
+Rate of Convergence: NaN
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.07324
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 92.4204 seconds
+Time: 88.8088 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.2804
-norma di gradf(xk): 0.035387
+f(xk): 0.015582
+norma di gradf(xk): 0.041928
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.0006
+Rate of Convergence: 2576.7025
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 92.75 seconds
+Time: 0.62631 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.27773
-norma di gradf(xk): 0.11587
-N. of Iterations: 20000/20000
-Rate of Convergence: 0
+f(xk): 1654808064049.88
+norma di gradf(xk): 1.506086400276426e+19
+N. of Iterations: 77/20000
+Rate of Convergence: 1.5674
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.0059662
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 90.8622 seconds
+Time: 89.0583 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.26746
-norma di gradf(xk): 0.048604
+f(xk): 0.015667
+norma di gradf(xk): 0.044827
 N. of Iterations: 20000/20000
-Rate of Convergence: NaN
+Rate of Convergence: 321621.0036
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 3275.3756 seconds
+Time: 3188.5804 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.22827
-norma di gradf(xk): 0.024799
+f(xk): 0.006071
+norma di gradf(xk): 0.0012678
 N. of Iterations: 80000/80000
 Rate of Convergence: NaN
 ************************************
@@ -1891,143 +1951,157 @@ Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 2761.7943 seconds
+Time: 342.8473 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.31709
-norma di gradf(xk): 0.036599
-N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+f(xk): 0.033141
+norma di gradf(xk): 0.11979
+N. of Iterations: 8959/80000
+Rate of Convergence: -12086833.9432
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00034062
+last values of steplength alphak: [0.8 1 1 0.8 0.8 1 0.262144 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 4089.9844 seconds
+Time: 204.1543 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.15742
-norma di gradf(xk): 0.029714
-N. of Iterations: 80000/80000
+f(xk): 0.071778
+norma di gradf(xk): 0.25762
+N. of Iterations: 5689/80000
 Rate of Convergence: NaN
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -6.2323e-05
+last values of steplength alphak: [1 0.64 0.1073741824 1 1 1 0.00737869762948383 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 4534.5163 seconds
+Time: 105.9631 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.22278
-norma di gradf(xk): 0.021065
-N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+f(xk): 0.10111
+norma di gradf(xk): 1.8664
+N. of Iterations: 2840/80000
+Rate of Convergence: -833895.6911
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -2.7848e-05
+last values of steplength alphak: [1 1 1 1 1 1 0.4096 0.262144 1 0.32768 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 3776.7355 seconds
+Time: 172.5797 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.3435
-norma di gradf(xk): 0.050685
-N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+f(xk): 0.10243
+norma di gradf(xk): 0.30553
+N. of Iterations: 4820/80000
+Rate of Convergence: 0.13636
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00041052
+last values of steplength alphak: [1 1 0.512 1 1 1 0.0549755813888 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 3276.7024 seconds
+Time: 4368.5605 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.14532
-norma di gradf(xk): 0.018083
+f(xk): 0.0063094
+norma di gradf(xk): 0.0011499
 N. of Iterations: 80000/80000
-Rate of Convergence: 4.8629
+Rate of Convergence: 8.543e-05
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 2743.9837 seconds
+Time: 253.1319 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.18783
-norma di gradf(xk): 0.021005
-N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+f(xk): 0.051934
+norma di gradf(xk): 0.16259
+N. of Iterations: 6010/80000
+Rate of Convergence: 0.22781
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00025016
+last values of steplength alphak: [1 1 0.32768 0.8 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 3220.4742 seconds
+Time: 128.9418 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.16516
-norma di gradf(xk): 0.015356
-N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+f(xk): 0.20532
+norma di gradf(xk): 1.0209
+N. of Iterations: 2990/80000
+Rate of Convergence: 1.8892
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.00011488
+last values of steplength alphak: [1 0.4096 1 1 0.512 0.262144 0.2097152 1 0.0858993459200001 0.134217728 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 3865.9586 seconds
+Time: 3778.6706 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.30024
-norma di gradf(xk): 0.2363
+f(xk): 0.0060542
+norma di gradf(xk): 0.00096805
 N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+Rate of Convergence: 14155.0573
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 3717.9753 seconds
+Time: 4376.7099 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.20627
-norma di gradf(xk): 0.032436
+f(xk): 0.0060851
+norma di gradf(xk): 0.0012706
 N. of Iterations: 80000/80000
-Rate of Convergence: NaN
+Rate of Convergence: 0.058907
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-08) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 3244.2264 seconds
+Time: 193.8308 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 0.1596
-norma di gradf(xk): 0.016891
-N. of Iterations: 80000/80000
-Rate of Convergence: 1.0016
+f(xk): 0.12241
+norma di gradf(xk): 0.35373
+N. of Iterations: 5145/80000
+Rate of Convergence: 0.021871
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -3.401e-05
+last values of steplength alphak: [0.512 1 1 1 1 0.00154742504910673 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 
@@ -2035,472 +2109,476 @@ TMN =
 
   3×6 table
 
-              avg fbest    avg gradf_norm    avg num of iters    avg time of exec (sec)    n failure     avg roc  
-              _________    ______________    ________________    ______________________    _________    __________
+                 avg fbest               avg gradf_norm           avg num of iters    avg time of exec (sec)    n failure    avg roc
+              ________________    ____________________________    ________________    ______________________    _________    _______
 
-    1000        0.52            0.49              2000.00                  6.36              11.00      2166640.09
-    10000       0.28            0.07             20000.00                101.54              11.00             NaN
-    100000      0.22            0.05             80000.00               3500.70              11.00             NaN
+    1000          658379163.44               41428769603741.19         1643.27                  5.23              11.00      704.39 
+    10000     1725653638100.74    9650819577503096034557952.00        16370.82                 73.47              11.00         NaN 
+    100000                0.06                            0.37        32404.82               1555.82              11.00         NaN 
 
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 0.047075 seconds
+Time: 0.044857 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 78071.2384
-norma di gradf(xk): 11928331637.4786
-N. of Iterations: 3/2000
-Rate of Convergence: -4.0206
+f(xk): 79842.5
+norma di gradf(xk): 6393477913.5148
+N. of Iterations: 1/2000
+Rate of Convergence: NaN
 ************************************
 FAIL
 Failure due to backtracking
 cosine of the angle between the last computed direction pk and the gradient: -0.70711
-last values of steplength alphak: zeros(1,0)
+last values of steplength alphak: zeros(0,1)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 5.9776 seconds
+Time: 6.162 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18124589891.832
-norma di gradf(xk): 7123676845.2337
+f(xk): 18125840469.5013
+norma di gradf(xk): 7124190262.1588
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.63907
+Rate of Convergence: 1.0391
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 5.9381 seconds
+Time: 6.1789 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17201289337.4261
-norma di gradf(xk): 6891521580.8969
+f(xk): 17200817459.5286
+norma di gradf(xk): 6891321841.1263
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.42611
+Rate of Convergence: 0.68055
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 5.9432 seconds
+Time: 6.0042 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18350378059.5106
-norma di gradf(xk): 7053257824.433
+f(xk): 18350610985.4585
+norma di gradf(xk): 7053349183.7964
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.86689
+Rate of Convergence: 0.79362
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 5.9546 seconds
+Time: 6.0342 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17431408491.9842
-norma di gradf(xk): 7134856229.0905
+f(xk): 17432011348.8299
+norma di gradf(xk): 7135126000.4447
 N. of Iterations: 2000/2000
-Rate of Convergence: 2.0552
+Rate of Convergence: 1.397
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 5.9656 seconds
+Time: 6.0133 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17638209271.7571
-norma di gradf(xk): 6661227173.8743
+f(xk): 17638547168.0291
+norma di gradf(xk): 6661347495.0484
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.62775
+Rate of Convergence: 0.59485
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 5.9896 seconds
+Time: 6.0563 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17566537947.2259
-norma di gradf(xk): 6847759516.4603
+f(xk): 17566775286.5469
+norma di gradf(xk): 6847858953.5507
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.6883
+Rate of Convergence: 0.29352
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 6.0233 seconds
+Time: 6.0103 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 20180382732.2528
-norma di gradf(xk): 7838050645.6151
+f(xk): 20178817641.9436
+norma di gradf(xk): 7837420978.995
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.80849
+Rate of Convergence: 1.6386
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 5.9778 seconds
+Time: 6.0026 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 19414290477.7169
-norma di gradf(xk): 7752966915.9247
+f(xk): 19415433580.9828
+norma di gradf(xk): 7753421059.1056
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.76589
+Rate of Convergence: 1.2078
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 5.9594 seconds
+Time: 6.0402 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 16390750161.6485
-norma di gradf(xk): 6605030307.9482
+f(xk): 16391250144.4401
+norma di gradf(xk): 6605239264.6319
 N. of Iterations: 2000/2000
-Rate of Convergence: 5.5462
+Rate of Convergence: 0.92099
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 6.0345 seconds
+Time: 5.9792 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 21844729884.2589
-norma di gradf(xk): 8333166789.6579
+f(xk): 21845618069.0037
+norma di gradf(xk): 8333506421.5926
 N. of Iterations: 2000/2000
-Rate of Convergence: 2.4206
+Rate of Convergence: 1.3208
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 91.5055 seconds
+Time: 0.051767 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 2.5526
-norma di gradf(xk): 2.202
-N. of Iterations: 20000/20000
-Rate of Convergence: 0.72341
+f(xk): 7541543.3616
+norma di gradf(xk): 1.172887294791867e+18
+N. of Iterations: 4/20000
+Rate of Convergence: 14.8645
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.70712
+last values of steplength alphak: zeros(1,0)
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 114.601 seconds
+Time: 117.3817 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18638468779992.5
-norma di gradf(xk): 2346273445778.532
+f(xk): 18637439514001.27
+norma di gradf(xk): 2346137829882.569
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.881
+Rate of Convergence: 0.61448
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 114.4652 seconds
+Time: 117.6755 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 16829640006743.59
-norma di gradf(xk): 2158988384578.956
+f(xk): 16829137015428.96
+norma di gradf(xk): 2158920897433.647
 N. of Iterations: 20000/20000
-Rate of Convergence: 2.7357
+Rate of Convergence: 0.95828
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 114.4629 seconds
+Time: 117.3618 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17104349146818.14
-norma di gradf(xk): 2152350495562.788
+f(xk): 17104270436287.66
+norma di gradf(xk): 2152339861434.514
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.7101
+Rate of Convergence: 0.79146
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 114.6733 seconds
+Time: 117.8059 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17344880302251.61
-norma di gradf(xk): 2196527693144.313
+f(xk): 17345076160332.46
+norma di gradf(xk): 2196552102950.352
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.1441
+Rate of Convergence: 1.3657
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 114.6437 seconds
+Time: 117.5714 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17237372065852.46
-norma di gradf(xk): 2180578846903.588
+f(xk): 17237640991348.46
+norma di gradf(xk): 2180613291288.067
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.66147
+Rate of Convergence: 1.1198
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 115.2375 seconds
+Time: 117.6222 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17974757417404.05
-norma di gradf(xk): 2281958844335.5
+f(xk): 17975589808889.33
+norma di gradf(xk): 2282068817905.876
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.74623
+Rate of Convergence: 1.4681
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 115.213 seconds
+Time: 117.9342 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17183614012025.85
-norma di gradf(xk): 2166038078110.872
+f(xk): 17184111299495.11
+norma di gradf(xk): 2166103082876.352
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.1143
+Rate of Convergence: 1.0799
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 115.0321 seconds
+Time: 117.3754 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17085695904369.62
-norma di gradf(xk): 2146874191239.665
+f(xk): 17085529758305.72
+norma di gradf(xk): 2146852673528.287
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.3372
+Rate of Convergence: 1.8837
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 115.1469 seconds
+Time: 117.9599 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17507128188247.26
-norma di gradf(xk): 2189553299070.192
+f(xk): 17507444052540.68
+norma di gradf(xk): 2189593546011.343
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.95893
+Rate of Convergence: 0.9178
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 115.1858 seconds
+Time: 118.6862 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18211968798586.46
-norma di gradf(xk): 2303002364610.228
+f(xk): 18212278177851.04
+norma di gradf(xk): 2303043968892.899
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.5125
+Rate of Convergence: 0.62723
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 2858.622 seconds
+Time: 2.6954 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 3.0519
-norma di gradf(xk): 18.5313
-N. of Iterations: 80000/80000
-Rate of Convergence: 2.7557
+f(xk): 52164976.569
+norma di gradf(xk): 4.364660128686245e+22
+N. of Iterations: 40/80000
+Rate of Convergence: 0.56267
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.60571
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 3392.7317 seconds
+Time: 4809.1642 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.707269466776584e+16
-norma di gradf(xk): 682824010191309.4
+f(xk): 1.707186342274553e+16
+norma di gradf(xk): 682789196318281.4
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.4014
+Rate of Convergence: 0.83237
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 3398.6271 seconds
+Time: 5788.445 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.705754069424696e+16
-norma di gradf(xk): 680083869163737.5
+f(xk): 1.705758644541088e+16
+norma di gradf(xk): 680085556984857.6
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.1361
+Rate of Convergence: 1.1056
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 4230.4657 seconds
+Time: 3895.4814 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.729636880686685e+16
-norma di gradf(xk): 691589584450632.9
+f(xk): 1.729682667025603e+16
+norma di gradf(xk): 691608370010807
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.96847
+Rate of Convergence: 1.111
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 5384.5411 seconds
+Time: 3452.3131 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.730836619498233e+16
-norma di gradf(xk): 691719526801067.4
+f(xk): 1.730793048331066e+16
+norma di gradf(xk): 691701395292639.8
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.82497
+Rate of Convergence: 1.1288
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 4881.9793 seconds
+Time: 3442.7612 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.709397866365868e+16
-norma di gradf(xk): 682806131655739.5
+f(xk): 1.70937913862203e+16
+norma di gradf(xk): 682798162633366.6
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.84079
+Rate of Convergence: 1.052
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 3382.3972 seconds
+Time: 3468.7333 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.694430523671861e+16
-norma di gradf(xk): 673990655788353.5
+f(xk): 1.694442983440159e+16
+norma di gradf(xk): 673995550625513.9
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.90574
+Rate of Convergence: 0.94556
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 4735.7268 seconds
+Time: 3444.6407 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.690881498653992e+16
-norma di gradf(xk): 671785453977432.1
+f(xk): 1.690782953515597e+16
+norma di gradf(xk): 671744808271198.5
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.9734
+Rate of Convergence: 1.1226
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 5267.1444 seconds
+Time: 3487.2763 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.727085502772315e+16
-norma di gradf(xk): 685532514204507.1
+f(xk): 1.727040518770511e+16
+norma di gradf(xk): 685513910236557.1
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.1034
+Rate of Convergence: 0.90031
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 4551.5935 seconds
+Time: 3538.7301 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.711522003366518e+16
-norma di gradf(xk): 685232634566067.9
+f(xk): 1.71165261763447e+16
+norma di gradf(xk): 685286895171919.8
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.1553
+Rate of Convergence: 1.2725
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-10) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 4718.8367 seconds
+Time: 3452.9998 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.718384124621996e+16
-norma di gradf(xk): 688165496732673
+f(xk): 1.718365809244372e+16
+norma di gradf(xk): 688157883378774.8
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.80173
+Rate of Convergence: 0.967
 ************************************
 FAIL
 Failure not due to backtracking
@@ -2511,470 +2589,472 @@ TMN =
 
   3×6 table
 
-                   avg fbest            avg gradf_norm      avg num of iters    avg time of exec (sec)    n failure    avg roc
-              ____________________    __________________    ________________    ______________________    _________    _______
+                   avg fbest               avg gradf_norm          avg num of iters    avg time of exec (sec)    n failure    avg roc
+              ____________________    _________________________    ________________    ______________________    _________    _______
 
-    1000            16740240393.35         7651804133.33         1818.45                  5.44              11.00       1.07  
-    10000        15919806783844.92      2011104149394.26        20000.00                112.74              11.00       1.32  
-    100000    15568362323489772.00    621248170684685.38        80000.00               4254.79              11.00       1.17  
+    1000            16740527454.25                7148750852.18         1818.27                  5.50              11.00        NaN  
+    10000        15919865886911.28        106628128819812656.00        18182.18                107.04              11.00       2.34  
+    100000    15568258844196314.00    3967873465504015319040.00        72730.91               3525.75              11.00       1.00  
 
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 1, dimension 1000):  *****
-Time: 6.2761 seconds
+Time: 6.1018 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 79836.2064
-norma di gradf(xk): 2258182.5613
+f(xk): 79835.7931
+norma di gradf(xk): 2258172.2549
 N. of Iterations: 2000/2000
-Rate of Convergence: 1
+Rate of Convergence: 0.85321
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 2, dimension 1000):  *****
-Time: 6.0248 seconds
+Time: 6.1422 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18186288731.4242
-norma di gradf(xk): 7148542782.1307
+f(xk): 18186288819.5795
+norma di gradf(xk): 7148521224.7195
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.349
+Rate of Convergence: 0.77251
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 3, dimension 1000):  *****
-Time: 6.0505 seconds
+Time: 6.0557 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17264036965.0542
-norma di gradf(xk): 6917500005.5232
+f(xk): 17264037050.7803
+norma di gradf(xk): 6917299195.2417
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.223
+Rate of Convergence: 1.4246
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 4, dimension 1000):  *****
-Time: 6.0664 seconds
+Time: 6.084 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18404629934.3585
-norma di gradf(xk): 7073504243.0139
+f(xk): 18404629878.3203
+norma di gradf(xk): 7074023925.7397
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.58994
+Rate of Convergence: 1.1102
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 5, dimension 1000):  *****
-Time: 6.0046 seconds
+Time: 6.1089 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17493429205.5321
-norma di gradf(xk): 7161424463.9477
+f(xk): 17493429221.8058
+norma di gradf(xk): 7161266935.9884
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.57275
+Rate of Convergence: 1.1165
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 6, dimension 1000):  *****
-Time: 6.0324 seconds
+Time: 6.1408 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17701953644.6996
-norma di gradf(xk): 6684528687.6428
+f(xk): 17701953616.1282
+norma di gradf(xk): 6684519121.1374
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.2829
+Rate of Convergence: 1.2562
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 7, dimension 1000):  *****
-Time: 6.0587 seconds
+Time: 6.0903 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17610810417.5962
-norma di gradf(xk): 6865062739.239
+f(xk): 17610810331.7663
+norma di gradf(xk): 6864700915.403
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.48525
+Rate of Convergence: 0.57988
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 8, dimension 1000):  *****
-Time: 6.1277 seconds
+Time: 6.1432 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 20239021294.4422
-norma di gradf(xk): 7861788510.0774
+f(xk): 20239021261.8329
+norma di gradf(xk): 7861675251.9475
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.0534
+Rate of Convergence: 1.6336
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 9, dimension 1000):  *****
-Time: 5.9767 seconds
+Time: 6.1014 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 19477597880.5835
-norma di gradf(xk): 7778109937.7717
+f(xk): 19477597729.9898
+norma di gradf(xk): 7778441001.4806
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.90948
+Rate of Convergence: 0.76387
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 10, dimension 1000):  *****
-Time: 6.0794 seconds
+Time: 6.0763 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 16435830293.202
-norma di gradf(xk): 6624218822.3567
+f(xk): 16435830364.2556
+norma di gradf(xk): 6624628428.6734
 N. of Iterations: 2000/2000
-Rate of Convergence: 1.7707
+Rate of Convergence: 2.527
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 11, dimension 1000):  *****
-Time: 6.0244 seconds
+Time: 6.0928 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 21909409729.5812
-norma di gradf(xk): 8358011554.9547
+f(xk): 21909409681.9798
+norma di gradf(xk): 8357676990.8299
 N. of Iterations: 2000/2000
-Rate of Convergence: 0.38234
+Rate of Convergence: 1.4728
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 1, dimension 10000):  *****
-Time: 107.239 seconds
+Time: 112.502 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 7848307.9377
-norma di gradf(xk): 222137213.7136
+f(xk): 7991869.6515
+norma di gradf(xk): 226098888.8739
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.86957
+Rate of Convergence: 0.70968
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 2, dimension 10000):  *****
-Time: 119.1547 seconds
+Time: 120.3551 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18898557848668.46
-norma di gradf(xk): 2380596425393.55
+f(xk): 18898557843906.82
+norma di gradf(xk): 2380562221977.221
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.9988
+Rate of Convergence: 1.4233
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 3, dimension 10000):  *****
-Time: 118.9695 seconds
+Time: 120.7623 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17061159029441.81
-norma di gradf(xk): 2190326669679.279
+f(xk): 17061158979993.84
+norma di gradf(xk): 2190342107891.794
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.2651
+Rate of Convergence: 1.5918
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 4, dimension 10000):  *****
-Time: 119.0112 seconds
+Time: 120.0457 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17338328775796.71
-norma di gradf(xk): 2182781491682.249
+f(xk): 17338328787734.34
+norma di gradf(xk): 2182789417446.239
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.54318
+Rate of Convergence: 0.8107
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 5, dimension 10000):  *****
-Time: 119.2426 seconds
+Time: 120.3522 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17592709958847.15
-norma di gradf(xk): 2229030675895.228
+f(xk): 17592709889272.93
+norma di gradf(xk): 2229041124221.779
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.0219
+Rate of Convergence: 1.2485
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 6, dimension 10000):  *****
-Time: 119.3413 seconds
+Time: 122.6592 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17472463925448.54
-norma di gradf(xk): 2211060053070.192
+f(xk): 17472464031429.85
+norma di gradf(xk): 2211070368153.062
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.0014
+Rate of Convergence: 0.6794
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 7, dimension 10000):  *****
-Time: 119.0904 seconds
+Time: 120.4308 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18214002881884.68
-norma di gradf(xk): 2313622383983.653
+f(xk): 18214002925623.5
+norma di gradf(xk): 2313659749252.611
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.6641
+Rate of Convergence: 0.73976
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 8, dimension 10000):  *****
-Time: 119.2814 seconds
+Time: 120.3514 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17370494936805.44
-norma di gradf(xk): 2190362515831.276
+f(xk): 17370494878613.68
+norma di gradf(xk): 2190359476691.786
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.5357
+Rate of Convergence: 0.87593
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 9, dimension 10000):  *****
-Time: 120.0132 seconds
+Time: 120.6981 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17343031903798.68
-norma di gradf(xk): 2180535480458.114
+f(xk): 17343032016458.27
+norma di gradf(xk): 2180484018272.819
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.1049
+Rate of Convergence: 1.0017
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 10, dimension 10000):  *****
-Time: 119.2389 seconds
+Time: 120.6339 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 17768230053603.13
-norma di gradf(xk): 2223083243450.583
+f(xk): 17768229962387.65
+norma di gradf(xk): 2223090592624.183
 N. of Iterations: 20000/20000
-Rate of Convergence: 1.7384
+Rate of Convergence: 0.53394
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 11, dimension 10000):  *****
-Time: 119.4931 seconds
+Time: 121.2157 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 18444585539012.69
-norma di gradf(xk): 2334239166844.033
+f(xk): 18444585497574.83
+norma di gradf(xk): 2334209961364.334
 N. of Iterations: 20000/20000
-Rate of Convergence: 0.81284
+Rate of Convergence: 0.77781
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 1, dimension 100000):  *****
-Time: 2938.1224 seconds
+Time: 1294.1536 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 654850500.2938
-norma di gradf(xk): 13851522638.3434
-N. of Iterations: 80000/80000
-Rate of Convergence: 1.5714
+f(xk): 85977855.5954
+norma di gradf(xk): 4.031573947170277e+16
+N. of Iterations: 30316/80000
+Rate of Convergence: 2.5405
 ************************************
 FAIL
-Failure not due to backtracking
+Failure due to backtracking
+cosine of the angle between the last computed direction pk and the gradient: -0.0049794
+last values of steplength alphak: [1 1 1 1 1 1 1 1 1 1 1.8971375900642e-09]
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 2, dimension 100000):  *****
-Time: 3442.7694 seconds
+Time: 3504.4523 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.770510146450902e+16
-norma di gradf(xk): 709298163130935.1
+f(xk): 1.770510140742764e+16
+norma di gradf(xk): 709299298468494.8
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.0851
+Rate of Convergence: 0.75211
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 3, dimension 100000):  *****
-Time: 5189.396 seconds
+Time: 3491.1017 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.772013405909511e+16
-norma di gradf(xk): 707605964047843.5
+f(xk): 1.772013407006694e+16
+norma di gradf(xk): 707602682645541.5
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.4485
+Rate of Convergence: 0.79794
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 4, dimension 100000):  *****
-Time: 3987.5104 seconds
+Time: 5101.9585 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.793128221120866e+16
-norma di gradf(xk): 717929684918204.4
+f(xk): 1.793128219890617e+16
+norma di gradf(xk): 717921940096622
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.1563
+Rate of Convergence: 1.0708
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 5, dimension 100000):  *****
-Time: 3423.5222 seconds
+Time: 5132.2024 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.797244812979741e+16
-norma di gradf(xk): 719189124302760.8
+f(xk): 1.797244811647449e+16
+norma di gradf(xk): 719187545791038.2
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.75297
+Rate of Convergence: 0.91571
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 6, dimension 100000):  *****
-Time: 3407.2834 seconds
+Time: 3477.1066 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.776038609277949e+16
-norma di gradf(xk): 710437929991816.5
+f(xk): 1.776038601737398e+16
+norma di gradf(xk): 710436901806889.6
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.83625
+Rate of Convergence: 0.86716
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 7, dimension 100000):  *****
-Time: 3459.739 seconds
+Time: 3830.961 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.759751973462076e+16
-norma di gradf(xk): 700745381581098
+f(xk): 1.759751977386529e+16
+norma di gradf(xk): 700746542847107.4
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.08
+Rate of Convergence: 0.81707
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 8, dimension 100000):  *****
-Time: 3398.8946 seconds
+Time: 3679.4492 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.756805328554406e+16
-norma di gradf(xk): 698991218453533.4
+f(xk): 1.756805324787388e+16
+norma di gradf(xk): 698990881722798.6
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.62639
+Rate of Convergence: 0.86925
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 9, dimension 100000):  *****
-Time: 3388.5062 seconds
+Time: 4055.1701 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.790733529996773e+16
-norma di gradf(xk): 711767094146552.5
+f(xk): 1.790733519130538e+16
+norma di gradf(xk): 711767692436831.8
 N. of Iterations: 80000/80000
-Rate of Convergence: 0.80831
+Rate of Convergence: 0.89248
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 10, dimension 100000):  *****
-Time: 3399.0372 seconds
+Time: 3672.2391 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.776995429449727e+16
-norma di gradf(xk): 712627099411694.4
+f(xk): 1.776995431087936e+16
+norma di gradf(xk): 712626984269514.4
 N. of Iterations: 80000/80000
-Rate of Convergence: 1
+Rate of Convergence: 0.91743
 ************************************
 FAIL
 Failure not due to backtracking
 ************************************
  
 **** MODIFIED NEWTON METHOD WITH FIN DIFF ( REL with h = 1e-12) FOR THE PB 75 (point 11, dimension 100000):  *****
-Time: 3404.6889 seconds
+Time: 3887.0741 seconds
 Backtracking parameters (rho, c1): 0.8 1e-05
 **** MODIFIED NEWTON METHOD : RESULTS *****
 ************************************
-f(xk): 1.78591685425747e+16
-norma di gradf(xk): 716145287615757.2
+f(xk): 1.785916860531312e+16
+norma di gradf(xk): 716143048727359.6
 N. of Iterations: 80000/80000
-Rate of Convergence: 1.0664
+Rate of Convergence: 0.87505
 ************************************
 FAIL
 Failure not due to backtracking
@@ -2985,11 +3065,10 @@ TMN =
 
   3×6 table
 
-                   avg fbest            avg gradf_norm      avg num of iters    avg time of exec (sec)    n failure    avg roc
-              ____________________    __________________    ________________    ______________________    _________    _______
+                   avg fbest            avg gradf_norm       avg num of iters    avg time of exec (sec)    n failure    avg roc
+              ____________________    ___________________    ________________    ______________________    _________    _______
 
-    1000            16793007993.88         6588631811.75         2000.00                  6.07              11.00       0.97  
-    10000        16136688427419.57      2039623658500.17        20000.00                118.19              11.00       1.23  
-    100000    16162853069949518.00    645886436283893.88        80000.00               3585.41              11.00       1.04  
+    1000            16793007981.11          6588637378.49         2000.00                  6.10              11.00       1.23  
+    10000        16136688436805.95       2039621376071.34        20000.00                120.00              11.00       0.94  
+    100000    16162853002314918.00    4310951180955906.00        75483.27               3738.72              11.00       1.03  
 
->> 

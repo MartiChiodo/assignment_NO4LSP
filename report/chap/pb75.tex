@@ -196,3 +196,154 @@ and recalling that each $f_k$ for $1<k\leq n$ only depends on $x_k$ ad $x_{k-1}$
 \end{eqnarray*}
 These are the only elements we have to compute to approximate the Hessian, since it is tridiagonal and we exploit its simmetry to avoid computing 
 the elements of the upper diagonal.
+
+Running the Modified Newton method using these approximations, with the parameters 
+\begin{eqnarray*}
+    \rho &=& 0.8 \\
+    c_1 &=& 10^{-5} \\
+    \texttt{btmax} &=& 90
+\end{eqnarray*}
+we obtain the following results:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_2.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-2}|\hat{x_i|}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_4.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-4}|\hat{x_i|}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_6.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-6}|\hat{x_i|}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_8.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-8}|\hat{x_i|}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_10.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-10}|\hat{x_i|}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_REL_12.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-12}|\hat{x_i|}$.} 
+\end{figure}
+
+The rate of convergence \texttt{NaN} that is sometimes shown is due to failures that occur before having performed the minimum number of iterations 
+needed to compute it (which is three since we know the exact value of the solution).
+
+We can identify two different kind of failures that occur: those due to backtracking and those due to the reach of the maximum number of iterations.
+In particular, for $h_i=10^{-k}|\hat{x_i}|$ for $k=2,4,6$ all the failures are because of backtracking (they can occur even for smaller $h$, but less frequently). 
+This happens because, since $h$ is too large, the approximation 
+of the gradient and the Hessian are not good enough to guarantee that a good descent direction is found. For 
+all the points, we obtain something similar to the following pathological case:
+\begin{list}{}{\setlength{\leftmargin}{0.7cm}}
+    \item \texttt{**** REL with h = 1e-06 FOR THE PB 75 (point 8, dimension 10000):  ***** \\
+    Time: 0.37252 seconds \\
+    Backtracking parameters (rho, c1): 0.8 1e-05 \\
+    **** MODIFIED NEWTON METHOD : RESULTS ***** \\
+    ************************************ \\
+    f(xk): 39458126.9661 \\
+    norma di gradf(xk): 414870519.4969 \\
+    N. of Iterations: 18/20000 \\
+    Rate of Convergence: 8.7683 \\
+    ************************************ \\
+    FAIL \\
+    Failure due to backtracking \\
+    cos of the angle between the last computed direction and the gradient: -1.6049e-05 \\
+    ************************************
+    }
+\end{list}
+where we can note that after few iterations, becktracking fails because the cosine of the angle between the computed descent direction
+and the gradient is so close to zero that this direction is almost perpendicular to the gradient and so tangent to the contour lines of $F$.
+
+The second kind of failure occur for $h_i=10^{-k}|\hat{x_i}|$ for $k=8, 10, 12$. The best results are obtained with $k=8$, because, with most starting points, 
+when the method reaches the maximum number of iterations allowed, the current solution is quite close to zero. One example is the following:
+\begin{list}{}{\setlength{\leftmargin}{0.7cm}}
+    \item \texttt{**** REL with h = 1e-08 FOR THE PB 75 (point 10, dimension 100000):  *****\\
+    Time: 4376.7099 seconds\\
+    Backtracking parameters (rho, c1): 0.8 1e-05\\
+    **** MODIFIED NEWTON METHOD : RESULTS *****\\
+    ************************************\\
+    f(xk): 0.0060851\\
+    norma di gradf(xk): 0.0012706\\
+    N. of Iterations: 80000/80000\\
+    Rate of Convergence: 0.058907\\
+    ************************************\\
+    FAIL\\
+    Failure not due to backtracking\\
+    ************************************\\
+    }
+\end{list}
+Still, the behaviour is very irregular and we can see it for example from the experimental rate of convergence, which is completely
+different from the theoretical one.
+
+For $k=10, 12$ we have very poor results: the method fails in most cases because of the maximum number of iterations, but the solution found 
+is very far from the exact one. This is due to numerical cancellation that occurs when computing the approximations of 
+the derivatives since we are subtracting two numbers very close to each other. So the approximations obtained are completely inaccurate and cause
+the method to perform this poorly. One example is the following:
+\begin{list}{}{\setlength{\leftmargin}{0.7cm}}
+    \item \texttt{**** REL with h = 1e-12 FOR THE PB 75 (point 8, dimension 100000):  ***** \\
+    Time: 3679.4492 seconds\\
+    Backtracking parameters (rho, c1): 0.8 1e-05\\
+    **** MODIFIED NEWTON METHOD : RESULTS *****\\
+    ************************************\\
+    f(xk): 1.756805324787388e+16\\
+    norma di gradf(xk): 698990881722798.6\\
+    N. of Iterations: 80000/80000\\
+    Rate of Convergence: 0.86925\\
+    ************************************\\
+    FAIL\\
+    Failure not due to backtracking\\
+    ************************************\\
+    }
+\end{list}
+
+When constant values of $h$ are used, the behaviour is similar: for $h=10^{-k}$, $k=2,4,6$ we always have failures due to backtracking and 
+for $h=10^{-k}$, $k=10,12$ most failures occur because of the reach of the maximum number of iterations, producing a solution very far from the exact one.
+
+For $h=10^{-8}$ the behaviour is again the best, with no failures occurring for dimension $n=10^3$ and $n=10^4$ and some failures due to backtracking 
+for $n=10^5$, but happening when the method is close to the exact solution. We report here two examples of this:
+\begin{list}{}{\setlength{\leftmargin}{0.7cm}}
+    \item \texttt{**** COST with h = 1e-08 FOR THE PB 75 (point 1, dimension 1000):  *****\\
+    Time: 4.7991 seconds\\
+    Backtracking parameters (rho, c1): 0.8 1e-05\\
+    **** MODIFIED NEWTON METHOD : RESULTS *****\\
+    ************************************\\
+    f(xk): 1.361e-05\\
+    norma di gradf(xk): 9.9781e-05\\
+    N. of Iterations: 1699/2000\\
+    Rate of Convergence: 0.9956\\
+    ************************************\\
+    SUCCESS\\
+    ************************************\\
+    } 
+\end{list}
+\begin{list}{}{\setlength{\leftmargin}{0.7cm}}
+    \item \texttt{**** COST with h = 1e-08 FOR THE PB 75 (point 11, dimension 100000):  *****\\
+    Time: 155.1714 seconds\\
+    Backtracking parameters (rho, c1): 0.8 1e-05\\
+    **** MODIFIED NEWTON METHOD : RESULTS *****\\
+    ************************************\\
+    f(xk): 0.012298\\
+    norma di gradf(xk): 0.32072\\
+    N. of Iterations: 4748/80000\\
+    Rate of Convergence: 1.5507\\
+    ************************************\\
+    FAIL\\
+    Failure due to backtracking\\
+    cos of the angle between last computed direction and the gradient: -0.00022156\\
+    ************************************}
+\end{list}
