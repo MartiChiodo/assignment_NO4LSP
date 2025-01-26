@@ -5,7 +5,7 @@ We consider the Rosenbrock function for $\boldsymbol{x} \in \mathbbm{R}^2$
 \end{equation*}
 with two different starting point $\boldsymbol{x}^{(0)}=(1.2,1.2)$ and $\boldsymbol{x}^{(0)}=(-1.2,1)$.
 \\
-The global minima for the function is zero and the global minimum
+The global minimum for the function is zero and the global minimum
 point is $\boldsymbol{x^*}=(1,1)$, as shown in the following figure.
 
 \begin{figure}[H]
@@ -24,7 +24,7 @@ for reflection, expansion, contraction and shrinking; which are respectively
     \sigma &=& 0.5
 \end{eqnarray*}
 For the Modified Newton method, 5000 maximum outer iterations, 100 maximum iterations allowed to 
-compute tra matrix $B_k$ at every step $k$. For backtracking we used the following values of the parameters 
+compute the positive definite approximation of the Hessian matrix $B_k$ at every step $k$. For backtracking we used the following values of the parameters 
 \begin{eqnarray*}
     \rho &=& 0.5 \\
     c_1 &=& 10^{-4} \\

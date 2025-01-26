@@ -1,0 +1,17 @@
+Summarizing the results obtained by exploiting Nelder Mead and Modified Newton methods for 
+unconstrained optimization of the considered functions, we can say that, as expected, the 
+simplex methods performs more poorly (even considering that the dimensionalities we tested it 
+on were significantly smaller than those used for the Modified Newton). This happens because 
+we are using a black box method on some problems that have high regularity, so the choice is 
+not optimal because it does not exploit a lot of useful information coming from the derivatives. 
+However, even if it does not always find the true minimizer, it is usually able to return a solution 
+that is not so far away from it.
+
+Modified Newton method using exact derivatives is, as expected, the best choice in all considered cases. 
+Exploiting the derivatives it is able to always find the minimizer even when the function presents 
+some flat areas.
+
+When using the approximation of derivatives, we saw that the shape of the function greatly influences the 
+succeed of the method: when flat areas are present, more problems arise. Also, the choice of the increment 
+$h_k$ influences the possibility of success, but the best choice for this value is not always the same 
+and should be chosen after some testings on the specific problem.

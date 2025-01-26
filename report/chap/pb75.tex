@@ -37,7 +37,7 @@ The gradient of $F(\boldsymbol{x})$ is the following (note that, besides the fir
         200 \cdot (n-1)^2(x_n-x_{n-1})^3
     \end{bmatrix}
 \end{equation*}
-The Hessian matrix of $F(\boldsymbol{x})$ is sparse since only on three diagonals elements different from zeros are present. They are the following:
+The Hessian matrix of $F(\boldsymbol{x})$ is sparse since only the elements on three diagonals are different from zeros. They are the following:
 \begin{align*}
     \frac{\partial^2 F}{\partial x_1^2} (\boldsymbol{x}) &= 1+600\cdot(x_2-x_1)^2 \\
     \frac{\partial^2 F}{\partial x_k^2} (\boldsymbol{x}) &= 600\cdot\Big((k-1)^2(x_k-x_{k-1})^2+k^2(x_{k+1}-x_k)^2 \Big), \quad 1 < k < n  & \\
@@ -169,7 +169,7 @@ In the following figure we can see two examples of the progress of the minimum v
     \caption{Example of convergence to zero of the value of $F(x)$.}
     \label{convergenze MN 75}
 \end{figure}
-Notice how fast it decreases in the first iterations, while the convergence becomes smaller when entering the almost flat area of the function.
+Notice how fast it decreases in the first iterations, while the convergence becomes slower when entering the almost flat area of the function.
 
 \medskip
 \subsection*{Modified Newton Method - Approximated Derivatives}
@@ -241,6 +241,43 @@ we obtain the following results:
     \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h_i=10^{-12}|\hat{x_i|}$.} 
 \end{figure}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_2.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-2}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_4.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-4}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_6.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-6}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_8.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-8}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_10.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-10}$.} 
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{img/pb75_table_MN_COST_12.png}
+    \caption{Results obtained by running the Modified Newton method on problem 75 using approximated derivatives with $h=10^{-12}$.} 
+\end{figure}
+
+
 The rate of convergence \texttt{NaN} that is sometimes shown is due to failures that occur before having performed the minimum number of iterations 
 needed to compute it (which is three since we know the exact value of the solution).
 
@@ -248,7 +285,7 @@ We can identify two different kind of failures that occur: those due to backtrac
 In particular, for $h_i=10^{-k}|\hat{x_i}|$ for $k=2,4,6$ all the failures are because of backtracking (they can occur even for smaller $h$, but less frequently). 
 This happens because, since $h$ is too large, the approximation 
 of the gradient and the Hessian are not good enough to guarantee that a good descent direction is found. For 
-all the points, we obtain something similar to the following pathological case:
+most points, we obtain something similar to the following pathological case:
 \begin{list}{}{\setlength{\leftmargin}{0.7cm}}
     \item \texttt{**** REL with h = 1e-06 FOR THE PB 75 (point 8, dimension 10000):  ***** \\
     Time: 0.37252 seconds \\
@@ -269,7 +306,7 @@ all the points, we obtain something similar to the following pathological case:
 where we can note that after few iterations, becktracking fails because the cosine of the angle between the computed descent direction
 and the gradient is so close to zero that this direction is almost perpendicular to the gradient and so tangent to the contour lines of $F$.
 
-The second kind of failure occur for $h_i=10^{-k}|\hat{x_i}|$ for $k=8, 10, 12$. The best results are obtained with $k=8$, because, with most starting points, 
+The second kind of failure occurs for $h_i=10^{-k}|\hat{x_i}|$ for $k=8, 10, 12$. The best results are obtained with $k=8$, because, with most starting points, 
 when the method reaches the maximum number of iterations allowed, the current solution is quite close to zero. One example is the following:
 \begin{list}{}{\setlength{\leftmargin}{0.7cm}}
     \item \texttt{**** REL with h = 1e-08 FOR THE PB 75 (point 10, dimension 100000):  *****\\

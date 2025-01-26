@@ -90,7 +90,7 @@ Table $\eqref{Sx76}$ contains some general results obtained by running the Neald
 
 First thing we can notice is that for smaller dimensionalities the simplex method is able to find the minimum in a reasonable amount of time, but when the dimensionality becomes higher the method starts failing.
 From the plot in figure $\eqref{fig:iter}$, we can see that for most points belonging to $\mathbb{R}^{50}$, the method keeps iterating until the maximum number of iterations is reached without satisfying the stopping criterion.
-This behavior can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method would needs to perform more iterations to reach the minimum.
+This behavior can probably be explained by the fact that when the dimensionality increases the starting point is more far from the minimum due to its definition, so the method would need to perform more iterations to reach the minimum.
 
 However, as expected due to the shape of the function, the algorithm consistently approximates the minimum point close to $0$ (as we can see from the barplot $\eqref{76log(fbest)}$), even for the only starting point in dimension $50$ from which the method is able to converge.
 
@@ -237,7 +237,7 @@ As we can see from the plots $\eqref{logfbest_difffinite76}$, especially for lar
     \label{76itermn}
 \end{figure*}
 
-In general, we can notice that for this specific problem the exact derivatives or the approximated ones while running the Modified Newton method does not significantly affect the results. As a matter of fact we can see that the average minimum point found is consistently close to $0$ for each choice of the increment $h$ (as shown by the barplots $\eqref{logfbest_difffinite76}$) and also the average time of execution remains almost the same as we can see from the barplots $\eqref{76itermn}$. 
+In general, we can notice that for this specific problem the exact derivatives or the approximated ones while running the Modified Newton method do not significantly affect the results. As a matter of fact we can see that the average minimum point found is consistently close to $0$ for each choice of the increment $h$ (as shown by the barplots $\eqref{logfbest_difffinite76}$) and also the average time of execution remains almost the same as we can see from the barplots $\eqref{76itermn}$. 
 Lastly, also the average rate of convergence, shown in barplots $\eqref{76rocmn}$,  computed while running the method with approximated derivatives is close to $2$ for each increment.
 
 

@@ -32,9 +32,9 @@ If $n$ is odd, there are two changes in the Hessian matrix: the derivative $\fra
 \end{align*}
 
 By analyzing the derivatives of the problem, we can deduce that the gradient of the function is nullified by the vector composed of ones which also nullifies the value of $F(\mathbf{x})$. 
-As a matter of fact, we can notice that the terms $f_k()$ for an odd value of $k$ are nullified only when $x_{k - 1} = 1$, while the terms $f_k()$ for an even value of $k$ are nullified when $1 = x_k^2 = x_{k+1}$. This leads to the conclusion that the function $F(\mathbf{x})$ assume is lower value, in other words is nullified, when for the vector $\mathbf{x} = \mathbbm{1}$, which, indeed, is a global minimum.
+As a matter of fact, we can notice that the terms $f_k()$ for an odd value of $k$ are nullified only when $x_{k - 1} = 1$, while the terms $f_k()$ for an even value of $k$ are nullified when $1 = x_k^2 = x_{k+1}$. This leads to the conclusion that the function $F(\mathbf{x})$ assumes its lower value, in other words is nullified, when for the vector $\mathbf{x} = \mathbbm{1}$, which, indeed, is a global minimum.
 \\ To better understand the behavior of the function $F(\mathbf{x})$ in the neighborhood of the minimizer we have found, we now report a plot of the function in 2D for $n = 2$. 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{img/pb25_fig.png}
     \caption{2D plot of the function $F(x_1, x_2)$.}
@@ -63,7 +63,7 @@ The table $\eqref{SX25}$ shows some general results of these experiments, such a
 \end{figure*}
 
 Looking at the table, it is clear that even if the method satisfies the stopping criterion for all dimensionalities it does not reach the point we declared be a global minimum, actually the minimum value the algorithm finds increases with the dimensionality.
-We are not too surprised by the por performance of the simplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objective function and thus it is possible that it got stuck in the flat zone of the function.
+We are not too surprised by the poor performance of the simplex method because the algorithm solely relies on function evaluation and does not take advantage of the information contained in the derivatives of the objective function and thus it is possible that it got stuck in the flat zone of the function.
 
 The column that should contain the average rate of convergence is filled with \verb+NaN+ values. This occurs because the best value found by the method remains almost stationary in the last few iterations, usually during the shrinking phase. As a result, in the formula $\eqref{definizione_roc}$, we encounter an indeterminate form $0/0$ which leads to a \verb+NaN+ value.
 
