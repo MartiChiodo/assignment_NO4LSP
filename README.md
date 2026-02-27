@@ -1,4 +1,2 @@
 # assignment_NO4LSP
-Assignment for unconstrained optimization for the Numerical Optimization for Large Scale Problems course at Polito.    
-The adressed assignment is the uncostrained one, for further details refer the file _NO4LSP_Assignments2425.pdf_.
-
+Assignment for the _Numerical Optimization for Large Scale Problems_ course at Politecnico di Torino (AY 2024/25). The project focuses on implementing numerical methods like Nelder-Mead and Modified Newton in MATLAB to solve unconstrained optimization problems. For full details, see the file _NO4LSP_Assignments2425.pdf_.
